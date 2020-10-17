@@ -1,6 +1,6 @@
 /// @description Set up client
 
-// Enums: network.move = 0, because move is at index 0 of this enumerator.
+// Enums: network.player_establish = 0, because move is at index 0 of this enumerator.
 // Server should have same enum.
 enum network {
 	player_establish,	//

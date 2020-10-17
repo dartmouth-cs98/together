@@ -14,4 +14,5 @@ if (!active) {
 	buffer_write(con_client.client_buffer, buffer_string, chat_text);	// Message contents
 	buffer_write(con_client.client_buffer, buffer_u8, client_color_id);	// Message color
 	network_send_packet(con_client.client, con_client.client_buffer, buffer_tell(con_client.client_buffer));
+	show_debug_message("SEND: chat: "+string(current_time));
 }

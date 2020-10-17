@@ -12,3 +12,4 @@ buffer_write(con_client.client_buffer, buffer_u16, mouse_y);
 
 // Send the packet
 network_send_packet(con_client.client, con_client.client_buffer, buffer_tell(con_client.client_buffer));
+show_debug_message("SEND: move: "+string(current_time));

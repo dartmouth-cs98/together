@@ -5,11 +5,15 @@ function scr_recieved_packet(buffer, socket){
 	// All the possible things we may need the server to do should be in here
 	switch (msgid) {
 		case network.player_establish:
+			show_debug_message("RECIEVE: player_establish: "+string(current_time));
+		
 			var _username = buffer_read(buffer, buffer_string);
 			scr_network_player_join(_username);
 			break;
 		
 		case network.move:
+			show_debug_message("RECIEVE: move: "+string(current_time));
+		
 			// Make sure your reads & writes match. Write string -> read string.
 			var move_x = buffer_read(buffer, buffer_u16);
 			var move_y = buffer_read(buffer, buffer_u16);
@@ -31,10 +35,13 @@ function scr_recieved_packet(buffer, socket){
 				buffer_write(server_buffer, buffer_u16, move_y);		// Y
 				
 				network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
+				show_debug_message("SEND: move: "+string(current_time));
 			}
 			break;
 			
 		case network.chat:
+			show_debug_message("RECIEVE: chat: "+string(current_time));
+			
 			var _chat = buffer_read(buffer, buffer_string);
 			var	_player = ds_map_find_value(socket_to_instanceid, socket);
 			
@@ -55,8 +62,8 @@ function scr_recieved_packet(buffer, socket){
 				buffer_write(server_buffer, buffer_u8, _colorid);		// Message color (number that maps to it)
 				
 				network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
+				show_debug_message("SEND: chat: "+string(current_time));
 			}
-			
 			break;
 	}
 }
