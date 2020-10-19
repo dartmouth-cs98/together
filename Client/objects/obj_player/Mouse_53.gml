@@ -1,5 +1,6 @@
 /// @description Move on left click
 
+/*
 // Go to start of buffer
 buffer_seek(con_client.client_buffer, buffer_seek_start, 0);
 
@@ -13,3 +14,4 @@ buffer_write(con_client.client_buffer, buffer_u16, mouse_y);
 // Send the packet
 network_send_packet(con_client.client, con_client.client_buffer, buffer_tell(con_client.client_buffer));
 show_debug_message("SEND: move: "+string(current_time));
+*/

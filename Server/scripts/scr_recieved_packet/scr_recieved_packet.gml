@@ -15,12 +15,18 @@ function scr_recieved_packet(buffer, socket){
 			show_debug_message("RECIEVE: move: "+string(current_time));
 		
 			// Make sure your reads & writes match. Write string -> read string.
-			var move_x = buffer_read(buffer, buffer_u16);
-			var move_y = buffer_read(buffer, buffer_u16);
+			var move_x = buffer_read(buffer, buffer_s16);
+			var move_y = buffer_read(buffer, buffer_s16);
+			var move_dir = buffer_read(buffer, buffer_s16);		// TODO: Use for setting sprite direction
+			
+			
 			
 			var _player = ds_map_find_value(socket_to_instanceid, socket)
-			_player.x = move_x;
-			_player.y = move_y;
+			with (_player) {
+				x += move_x;
+				y += move_y;
+			}
+			
 			
 			for(var i = 0; i < ds_list_size(socket_list); i++) {
 				
@@ -31,8 +37,9 @@ function scr_recieved_packet(buffer, socket){
 				
 				buffer_write(server_buffer, buffer_u8, socket);			// Socket of the moving player
 				
-				buffer_write(server_buffer, buffer_u16, move_x);		// X
-				buffer_write(server_buffer, buffer_u16, move_y);		// Y
+				buffer_write(server_buffer, buffer_s16, move_x);		// X
+				buffer_write(server_buffer, buffer_s16, move_y);		// Y
+				buffer_write(server_buffer, buffer_s16, move_dir);		// direction
 				
 				network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
 				show_debug_message("SEND: move: "+string(current_time));

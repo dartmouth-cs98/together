@@ -33,9 +33,9 @@ These types and their respective IDs are defined in the enum `network`. This enu
 ### `move`
 * ID: 4
 * Protocol
-    * When the user inputs the move command, the client sends this message. Format: `<ID, mouse_x, mouse_y>`
-    * The server recieves this and echoes it to all players. Format: `<ID, x_pos, y_pos>`
-    * Each player recieves this and updates player positions based on it. No response.
+    * When the user inputs the move command, the client sends this message. Format: `<ID, mouse_x, mouse_y, move_dir>`
+    * The server recieves this and echoes it to all players. Format: `<ID, x_pos, y_pos, move_dir>`
+    * Each player recieves this and updates player positions and sprites based on it. No response.
 
 ### `chat`
 * ID: 5

@@ -64,16 +64,31 @@ function scr_recieved_packet(buffer){
 			break;
 		
 		case network.move: 
-			show_debug_message("RECIEVE: move: "+string(current_time));
+			//show_debug_message("RECIEVE: move: "+string(current_time));
 			
 			var _sock = buffer_read(buffer, buffer_u8);
-			var move_x = buffer_read(buffer, buffer_u16);
-			var move_y = buffer_read(buffer, buffer_u16);
+			var move_x = buffer_read(buffer, buffer_s16);
+			var move_y = buffer_read(buffer, buffer_s16);
+			var move_dir = buffer_read(buffer, buffer_s16); //TODO: Use for setting sprite direction.
 			
 			// This is whoever's moving, player or other.
 			_player = ds_map_find_value(socket_to_instanceid, _sock);
-			_player.x = move_x;
-			_player.y = move_y;
+			with (_player) {
+				x += move_x;
+				y += move_y;
+				
+				// Set sprites based on move direction
+				switch(move_dir) {
+					case 0: sprite_index = spr_r_strip4; break;			// Right
+					case 45: sprite_index = spr_ur_strip4; break;		// Up-Right
+					case 90: sprite_index = spr_u_strip4; break;		// Up
+					case 135: sprite_index = spr_ul_strip4; break;		// Up-Left
+					case 180: sprite_index = spr_l_strip4; break;		// Left
+					case 225: sprite_index = spr_dl_strip4; break;		// Down-Left
+					case 270: sprite_index = spr_d_strip4; break;		// Down
+					case 315: sprite_index = spr_dr_strip4; break;		// Down-Right
+				}
+			}
 			break;
 			
 		case network.chat:
