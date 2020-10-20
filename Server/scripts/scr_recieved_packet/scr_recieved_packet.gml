@@ -5,15 +5,18 @@ function scr_recieved_packet(buffer, socket){
 	// All the possible things we may need the server to do should be in here
 	switch (msgid) {
 		case network.player_establish:
+			#region player_establish
 			show_debug_message("RECIEVE: player_establish: "+string(current_time));
 		
 			var _username = buffer_read(buffer, buffer_string);
 			scr_network_player_join(_username);
+			#endregion
 			break;
 		
 		case network.move:
+			#region move
 			show_debug_message("RECIEVE: move: "+string(current_time));
-		
+			
 			// Make sure your reads & writes match. Write string -> read string.
 			var h_input = buffer_read(buffer, buffer_s8);
 			var v_input = buffer_read(buffer, buffer_s8);
@@ -65,41 +68,11 @@ function scr_recieved_packet(buffer, socket){
 				show_debug_message("SEND: move: "+string(current_time));
 			}
 			
-			
-			/*
-			var move_x = buffer_read(buffer, buffer_s16);
-			var move_y = buffer_read(buffer, buffer_s16);
-			var move_dir = buffer_read(buffer, buffer_s16);
-			
-			
-			
-			var _player = ds_map_find_value(socket_to_instanceid, socket)
-			with (_player) {
-				x += move_x;
-				y += move_y;
-			}
-			
-			
-			for(var i = 0; i < ds_list_size(socket_list); i++) {
-				
-				var _sock = ds_list_find_value(socket_list, i);
-				
-				buffer_seek(server_buffer, buffer_seek_start, 0);		// Start from top of buffer
-				buffer_write(server_buffer, buffer_u8, network.move);	// Message ID
-				
-				buffer_write(server_buffer, buffer_u8, socket);			// Socket of the moving player
-				
-				buffer_write(server_buffer, buffer_s16, move_x);		// X
-				buffer_write(server_buffer, buffer_s16, move_y);		// Y
-				buffer_write(server_buffer, buffer_s16, move_dir);		// direction
-				
-				network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
-				show_debug_message("SEND: move: "+string(current_time));
-			}
-			*/
+			#endregion
 			break;
 			
 		case network.chat:
+			#region chat
 			show_debug_message("RECIEVE: chat: "+string(current_time));
 			
 			var _chat = buffer_read(buffer, buffer_string);
@@ -124,6 +97,7 @@ function scr_recieved_packet(buffer, socket){
 				network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
 				show_debug_message("SEND: chat: "+string(current_time));
 			}
+			#endregion
 			break;
 	}
 }

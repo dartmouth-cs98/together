@@ -4,9 +4,11 @@ function scr_recieved_packet(buffer){
 	
 	switch(msgid) {
 		case network.player_establish:
+			#region player_establish
 			show_debug_message("RECIEVE: player_establish: "+string(current_time));
 			
 			var _socket = buffer_read(buffer, buffer_u8);
+			
 			// This is this client's socket, put in a global variable to the client can always access it.
 			global.mysocket = _socket;
 			
@@ -15,11 +17,11 @@ function scr_recieved_packet(buffer){
 			buffer_write(client_buffer, buffer_string, con_game_manager.username);
 			network_send_packet(client, client_buffer, buffer_tell(client_buffer));
 			show_debug_message("SEND: player_establish: "+string(current_time));
-			
+			#endregion
 			break;
 		
-		
-		case network.player_connect: // The ID for player_connect is 1, as defined in the enum from the create method
+		case network.player_connect:
+			#region player_connect
 			show_debug_message("RECIEVE: player_connect: "+string(current_time));
 			
 			// When a player connects, get their info & put them in appropriate data structures
@@ -33,9 +35,11 @@ function scr_recieved_packet(buffer){
 			_player.username = _username;
 			
 			ds_map_add(socket_to_instanceid, _socket, _player);
+			#endregion
 			break;
 			
 		case network.player_joined:
+			#region player_joined
 			show_debug_message("RECIEVE: player_joined: "+string(current_time));
 			
 			var _socket = buffer_read(buffer, buffer_u8);
@@ -47,9 +51,11 @@ function scr_recieved_packet(buffer){
 			_other.socket = _socket;
 			_other.username = _username;
 			ds_map_add(socket_to_instanceid, _socket, _other);
+			#endregion
 			break;
 			
 		case network.player_disconnect:
+			#region player_disconnect
 			show_debug_message("RECIEVE: player_disconnect: "+string(current_time));
 			
 			// Destroy whichever player is disconnected and remove them from the socket map
@@ -61,9 +67,11 @@ function scr_recieved_packet(buffer){
 			}
 			
 			ds_map_delete(socket_to_instanceid, _socket);
+			#endregion
 			break;
 		
 		case network.move: 
+			#region move
 			show_debug_message("RECIEVE: move: "+string(current_time));
 			
 			var _sock = buffer_read(buffer, buffer_u8);
@@ -97,9 +105,11 @@ function scr_recieved_packet(buffer){
 					image_index = 0;
 				}
 			}
+			#endregion
 			break;
 			
 		case network.chat:
+			#region chat
 			show_debug_message("RECIEVE: chat: "+string(current_time));
 			
 			// Read chat message, put it in the list.
@@ -108,6 +118,7 @@ function scr_recieved_packet(buffer){
 			
 			var _colorid = buffer_read(buffer, buffer_u8);
 			ds_list_insert(global.chat_color, 0, ds_map_find_value(color_map, _colorid));
+			#endregion
 			break;
 	}
 }
