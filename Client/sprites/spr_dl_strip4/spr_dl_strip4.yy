@@ -80,8 +80,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"b75d4f1c-09e5-4ac3-afad-d463f797dbe9","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Player",
-    "path": "folders/Sprites/Player.yy",
+    "name": "Gray Humanoid",
+    "path": "folders/Sprites/Gray Humanoid.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_dl_strip4",
