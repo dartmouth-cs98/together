@@ -33,6 +33,7 @@ function scr_recieved_packet(buffer){
 			var _player = instance_create_depth(_x, _y, depth, obj_player);
 			_player.socket = _socket;
 			_player.username = _username;
+			_player.image_index = 0;
 			
 			ds_map_add(socket_to_instanceid, _socket, _player);
 			#endregion
@@ -50,6 +51,7 @@ function scr_recieved_packet(buffer){
 			var _other = instance_create_depth(_x, _y, depth, obj_other);
 			_other.socket = _socket;
 			_other.username = _username;
+			_other.image_index = 0;
 			ds_map_add(socket_to_instanceid, _socket, _other);
 			#endregion
 			break;
@@ -91,22 +93,55 @@ function scr_recieved_packet(buffer){
 						x += move_x;
 						y += move_y;
 				
-						// Set sprites based on move direction
-						switch(move_dir) {
-							case 0: sprite_index = spr_r_strip4; break;			// Right
-							case 45: sprite_index = spr_ur_strip4; break;		// Up-Right
-							case 90: sprite_index = spr_u_strip4; break;		// Up
-							case 135: sprite_index = spr_ul_strip4; break;		// Up-Left
-							case 180: sprite_index = spr_l_strip4; break;		// Left
-							case 225: sprite_index = spr_dl_strip4; break;		// Down-Left
-							case 270: sprite_index = spr_d_strip4; break;		// Down
-							case 315: sprite_index = spr_dr_strip4; break;		// Down-Right
+						#region Set sprites based on move direction and player type
+						if (id == obj_player.id) {
+							// Dog walking sprite
+							image_xscale = 1;
+							switch(move_dir) {
+								case 0: sprite_index = spr_Dog_Walk_R; break;						// Right
+								case 45: sprite_index = spr_Dog_Walk_R; break;						// Up-Right
+								case 90: sprite_index = spr_Dog_Walk_U; break;						// Up
+								case 135: sprite_index = spr_Dog_Walk_R; image_xscale = -1; break;	// Up-Left
+								case 180: sprite_index = spr_Dog_Walk_R; image_xscale = -1; break;	// Left
+								case 225: sprite_index = spr_Dog_Walk_R; image_xscale = -1; break;	// Down-Left
+								case 270: sprite_index = spr_Dog_Walk_D; break;						// Down
+								case 315: sprite_index = spr_Dog_Walk_R; break;						// Down-Right
+							}
+						} else if (id == obj_other.id) {
+							// Gray humanoid sprite
+							switch(move_dir) {
+								case 0: sprite_index = spr_r_strip4; break;			// Right
+								case 45: sprite_index = spr_ur_strip4; break;		// Up-Right
+								case 90: sprite_index = spr_u_strip4; break;		// Up
+								case 135: sprite_index = spr_ul_strip4; break;		// Up-Left
+								case 180: sprite_index = spr_l_strip4; break;		// Left
+								case 225: sprite_index = spr_dl_strip4; break;		// Down-Left
+								case 270: sprite_index = spr_d_strip4; break;		// Down
+								case 315: sprite_index = spr_dr_strip4; break;		// Down-Right
+							}
 						}
+						#endregion
 					} else {
 						image_index = 0;
 					}
 				}
 			}
+			
+			#region Have camera follow player
+			with (con_camera) {
+				if (instance_exists(target)){
+					// Center on player
+					global.cam_X = target.x - (global.cam_width/2);
+					global.cam_Y = target.y - (global.cam_height/2);
+	
+					// Clamp camera at edges edges are clear
+					global.cam_X = clamp(global.cam_X, 0, room_width-global.cam_width);
+					global.cam_Y = clamp(global.cam_Y, 0, room_height-global.cam_height);
+				}
+				camera_set_view_pos(view_camera[0], global.cam_X, global.cam_Y);
+			}
+			#endregion
+			
 			#endregion
 			break;
 			

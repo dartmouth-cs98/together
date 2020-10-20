@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_d_strip4",
-    "path": "sprites/spr_d_strip4/spr_d_strip4.yy",
+    "name": "spr_Dog_Walk_D",
+    "path": "sprites/spr_Dog_Walk_D/spr_Dog_Walk_D.yy",
   },
   "solid": false,
   "visible": true,
