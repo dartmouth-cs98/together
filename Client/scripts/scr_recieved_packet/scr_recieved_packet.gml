@@ -81,28 +81,30 @@ function scr_recieved_packet(buffer){
 			
 			// This is whoever's moving, player or other.
 			_player = ds_map_find_value(socket_to_instanceid, _sock);
-			with (_player) {
-				if (h_input != 0 or v_input != 0) {
-					var move_dir = point_direction(0, 0, h_input, v_input);
-					var move_x = lengthdir_x(walk_speed, move_dir);
-					var move_y = lengthdir_y(walk_speed, move_dir);	
+			if (!is_undefined(_player)) {
+				with (_player) {
+					if (h_input != 0 || v_input != 0) {
+						var move_dir = point_direction(0, 0, h_input, v_input);
+						var move_x = lengthdir_x(walk_speed, move_dir);
+						var move_y = lengthdir_y(walk_speed, move_dir);	
 					
-					x += move_x;
-					y += move_y;
+						x += move_x;
+						y += move_y;
 				
-					// Set sprites based on move direction
-					switch(move_dir) {
-						case 0: sprite_index = spr_r_strip4; break;			// Right
-						case 45: sprite_index = spr_ur_strip4; break;		// Up-Right
-						case 90: sprite_index = spr_u_strip4; break;		// Up
-						case 135: sprite_index = spr_ul_strip4; break;		// Up-Left
-						case 180: sprite_index = spr_l_strip4; break;		// Left
-						case 225: sprite_index = spr_dl_strip4; break;		// Down-Left
-						case 270: sprite_index = spr_d_strip4; break;		// Down
-						case 315: sprite_index = spr_dr_strip4; break;		// Down-Right
+						// Set sprites based on move direction
+						switch(move_dir) {
+							case 0: sprite_index = spr_r_strip4; break;			// Right
+							case 45: sprite_index = spr_ur_strip4; break;		// Up-Right
+							case 90: sprite_index = spr_u_strip4; break;		// Up
+							case 135: sprite_index = spr_ul_strip4; break;		// Up-Left
+							case 180: sprite_index = spr_l_strip4; break;		// Left
+							case 225: sprite_index = spr_dl_strip4; break;		// Down-Left
+							case 270: sprite_index = spr_d_strip4; break;		// Down
+							case 315: sprite_index = spr_dr_strip4; break;		// Down-Right
+						}
+					} else {
+						image_index = 0;
 					}
-				} else {
-					image_index = 0;
 				}
 			}
 			#endregion
