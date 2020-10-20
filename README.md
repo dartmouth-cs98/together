@@ -22,7 +22,12 @@ With a liscense, we can have Gamemaker Studio 2 export the project as an executa
 
 Willem Klein Wassink, Eitan Vilker, Joe Zhang
 
+## Assets
+* [Canari 8Bit Top Down](https://canarigames.itch.io/canaripack-8bit-topdown)
+
 ## Acknowledgments
 
-Thanks to FriendlyCosmonaut for her great [Gamemaker tutorial](https://www.youtube.com/watch?v=raGK_j1NVdE&list=PLhIbBGhnxj5JcbfoxS_CWTnImRL_wB_Wg)
-Thanks to Wizirdi for his great [networking tutorial](https://youtu.be/NbsXRuNijlo)
+* Tutorials:
+  * [GMS2 Series](https://www.youtube.com/watch?v=raGK_j1NVdE&list=PLhIbBGhnxj5JcbfoxS_CWTnImRL_wB_Wg)
+  * [Networking Series](https://youtu.be/NbsXRuNijlo)
+  * [Movement Series](https://www.youtube.com/watch?v=0-a0Fak7cjk)
