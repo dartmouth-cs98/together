@@ -1,11 +1,19 @@
 {
   "resources": [
     {"id":{"name":"con_server","path":"objects/con_server/con_server.yy",},"order":0,},
+    {"id":{"name":"spr_dl_strip4","path":"sprites/spr_dl_strip4/spr_dl_strip4.yy",},"order":1,},
     {"id":{"name":"scr_recieved_packet","path":"scripts/scr_recieved_packet/scr_recieved_packet.yy",},"order":0,},
-    {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},"order":0,},
+    {"id":{"name":"spr_r_strip4","path":"sprites/spr_r_strip4/spr_r_strip4.yy",},"order":4,},
+    {"id":{"name":"spr_dr_strip4","path":"sprites/spr_dr_strip4/spr_dr_strip4.yy",},"order":2,},
+    {"id":{"name":"spr_u_strip4","path":"sprites/spr_u_strip4/spr_u_strip4.yy",},"order":5,},
+    {"id":{"name":"spr_penguin","path":"sprites/spr_penguin/spr_penguin.yy",},"order":0,},
+    {"id":{"name":"spr_ul_strip4","path":"sprites/spr_ul_strip4/spr_ul_strip4.yy",},"order":6,},
+    {"id":{"name":"spr_ur_strip4","path":"sprites/spr_ur_strip4/spr_ur_strip4.yy",},"order":7,},
     {"id":{"name":"scr_network_player_join","path":"scripts/scr_network_player_join/scr_network_player_join.yy",},"order":1,},
+    {"id":{"name":"spr_l_strip4","path":"sprites/spr_l_strip4/spr_l_strip4.yy",},"order":3,},
     {"id":{"name":"con_gui","path":"objects/con_gui/con_gui.yy",},"order":2,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":1,},
+    {"id":{"name":"spr_d_strip4","path":"sprites/spr_d_strip4/spr_d_strip4.yy",},"order":0,},
     {"id":{"name":"rm_server","path":"rooms/rm_server/rm_server.yy",},"order":0,},
   ],
   "Options": [
@@ -39,6 +47,7 @@
     {"folderPath":"folders/Animation Curves.yy","order":12,"resourceVersion":"1.0","name":"Animation Curves","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Notes.yy","order":13,"resourceVersion":"1.0","name":"Notes","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Extensions.yy","order":14,"resourceVersion":"1.0","name":"Extensions","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/Player.yy","order":9,"resourceVersion":"1.0","name":"Player","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},

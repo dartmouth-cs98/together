@@ -73,5 +73,5 @@ socket_list = ds_list_create();
 // Map sockets to instance IDs of players.
 socket_to_instanceid = ds_map_create();
 
-player_spawn_x = 100;
-player_spawn_y = 100;
+player_spawn_x = room_width/2;
+player_spawn_y = room_height/2;

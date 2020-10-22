@@ -23,5 +23,6 @@ if (!active) {
 		buffer_write(con_server.server_buffer, buffer_u8, colors.red);		// Message color
 				
 		network_send_packet(_sock, con_server.server_buffer, buffer_tell(con_server.server_buffer));
+		show_debug_message("SEND: chat: "+string(current_time));
 	}
 }
