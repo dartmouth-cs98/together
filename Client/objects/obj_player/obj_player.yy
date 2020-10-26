@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_Dog_Walk_D",
-    "path": "sprites/spr_Dog_Walk_D/spr_Dog_Walk_D.yy",
+    "name": "spr_blue_cape_down",
+    "path": "sprites/spr_blue_cape_down/spr_blue_cape_down.yy",
   },
   "solid": false,
   "visible": true,

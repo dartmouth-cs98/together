@@ -96,16 +96,15 @@ function scr_recieved_packet(buffer){
 						#region Set sprites based on move direction and player type
 						if (id == obj_player.id) {
 							// Dog walking sprite
-							image_xscale = 1;
 							switch(move_dir) {
-								case 0: sprite_index = spr_Dog_Walk_R; break;						// Right
-								case 45: sprite_index = spr_Dog_Walk_R; break;						// Up-Right
-								case 90: sprite_index = spr_Dog_Walk_U; break;						// Up
-								case 135: sprite_index = spr_Dog_Walk_R; image_xscale = -1; break;	// Up-Left
-								case 180: sprite_index = spr_Dog_Walk_R; image_xscale = -1; break;	// Left
-								case 225: sprite_index = spr_Dog_Walk_R; image_xscale = -1; break;	// Down-Left
-								case 270: sprite_index = spr_Dog_Walk_D; break;						// Down
-								case 315: sprite_index = spr_Dog_Walk_R; break;						// Down-Right
+								case 0: sprite_index = spr_blue_cape_right; break;		// Right
+								case 45: sprite_index = spr_blue_cape_right; break;		// Up-Right
+								case 90: sprite_index = spr_blue_cape_up; break;		// Up
+								case 135: sprite_index = spr_blue_cape_left; break;		// Up-Left
+								case 180: sprite_index = spr_blue_cape_left; break;		// Left
+								case 225: sprite_index = spr_blue_cape_left; break;		// Down-Left
+								case 270: sprite_index = spr_blue_cape_down; break;		// Down
+								case 315: sprite_index = spr_blue_cape_right; break;	// Down-Right
 							}
 						} else if (id == obj_other.id) {
 							// Gray humanoid sprite

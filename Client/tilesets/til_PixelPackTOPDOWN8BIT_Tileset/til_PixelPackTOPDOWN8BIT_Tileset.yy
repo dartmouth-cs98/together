@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "spr_PixelPackTOPDOWN8BIT_Tileset_1",
-    "path": "sprites/spr_PixelPackTOPDOWN8BIT_Tileset_1/spr_PixelPackTOPDOWN8BIT_Tileset_1.yy",
-  },
+  "spriteId": null,
   "tileWidth": 16,
   "tileHeight": 16,
   "tilexoff": 0,
@@ -11,8 +8,8 @@
   "tilevsep": 0,
   "spriteNoExport": true,
   "textureGroupId": {
-    "name": "",
-    "path": "",
+    "name": "Default",
+    "path": "texturegroups/Default",
   },
   "out_tilehborder": 2,
   "out_tilevborder": 2,
