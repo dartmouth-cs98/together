@@ -11,6 +11,6 @@ buffer_write(con_client.client_buffer, buffer_s8, h_input);			// Horizontal inpu
 buffer_write(con_client.client_buffer, buffer_s8, v_input);			// Vertical input
 buffer_write(con_client.client_buffer, buffer_u8, walk_speed);		// Walk speed
 network_send_packet(con_client.client, con_client.client_buffer, buffer_tell(con_client.client_buffer));
-show_debug_message("SEND: move: "+string(current_time));
+//show_debug_message("SEND: move: "+string(current_time));
 
 #endregion

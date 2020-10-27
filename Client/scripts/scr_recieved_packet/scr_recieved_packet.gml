@@ -74,7 +74,7 @@ function scr_recieved_packet(buffer){
 		
 		case network.move: 
 			#region move
-			show_debug_message("RECIEVE: move: "+string(current_time));
+			//show_debug_message("RECIEVE: move: "+string(current_time));
 			
 			var _sock = buffer_read(buffer, buffer_u8);
 			var h_input = buffer_read(buffer, buffer_s8);
@@ -84,6 +84,7 @@ function scr_recieved_packet(buffer){
 			// This is whoever's moving, player or other.
 			_player = ds_map_find_value(socket_to_instanceid, _sock);
 			if (!is_undefined(_player)) {
+				
 				with (_player) {
 					if (h_input != 0 || v_input != 0) {
 						var move_dir = point_direction(0, 0, h_input, v_input);

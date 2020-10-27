@@ -15,7 +15,7 @@ function scr_recieved_packet(buffer, socket){
 		
 		case network.move:
 			#region move
-			show_debug_message("RECIEVE: move: "+string(current_time));
+			//show_debug_message("RECIEVE: move: "+string(current_time));
 			
 			// Make sure your reads & writes match. Write string -> read string.
 			var h_input = buffer_read(buffer, buffer_s8);
