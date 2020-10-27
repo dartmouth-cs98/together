@@ -5,7 +5,6 @@
     {"id":{"name":"snd_Jump03","path":"sounds/snd_Jump03/snd_Jump03.yy",},"order":11,},
     {"id":{"name":"snd_Jump02","path":"sounds/snd_Jump02/snd_Jump02.yy",},"order":10,},
     {"id":{"name":"spr_blue_cape_left","path":"sprites/spr_blue_cape_left/spr_blue_cape_left.yy",},"order":3,},
-    {"id":{"name":"til_PixelPackTOPDOWN8BIT_Tileset","path":"tilesets/til_PixelPackTOPDOWN8BIT_Tileset/til_PixelPackTOPDOWN8BIT_Tileset.yy",},"order":1,},
     {"id":{"name":"spr_l_strip4","path":"sprites/spr_l_strip4/spr_l_strip4.yy",},"order":3,},
     {"id":{"name":"snd_Death01","path":"sounds/snd_Death01/snd_Death01.yy",},"order":4,},
     {"id":{"name":"snd_MusicADVENTURE","path":"sounds/snd_MusicADVENTURE/snd_MusicADVENTURE.yy",},"order":0,},
