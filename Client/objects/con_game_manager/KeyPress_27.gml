@@ -2,7 +2,7 @@
 
 if (room == rm_client) {
 	if (!paused) {
-		#region Store info about player so they remain visible while paused
+		// Store info about player so they remain visible while paused
 		var player = instance_find(obj_player, 0);
 		player_data[0] = player.sprite_index;
 		player_data[1] = player.image_index;
@@ -13,7 +13,6 @@ if (room == rm_client) {
 		player_data[6] = player.image_angle;
 		player_data[7] = player.image_blend;
 		player_data[8] = player.image_alpha;
-		#endregion
 		
 		instance_deactivate_object(obj_player);
 		paused = true;
