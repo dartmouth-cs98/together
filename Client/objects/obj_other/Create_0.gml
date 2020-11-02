@@ -1,4 +1,5 @@
 /// @description Initialize other player sprite
 
-image_speed = 0.4;
 username = "";
+default_image_speed = 0.4;
+image_speed = default_image_speed;

@@ -157,5 +157,28 @@ function scr_recieved_packet(buffer){
 			ds_list_insert(global.chat_color, 0, ds_map_find_value(color_map, _colorid));
 			#endregion
 			break;
+			
+		case network.pause:
+			#region pause
+			show_debug_message("RECIEVE: pause: "+string(current_time));
+			
+			var pause_socket = buffer_read(buffer, buffer_u8);
+			var _player = ds_map_find_value(socket_to_instanceid, pause_socket);
+			_player.image_index = 0;
+			_player.image_speed = 0;
+			
+			#endregion
+			break;
+			
+		case network.unpause:
+			#region unpause
+			show_debug_message("RECIEVE: unpause: "+string(current_time));
+			
+			var unpause_socket = buffer_read(buffer, buffer_u8);
+			var _player = ds_map_find_value(socket_to_instanceid, unpause_socket);
+			_player.image_speed = _player.default_image_speed;
+			
+			#endregion
+			break;
 	}
 }
