@@ -7,6 +7,7 @@ enum network {
 	player_disconnect,	// For removing a player when they disconnect
 	move,				// For when a player moves
 	chat,				// For managing chat messages
+	task,				// For handling task bar progress
 }
 
 #region An enum & ds map for colors, makes it easier to send color IDs across the internet

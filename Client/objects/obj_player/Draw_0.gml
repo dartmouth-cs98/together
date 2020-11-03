@@ -7,3 +7,5 @@ draw_set_color(c_white);
 draw_text(x, y-40, username);
 draw_text(x - 50, y-100, food);
 draw_text(x - 30, y-100, water);
+
+draw_text(global.cam_X+50, global.cam_Y+50, global.taskbar)

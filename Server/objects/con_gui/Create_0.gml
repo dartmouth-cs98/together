@@ -12,3 +12,5 @@ repeat(chat_size) {
 }
 
 chat_text = "";		// Current chat message
+
+global.task = 0;	// Start taskbar progress at 0

@@ -99,5 +99,28 @@ function scr_recieved_packet(buffer, socket){
 			}
 			#endregion
 			break;
+			
+		case network.task:
+			//show_debug_message("RECIEVE: task: "+string(current_time));
+			
+			var add_to_taskbar = buffer_read(buffer, buffer_u8);
+
+			// Add to total taskbar
+			global.task += add_to_taskbar;
+			
+			// Broadcast taskbar status to all players
+			for(var i = 0; i < ds_list_size(socket_list); i++) {
+				
+				var _sock = ds_list_find_value(socket_list, i);
+				
+				buffer_seek(server_buffer, buffer_seek_start, 0);		// Start from top of buffer
+				buffer_write(server_buffer, buffer_u8, network.task);	// Message ID
+				
+				buffer_write(server_buffer, buffer_u8, global.task);			// Taskbar
+				
+				network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
+				//show_debug_message("SEND: task: "+string(current_time));
+			}
+			break;
 	}
 }
