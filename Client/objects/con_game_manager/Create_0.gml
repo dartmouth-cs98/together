@@ -4,5 +4,4 @@
 username = get_string("Please enter a username", "");
 
 // Keep track of game state when pausing
-paused = false;
-player_data = [];
+global.paused = false;

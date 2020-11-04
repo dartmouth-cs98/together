@@ -8,13 +8,9 @@ if (room == rm_main_menu) {
 }
 #endregion
 
-#region pause menu
-if (paused) {
-	// Redraw player from stored data
-	draw_sprite_ext(player_data[0], player_data[1], player_data[2],
-					player_data[3], player_data[4], player_data[5],
-					player_data[6], player_data[7], player_data[8]/2);
-	
+#region Pause message
+if (global.paused) {
+	// Draw pause message
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);
 	draw_set_color(c_white);
