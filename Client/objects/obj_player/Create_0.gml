@@ -1,6 +1,8 @@
 /// @description Initialize player
 
-image_speed = 0.25; // float
+default_image_speed = 0.25; // float
+image_speed = default_image_speed;
+
 username = ""; // string
 walk_speed = 4; // int
 food = 10; // int
@@ -18,5 +20,3 @@ time_since_hands_washed = 0; // double
 mask_on = false; // bool
 
 draw_set_font(Font1);
-
-show_debug_message("USERNAME: " + username);

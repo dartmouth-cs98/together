@@ -6,7 +6,7 @@ function scr_recieved_packet(buffer, socket){
 	switch (msgid) {
 		case network.player_establish:
 			#region player_establish
-			show_debug_message("RECIEVE: player_establish: "+string(current_time));
+			//show_debug_message("RECIEVE: player_establish: "+string(current_time));
 		
 			var _username = buffer_read(buffer, buffer_string);
 			scr_network_player_join(_username);
@@ -22,7 +22,7 @@ function scr_recieved_packet(buffer, socket){
 			var v_input = buffer_read(buffer, buffer_s8);
 			var walk_speed = buffer_read(buffer, buffer_u8);
 			
-			var _player = ds_map_find_value(socket_to_instanceid, socket)
+			var _player = ds_map_find_value(socket_to_instanceid, socket);
 			
 			// Move the player
 			with (_player) {
@@ -73,7 +73,7 @@ function scr_recieved_packet(buffer, socket){
 			
 		case network.chat:
 			#region chat
-			show_debug_message("RECIEVE: chat: "+string(current_time));
+			//show_debug_message("RECIEVE: chat: "+string(current_time));
 			
 			var _chat = buffer_read(buffer, buffer_string);
 			var	_player = ds_map_find_value(socket_to_instanceid, socket);
@@ -81,7 +81,7 @@ function scr_recieved_packet(buffer, socket){
 			_chat = _player.username + ": " + _chat;					// Append username to show who it's from
 			ds_list_insert(global.chat, 0, _chat);
 			
-			//TODO: Potential issues here, 32:44 in video
+			//TODO: Potential issues here, 32:44 in networking video
 			_colorid = buffer_read(buffer, buffer_u8);
 			ds_list_insert(global.chat_color, 0, ds_map_find_value(color_map, _colorid))
 			
@@ -97,6 +97,57 @@ function scr_recieved_packet(buffer, socket){
 				network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
 				show_debug_message("SEND: chat: "+string(current_time));
 			}
+			#endregion
+			break;
+			
+		case network.pause:
+			#region pause
+			show_debug_message("RECIEVE: pause: "+string(current_time));
+			
+			var _player = ds_map_find_value(socket_to_instanceid, socket);
+			
+			// Stop player from animating
+			_player.image_index = 0;
+			_player.image_speed = 0;
+			
+			// Echo the message out
+			for(var i = 0; i < ds_list_size(socket_list); i++) {
+				var recipient_socket = ds_list_find_value(socket_list, i);
+				
+				if (recipient_socket != socket) {
+					buffer_seek(server_buffer, buffer_seek_start, 0);
+					buffer_write(server_buffer, buffer_u8, network.pause);
+					buffer_write(server_buffer, buffer_u8, socket);			// Socket of the pausing player
+					network_send_packet(recipient_socket, server_buffer, buffer_tell(server_buffer));
+					show_debug_message("SEND: pause: "+string(current_time));
+				}
+			}
+			
+			#endregion
+			break;
+			
+		case network.unpause:
+			#region unpause
+			show_debug_message("RECIEVE: unpause: "+string(current_time));
+			
+			var _player = ds_map_find_value(socket_to_instanceid, socket);
+			
+			// Restore normal animation
+			_player.image_speed = _player.default_image_speed;
+			
+			// Echo it out
+			for(var i = 0; i < ds_list_size(socket_list); i++) {
+				var recipient_socket = ds_list_find_value(socket_list, i);
+				
+				if (recipient_socket != socket) {
+					buffer_seek(server_buffer, buffer_seek_start, 0);
+					buffer_write(server_buffer, buffer_u8, network.unpause);
+					buffer_write(server_buffer, buffer_u8, socket);			// Socket of the unpausing player
+					network_send_packet(recipient_socket, server_buffer, buffer_tell(server_buffer));
+					show_debug_message("SEND: unpause: "+string(current_time));
+				}
+			}
+			
 			#endregion
 			break;
 	}

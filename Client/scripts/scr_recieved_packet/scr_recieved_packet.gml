@@ -5,7 +5,7 @@ function scr_recieved_packet(buffer){
 	switch(msgid) {
 		case network.player_establish:
 			#region player_establish
-			show_debug_message("RECIEVE: player_establish: "+string(current_time));
+			//show_debug_message("RECIEVE: player_establish: "+string(current_time));
 			
 			var _socket = buffer_read(buffer, buffer_u8);
 			
@@ -16,13 +16,13 @@ function scr_recieved_packet(buffer){
 			buffer_write(client_buffer, buffer_u8, network.player_establish);
 			buffer_write(client_buffer, buffer_string, con_game_manager.username);
 			network_send_packet(client, client_buffer, buffer_tell(client_buffer));
-			show_debug_message("SEND: player_establish: "+string(current_time));
+			//show_debug_message("SEND: player_establish: "+string(current_time));
 			#endregion
 			break;
 		
 		case network.player_connect:
 			#region player_connect
-			show_debug_message("RECIEVE: player_connect: "+string(current_time));
+			//show_debug_message("RECIEVE: player_connect: "+string(current_time));
 			
 			// When a player connects, get their info & put them in appropriate data structures
 			var _socket = buffer_read(buffer, buffer_u8);
@@ -41,7 +41,7 @@ function scr_recieved_packet(buffer){
 			
 		case network.player_joined:
 			#region player_joined
-			show_debug_message("RECIEVE: player_joined: "+string(current_time));
+			//show_debug_message("RECIEVE: player_joined: "+string(current_time));
 			
 			var _socket = buffer_read(buffer, buffer_u8);
 			var _x = buffer_read(buffer, buffer_u16);
@@ -58,7 +58,7 @@ function scr_recieved_packet(buffer){
 			
 		case network.player_disconnect:
 			#region player_disconnect
-			show_debug_message("RECIEVE: player_disconnect: "+string(current_time));
+			//show_debug_message("RECIEVE: player_disconnect: "+string(current_time));
 			
 			// Destroy whichever player is disconnected and remove them from the socket map
 			var _socket = buffer_read(buffer, buffer_u8);
@@ -147,7 +147,7 @@ function scr_recieved_packet(buffer){
 			
 		case network.chat:
 			#region chat
-			show_debug_message("RECIEVE: chat: "+string(current_time));
+			//show_debug_message("RECIEVE: chat: "+string(current_time));
 			
 			// Read chat message, put it in the list.
 			var _chat = buffer_read(buffer, buffer_string);
@@ -155,6 +155,29 @@ function scr_recieved_packet(buffer){
 			
 			var _colorid = buffer_read(buffer, buffer_u8);
 			ds_list_insert(global.chat_color, 0, ds_map_find_value(color_map, _colorid));
+			#endregion
+			break;
+			
+		case network.pause:
+			#region pause
+			//show_debug_message("RECIEVE: pause: "+string(current_time));
+			
+			var pause_socket = buffer_read(buffer, buffer_u8);
+			var _player = ds_map_find_value(socket_to_instanceid, pause_socket);
+			_player.image_index = 0;
+			_player.image_speed = 0;
+			
+			#endregion
+			break;
+			
+		case network.unpause:
+			#region unpause
+			//show_debug_message("RECIEVE: unpause: "+string(current_time));
+			
+			var unpause_socket = buffer_read(buffer, buffer_u8);
+			var _player = ds_map_find_value(socket_to_instanceid, unpause_socket);
+			_player.image_speed = _player.default_image_speed;
+			
 			#endregion
 			break;
 	}
