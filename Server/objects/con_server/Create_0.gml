@@ -8,6 +8,8 @@ enum network {
 	move,				// For when a player moves
 	chat,				// For managing chat messages
 	task,				// For handling task bar progress
+	pause,				// To keep paused players from animating
+	unpause				// To restore normal animation after pausing
 }
 
 #region An enum & ds map for colors, makes it easier to send color IDs across the internet
