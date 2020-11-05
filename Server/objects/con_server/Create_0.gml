@@ -7,6 +7,7 @@ enum network {
 	player_disconnect,	// For removing a player when they disconnect
 	move,				// For when a player moves
 	chat,				// For managing chat messages
+	task,				// For handling task bar progress
 	pause,				// To keep paused players from animating
 	unpause				// To restore normal animation after pausing
 }
