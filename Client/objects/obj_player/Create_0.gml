@@ -16,6 +16,8 @@ y = 0;
 image_angle = 0;
 time_since_hands_washed = 0; // double
 mask_on = false; // bool
+h_collide = 0;
+v_collide = 0;
 
 draw_set_font(Font1);
 
