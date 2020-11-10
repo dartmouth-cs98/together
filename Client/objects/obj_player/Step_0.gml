@@ -6,6 +6,8 @@ h_input = keyboard_check(vk_right) - keyboard_check(vk_left);
 v_input = keyboard_check(vk_down) - keyboard_check(vk_up);
 
 if (h_collide == -1 && h_input < 0){ // Going left
+	
+	
 	h_input = 0;
 }
 

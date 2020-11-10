@@ -1,18 +1,21 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (x > (15 + other.x)){ // Collision left
+// Check object's center-to-bottom distance
+// Make this check only if trying to move up
+
+if (x > (other.x + 37)){ // Collision left
 	h_collide = -1;	
 }
 
-if (x < (-15 + other.x)){ // Collision right
+else if (x < (other.x - 37)){ // Collision right
 	h_collide = 1;	
 }
 
-if (y > (15 + other.y)){ // Collision up
+else if (y > (other.y + 34)){ // Collision up
 	v_collide = -1;	
 }
 
-if (y < (-15 + other.y)){ // Collision down
+else if (y < (other.y - 34)){ // Collision down
 	v_collide = 1;	
 }
