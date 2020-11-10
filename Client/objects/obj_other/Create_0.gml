@@ -4,7 +4,7 @@ default_image_speed = 0.4;
 image_speed = default_image_speed;
 username = "";
 infection_level = 0; // int
-player_color = ds_map_find_value(color_map, colors.black); // string
+player_color = c_black; // string
 hat = ""; // string
 role = ""; // string
 
