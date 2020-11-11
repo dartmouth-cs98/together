@@ -8,6 +8,7 @@ if (room == rm_main_menu) {
 }
 #endregion
 
+/*
 #region Pause message
 if (global.paused) {
 	// Draw pause message
@@ -17,3 +18,4 @@ if (global.paused) {
 	draw_text(global.cam_X + (global.cam_height/2), global.cam_Y + (global.cam_height/2), "Paused")
 }
 #endregion
+*/

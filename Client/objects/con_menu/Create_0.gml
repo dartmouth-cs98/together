@@ -1,7 +1,6 @@
 /// @description Set up menus
 
-// global.paused already exists. We'll use that.
-// We already have global.cam_width & global.cam_height
+// Menus are based on tutorial from FriendlyCosmonaut: https://youtu.be/Y0XohkeieVg
 
 // Menu keys
 global.key_revert	= ord("X");		// Back

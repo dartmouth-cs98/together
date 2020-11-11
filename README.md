@@ -33,3 +33,4 @@ Willem Klein Wassink, Eitan Vilker, Joe Zhang
   * [Networking Series](https://youtu.be/NbsXRuNijlo)
   * [Movement Series](https://www.youtube.com/watch?v=0-a0Fak7cjk)
   * [Spritesheet Conversion Tutorial](https://youtu.be/0boZofzJfME)
+  * [Menus & Data Organization](https://youtu.be/1ITZOrI2qkA)
