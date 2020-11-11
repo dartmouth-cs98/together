@@ -7,6 +7,9 @@ enum network {
 	player_disconnect,	// For removing a player when they disconnect
 	move,				// For when a player moves
 	chat,				// For managing chat messages
+	task,				// For handling task bar progress
+	pause,				// To keep paused players from animating
+	unpause				// To restore normal animation after pausing
 }
 
 #region An enum & ds map for colors, makes it easier to send color IDs across the internet
@@ -73,5 +76,5 @@ socket_list = ds_list_create();
 // Map sockets to instance IDs of players.
 socket_to_instanceid = ds_map_create();
 
-player_spawn_x = room_width/2;
-player_spawn_y = room_height/2;
+player_spawn_x = 0;
+player_spawn_y = 0;

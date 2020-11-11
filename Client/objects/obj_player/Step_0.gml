@@ -2,8 +2,9 @@
 
 #region Manage 8-directional movement, based on this video: https://www.youtube.com/watch?v=0-a0Fak7cjk
 
-h_input = keyboard_check(vk_right) - keyboard_check(vk_left);
-v_input = keyboard_check(vk_down) - keyboard_check(vk_up);
+if (!global.paused) {
+	h_input = keyboard_check(vk_right) - keyboard_check(vk_left);
+	v_input = keyboard_check(vk_down) - keyboard_check(vk_up);
 
 if (h_collide == -1 && h_input < 0){ // Going left
 	
@@ -33,5 +34,5 @@ buffer_write(con_client.client_buffer, buffer_s8, v_input);			// Vertical input
 buffer_write(con_client.client_buffer, buffer_u8, walk_speed);		// Walk speed
 network_send_packet(con_client.client, con_client.client_buffer, buffer_tell(con_client.client_buffer));
 //show_debug_message("SEND: move: "+string(current_time));
-
+  
 #endregion
