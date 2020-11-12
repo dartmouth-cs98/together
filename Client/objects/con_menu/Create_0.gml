@@ -10,6 +10,9 @@ global.key_right	= vk_right;
 global.key_up		= vk_up;
 global.key_down		= vk_down;
 
+show_debug_message("Right: " + string(global.key_right));
+show_debug_message("Left: " + string(global.key_left));
+
 // ID for each menu page
 enum menu_page {
 	main,
@@ -98,3 +101,5 @@ repeat(array_length_1d(menu_pages)) {
 	menu_option[i] = 0;
 	i++;
 }
+
+inputting = false;	// Are we currently setting some value in a menu?
