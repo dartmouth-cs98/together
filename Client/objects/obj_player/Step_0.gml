@@ -37,3 +37,22 @@ network_send_packet(con_client.client, con_client.client_buffer, buffer_tell(con
 //show_debug_message("SEND: move: "+string(current_time));
   
 #endregion
+
+#region Manage Object interaction
+
+nearestObject = instance_nearest(x,y,obj_interactable);
+if(distance_to_object(nearestObject) < interactRange){
+	if(keyboard_check_released(vk_space)){
+		show_debug_message("Object interact: " + string(distance_to_object(nearestObject)))
+	}
+	
+	with(nearestObject){
+		sprite_index = choose(object2);
+	}
+} else {
+	with(nearestObject){
+		sprite_index = choose(object1);
+	}
+}
+
+#endregion

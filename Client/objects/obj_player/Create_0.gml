@@ -20,6 +20,8 @@ taskbar_max = 100; // int
 taskbar_width = 118;  // int
 taskbar_height = 22; // int
 
+interactRange = 10; // int
+
 x = 0;
 y = 0;
 image_angle = 0;
