@@ -47,11 +47,11 @@ if(distance_to_object(nearestObject) < interactRange){
 	}
 	
 	with(nearestObject){
-		sprite_index = choose(spr_object2);
+		sprite_index = choose(object2);
 	}
 } else {
 	with(nearestObject){
-		sprite_index = choose(spr_object1);
+		sprite_index = choose(object1);
 	}
 }
 
