@@ -28,7 +28,7 @@ if (global.paused and global.pause_menu) {
 				
 				switch (menu_option[page]) {
 					case 0:
-					case 1: if (!audio_is_playing(snd_Attack02)) { audio_play_sound(snd_Attack02, 1, false); } break;
+					case 1: if (!audio_is_playing(snd_Cursor01)) { audio_play_sound(snd_Cursor01, 1, false); } break;
 					case 2: break;
 				}
 				
@@ -72,7 +72,7 @@ if (global.paused and global.pause_menu) {
 		var option_change = input_down_p - input_up_p;
 		if (option_change != 0) {
 			menu_option[page] += option_change;
-			
+			audio_play_sound(snd_Cursor01, 1, false);
 			if (menu_option[page] > ds_height-1) { menu_option[page] = 0; }
 			if (menu_option[page] < 0) { menu_option[page] = ds_height - 1; }	
 		}
@@ -81,6 +81,7 @@ if (global.paused and global.pause_menu) {
 	
 	#region Enact selected option
 	if (input_enter_p) {
+		audio_play_sound(snd_Cursor01, 1, false);
 		switch(ds_grid[# 1, menu_option[page]]) {
 			case menu_element_type.script_runner: script_execute(ds_grid[# 2, menu_option[page]]); break;
 			case menu_element_type.page_transfer: page = ds_grid[# 2, menu_option[page]]; break;
