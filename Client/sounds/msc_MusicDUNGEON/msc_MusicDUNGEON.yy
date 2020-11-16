@@ -7,17 +7,17 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "audiogroup_default",
-    "path": "audiogroups/audiogroup_default",
+    "name": "audiogroup_music",
+    "path": "audiogroups/audiogroup_music",
   },
-  "soundFile": "snd_MusicDUNGEON",
+  "soundFile": "msc_MusicDUNGEON",
   "duration": 36.445,
   "parent": {
     "name": "MUSIC_PixelPackTOPDOWN",
     "path": "folders/Sounds/MUSIC_PixelPackTOPDOWN.yy",
   },
   "resourceVersion": "1.0",
-  "name": "snd_MusicDUNGEON",
+  "name": "msc_MusicDUNGEON",
   "tags": [],
   "resourceType": "GMSound",
 }

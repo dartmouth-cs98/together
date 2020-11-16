@@ -1,6 +1,6 @@
 /// @description Draw menus
 
-if (global.paused) {	
+if (global.paused and global.pause_menu) {	
 	#region Variables for readability & prevention of magic numbers
 	
 	var ds_grid = menu_pages[page];

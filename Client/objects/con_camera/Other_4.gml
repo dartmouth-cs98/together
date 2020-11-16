@@ -7,7 +7,7 @@ global.cam_X = 0;
 global.cam_Y = 0;
 target = obj_player;
 
-global.cam_width = 300;
+global.cam_width = 534;
 global.cam_height = 300 ;
 
 // Enabling a viewport & making it visible (0 in this case)
