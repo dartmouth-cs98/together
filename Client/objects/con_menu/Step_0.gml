@@ -27,7 +27,7 @@ if (global.paused and global.pause_menu) {
 				#region slider
 				
 				switch (menu_option[page]) {
-					case 0: /*if (!audio_is_playing(snd_Land01)) { audio_play_sound(snd_Land01, 1, false); } break;*/
+					case 0:
 					case 1: if (!audio_is_playing(snd_Attack02)) { audio_play_sound(snd_Attack02, 1, false); } break;
 					case 2: break;
 				}
