@@ -25,9 +25,6 @@ Description of global variables.
 * List, contains the data for drawing the player's sprite while they're deactivated.
 * Data includes: `sprite_index`, `image_index`, `x`, `y`, `image_xscale`, `image_yscale`, `image_angle`, `image_blend`, and `image_alpha`
 
-### `global.taskbar`
-* Int, indicates progress of tasks
-
 ---
 
 ## Server
@@ -37,6 +34,3 @@ Description of global variables.
 
 ### `global.chat_color`
 * The list of colors in which messages should be displayed. Tracks with `global.chat`.
-
-### `global.task`
-* Int, indicates progress of tasks
