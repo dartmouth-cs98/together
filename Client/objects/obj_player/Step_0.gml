@@ -3,8 +3,8 @@
 #region Manage 8-directional movement, based on this video: https://www.youtube.com/watch?v=0-a0Fak7cjk
 
 if (!global.paused) {
-	h_input = keyboard_check(vk_right) - keyboard_check(vk_left);
-	v_input = keyboard_check(vk_down) - keyboard_check(vk_up);
+	h_input = keyboard_check(global.key_right) - keyboard_check(global.key_left);
+	v_input = keyboard_check(global.key_down) - keyboard_check(global.key_up);
 
 	buffer_seek(con_client.client_buffer, buffer_seek_start, 0);		// Go to start of buffer
 	buffer_write(con_client.client_buffer, buffer_u8, network.move);	// ID
