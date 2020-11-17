@@ -7,8 +7,8 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "audiogroup_master",
-    "path": "audiogroups/audiogroup_master",
+    "name": "audiogroup_default",
+    "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_Attack01",
   "duration": 0.320646,
