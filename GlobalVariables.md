@@ -44,6 +44,9 @@ Description of global variables.
 * Int, contains the value of whatever key is mapped to down.
 * Default: `vk_down`
 
+### `global.taskbar`
+* Int, indicates progress of tasks
+
 ---
 
 ## Server
@@ -53,3 +56,6 @@ Description of global variables.
 
 ### `global.chat_color`
 * The list of colors in which messages should be displayed. Tracks with `global.chat`.
+
+### `global.task`
+* Int, indicates progress of tasks

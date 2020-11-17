@@ -20,10 +20,14 @@ taskbar_max = 100; // int
 taskbar_width = 118;  // int
 taskbar_height = 22; // int
 
+interactRange = 10; // int
+
 x = 0;
 y = 0;
 image_angle = 0;
 time_since_hands_washed = 0; // double
 mask_on = false; // bool
+h_collide = 0;
+v_collide = 0;
 
 draw_set_font(Font1);
