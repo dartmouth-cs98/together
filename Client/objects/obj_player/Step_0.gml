@@ -43,7 +43,10 @@ network_send_packet(con_client.client, con_client.client_buffer, buffer_tell(con
 nearestObject = instance_nearest(x,y,obj_interactable);
 if(distance_to_object(nearestObject) < interactRange){
 	if(keyboard_check_released(vk_space)){
-		show_debug_message("Object interact: " + string(distance_to_object(nearestObject)))
+		// Run object script
+		script_execute(nearestObject.myscript, nearestObject);
+
+		show_debug_message("Object interact distance: " + string(distance_to_object(nearestObject)))
 	}
 	
 	with(nearestObject){

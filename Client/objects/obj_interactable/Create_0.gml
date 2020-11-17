@@ -6,5 +6,7 @@
 object1 = spr_object1;
 object2 = spr_object2;
 
-sprite_index = object1;
+// Default script, change in children
+myscript = scr_pickup;
 
+sprite_index = object1;

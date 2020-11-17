@@ -48,6 +48,7 @@
     {"id":{"name":"snd_MenuBack01","path":"sounds/snd_MenuBack01/snd_MenuBack01.yy",},"order":13,},
     {"id":{"name":"scr_unpause","path":"scripts/scr_unpause/scr_unpause.yy",},"order":2,},
     {"id":{"name":"snd_Attack03","path":"sounds/snd_Attack03/snd_Attack03.yy",},"order":2,},
+    {"id":{"name":"scr_pickup","path":"scripts/scr_pickup/scr_pickup.yy",},"order":3,},
     {"id":{"name":"con_game_manager","path":"objects/con_game_manager/con_game_manager.yy",},"order":3,},
     {"id":{"name":"snd_Pickup01","path":"sounds/snd_Pickup01/snd_Pickup01.yy",},"order":14,},
     {"id":{"name":"spr_object2","path":"sprites/spr_object2/spr_object2.yy",},"order":18,},
