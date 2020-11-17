@@ -1,5 +1,5 @@
 /// @description Set up the chat
-/* I turned this off since we're not working on chat, and this is just causing grief
+
 global.chat = ds_list_create();
 global.chat_color = ds_list_create();
 

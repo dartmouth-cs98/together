@@ -21,28 +21,9 @@ Description of global variables.
 ### `global.paused`
 * Boolean, true when the player is paused, false when they are not paused.
 
-### `global.pause_menu`
-* Boolean, true when the pause menu specifically is open, false in all other cases.
-
-### `global.key_enter`
-* Int, contains the value of whatever key is mapped to enter/confirm.
-* Default: `vk_enter`
-
-### `global.key_left`
-* Int, contains the value of whatever key is mapped to left.
-* Default: `vk_left`
-
-### `global.key_right`
-* Int, contains the value of whatever key is mapped to right.
-* Default: `vk_right`
-
-### `global.key_up`
-* Int, contains the value of whatever key is mapped to up.
-* Default: `vk_up`
-
-### `global.key_down`
-* Int, contains the value of whatever key is mapped to down.
-* Default: `vk_down`
+### `player_pause_data`
+* List, contains the data for drawing the player's sprite while they're deactivated.
+* Data includes: `sprite_index`, `image_index`, `x`, `y`, `image_xscale`, `image_yscale`, `image_angle`, `image_blend`, and `image_alpha`
 
 ### `global.taskbar`
 * Int, indicates progress of tasks

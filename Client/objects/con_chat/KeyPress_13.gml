@@ -1,5 +1,5 @@
 /// @description Turn chat on/off
-/* I turned this off since we're not working on chat, and this is just causing grief
+
 if (!active) {
 	// On
 	active = true;
