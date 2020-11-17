@@ -1,3 +1,4 @@
+///@description Change resolution to preset values based on input index. Don't change it in fullscreen
 function scr_change_resolution(index){
 	if (!window_get_fullscreen()) {
 		switch (index) {

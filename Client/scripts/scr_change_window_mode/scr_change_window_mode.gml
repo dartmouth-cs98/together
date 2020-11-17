@@ -1,4 +1,4 @@
-/// @description Swap between fullscreen & windowed mode
+/// @description Swap between fullscreen & windowed modes
 function scr_change_window_mode(window_mode){
 	switch (window_mode) {
 		case 0:

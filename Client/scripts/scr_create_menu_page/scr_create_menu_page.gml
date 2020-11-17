@@ -1,4 +1,4 @@
-///@description	Set up menu page based on array
+///@description	Set up menu page based on arrays
 function scr_create_menu_page(a1, a2, a3, a4, a5){
 	var arg, i = 0;
 	

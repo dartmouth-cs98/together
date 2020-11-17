@@ -1,4 +1,4 @@
-// Takes value to set the volume to and which volume type to change
+///@description Takes value to set the volume to and which volume type to change
 function scr_change_volume(value, type){
 	switch (type) {
 		// Master volume

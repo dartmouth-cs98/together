@@ -1,5 +1,5 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+///@description Close the pause menu
 function scr_resume_game(){
 	scr_unpause();
+	global.pause_menu = false;
 }
