@@ -2,9 +2,15 @@
 
 function scr_pickup(object){
 	// Picks up object
-	var value = object.object_index;
+	var name = object.myname;
 
-	if(ds_list_find_index(inventory, value)){
+	if(ds_list_find_index(inventory, name) == -1){
+		if(ds_list_size(inventory < max_inventory)){
+			ds_list_add(inventory, name);
+		} else {
+			show_message("You're inventory is full!");
+		}
+	} else {
 		show_message("You already have one!");
 	}
 }
