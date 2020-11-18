@@ -12,8 +12,8 @@ switch(room){
 	case rm_client:
 		
 		if(instance_find(obj_player, 0) != noone){
-			draw_text(global.cam_X + 40, global.cam_Y + 20, "Food: " + string(obj_player.food));
-			draw_text(global.cam_X + 40, global.cam_Y + 35, "Water: " + string(obj_player.water));	
+			draw_text(global.cam_X + 40, global.cam_Y + 50, "Food: " + string(obj_player.food));
+			draw_text(global.cam_X + 40, global.cam_Y + 65, "Water: " + string(obj_player.water));	
 		}
     
 	    if (global.paused) {
@@ -29,4 +29,3 @@ switch(room){
 		break;
 	
 }
-
