@@ -10,14 +10,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_MusicMYSTERY",
+  "soundFile": "msc_MusicMYSTERY",
   "duration": 38.505,
   "parent": {
     "name": "MUSIC_PixelPackTOPDOWN",
     "path": "folders/Sounds/MUSIC_PixelPackTOPDOWN.yy",
   },
   "resourceVersion": "1.0",
-  "name": "snd_MusicMYSTERY",
+  "name": "msc_MusicMYSTERY",
   "tags": [],
   "resourceType": "GMSound",
 }

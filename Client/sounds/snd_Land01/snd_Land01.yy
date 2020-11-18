@@ -7,8 +7,8 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "audiogroup_default",
-    "path": "audiogroups/audiogroup_default",
+    "name": "audiogroup_master",
+    "path": "audiogroups/audiogroup_master",
   },
   "soundFile": "snd_Land01",
   "duration": 0.280601,
