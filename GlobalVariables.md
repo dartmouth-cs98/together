@@ -47,6 +47,9 @@ Description of global variables.
 ### `global.taskbar`
 * Int, indicates progress of tasks
 
+### `global.minigame_passcode`
+* Bool, indicates whether or not the passcode minigame should be active.
+
 ---
 
 ## Server

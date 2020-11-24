@@ -17,15 +17,18 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"con_passcode","path":"objects/con_passcode/con_passcode.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":88,"eventType":9,"collisionObjectId":null,"parent":{"name":"con_passcode","path":"objects/con_passcode/con_passcode.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Controllers",
-    "path": "folders/Objects/Controllers.yy",
+    "name": "Passcode",
+    "path": "folders/Objects/Minigames/Passcode.yy",
   },
   "resourceVersion": "1.0",
-  "name": "con_minigames",
+  "name": "con_passcode",
   "tags": [],
   "resourceType": "GMObject",
 }

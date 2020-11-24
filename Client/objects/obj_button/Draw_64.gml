@@ -1,6 +1,6 @@
 /// @description Draw the button
 
-draw_set_color(merge_color(hover_color, color, hover));
+draw_set_color(merge_color(color, hover_color, hover));
 
 draw_roundrect(x, y, x+width, y+height, 0);	// Rounded rectangle
 
