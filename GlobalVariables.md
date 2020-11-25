@@ -8,6 +8,7 @@ Description of global variables.
 
 ### `global.chat`
 * The list of chat messages.
+* Currently not in use.
 
 ### `global.chat_color`
 * The list of colors in which messages should be displayed. Tracks with `global.chat`.
@@ -20,6 +21,7 @@ Description of global variables.
 
 ### `global.paused`
 * Boolean, true when the player is paused, false when they are not paused.
+* Default: `false`
 
 ### `global.pause_menu`
 * Boolean, true when the pause menu specifically is open, false in all other cases.
@@ -46,9 +48,16 @@ Description of global variables.
 
 ### `global.taskbar`
 * Int, indicates progress of tasks
+* Default: `0`
 
 ### `global.minigame_passcode`
 * Bool, indicates whether or not the passcode minigame should be active.
+* Default: `false`
+
+### `global.any_menu`
+* Set to true when any menu is opened, set to false when the menu is closed.
+* Menus only open if this variable is false.
+* Default: `false`
 
 ---
 
