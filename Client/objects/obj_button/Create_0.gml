@@ -1,4 +1,5 @@
 /// @description Set up initial button properties
+// Implementation based on this video: https://youtu.be/jsWPUuwB1RQ
 
 width = 300;
 height = 100;
