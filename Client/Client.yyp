@@ -115,7 +115,7 @@
     {"folderPath":"folders/Sounds/MUSIC_PixelPackTOPDOWN.yy","order":2,"resourceVersion":"1.0","name":"MUSIC_PixelPackTOPDOWN","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Mythril Age.yy","order":14,"resourceVersion":"1.0","name":"Mythril Age","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Mythril Age/blue cape.yy","order":2,"resourceVersion":"1.0","name":"blue cape","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Scripts/menus.yy","order":4,"resourceVersion":"1.0","name":"menus","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Scripts/pause menu.yy","order":4,"resourceVersion":"1.0","name":"pause menu","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Controllers.yy","order":7,"resourceVersion":"1.0","name":"Controllers","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Minigames.yy","order":8,"resourceVersion":"1.0","name":"Minigames","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Minigames/Passcode.yy","order":1,"resourceVersion":"1.0","name":"Passcode","tags":[],"resourceType":"GMFolder",},

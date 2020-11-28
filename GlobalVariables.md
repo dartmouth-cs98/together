@@ -56,7 +56,8 @@ Description of global variables.
 
 ### `global.any_menu`
 * Set to true when any menu is opened, set to false when the menu is closed.
-* Menus only open if this variable is false.
+* Menu open/cose code should only execute if this condition is met: `!(global.any_menu && !global.relevant_menu)`
+    * In other words, only if either `global.any_menu` is false or `global.relevant_menu` is true.
 * Default: `false`
 
 ---
