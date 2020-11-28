@@ -6,6 +6,7 @@ image_speed = default_image_speed;
 username = ""; // string
 walk_speed = 4; // int
 food = 10; // int
+//food_obj = instance_create(0, 0, obj_food);
 water = 10; // int
 infection_level = 0; // int
 player_color = c_black; // string

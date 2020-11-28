@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "blue cape",
-    "path": "folders/Sprites/Mythril Age/blue cape.yy",
+    "path": "folders/Tile Sets/Sprites/Mythril Age/blue cape.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_blue_cape",
