@@ -10,14 +10,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "snd_MusicADVENTURE",
+  "soundFile": "msc_MusicADVENTURE",
   "duration": 41.245,
   "parent": {
     "name": "MUSIC_PixelPackTOPDOWN",
     "path": "folders/Sounds/MUSIC_PixelPackTOPDOWN.yy",
   },
   "resourceVersion": "1.0",
-  "name": "snd_MusicADVENTURE",
+  "name": "msc_MusicADVENTURE",
   "tags": [],
   "resourceType": "GMSound",
 }
