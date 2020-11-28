@@ -11,9 +11,7 @@ infection_level = 0; // int
 player_color = c_black; // string
 hat = ""; // string
 role = ""; // string
-
-inventory = ds_list_create(); // list
-max_inventory = 3; // int
+inventory = []; // list
 
 tasks = []; // list, but fetches from hashtable in server
 taskbar_x = 10;  // int
