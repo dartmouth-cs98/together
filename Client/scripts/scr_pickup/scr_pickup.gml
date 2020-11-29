@@ -1,4 +1,4 @@
-/// @description Script for picking up an object
+/// @description Script for picking up an object.
 
 function scr_pickup(object){
 	// Picks up object
