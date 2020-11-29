@@ -81,7 +81,7 @@
   ],
   "parent": {
     "name": "Gray Humanoid",
-    "path": "folders/Sprites/Gray Humanoid.yy",
+    "path": "folders/Tile Sets/Sprites/Gray Humanoid.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_ul_strip4",

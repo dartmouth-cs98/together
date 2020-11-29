@@ -12,11 +12,13 @@ switch(room){
 	case rm_client:
 		
 		if(instance_find(obj_player, 0) != noone){
-			draw_text(global.cam_X + 40, global.cam_Y + 50, "Food: " + string(obj_player.food));
+		
+			food_obj = instance_find(obj_food, 0);
+			food_obj.x = global.cam_X + 20;
+			food_obj.y = global.cam_Y + 40;
 			draw_text(global.cam_X + 40, global.cam_Y + 65, "Water: " + string(obj_player.water));	
 		}
-		
-	    break;
+    break;
 		
 	default:
 		break;

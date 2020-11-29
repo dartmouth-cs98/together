@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"4cd908f8-81f9-4130-9d41-39254986ec19","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Client",
-    "path": "Client.yyp",
+    "name": "Sprites",
+    "path": "folders/Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "Sprite17",
