@@ -12,7 +12,9 @@ infection_level = 0; // int
 player_color = c_black; // string
 hat = ""; // string
 role = ""; // string
-inventory = []; // list
+
+inventory = ds_list_create(); // list
+max_inventory = 3; // int
 
 tasks = []; // list, but fetches from hashtable in server
 taskbar_x = 10;  // int
@@ -20,6 +22,8 @@ taskbar_y = 10;  // int
 taskbar_max = 100; // int
 taskbar_width = 118;  // int
 taskbar_height = 22; // int
+
+interactRange = 10; // int
 
 x = 0;
 y = 0;

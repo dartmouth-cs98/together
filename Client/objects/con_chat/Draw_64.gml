@@ -1,5 +1,5 @@
 /// @description Show chat
-
+/* I turned this off since we're not working on chat, and this is just causing grief
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
 

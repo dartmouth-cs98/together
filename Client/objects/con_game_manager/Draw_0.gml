@@ -18,18 +18,9 @@ switch(room){
 			food_obj.y = global.cam_Y + 40;
 			draw_text(global.cam_X + 40, global.cam_Y + 65, "Water: " + string(obj_player.water));	
 		}
-    
-	    if (global.paused) {
-	      // Draw pause message
-	      draw_set_halign(fa_center);
-	      draw_set_valign(fa_middle);
-	      draw_set_color(c_white);
-	      draw_text(global.cam_X + (global.cam_height/2), global.cam_Y + (global.cam_height/2), "Paused");
-	    }
-	    break;
+    break;
 		
 	default:
 		break;
 	
 }
-
