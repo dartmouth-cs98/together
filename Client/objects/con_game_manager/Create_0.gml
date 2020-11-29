@@ -8,8 +8,12 @@ global.taskbar = 0;
 // Keep track of game state when pausing
 global.paused = false;
 
+// Is there any menu open?
+global.any_menu = false;
+
 // Variables for which menu to open
 global.pause_menu = false;
+global.minigame_passcode = false;
 
 audio_group_load(audiogroup_music);
 audio_group_load(audiogroup_soundeffects);

@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "pause menu",
-    "path": "folders/Scripts/pause menu.yy",
+    "name": "passcode",
+    "path": "folders/Scripts/minigames/passcode.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_change_window_mode",
+  "name": "scr_append_input",
   "tags": [],
   "resourceType": "GMScript",
 }

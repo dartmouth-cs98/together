@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "pause menu",
-    "path": "folders/Scripts/pause menu.yy",
+    "name": "buttons",
+    "path": "folders/Scripts/buttons.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_change_window_mode",
+  "name": "scr_get_hover",
   "tags": [],
   "resourceType": "GMScript",
 }

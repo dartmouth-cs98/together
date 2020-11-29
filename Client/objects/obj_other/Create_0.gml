@@ -8,8 +8,6 @@ player_color = c_black; // string
 hat = ""; // string
 role = ""; // string
 
-x = 0;
-y = 0;
 image_angle = 0;
 time_since_hands_washed = 0; // double
 mask_on = false; // bool
