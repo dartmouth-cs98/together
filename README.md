@@ -36,4 +36,3 @@ Willem Klein Wassink, Eitan Vilker, Joe Zhang
   * [Spritesheet Conversion Tutorial](https://youtu.be/0boZofzJfME)
   * [Menus & Data Organization](https://youtu.be/1ITZOrI2qkA)
   * [Clickable buttons](https://youtu.be/jsWPUuwB1RQ)
-  
