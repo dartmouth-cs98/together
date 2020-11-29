@@ -7,8 +7,8 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "audiogroup_soundeffects",
-    "path": "audiogroups/audiogroup_soundeffects",
+    "name": "audiogroup_default",
+    "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "snd_Valid01",
   "duration": 0.247585,
