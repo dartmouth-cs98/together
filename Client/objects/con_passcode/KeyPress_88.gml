@@ -33,8 +33,9 @@ if ( !(global.any_menu and !global.minigame_passcode )) {
 		passcode_buttons[8] =	scr_create_button(global.cam_width/2 + _offset - _width/2,		global.cam_height/2 + _offset - _height/2,		_width, _height, string(9),		scr_append_input,		_color,		_hover_color, _text_color);
 	
 		// Enter & Backspace
-		passcode_buttons[9] =	scr_create_button(global.cam_width/2 - _width/2,				global.cam_height/2 + (2*_offset) - _height/2,	_width, _height, "GO",			scr_submit_passcode,	c_green,	_hover_color, _text_color);
-		passcode_buttons[10] =	scr_create_button(global.cam_width/2 + _offset - _width/2,		global.cam_height/2 + (2*_offset) - _height/2,	_width, _height, "X",			scr_backspace,			c_red,		_hover_color, _text_color);
+		passcode_buttons[9] =	scr_create_button(global.cam_width/2 - _offset - _width/2,		global.cam_height/2 + (2*_offset) - _height/2,	_width, _height, "GO",			scr_submit_passcode,	c_green,	_hover_color, _text_color);
+		passcode_buttons[10] =	scr_create_button(global.cam_width/2 - _width/2,				global.cam_height/2 + (2*_offset) - _height/2,	_width, _height, "0",			scr_append_input,		_color,		_hover_color, _text_color);	
+		passcode_buttons[11] =	scr_create_button(global.cam_width/2 + _offset - _width/2,		global.cam_height/2 + (2*_offset) - _height/2,	_width, _height, "X",			scr_backspace,			c_red,		_hover_color, _text_color);
 	
 		#endregion
 	

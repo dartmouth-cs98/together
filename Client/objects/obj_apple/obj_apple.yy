@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_apple1",
+    "path": "sprites/spr_apple1/spr_apple1.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
