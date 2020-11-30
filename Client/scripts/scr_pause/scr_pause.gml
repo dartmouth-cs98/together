@@ -8,5 +8,8 @@ function scr_pause(){
 	
 	obj_player.image_speed = 0;
 	obj_player.image_index = 0;
+	obj_player.h_input = 0;
+	obj_player.v_input = 0;
+	
 	global.paused = true;
 }
