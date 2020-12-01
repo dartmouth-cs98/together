@@ -1,5 +1,5 @@
 /// @description FOR TESTING PURPOSES. IF THE PASSCODE MINIGAME WORKS, THIS SHOULD BE REMOVED AND IMPLEMENTED ELSEWHERE.
-
+/*
 if ( !(global.any_menu and !global.minigame_passcode )) {	
 	if (!global.minigame_passcode and !global.any_menu) {
 		global.minigame_passcode = true;
