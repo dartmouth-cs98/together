@@ -1,5 +1,4 @@
 {
-  "name": "TileSet4",
   "spriteId": {
     "name": "PixelPackTOPDOWN8BIT",
     "path": "sprites/PixelPackTOPDOWN8BIT/PixelPackTOPDOWN8BIT.yy",
@@ -517,6 +516,7 @@
     "path": "folders/Tile Sets.yy",
   },
   "resourceVersion": "1.0",
+  "name": "TileSet4",
   "tags": [],
   "resourceType": "GMTileSet",
 }
