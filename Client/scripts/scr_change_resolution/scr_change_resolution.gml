@@ -1,7 +1,7 @@
 ///@description Change resolution to preset values based on input index. Don't change it in fullscreen
 function scr_change_resolution(index){
-	window_set_fullscreen(false);
-	// Set the fullscreen toggle t
+	//window_set_fullscreen(false);
+	// Set the fullscreen toggle to off
 	
 	switch (index) {
 		case 0: window_set_size(384, 216); break;

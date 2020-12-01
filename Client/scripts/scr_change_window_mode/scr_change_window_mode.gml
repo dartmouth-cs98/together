@@ -8,9 +8,12 @@ function scr_change_window_mode(window_mode){
 		case 1:
 			window_set_fullscreen(false);
 			// The game doesn't track resolution changes made while in fullscreen. This corrects that.
+			/*
 			with (con_menu) {
+				show_debug_message(string(menu_pages[3][# 3, 0]));
 				scr_change_resolution(menu_pages[3][# 3, 0]);
 			}
+			*/
 			break;
 	}
 }

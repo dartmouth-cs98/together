@@ -81,17 +81,29 @@ if (global.paused and global.pause_menu) {
 	
 	#region Enact selected option
 	if (input_enter_p) {
-		audio_play_sound(snd_Cursor01, 1, false);
-		switch(ds_grid[# 1, menu_option[page]]) {
-			case menu_element_type.script_runner: script_execute(ds_grid[# 2, menu_option[page]]); break;
-			case menu_element_type.page_transfer: page = ds_grid[# 2, menu_option[page]]; break;
-			case menu_element_type.shift:
-			case menu_element_type.slider:
-			case menu_element_type.toggle: if (inputting) { script_execute(ds_grid[# 2, menu_option[page]], ds_grid[# 3, menu_option[page]]); }
-			case menu_element_type.input:
-				// The switch case is structured like this so that they will all flip the value of "inputting"
-				inputting = !inputting;
-				break;
+		show_debug_message("Fullscreen? " + string(window_get_fullscreen()));
+		show_debug_message("Grid:");
+		show_debug_message(string(ds_grid));
+		//show_debug_message("Option name: " + ds_grid[# 1, menu_option[page]-1])
+		
+		// This long if condition ensures that the resolution cannot be changed while the game is in fullscreen
+		if (!(	ds_grid[# 1, menu_option[page]] == menu_element_type.shift and
+				window_get_fullscreen() and
+				ds_grid[# 0, menu_option[page]] == "RESOLUTION"
+			)) {
+				
+			audio_play_sound(snd_Cursor01, 1, false);
+			switch(ds_grid[# 1, menu_option[page]]) {
+				case menu_element_type.script_runner: script_execute(ds_grid[# 2, menu_option[page]]); break;
+				case menu_element_type.page_transfer: page = ds_grid[# 2, menu_option[page]]; break;
+				case menu_element_type.shift:
+				case menu_element_type.slider:
+				case menu_element_type.toggle: if (inputting) { script_execute(ds_grid[# 2, menu_option[page]], ds_grid[# 3, menu_option[page]]); }
+				case menu_element_type.input:
+					// The switch case is structured like this so that they will all flip the value of "inputting"
+					inputting = !inputting;
+					break;
+			}
 		}
 	}
 	#endregion

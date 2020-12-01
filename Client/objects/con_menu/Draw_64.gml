@@ -72,7 +72,14 @@ if (global.paused and global.pause_menu) {
 				if (current_value = array_length_1d(ds_grid[# 4, yy])-1) { right_shift = ""; }
 				
 				c = default_color;
+				
 				if (inputting and yy == menu_option[page]) { c = inputting_color; }	// Highlight if we're inputting
+				
+				// If we're in fullscreen, the resolution cannot be changed. Set it to gray.
+				if (window_get_fullscreen()) {
+					c = not_selected_color;
+				}
+				
 				draw_text_color(rtx, rty, left_shift+current_array[current_value]+right_shift, c, c, c, c, 1);
 				#endregion
 				break;
