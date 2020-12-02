@@ -1,7 +1,7 @@
 /// @description On Create
 // Object name, change in children
 
-myname = "Floppy Disk";
+myname = "Passcode Object";
 
 // Object 1 is the unhighlighted sprite
 // Object 2 is the highlighted sprite

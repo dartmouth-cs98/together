@@ -1,7 +1,7 @@
 /// @description Set up menus
 // You can write your code in this editor
 
-username = get_string("Please enter a username", "");
+username = get_string_async("Please enter a username", "");
 
 global.taskbar = 0;
 
