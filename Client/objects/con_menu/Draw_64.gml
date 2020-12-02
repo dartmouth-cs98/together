@@ -72,7 +72,14 @@ if (global.paused and global.pause_menu) {
 				if (current_value = array_length_1d(ds_grid[# 4, yy])-1) { right_shift = ""; }
 				
 				c = default_color;
+				
 				if (inputting and yy == menu_option[page]) { c = inputting_color; }	// Highlight if we're inputting
+				
+				// If we're in fullscreen, the resolution cannot be changed. Set it to gray.
+				if (window_get_fullscreen()) {
+					c = not_selected_color;
+				}
+				
 				draw_text_color(rtx, rty, left_shift+current_array[current_value]+right_shift, c, c, c, c, 1);
 				#endregion
 				break;
@@ -105,8 +112,8 @@ if (global.paused and global.pause_menu) {
 				if (current_value == 0) { c1 = c; c2 = not_selected_color;}			// ON is selected
 				else { c1 = not_selected_color; c2 = c;}							// OFF is selected
 				
-				draw_text_color(rtx, rty, "ON",  c1, c1, c1, c1, 1);
-				draw_text_color(rtx + 32, rty, "OFF",  c2, c2, c2, c2, 1);
+				draw_text_color(rtx, rty, ds_grid[# 4, 1][0],  c1, c1, c1, c1, 1);
+				draw_text_color(rtx + 32, rty, ds_grid[# 4, 1][1],  c2, c2, c2, c2, 1);
 				#endregion
 				break;
 				

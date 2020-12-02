@@ -6,6 +6,7 @@ height = 100;
 text = "<INSERT_BUTTON_TEXT_HERE>"
 hover = 0;
 button_script = -1;
+params = [];
 
 color = c_white;
 hover_color = c_ltgray;

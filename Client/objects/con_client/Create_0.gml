@@ -4,7 +4,7 @@
 // Enums: network.player_establish = 0, because move is at index 0 of this enumerator.
 // Server should have same enum.
 enum network {
-	player_establish,	//
+	player_establish,	// 
 	player_connect,		// For managing a player connecting
 	player_joined,		// For when an additional player joins
 	player_disconnect,	// For removing a player when they disconnect

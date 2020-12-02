@@ -72,7 +72,7 @@ ds_menu_difficulty = scr_create_menu_page(
 */
 ds_menu_graphics = scr_create_menu_page(
 	["RESOLUTION",	menu_element_type.shift,			scr_change_resolution,	2,	["384 x 216", "768 x 432", "1152 x 648", "1536 x 874", "1920 x 1080"]],
-	["FULLSCREEN",	menu_element_type.toggle,			scr_change_window_mode,	1,	["FULLSCREEN", "WINDOWED"]],
+	["FULLSCREEN",	menu_element_type.toggle,			scr_change_window_mode,	1,	["ON", "OFF"]],
 	["BACK",		menu_element_type.page_transfer,	menu_page.settings],
 	[],
 	[]
