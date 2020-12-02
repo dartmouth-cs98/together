@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_floppydisk1",
+    "path": "sprites/spr_floppydisk1/spr_floppydisk1.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

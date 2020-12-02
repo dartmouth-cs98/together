@@ -13,6 +13,8 @@ if (global.paused and global.minigame_passcode) {
 							rect_color, rect_color, rect_color, rect_color, false);
 	*/
 	
+	
+	// Draw text
 	draw_set_color(c_white);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);

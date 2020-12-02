@@ -1,5 +1,6 @@
 /// @description On Create
 // Object name, change in children
+
 myname = "Floppy Disk";
 
 // Object 1 is the unhighlighted sprite
@@ -9,6 +10,6 @@ object1 = spr_floppydisk1;
 object2 = spr_floppydisk2;
 
 // Default script, change in children
-myscript = scr_pickup;
+myscript = scr_open_close_passcode;
 
 sprite_index = object1;

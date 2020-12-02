@@ -2,9 +2,11 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_submit_passcode(){
 	if (con_passcode.passcode == con_passcode.input) {
-		show_debug_message("CORRECT!");
+		scr_task_complete(5);
+		show_message("CORRECT!");
+		scr_open_close_passcode();
 	} else {
-		show_debug_message("WRONG!");
-		con_passcode.input = "";
+		show_message("WRONG!");
 	}
+	con_passcode.input = "";
 }
