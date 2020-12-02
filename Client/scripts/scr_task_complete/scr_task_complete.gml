@@ -5,4 +5,5 @@ function scr_task_complete(value){
 
 	buffer_write(con_client.client_buffer, buffer_u8, value);		// Add to taskbar
 	network_send_packet(con_client.client, con_client.client_buffer, buffer_tell(con_client.client_buffer));
+	audio_play_sound(snd_Jump03, 1, false);
 }

@@ -1,2 +1,4 @@
 /// @description Toggle inventory
-showInventory = !showInventory;
+if (!global.paused) {
+	showInventory = !showInventory;
+}

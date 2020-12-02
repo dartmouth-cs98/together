@@ -8,7 +8,6 @@ function scr_collect(object){
 		if(object_get_name(key)==object.collects){
 			ds_list_delete(inventory, i);
 			scr_task_complete(10);
-			audio_play_sound(snd_Valid01, 1, false);
 			show_message("Delivery successful!");
 			exit;
 		}

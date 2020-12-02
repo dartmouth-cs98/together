@@ -119,7 +119,10 @@
     "name": "Default",
     "children": [],
   },
-  "RoomOrder": [],
+  "RoomOrderNodes": [
+    {"roomId":{"name":"rm_main_menu","path":"rooms/rm_main_menu/rm_main_menu.yy",},},
+    {"roomId":{"name":"rm_client","path":"rooms/rm_client/rm_client.yy",},},
+  ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":470,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Tile Sets.yy","order":460,"resourceVersion":"1.0","name":"Tile Sets","tags":[],"resourceType":"GMFolder",},
@@ -163,7 +166,7 @@
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_master","resourceType":"GMAudioGroup",},
   ],
   "TextureGroups": [
-    {"isScaled":true,"autocrop":true,"border":2,"mipsToGenerate":0,"targets":461609314234257646,"resourceVersion":"1.0","name":"Default","resourceType":"GMTextureGroup",},
+    {"isScaled":true,"autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":461609314234257646,"resourceVersion":"1.0","name":"Default","resourceType":"GMTextureGroup",},
   ],
   "IncludedFiles": [
     {"CopyToMask":-1,"filePath":"datafiles/kenney_foliagepack/PNG/Default size/Leaves","resourceVersion":"1.0","name":"foliagePack_leaves_003.png","resourceType":"GMIncludedFile",},
@@ -1088,9 +1091,9 @@
     {"CopyToMask":-1,"filePath":"datafiles/kenney_foliagepack","resourceVersion":"1.0","name":"Sample.png","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2.3.0.529",
+    "IDEVersion": "2.3.1.536",
   },
-  "resourceVersion": "1.3",
+  "resourceVersion": "1.4",
   "name": "Client",
   "tags": [],
   "resourceType": "GMProject",

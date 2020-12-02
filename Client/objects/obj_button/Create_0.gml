@@ -11,3 +11,5 @@ params = [];
 color = c_white;
 hover_color = c_ltgray;
 text_color = c_black;
+
+sound = snd_Pickup01;
