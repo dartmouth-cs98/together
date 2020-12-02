@@ -15,6 +15,10 @@ role = ""; // string
 
 inventory = ds_list_create(); // list
 max_inventory = 3; // int
+interactRange = 10; // int
+showInventory = false; // bool
+inventory_x = (global.cam_width/2)-75; // int
+inventory_y = global.cam_height-48; // int
 
 tasks = []; // list, but fetches from hashtable in server
 taskbar_x = 10;  // int
@@ -22,8 +26,6 @@ taskbar_y = 10;  // int
 taskbar_max = 100; // int
 taskbar_width = 118;  // int
 taskbar_height = 22; // int
-
-interactRange = 10; // int
 
 x = 0;
 y = 0;

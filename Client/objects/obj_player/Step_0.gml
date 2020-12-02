@@ -40,7 +40,7 @@ if(distance_to_object(nearestObject) < interactRange){
 		// Run object script
 		script_execute(nearestObject.myscript, nearestObject);
 
-		show_debug_message("Object interact distance: " + string(distance_to_object(nearestObject)))
+		//show_debug_message("Object interact distance: " + string(distance_to_object(nearestObject)))
 	}
 	
 	with(nearestObject){
@@ -51,5 +51,4 @@ if(distance_to_object(nearestObject) < interactRange){
 		sprite_index = choose(object1);
 	}
 }
-
 #endregion

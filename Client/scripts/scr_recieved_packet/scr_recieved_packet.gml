@@ -161,6 +161,7 @@ function scr_recieved_packet(buffer){
 		case network.task:
 			var taskbar = buffer_read(buffer, buffer_u8);
 			global.taskbar = taskbar;
+			//show_debug_message("Taskbar: " + string(taskbar))
 			break;
 
 		case network.pause:
