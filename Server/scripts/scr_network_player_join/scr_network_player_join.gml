@@ -49,6 +49,14 @@ function scr_network_player_join(_username){
 			network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
 			//show_debug_message("SEND: player_joined: "+string(current_time));
 		}
+		
+		// Send taskbar info
+		if (_sock == socket) {
+			buffer_seek(server_buffer, buffer_seek_start, 0);		// Start from top of buffer
+			buffer_write(server_buffer, buffer_u8, network.task);	// Message ID
+			buffer_write(server_buffer, buffer_u8, global.task);			// Taskbar		
+			network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
+		}
 	}
 	#endregion
 }

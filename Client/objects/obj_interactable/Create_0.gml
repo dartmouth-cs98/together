@@ -8,7 +8,10 @@ myname = "object";
 object1 = spr_object1;
 object2 = spr_object2;
 
+// For collecting objects, can ignore if not relevant
+collects = "obj_apple";
+
 // Default script, change in children
-myscript = scr_pickup;
+myscript = scr_collect;
 
 sprite_index = object1;

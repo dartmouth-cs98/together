@@ -7,15 +7,15 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 0,
-  "bbox_right": 0,
-  "bbox_top": 0,
-  "bbox_bottom": 21,
+  "bbox_left": 47,
+  "bbox_right": 102,
+  "bbox_top": 22,
+  "bbox_bottom": 47,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 1,
-  "height": 22,
+  "width": 150,
+  "height": 48,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"74f8510e-a189-45a1-9c60-b906f55a8ee9","path":"sprites/spr_taskbar/spr_taskbar.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"74f8510e-a189-45a1-9c60-b906f55a8ee9","path":"sprites/spr_taskbar/spr_taskbar.yy",},"LayerId":{"name":"f1629fe6-0730-41bd-b380-2f2c2d42040a","path":"sprites/spr_taskbar/spr_taskbar.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_taskbar","path":"sprites/spr_taskbar/spr_taskbar.yy",},"resourceVersion":"1.0","name":"74f8510e-a189-45a1-9c60-b906f55a8ee9","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"5623b7d5-4260-450e-baef-cff116d2cc5c","path":"sprites/spr_tab/spr_tab.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"5623b7d5-4260-450e-baef-cff116d2cc5c","path":"sprites/spr_tab/spr_tab.yy",},"LayerId":{"name":"557e3a09-6534-406b-8761-0b2c83e9ae79","path":"sprites/spr_tab/spr_tab.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_tab","path":"sprites/spr_tab/spr_tab.yy",},"resourceVersion":"1.0","name":"5623b7d5-4260-450e-baef-cff116d2cc5c","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_taskbar","path":"sprites/spr_taskbar/spr_taskbar.yy",},
+    "spriteId": {"name":"spr_tab","path":"sprites/spr_tab/spr_tab.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"f7194653-6665-449c-8b4c-58d50b2eef85","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"74f8510e-a189-45a1-9c60-b906f55a8ee9","path":"sprites/spr_taskbar/spr_taskbar.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"cad85173-0442-4b74-9ba9-7f697de0fa65","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"5623b7d5-4260-450e-baef-cff116d2cc5c","path":"sprites/spr_tab/spr_tab.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,21 +58,21 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_taskbar","path":"sprites/spr_taskbar/spr_taskbar.yy",},
+    "parent": {"name":"spr_tab","path":"sprites/spr_tab/spr_tab.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_taskbar",
+    "name": "spr_tab",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f1629fe6-0730-41bd-b380-2f2c2d42040a","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"557e3a09-6534-406b-8761-0b2c83e9ae79","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "UI",
     "path": "folders/Sprites/UI.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_taskbar",
+  "name": "spr_tab",
   "tags": [],
   "resourceType": "GMSprite",
 }
