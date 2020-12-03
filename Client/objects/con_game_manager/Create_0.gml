@@ -4,6 +4,7 @@
 username = get_string_async("Please enter a username", "");
 
 global.taskbar = 0;
+global.taskbar_max = 100;
 
 // Keep track of game state when pausing
 global.paused = false;
