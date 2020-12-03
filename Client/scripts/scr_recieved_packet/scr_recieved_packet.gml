@@ -159,9 +159,16 @@ function scr_recieved_packet(buffer){
 			break;
       
 		case network.task:
+			#region task
 			var taskbar = buffer_read(buffer, buffer_u8);
 			global.taskbar = taskbar;
+			if (global.taskbar >= global.taskbar_max) {
+				//
+				
+				room_goto(rm_win_screen);
+			}
 			//show_debug_message("Taskbar: " + string(taskbar))
+			#endregion
 			break;
 
 		case network.pause:

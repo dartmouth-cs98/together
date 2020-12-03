@@ -60,6 +60,10 @@ Description of global variables.
     * In other words, only if either `global.any_menu` is false or `global.relevant_menu` is true.
 * Default: `false`
 
+### `global.taskbar_max`
+* Int, The value that the taskbar must reach for the players to win.
+* Default:  `100`
+
 ---
 
 ## Server

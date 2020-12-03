@@ -1,7 +1,17 @@
 /// @description Store player in rm_client
 
-if (room = rm_client) {
-	global.player = instance_find(obj_player, 0);
-	audio_play_sound(msc_MusicDUNGEON, 2, true);
-	window_set_size(1152, 648);
+switch (room) {
+	case rm_client:
+		global.player = instance_find(obj_player, 0);
+		audio_play_sound(msc_MusicDUNGEON, 2, true);
+		window_set_size(1152, 648);
+		break;
+		
+	case rm_win_screen:
+		audio_stop_all();
+		audio_play_sound(msc_MusicADVENTURE, 2, false);
+		break;
+		
+	default:
+		break;
 }

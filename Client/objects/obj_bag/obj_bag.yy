@@ -1,13 +1,16 @@
 {
   "spriteId": {
-    "name": "spr_object1",
-    "path": "sprites/spr_object1/spr_object1.yy",
+    "name": "spr_bag1",
+    "path": "sprites/spr_bag1/spr_bag1.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_interactable",
+    "path": "objects/obj_interactable/obj_interactable.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -21,16 +24,16 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_interactable","path":"objects/obj_interactable/obj_interactable.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_bag","path":"objects/obj_bag/obj_bag.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Delivery",
+    "path": "folders/Objects/Minigames/Delivery.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_interactable",
+  "name": "obj_bag",
   "tags": [],
   "resourceType": "GMObject",
 }

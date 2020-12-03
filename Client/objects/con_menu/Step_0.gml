@@ -28,7 +28,7 @@ if (global.paused and global.pause_menu) {
 				
 				switch (menu_option[page]) {
 					case 0:
-					case 1: if (!audio_is_playing(snd_Cursor01)) { audio_play_sound(snd_Cursor01, 1, false); } break;
+					case 1: //if (!audio_is_playing(snd_Cursor01)) { audio_play_sound(snd_Cursor01, 1, false); } break;
 					case 2: break;
 				}
 				

@@ -1,4 +1,4 @@
-/// @description Script for picking up an object.
+/// @description Script for delivering an object.
 
 function scr_collect(object){
 	// Checks to see if object is in inventory
@@ -12,5 +12,6 @@ function scr_collect(object){
 			exit;
 		}
 	}
-	show_message("You do not have object: " + string(object.collects) + "!");
+	//show_message("You do not have object: " + string(object.collects) + "!");
+	show_message("You don't have any apples in your inventory! See if you can find all 5.");
 }
