@@ -65,7 +65,7 @@ function scr_recieved_packet(buffer, socket){
 				buffer_write(server_buffer, buffer_u8, walk_speed);		// Walk speed
 				
 				network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
-				show_debug_message("SEND: move: "+string(current_time));
+				//show_debug_message("SEND: move: "+string(current_time));
 			}
 			
 			#endregion
@@ -95,7 +95,7 @@ function scr_recieved_packet(buffer, socket){
 				buffer_write(server_buffer, buffer_u8, _colorid);		// Message color (number that maps to it)
 				
 				network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
-				show_debug_message("SEND: chat: "+string(current_time));
+				//show_debug_message("SEND: chat: "+string(current_time));
 			}
 			#endregion
 			break;
@@ -125,7 +125,7 @@ function scr_recieved_packet(buffer, socket){
 
 		case network.pause:
 			#region pause
-			show_debug_message("RECIEVE: pause: "+string(current_time));
+			//show_debug_message("RECIEVE: pause: "+string(current_time));
 			
 			var _player = ds_map_find_value(socket_to_instanceid, socket);
 			
@@ -142,7 +142,7 @@ function scr_recieved_packet(buffer, socket){
 					buffer_write(server_buffer, buffer_u8, network.pause);
 					buffer_write(server_buffer, buffer_u8, socket);			// Socket of the pausing player
 					network_send_packet(recipient_socket, server_buffer, buffer_tell(server_buffer));
-					show_debug_message("SEND: pause: "+string(current_time));
+					//show_debug_message("SEND: pause: "+string(current_time));
 				}
 			}
 			
@@ -151,7 +151,7 @@ function scr_recieved_packet(buffer, socket){
 			
 		case network.unpause:
 			#region unpause
-			show_debug_message("RECIEVE: unpause: "+string(current_time));
+			//show_debug_message("RECIEVE: unpause: "+string(current_time));
 			
 			var _player = ds_map_find_value(socket_to_instanceid, socket);
 			
@@ -167,7 +167,7 @@ function scr_recieved_packet(buffer, socket){
 					buffer_write(server_buffer, buffer_u8, network.unpause);
 					buffer_write(server_buffer, buffer_u8, socket);			// Socket of the unpausing player
 					network_send_packet(recipient_socket, server_buffer, buffer_tell(server_buffer));
-					show_debug_message("SEND: unpause: "+string(current_time));
+					//show_debug_message("SEND: unpause: "+string(current_time));
 				}
 			}
 			
