@@ -2,13 +2,6 @@
 
 // Menus are based on tutorial from FriendlyCosmonaut: https://youtu.be/Y0XohkeieVg
 
-// Menu keys
-global.key_enter	= vk_enter;		// Confirm
-global.key_left		= vk_left;
-global.key_right	= vk_right;
-global.key_up		= vk_up;
-global.key_down		= vk_down;
-
 // ID for each menu page
 enum menu_page {
 	main,

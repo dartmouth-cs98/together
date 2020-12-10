@@ -3,6 +3,14 @@
 
 username = get_string_async("Please enter a username", "");
 
+// Default controls
+global.key_enter	= vk_enter;		// Confirm
+global.key_left		= vk_left;
+global.key_right	= vk_right;
+global.key_up		= vk_up;
+global.key_down		= vk_down;
+
+// Taskbar
 global.taskbar = 0;
 global.taskbar_max = 100;
 

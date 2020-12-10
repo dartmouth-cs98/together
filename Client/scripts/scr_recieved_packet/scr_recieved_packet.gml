@@ -84,8 +84,9 @@ function scr_recieved_packet(buffer){
 			// This is whoever's moving, player or other.
 			_player = ds_map_find_value(socket_to_instanceid, _sock);
 			if (!is_undefined(_player)) {
-				
 				with (_player) {
+					
+					#region Set sprite direction based on movement
 					if (h_input != 0 || v_input != 0) {
 						var move_dir = point_direction(0, 0, h_input, v_input);
 						var move_x = lengthdir_x(walk_speed, move_dir);
@@ -93,37 +94,26 @@ function scr_recieved_packet(buffer){
 					
 						x += move_x;
 						y += move_y;
-				
-						#region Set sprites based on move direction and player type
-						if (id == obj_player.id) {
-							// Dog walking sprite
-							switch(move_dir) {
-								case 0: sprite_index = spr_blue_cape_right; break;		// Right
-								case 45: sprite_index = spr_blue_cape_right; break;		// Up-Right
-								case 90: sprite_index = spr_blue_cape_up; break;		// Up
-								case 135: sprite_index = spr_blue_cape_left; break;		// Up-Left
-								case 180: sprite_index = spr_blue_cape_left; break;		// Left
-								case 225: sprite_index = spr_blue_cape_left; break;		// Down-Left
-								case 270: sprite_index = spr_blue_cape_down; break;		// Down
-								case 315: sprite_index = spr_blue_cape_right; break;	// Down-Right
-							}
-						} else if (id == obj_other.id) {
-							// Gray humanoid sprite
-							switch(move_dir) {
-								case 0: sprite_index = spr_r_strip4; break;			// Right
-								case 45: sprite_index = spr_ur_strip4; break;		// Up-Right
-								case 90: sprite_index = spr_u_strip4; break;		// Up
-								case 135: sprite_index = spr_ul_strip4; break;		// Up-Left
-								case 180: sprite_index = spr_l_strip4; break;		// Left
-								case 225: sprite_index = spr_dl_strip4; break;		// Down-Left
-								case 270: sprite_index = spr_d_strip4; break;		// Down
-								case 315: sprite_index = spr_dr_strip4; break;		// Down-Right
-							}
+						
+						// Change which direction the player sprite is facing
+						switch(move_dir) {
+							case 0:		y_frame = 2; break;	// Right
+							case 45:	y_frame = 2; break;	// Up-Right
+							case 90:	y_frame = 3; break;	// Up
+							case 135:	y_frame = 1; break;	// Up-Left
+							case 180:	y_frame = 1; break;	// Left
+							case 225:	y_frame = 1; break;	// Down-Left
+							case 270:	y_frame = 0; break;	// Down
+							case 315:	y_frame = 2; break;	// Down-Right
 						}
-						#endregion
+							
+						// Progress the walk animation
+						x_frame += anim_speed/room_speed;
+						if (x_frame >= anim_length) { x_frame = 0 };
 					} else {
-						image_index = 0;
+						x_frame = 0.9; // Reset to idle, but high to prevent sliding
 					}
+					#endregion
 				}
 			}
 			

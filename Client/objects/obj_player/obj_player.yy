@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_blue_cape_down",
-    "path": "sprites/spr_blue_cape_down/spr_blue_cape_down.yy",
+    "name": "spr_cape_blue_sheet",
+    "path": "sprites/spr_cape_blue_sheet/spr_cape_blue_sheet.yy",
   },
   "solid": false,
   "visible": true,
