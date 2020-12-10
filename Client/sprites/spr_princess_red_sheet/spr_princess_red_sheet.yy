@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"bb7882fc-887b-4faa-bb97-1d5910a9bee5","path":"sprites/spr_red_princess_sheet/spr_red_princess_sheet.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"bb7882fc-887b-4faa-bb97-1d5910a9bee5","path":"sprites/spr_red_princess_sheet/spr_red_princess_sheet.yy",},"LayerId":{"name":"bc132c89-add3-4cfe-8b78-f9f6aade19f9","path":"sprites/spr_red_princess_sheet/spr_red_princess_sheet.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_red_princess_sheet","path":"sprites/spr_red_princess_sheet/spr_red_princess_sheet.yy",},"resourceVersion":"1.0","name":"bb7882fc-887b-4faa-bb97-1d5910a9bee5","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"65eb275d-fdb5-4921-81ff-ab0f82ef0d59","path":"sprites/spr_princess_red_sheet/spr_princess_red_sheet.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"65eb275d-fdb5-4921-81ff-ab0f82ef0d59","path":"sprites/spr_princess_red_sheet/spr_princess_red_sheet.yy",},"LayerId":{"name":"e146277c-33bf-4969-837b-306f7c80c2e8","path":"sprites/spr_princess_red_sheet/spr_princess_red_sheet.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_princess_red_sheet","path":"sprites/spr_princess_red_sheet/spr_princess_red_sheet.yy",},"resourceVersion":"1.0","name":"65eb275d-fdb5-4921-81ff-ab0f82ef0d59","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_red_princess_sheet","path":"sprites/spr_red_princess_sheet/spr_red_princess_sheet.yy",},
+    "spriteId": {"name":"spr_princess_red_sheet","path":"sprites/spr_princess_red_sheet/spr_princess_red_sheet.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"6203b911-c5b5-4a5a-affa-52b6bd94be37","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"bb7882fc-887b-4faa-bb97-1d5910a9bee5","path":"sprites/spr_red_princess_sheet/spr_red_princess_sheet.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"a6b86977-26a2-4b44-8b73-5af12f4aaf49","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"65eb275d-fdb5-4921-81ff-ab0f82ef0d59","path":"sprites/spr_princess_red_sheet/spr_princess_red_sheet.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,21 +58,21 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_red_princess_sheet","path":"sprites/spr_red_princess_sheet/spr_red_princess_sheet.yy",},
+    "parent": {"name":"spr_princess_red_sheet","path":"sprites/spr_princess_red_sheet/spr_princess_red_sheet.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_red_princess_sheet",
+    "name": "spr_princess_red_sheet",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"bc132c89-add3-4cfe-8b78-f9f6aade19f9","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e146277c-33bf-4969-837b-306f7c80c2e8","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Mythril Age",
-    "path": "folders/Sprites/Mythril Age.yy",
+    "name": "character sprite sheets",
+    "path": "folders/Sprites/Mythril Age/character sprite sheets.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_red_princess_sheet",
+  "name": "spr_princess_red_sheet",
   "tags": [],
   "resourceType": "GMSprite",
 }

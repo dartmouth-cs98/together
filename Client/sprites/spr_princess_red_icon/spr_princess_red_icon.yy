@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"14878d4d-c455-45ea-ab01-3590dc0d3a23","path":"sprites/spr_princess_red_icon/spr_princess_red_icon.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"14878d4d-c455-45ea-ab01-3590dc0d3a23","path":"sprites/spr_princess_red_icon/spr_princess_red_icon.yy",},"LayerId":{"name":"b2d77358-25ec-452b-a2cd-63eff52c0fd3","path":"sprites/spr_princess_red_icon/spr_princess_red_icon.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_princess_red_icon","path":"sprites/spr_princess_red_icon/spr_princess_red_icon.yy",},"resourceVersion":"1.0","name":"14878d4d-c455-45ea-ab01-3590dc0d3a23","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"35ccac87-7344-4ab8-8a78-aedd4e6a9cda","path":"sprites/spr_princess_red_icon/spr_princess_red_icon.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"35ccac87-7344-4ab8-8a78-aedd4e6a9cda","path":"sprites/spr_princess_red_icon/spr_princess_red_icon.yy",},"LayerId":{"name":"55aadfd7-0bc0-4329-833e-0b2ef7a472a1","path":"sprites/spr_princess_red_icon/spr_princess_red_icon.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_princess_red_icon","path":"sprites/spr_princess_red_icon/spr_princess_red_icon.yy",},"resourceVersion":"1.0","name":"35ccac87-7344-4ab8-8a78-aedd4e6a9cda","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_princess_red_icon","path":"sprites/spr_princess_red_icon/spr_princess_red_icon.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"e8cbc35f-2704-4f36-99f7-20def8cea309","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"14878d4d-c455-45ea-ab01-3590dc0d3a23","path":"sprites/spr_princess_red_icon/spr_princess_red_icon.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"1c07eea8-2761-49fe-bd20-546473e68d86","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"35ccac87-7344-4ab8-8a78-aedd4e6a9cda","path":"sprites/spr_princess_red_icon/spr_princess_red_icon.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"b2d77358-25ec-452b-a2cd-63eff52c0fd3","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"55aadfd7-0bc0-4329-833e-0b2ef7a472a1","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "character icons",

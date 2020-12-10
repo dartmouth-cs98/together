@@ -1,50 +1,88 @@
 /// @description Set up sprite select menu
+
+// Currently selected column & row
 column = 0;
 row = 0
 
 num_columns = 5;
 num_rows = 5;
 
-num_sprites = num_rows * num_columns;
+#region Icons for display in each row
 
-#region Sprites in each row
-
-row_1 = [	spr_bandana_purple_icon,
+i_row_1 = [	spr_bandana_purple_icon,
 			spr_bandana_red_icon,
 			spr_cape_blue_icon,
 			spr_cape_red_icon,
 			spr_epilets_icon];
 
-row_2 = [	spr_green_hair_icon,
+i_row_2 = [	spr_green_hair_icon,
 			spr_hat_red_icon,
 			spr_knight_gray_icon,
 			spr_knight_red_icon,
 			spr_knight_red_mask_icon];
 		
-row_3 =	[	spr_orc_brunette_icon,
+i_row_3 = [	spr_orc_brunette_icon,
 			spr_orc_gray_icon,
 			spr_orc_knight_icon,
 			spr_orc_redhead_icon,
 			spr_princess_red_icon];
 		
-row_4 = [	spr_purple_blond_icon,
+i_row_4 = [	spr_purple_blond_icon,
 			spr_purple_hooded_icon,
 			spr_shirt_blue_icon,
 			spr_shirt_green_icon,
 			spr_shirt_red_icon];
 		
-row_5 = [	spr_skeleton_gray_icon,
+i_row_5 = [	spr_skeleton_gray_icon,
 			spr_skeleton_pink_icon,
 			spr_witch_blue_icon,
 			spr_witch_purple_icon,
 			spr_witch_red_icon];
 
 #endregion
+icon_grid = scr_create_menu_page(i_row_1, i_row_2, i_row_3, i_row_4, i_row_5);
 
-sprite_grid = scr_create_menu_page(row_1, row_2, row_3, row_4, row_5);
+#region Sprite sheets
 
-names = [];
-for (var i = 1; i < num_sprites; i++) {
-	names[i-1] = string(i);
+s_row_1 = [	spr_bandana_purple_sheet,
+			spr_bandana_red_sheet,
+			spr_cape_blue_sheet,
+			spr_cape_red_sheet,
+			spr_epilets_sheet];
+
+s_row_2 = [	spr_green_hair_sheet,
+			spr_hat_red_sheet,
+			spr_knight_gray_sheet,
+			spr_knight_red_sheet,
+			spr_knight_red_mask_sheet];
+		
+s_row_3 = [	spr_orc_brunette_sheet,
+			spr_orc_gray_sheet,
+			spr_orc_knight_sheet,
+			spr_orc_redhead_sheet,
+			spr_princess_red_sheet];
+		
+s_row_4 = [	spr_purple_blond_sheet,
+			spr_purple_hooded_sheet,
+			spr_shirt_blue_sheet,
+			spr_shirt_green_sheet,
+			spr_shirt_red_sheet];
+		
+s_row_5 = [	spr_skeleton_gray_sheet,
+			spr_skeleton_pink_sheet,
+			spr_witch_blue_sheet,
+			spr_witch_purple_sheet,
+			spr_witch_red_sheet];
+
+#endregion
+sprite_grid = scr_create_menu_page(s_row_1, s_row_2, s_row_3, s_row_4, s_row_5);
+
+for (var c = 0; c < num_columns; c++) {
+	for (var r = 0; r < num_rows; r++) {
+		//var sprite = sprite_grid[# c, r];
+		show_debug_message( "R: " + string(r) );
+		show_debug_message( "C: " + string(c) );
+		show_debug_message( "W: " + string(sprite_get_width(icon_grid[# c, r])) );
+		show_debug_message( "H: " + string(sprite_get_height(icon_grid[# c, r])) );
+	}
 }
-
