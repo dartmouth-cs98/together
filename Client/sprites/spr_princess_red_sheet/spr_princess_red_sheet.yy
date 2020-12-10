@@ -1,5 +1,5 @@
 {
-  "bboxMode": 0,
+  "bboxMode": 2,
   "collisionKind": 1,
   "type": 0,
   "origin": 0,
@@ -7,14 +7,14 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 19,
-  "bbox_right": 236,
-  "bbox_top": 18,
-  "bbox_bottom": 255,
+  "bbox_left": 12,
+  "bbox_right": 36,
+  "bbox_top": 12,
+  "bbox_bottom": 56,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 256,
+  "width": 192,
   "height": 256,
   "textureGroupId": {
     "name": "Default",
@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"65eb275d-fdb5-4921-81ff-ab0f82ef0d59","path":"sprites/spr_princess_red_sheet/spr_princess_red_sheet.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"65eb275d-fdb5-4921-81ff-ab0f82ef0d59","path":"sprites/spr_princess_red_sheet/spr_princess_red_sheet.yy",},"LayerId":{"name":"e146277c-33bf-4969-837b-306f7c80c2e8","path":"sprites/spr_princess_red_sheet/spr_princess_red_sheet.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_princess_red_sheet","path":"sprites/spr_princess_red_sheet/spr_princess_red_sheet.yy",},"resourceVersion":"1.0","name":"65eb275d-fdb5-4921-81ff-ab0f82ef0d59","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"59089484-b179-4f3c-98d3-2d76d36f1111","path":"sprites/spr_princess_red_sheet/spr_princess_red_sheet.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"59089484-b179-4f3c-98d3-2d76d36f1111","path":"sprites/spr_princess_red_sheet/spr_princess_red_sheet.yy",},"LayerId":{"name":"48f44d9d-9182-45ba-93bc-02e1666577a9","path":"sprites/spr_princess_red_sheet/spr_princess_red_sheet.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_princess_red_sheet","path":"sprites/spr_princess_red_sheet/spr_princess_red_sheet.yy",},"resourceVersion":"1.0","name":"59089484-b179-4f3c-98d3-2d76d36f1111","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_princess_red_sheet","path":"sprites/spr_princess_red_sheet/spr_princess_red_sheet.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"a6b86977-26a2-4b44-8b73-5af12f4aaf49","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"65eb275d-fdb5-4921-81ff-ab0f82ef0d59","path":"sprites/spr_princess_red_sheet/spr_princess_red_sheet.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"a691d115-2b64-4487-be85-d6dee83f508f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"59089484-b179-4f3c-98d3-2d76d36f1111","path":"sprites/spr_princess_red_sheet/spr_princess_red_sheet.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e146277c-33bf-4969-837b-306f7c80c2e8","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"48f44d9d-9182-45ba-93bc-02e1666577a9","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "character sprite sheets",
