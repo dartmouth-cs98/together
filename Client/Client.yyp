@@ -16,7 +16,6 @@
     {"id":{"name":"snd_Jump03","path":"sounds/snd_Jump03/snd_Jump03.yy",},"order":11,},
     {"id":{"name":"con_menu","path":"objects/con_menu/con_menu.yy",},"order":4,},
     {"id":{"name":"snd_Jump02","path":"sounds/snd_Jump02/snd_Jump02.yy",},"order":10,},
-    {"id":{"name":"scr_change_difficulty","path":"scripts/scr_change_difficulty/scr_change_difficulty.yy",},"order":4,},
     {"id":{"name":"spr_blue_cape_left","path":"sprites/spr_blue_cape_left/spr_blue_cape_left.yy",},"order":2,},
     {"id":{"name":"spr_l_strip4","path":"sprites/spr_l_strip4/spr_l_strip4.yy",},"order":3,},
     {"id":{"name":"snd_Death01","path":"sounds/snd_Death01/snd_Death01.yy",},"order":4,},

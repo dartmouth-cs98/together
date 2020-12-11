@@ -76,3 +76,5 @@ s_row_5 = [	spr_skeleton_gray_sheet,
 
 #endregion
 sprite_grid = scr_create_menu_page(s_row_1, s_row_2, s_row_3, s_row_4, s_row_5);
+
+menu_sound = snd_Cursor01;
