@@ -15,6 +15,7 @@ function scr_recieved_packet(buffer){
 			buffer_seek(client_buffer, buffer_seek_start, 0);
 			buffer_write(client_buffer, buffer_u8, network.player_establish);
 			buffer_write(client_buffer, buffer_string, con_game_manager.username);
+			buffer_write(client_buffer, buffer_u8, con_game_manager.player_sprite);
 			network_send_packet(client, client_buffer, buffer_tell(client_buffer));
 			//show_debug_message("SEND: player_establish: "+string(current_time));
 			#endregion
@@ -22,14 +23,13 @@ function scr_recieved_packet(buffer){
 		
 		case network.player_connect:
 			#region player_connect
-			//show_debug_message("RECIEVE: player_connect: "+string(current_time));
+			show_debug_message("RECIEVE: player_connect: "+string(current_time));
 			
 			// When a player connects, get their info & put them in appropriate data structures
 			var _socket = buffer_read(buffer, buffer_u8);
 			var _x = buffer_read(buffer, buffer_u16);
 			var _y = buffer_read(buffer, buffer_u16);
 			var _username = buffer_read(buffer, buffer_string);
-			
 			var _player = instance_create_depth(_x, _y, depth, obj_player);
 			_player.socket = _socket;
 			_player.username = _username;
@@ -47,10 +47,11 @@ function scr_recieved_packet(buffer){
 			var _x = buffer_read(buffer, buffer_u16);
 			var _y = buffer_read(buffer, buffer_u16);
 			var _username = buffer_read(buffer, buffer_string);
-			
+			var _sprite_sheet = buffer_read(buffer, buffer_u8);
 			var _other = instance_create_depth(_x, _y, depth, obj_other);
 			_other.socket = _socket;
 			_other.username = _username;
+			_other.sprite_sheet = _sprite_sheet;
 			_other.image_index = 0;
 			ds_map_add(socket_to_instanceid, _socket, _other);
 			#endregion

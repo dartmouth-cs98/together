@@ -7,9 +7,10 @@ function scr_recieved_packet(buffer, socket){
 		case network.player_establish:
 			#region player_establish
 			//show_debug_message("RECIEVE: player_establish: "+string(current_time));
-		
+			
 			var _username = buffer_read(buffer, buffer_string);
-			scr_network_player_join(_username);
+			var _sprite_sheet = buffer_read(buffer, buffer_u8);
+			scr_network_player_join(_username, _sprite_sheet);
 			#endregion
 			break;
 		
@@ -81,7 +82,7 @@ function scr_recieved_packet(buffer, socket){
 			_chat = _player.username + ": " + _chat;					// Append username to show who it's from
 			ds_list_insert(global.chat, 0, _chat);
 			
-			//TODO: Potential issues here, 32:44 in networking video
+			//TODO: Potential issues here, 32:44 in networking video (https://youtu.be/NbsXRuNijlo) (Could be another one in the series)
 			_colorid = buffer_read(buffer, buffer_u8);
 			ds_list_insert(global.chat_color, 0, ds_map_find_value(color_map, _colorid))
 			

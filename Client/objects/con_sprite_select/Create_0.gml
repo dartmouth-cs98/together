@@ -76,13 +76,3 @@ s_row_5 = [	spr_skeleton_gray_sheet,
 
 #endregion
 sprite_grid = scr_create_menu_page(s_row_1, s_row_2, s_row_3, s_row_4, s_row_5);
-
-for (var c = 0; c < num_columns; c++) {
-	for (var r = 0; r < num_rows; r++) {
-		//var sprite = sprite_grid[# c, r];
-		show_debug_message( "R: " + string(r) );
-		show_debug_message( "C: " + string(c) );
-		show_debug_message( "W: " + string(sprite_get_width(icon_grid[# c, r])) );
-		show_debug_message( "H: " + string(sprite_get_height(icon_grid[# c, r])) );
-	}
-}
