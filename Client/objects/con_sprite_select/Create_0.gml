@@ -13,7 +13,7 @@ i_row_1 = [	spr_bandana_purple_icon,
 			spr_bandana_red_icon,
 			spr_cape_blue_icon,
 			spr_cape_red_icon,
-			spr_epilets_icon];
+			spr_epaulets_icon];
 
 i_row_2 = [	spr_green_hair_icon,
 			spr_hat_red_icon,
@@ -48,7 +48,7 @@ s_row_1 = [	spr_bandana_purple_sheet,
 			spr_bandana_red_sheet,
 			spr_cape_blue_sheet,
 			spr_cape_red_sheet,
-			spr_epilets_sheet];
+			spr_epaulets_sheet];
 
 s_row_2 = [	spr_green_hair_sheet,
 			spr_hat_red_sheet,

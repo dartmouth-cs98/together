@@ -102,6 +102,7 @@ function scr_recieved_packet(buffer, socket){
 			break;
     
 		case network.task:
+			#region task
 			//show_debug_message("RECIEVE: task: "+string(current_time));
 			
 			var add_to_taskbar = buffer_read(buffer, buffer_u8);
@@ -122,7 +123,8 @@ function scr_recieved_packet(buffer, socket){
 				network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
 				//show_debug_message("SEND: task: "+string(current_time));
 			}
-      break;
+			#endregion
+			break;
 
 		case network.pause:
 			#region pause
