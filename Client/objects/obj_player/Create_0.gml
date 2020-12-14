@@ -13,6 +13,8 @@ player_color = c_black; // string
 hat = ""; // string
 role = ""; // string
 
+currentNearestObject = obj_interactable; // object
+
 inventory = ds_list_create(); // list
 max_inventory = 3; // int
 interactRange = 10; // int
