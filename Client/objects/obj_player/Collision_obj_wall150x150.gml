@@ -1,9 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-// Check object's center-to-bottom distance
-// Make this check only if trying to move up
-
 var width = 150;
 var height = 150;
 
