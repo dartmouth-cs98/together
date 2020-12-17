@@ -4,12 +4,12 @@
 var width = 130;
 var height = 150;
 
-if (x > other.x + width - 20 and x < other.x + width){ // Collision left
-	if (y > (other.y - 45) and y < (other.y + height - 38)) h_collide = -1;
+if (x > other.x + width - 20 and x < other.x + width + 15){ // Collision left
+	if (y > (other.y - 45) and y < (other.y + height - 28)) h_collide = -1;
 }
 
 else if (x > other.x - 40 and x < other.x + 10){ // Collision right
-	if (y > (other.y - 45) and y < (other.y + height - 38)) h_collide = 1;
+	if (y > (other.y - 45) and y < (other.y + height - 28)) h_collide = 1;
 }
 
 if (y > other.y + height - 50 and y < other.y + height - 10){ // Collision up
