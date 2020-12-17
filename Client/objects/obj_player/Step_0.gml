@@ -45,6 +45,14 @@ network_send_packet(con_client.client, con_client.client_buffer, buffer_tell(con
 #region Manage Object interaction
 
 nearestObject = instance_nearest(x,y,obj_interactable);
+
+if(nearestObject != currentNearestObject){
+	with(currentNearestObject){
+		sprite_index = choose(object1);
+	}
+	currentNearestObject = nearestObject;
+}
+
 if(distance_to_object(nearestObject) < interactRange){
 	if(keyboard_check_released(vk_space)){
 		// Run object script

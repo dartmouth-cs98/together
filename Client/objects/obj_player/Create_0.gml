@@ -37,6 +37,8 @@ player_color = c_black; // string
 hat = ""; // string
 role = ""; // string
 
+currentNearestObject = obj_interactable; // object
+
 inventory = ds_list_create(); // list
 max_inventory = 3; // int
 interactRange = 10; // int
@@ -58,5 +60,4 @@ time_since_hands_washed = 0; // double
 mask_on = false; // bool
 h_collide = 0;
 v_collide = 0;
-
 draw_set_font(Font1);
