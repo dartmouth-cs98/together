@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_d_strip4",
-    "path": "sprites/spr_d_strip4/spr_d_strip4.yy",
+    "name": "spr_skeleton_gray_sheet",
+    "path": "sprites/spr_skeleton_gray_sheet/spr_skeleton_gray_sheet.yy",
   },
   "solid": false,
   "visible": true,

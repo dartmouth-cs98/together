@@ -2,7 +2,7 @@
 
 switch (room) {
 	case rm_main_menu:
-		room_goto(rm_client);
+		room_goto(rm_sprite_select);
 		break;
 		
 	default:

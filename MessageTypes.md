@@ -7,7 +7,7 @@ These types and their respective IDs are defined in the enum `network`. This enu
 * ID: 0
 * Protocol
     * Server sends to client after initial connection. Format: `<ID, socket>`
-    * Client recieves this message, sends back message. Format: `<ID, username>`
+    * Client recieves this message, sends back message. Format: `<ID, username, sprite_sheet>`
     * Continued in `player_connect` protocol.
 
 ### `player_connect`
@@ -20,8 +20,8 @@ These types and their respective IDs are defined in the enum `network`. This enu
 ### `player_joined`
 * ID: 2
 * Protocol
-    * On recieving `player_establish` from client, server sends info about other players back to client. Format: `<ID, socket, x_pos, y_pos, username>`
-    * Also sends info about the client to other players. Format: `<ID, socket, x_pos, y_pos, username>`
+    * On recieving `player_establish` from client, server sends info about other players back to client. Format: `<ID, socket, x_pos, y_pos, username, sprite_sheet>`
+    * Also sends info about the client to other players. Format: `<ID, socket, x_pos, y_pos, username, sprite_sheet>`
     * Clients only recieve info about other players through this message. When they get it, they create an `obj_other`. No response.
 
 ### `player_disconnect`

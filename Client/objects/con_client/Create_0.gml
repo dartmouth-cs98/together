@@ -6,7 +6,7 @@
 enum network {
 	player_establish,	// 
 	player_connect,		// For managing a player connecting
-	player_joined,		// For when an additional player joins
+	player_joined,		// For when another player joins
 	player_disconnect,	// For removing a player when they disconnect
 	move,				// For when a player moves
 	chat,				// For handling chat messages being sent

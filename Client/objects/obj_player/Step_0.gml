@@ -17,10 +17,20 @@ h_collide = 0;
 v_collide = 0;
 
 // Outer boundaries
-if (h_input < 0 && x < 12){ h_input = 0; }
-if (h_input > 0 && x > 2495){ h_input = 0; }
-if (v_input < 0 && y < 5){ v_input = 0; }
-if (v_input > 0 && y > 1495){  v_input = 0; }
+if (h_input < 0 and x < 25){
+	h_input = 0;
+}
+if (h_input > 0 and x > 2475){
+	h_input = 0;
+}
+if (v_input < 0 and y < 25){
+	v_input = 0;
+}
+if (v_input > 0 and y > 1475){
+	v_input = 0;
+}
+
+
 
 buffer_seek(con_client.client_buffer, buffer_seek_start, 0);		// Go to start of buffer
 buffer_write(con_client.client_buffer, buffer_u8, network.move);	// ID
