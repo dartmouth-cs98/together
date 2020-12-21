@@ -5,7 +5,7 @@ sprite_sheet = con_game_manager.player_sprite;
 walk_speed = 4; // int
 
 // Int, gaps at the top and left of the sprite sheet
-left_gap = 8;
+left_gap = 8
 top_gap = 18;
 
 // Int, width & height of one fame of a mithril age sprite
