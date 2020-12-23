@@ -184,5 +184,27 @@ function scr_recieved_packet(buffer){
 			
 			#endregion
 			break;
+	
+		case network.npc_create:
+			#region npc_create
+			show_debug_message("RECIEVE: npc_create: "+string(current_time));
+			var _npc_id = buffer_read(buffer, buffer_u8);
+			var _x = buffer_read(buffer, buffer_u16);
+			var _y = buffer_read(buffer, buffer_u16);
+			var _sprite_sheet = buffer_read(buffer, buffer_u8);
+			
+			_npc = instance_create_layer(_x, _y, "Instances", obj_npc);
+			
+			_npc.npc_id = _npc_id;
+			_npc.sprite_sheet = _sprite_sheet;
+			
+			#endregion
+			break;
+		
+		case network.npc_move:
+			#region npc_move
+			
+			#endregion
+			break;
 	}
 }

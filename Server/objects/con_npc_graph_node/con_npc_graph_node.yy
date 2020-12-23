@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_penguin",
+    "path": "sprites/spr_penguin/spr_penguin.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

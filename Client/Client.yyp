@@ -88,6 +88,7 @@
     {"id":{"name":"snd_Attack01","path":"sounds/snd_Attack01/snd_Attack01.yy",},"order":0,},
     {"id":{"name":"spr_witch_purple_icon","path":"sprites/spr_witch_purple_icon/spr_witch_purple_icon.yy",},"order":23,},
     {"id":{"name":"scr_recieved_packet","path":"scripts/scr_recieved_packet/scr_recieved_packet.yy",},"order":0,},
+    {"id":{"name":"obj_npc","path":"objects/obj_npc/obj_npc.yy",},"order":10,},
     {"id":{"name":"rm_sprite_select","path":"rooms/rm_sprite_select/rm_sprite_select.yy",},"order":3,},
     {"id":{"name":"spr_orc_brunette_icon","path":"sprites/spr_orc_brunette_icon/spr_orc_brunette_icon.yy",},"order":10,},
     {"id":{"name":"spr_test_tile","path":"sprites/spr_test_tile/spr_test_tile.yy",},"order":0,},

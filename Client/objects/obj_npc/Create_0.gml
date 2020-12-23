@@ -1,8 +1,8 @@
-/// @description Initialize NPC
+/// @description Set up NPC object
+npc_id = noone;
+sprite_sheet = noone;
 
 #region animation
-sprite_sheet = spr_skeleton_pink_sheet;
-
 // int [POSSIBLY UNNEEDED]
 default_walk_speed = 4;
 walk_speed = default_walk_speed;
@@ -28,14 +28,4 @@ v_sep = 18;
 
 anim_length = 4; // Int, # of frames in an animation [POSSIBLY UNNEEDED]
 anim_speed = 8; // Int, how fast it animates [POSSIBLY UNNEEDED]
-#endregion
-
-#region control movement
-
-moving = true; // Boolean, used to determine if the NPC is moving or not
-move_dir = 270; // Int, direction of NPC movement
-
-// Walk in a square
-alarm_set(0, 2 * room_speed);
-
 #endregion

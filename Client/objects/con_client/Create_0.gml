@@ -6,13 +6,15 @@
 enum network {
 	player_establish,	// 
 	player_connect,		// For managing a player connecting
-	player_joined,		// For when another player joins
+	player_joined,		// For when an additional player joins
 	player_disconnect,	// For removing a player when they disconnect
 	move,				// For when a player moves
-	chat,				// For handling chat messages being sent
+	chat,				// For managing chat messages
 	task,				// For handling task bar progress
-	pause,				// To keep player from animating on other machines
-	unpause				// To restore normal animation after unpausing
+	pause,				// To keep paused players from animating
+	unpause,			// To restore normal animation after pausing
+	npc_create,			// To set up NPCs on clients
+	npc_move			// To broadcast NPC movement to players
 }
 
 #region An enum & ds map for colors, makes it easier to send color IDs across the internet

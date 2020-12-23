@@ -23,6 +23,24 @@ if (moving) {
 	// Progress the walk animation
 	x_frame += anim_speed/room_speed;
 	if (x_frame >= anim_length) { x_frame = 0 };
+	
+	// Broadcast movement to all players
+	for(var i = 0; i < ds_list_size(con_server.socket_list); i++) {
+				
+		var _sock = ds_list_find_value(con_server.socket_list, i);
+				
+		buffer_seek(con_server.server_buffer, buffer_seek_start, 0);			// Start from top of buffer
+		buffer_write(con_server.server_buffer, buffer_u8, network.npc_move);	// Message ID
+
+		buffer_write(con_server.server_buffer, buffer_u8, self);				// ID of the moving NPC
+		buffer_write(con_server.server_buffer, buffer_u8, move_x);				// X movement
+		buffer_write(con_server.server_buffer, buffer_u8, move_y);				// Y movement
+		buffer_write(con_server.server_buffer, buffer_u8, move_dir);			// Move direction
+	
+		network_send_packet(_sock, con_server.server_buffer, buffer_tell(con_server.server_buffer));
+		//show_debug_message("SEND: npc_move: "+string(current_time));
+	}
+	
 } else {
 	x_frame = 0.9; // Reset to idle, but high to prevent sliding
 }

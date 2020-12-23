@@ -9,7 +9,9 @@ enum network {
 	chat,				// For managing chat messages
 	task,				// For handling task bar progress
 	pause,				// To keep paused players from animating
-	unpause				// To restore normal animation after pausing
+	unpause,			// To restore normal animation after pausing
+	npc_create,			// To set up NPCs on clients
+	npc_move			// To broadcast NPC movement to players
 }
 
 #region An enum & ds map for colors, makes it easier to send color IDs across the internet
