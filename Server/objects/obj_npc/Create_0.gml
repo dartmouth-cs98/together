@@ -2,7 +2,10 @@
 
 #region animation
 sprite_sheet = spr_skeleton_pink_sheet;
-walk_speed = 4; // int [POSSIBLY UNNEEDED]
+
+// int [POSSIBLY UNNEEDED]
+default_walk_speed = 4;
+walk_speed = default_walk_speed;
 
 // Int, gaps at the top and left of the sprite sheet
 left_gap = 8;
@@ -32,7 +35,7 @@ anim_speed = 8; // Int, how fast it animates [POSSIBLY UNNEEDED]
 moving = true; // Boolean, used to determine if the NPC is moving or not
 move_dir = 270; // Int, direction of NPC movement
 
-
-alarm_set(0, 2 * room_speed);
+// Walk in a square
+//alarm_set(0, 2 * room_speed);
 
 #endregion
