@@ -8,7 +8,7 @@ if (moving) {
 	x += move_x;
 	y += move_y;
 						
-	// Change which direction the player sprite is facing
+	// Change which direction the NPC sprite is facing
 	switch(move_dir) {
 		case 0:		y_frame = 2; break;	// Right
 		case 45:	y_frame = 2; break;	// Up-Right
@@ -22,7 +22,7 @@ if (moving) {
 							
 	// Progress the walk animation
 	x_frame += anim_speed/room_speed;
-	if (x_frame >= anim_length) { x_frame = 0 };
+	if (x_frame >= anim_length) { x_frame = 0; }
 	
 	// Broadcast movement to all players
 	for(var i = 0; i < ds_list_size(con_server.socket_list); i++) {
@@ -33,8 +33,8 @@ if (moving) {
 		buffer_write(con_server.server_buffer, buffer_u8, network.npc_move);	// Message ID
 
 		buffer_write(con_server.server_buffer, buffer_u8, self);				// ID of the moving NPC
-		buffer_write(con_server.server_buffer, buffer_u8, move_x);				// X movement
-		buffer_write(con_server.server_buffer, buffer_u8, move_y);				// Y movement
+		buffer_write(con_server.server_buffer, buffer_s16, move_x);				// X movement
+		buffer_write(con_server.server_buffer, buffer_s16, move_y);				// Y movement
 		buffer_write(con_server.server_buffer, buffer_u8, move_dir);			// Move direction
 	
 		network_send_packet(_sock, con_server.server_buffer, buffer_tell(con_server.server_buffer));
