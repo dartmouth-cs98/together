@@ -8,6 +8,8 @@ myname = "object";
 object1 = spr_object1;
 object2 = spr_object2;
 
+germs = 0; // Int to keep track of germs on an object
+
 // For collecting objects, can ignore if not relevant
 collects = "obj_apple";
 
