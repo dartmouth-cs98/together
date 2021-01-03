@@ -35,8 +35,9 @@ if (moving) {
 		buffer_write(con_server.server_buffer, buffer_u8, self);				// ID of the moving NPC
 		buffer_write(con_server.server_buffer, buffer_s16, move_x);				// X movement
 		buffer_write(con_server.server_buffer, buffer_s16, move_y);				// Y movement
-		buffer_write(con_server.server_buffer, buffer_u8, move_dir);			// Move direction
-	
+		buffer_write(con_server.server_buffer, buffer_u8, x_frame);				// Where along the walk animation should the npc be?
+		buffer_write(con_server.server_buffer, buffer_u8, y_frame);				// Which direction should the npc face?
+		
 		network_send_packet(_sock, con_server.server_buffer, buffer_tell(con_server.server_buffer));
 		//show_debug_message("SEND: npc_move: "+string(current_time));
 	}

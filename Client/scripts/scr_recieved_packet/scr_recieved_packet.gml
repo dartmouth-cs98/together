@@ -187,7 +187,7 @@ function scr_recieved_packet(buffer){
 	
 		case network.npc_create:
 			#region npc_create
-			show_debug_message("RECIEVE: npc_create: "+string(current_time));
+			//show_debug_message("RECIEVE: npc_create: "+string(current_time));
 			var _npc_id = buffer_read(buffer, buffer_u8);
 			var _x = buffer_read(buffer, buffer_u16);
 			var _y = buffer_read(buffer, buffer_u16);
@@ -205,35 +205,23 @@ function scr_recieved_packet(buffer){
 		
 		case network.npc_move:
 			#region npc_move
-			show_debug_message("RECIEVE: npc_move: "+string(current_time));
+			//show_debug_message("RECIEVE: npc_move: "+string(current_time));
 			
 			var npc_id = buffer_read(buffer, buffer_u8);
 			var move_x = buffer_read(buffer, buffer_s16);
 			var move_y = buffer_read(buffer, buffer_s16);
-			var move_dir = buffer_read(buffer, buffer_u8);
+			var _x_frame = buffer_read(buffer, buffer_u8);
+			var _y_frame = buffer_read(buffer, buffer_u8);
 			
 			_npc = ds_map_find_value(con_game_manager.id_to_npc_object_map, npc_id);
 			
-			// Change which direction the NPC sprite is facing
+			// Move sprite, advance animation, and set correct facing direction
 			if (!is_undefined(_npc)) {
 				with (_npc) {
 					x += move_x;
 					y += move_y;
-					
-					switch(move_dir) {
-						case 0:		y_frame = 2; break;	// Right
-						case 45:	y_frame = 2; break;	// Up-Right
-						case 90:	y_frame = 3; break;	// Up
-						case 135:	y_frame = 1; break;	// Up-Left
-						case 180:	y_frame = 1; break;	// Left
-						case 225:	y_frame = 1; break;	// Down-Left
-						case 270:	y_frame = 0; break;	// Down
-						case 315:	y_frame = 2; break;	// Down-Right
-					}
-							
-					// Progress the walk animation
-					x_frame += anim_speed/room_speed;
-					if (x_frame >= anim_length) { x_frame = 0; }
+					x_frame = _x_frame;
+					y_frame = _y_frame;
 				}
 			}
 			#endregion

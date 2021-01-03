@@ -56,4 +56,18 @@ These types and their respective IDs are defined in the enum `network`. This enu
 * Protocol
     * When the user unpauses, the client sends this message and then executes an upause client-side. Format: `<ID>`
     * The server recieves this, restarts the player's animation, and echoes the message out to the other players. Format: `<ID, player_socket>`
-    * Each other player recieves this and also restarts that player's animation. No response
+    * Each other player recieves this and also restarts that player's animation. No response.
+
+### `npc_create`
+* ID: 8
+* Protocol
+    * When a player joins the server, the `scr_network_player_join` script sends them info about each `obj_npc` from the `npc_list`. Format: `<ID, npc_ID, npc.x, npc.y, sprite_sheet>`
+        * *Note: As of 1/3/21, the sprite sheet is currently hard-coded due to differences between sprite sheet IDs on the client & server. Some sort of ds_map will need to be created later.*
+    * The client recieves this message and uses it to create an `obj_npc`. No response.
+
+### `npc_move`
+* ID: 9
+* Protocol
+    * The `obj_npc` step event onthe server determines how the npc will move and broadcasts that information to all players. Format: `<ID, npc_ID, move_x, move_y, x_frame, y_frame>`
+        * *Note: x_frame & y_frame determine what part of the sprite sheet to draw*
+    * The client reiceves this and directly updates this information in its `obj_npc` instances. No response.
