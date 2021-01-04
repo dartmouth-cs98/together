@@ -15,6 +15,9 @@ switch(room){
 			food_obj = instance_find(obj_food, 0);
 			food_obj.x = global.cam_X + 20;
 			food_obj.y = global.cam_Y + 40;
+			chat_obj = instance_find(obj_chat_icon, 0);
+			chat_obj.x = global.cam_X + 425;
+			chat_obj.y = global.cam_Y + 240;
 			draw_text(global.cam_X + 40, global.cam_Y + 65, "Water: " + string(obj_player.water));	
 		}
 		break;
