@@ -49,7 +49,7 @@ These types and their respective IDs are defined in the enum `network`. This enu
 * Protocol
     * When the user pauses, the client sends this message and then executes a pause client-side. Format: `<ID>`
     * The server recieves this, stops the player's animation, and echoes the message out to the other players. Format: `<ID, player_socket>`
-    * Each other player recieves this and also stops that player's animation. No response
+    * Each other player recieves this and also stops that player's animation. No response.
 
 ### `unpause`
 * ID: 7
