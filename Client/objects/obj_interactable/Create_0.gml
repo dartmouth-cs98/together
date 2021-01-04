@@ -13,7 +13,7 @@ germs = 0; // Int to keep track of germs on an object
 // For collecting objects, can ignore if not relevant
 collects = "obj_apple";
 
-// Default script, change in children
-myscript = scr_collect;
+// Default script, change in children, (do not call script)
+myscript = scr_duotask;
 
 sprite_index = object1;
