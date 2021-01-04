@@ -9,11 +9,12 @@ if (show_chat){
 	draw_set_valign(fa_middle);
 	
 	draw_set_color(c_white);
-	draw_rectangle(30, 30, 450, 300, false);
+	draw_rectangle(80, 30, 450, 250, false);
 
 	for (var i = 0; i < chat_size; i++) {
-		draw_set_color(ds_list_find_value(global.chat_color, i));
-		draw_text(100, 130-(16*i), ds_list_find_value(global.chat, i));
+		//draw_set_color(ds_list_find_value(global.chat_color, i));
+		draw_set_color(c_black);
+		draw_text(100, 260-(16*i), ds_list_find_value(global.chat, i));
 	}
 
 	if (active) {
