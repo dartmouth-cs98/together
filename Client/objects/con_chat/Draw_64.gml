@@ -14,7 +14,7 @@ if (show_chat){
 	for (var i = 0; i < chat_size; i++) {
 		//draw_set_color(ds_list_find_value(global.chat_color, i));
 		draw_set_color(c_black);
-		draw_text(100, 260-(16*i), ds_list_find_value(global.chat, i));
+		draw_text(100, 225-(16*i), ds_list_find_value(global.chat, i));
 	}
 
 	if (active) {
