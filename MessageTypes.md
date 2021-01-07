@@ -57,6 +57,7 @@ These types and their respective IDs are defined in the enum `network`. This enu
     * When the user unpauses, the client sends this message and then executes an upause client-side. Format: `<ID>`
     * The server recieves this, restarts the player's animation, and echoes the message out to the other players. Format: `<ID, player_socket>`
     * Each other player recieves this and also restarts that player's animation. No response.
+* *Note: This message may no longer be necessary. Recieving it client-side doesn't do anything.*
 
 ### `npc_create`
 * ID: 8
