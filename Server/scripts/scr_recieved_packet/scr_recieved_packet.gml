@@ -83,11 +83,9 @@ function scr_recieved_packet(buffer, socket){
 			ds_list_insert(global.chat, 0, _chat);
 			
 			//TODO: Potential issues here, 32:44 in networking video (https://youtu.be/NbsXRuNijlo) (Could be another one in the series)
-			//_colorid = buffer_read(buffer, buffer_u8);
 			var _color1 = buffer_read(buffer, buffer_u8);
 			var _color2 = buffer_read(buffer, buffer_u8);
 			var _color3 = buffer_read(buffer, buffer_u8);
-			//ds_list_insert(global.chat_color, 0, ds_map_find_value(color_map, _colorid));
 			ds_list_insert(global.chat_color, 0, make_color_rgb(_color1, _color2, _color3));
 			
 			for(var i = 0; i < ds_list_size(socket_list); i++) {
@@ -97,7 +95,6 @@ function scr_recieved_packet(buffer, socket){
 				buffer_seek(server_buffer, buffer_seek_start, 0);		// Start from top of buffer
 				buffer_write(server_buffer, buffer_u8, network.chat);	// Message ID
 				buffer_write(server_buffer, buffer_string, _chat);		// Message contents
-				//buffer_write(server_buffer, buffer_u8, _colorid);		// Message color (number that maps to it)
 				buffer_write(server_buffer, buffer_u8, _color1);		// Message color (number that maps to it)
 				buffer_write(server_buffer, buffer_u8, _color2);		// Message color (number that maps to it)
 				buffer_write(server_buffer, buffer_u8, _color3);		// Message color (number that maps to it)
@@ -183,26 +180,5 @@ function scr_recieved_packet(buffer, socket){
 			#endregion
 			break;
 			
-		case network.chat_rgb:
-			
-			var color_1 = buffer_read(buffer, buffer_string);
-			var color_2 = buffer_read(buffer, buffer_string);
-			var color_3 = buffer_read(buffer, buffer_string);
-			
-			// Echo it out
-			for(var i = 0; i < ds_list_size(socket_list); i++) {
-				var recipient_socket = ds_list_find_value(socket_list, i);
-				
-				if (recipient_socket != socket) {
-					buffer_seek(server_buffer, buffer_seek_start, 0);
-					buffer_write(server_buffer, buffer_u8, network.chat_rgb);
-					buffer_write(server_buffer, buffer_u8, socket);			// Socket of the unpausing player
-					buffer_write(server_buffer, buffer_u8, color_1);
-					buffer_write(server_buffer, buffer_u8, color_2);
-					buffer_write(server_buffer, buffer_u8, color_3);
-					network_send_packet(recipient_socket, server_buffer, buffer_tell(server_buffer));
-					//show_debug_message("SEND: unpause: "+string(current_time));
-				}
-			}
 	}
 }
