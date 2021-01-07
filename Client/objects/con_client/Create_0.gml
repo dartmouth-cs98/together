@@ -12,7 +12,8 @@ enum network {
 	chat,				// For handling chat messages being sent
 	task,				// For handling task bar progress
 	pause,				// To keep player from animating on other machines
-	unpause				// To restore normal animation after unpausing
+	unpause,			// To restore normal animation after unpausing
+	chat_rgb
 }
 
 #region An enum & ds map for colors, makes it easier to send color IDs across the internet
