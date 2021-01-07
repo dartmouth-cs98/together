@@ -14,14 +14,14 @@ if (show_chat){
 	for (var i = 0; i < chat_size; i++) {
 		draw_set_color(ds_list_find_value(global.chat_color, i));
 		//draw_set_color(c_black);
-		draw_text(100, 225-(16*i), ds_list_find_value(global.chat, i));
+		draw_text(100, 209-(16*i), ds_list_find_value(global.chat, i));
 	}
 
 	if (active) {
 		draw_set_color(c_lime);
-		draw_text(100, 400, "> " + chat_text);
+		draw_text(100, 225, "> " + chat_text);
 	} else {
 		draw_set_color(c_gray);
-		draw_text(100, 400, "> ");
+		draw_text(100, 225, "> ");
 	}
 }
