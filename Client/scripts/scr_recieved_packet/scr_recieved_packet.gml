@@ -145,11 +145,9 @@ function scr_recieved_packet(buffer){
 				var _chat = buffer_read(buffer, buffer_string);
 				ds_list_insert(global.chat, 0, _chat);
 			
-				//var _colorid = buffer_read(buffer, buffer_u8);
 				var _color_1 = buffer_read(buffer, buffer_u8);
 				var _color_2 = buffer_read(buffer, buffer_u8);
 				var _color_3 = buffer_read(buffer, buffer_u8);
-				//ds_list_insert(global.chat_color, 0, ds_map_find_value(color_map, _colorid));
 				ds_list_insert(global.chat_color, 0, make_color_rgb(_color_1, _color_2, _color_3));
 			}
 			#endregion
@@ -191,17 +189,5 @@ function scr_recieved_packet(buffer){
 			#endregion
 			break;
 		
-		/*
-		case network.chat_rgb:
-		
-			#region chat_rgb
-			
-			var rgb_socket = buffer_read(buffer, buffer_u8);
-			var _player = ds_map_find_value(socket_to_instanceid, rgb_socket);
-			_player.chat_color_1 = buffer_read(buffer, buffer_u8);
-			_player.chat_color_2 = buffer_read(buffer, buffer_u8);
-			_player.chat_color_3 = buffer_read(buffer, buffer_u8);
-			#endregion
-		*/
 	}
 }

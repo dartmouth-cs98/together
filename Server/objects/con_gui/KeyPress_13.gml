@@ -20,7 +20,6 @@ if (!active) {
 		buffer_seek(con_server.server_buffer, buffer_seek_start, 0);		// Start from top of buffer
 		buffer_write(con_server.server_buffer, buffer_u8, network.chat);	// Message ID
 		buffer_write(con_server.server_buffer, buffer_string, chat_text);	// Message contents
-		//buffer_write(con_server.server_buffer, buffer_u8, colors.red);		// Message color
 		buffer_write(con_server.server_buffer, buffer_u8, 255);		// Message color	
 		buffer_write(con_server.server_buffer, buffer_u8, 0);		// Message color
 		buffer_write(con_server.server_buffer, buffer_u8, 0);		// Message color
