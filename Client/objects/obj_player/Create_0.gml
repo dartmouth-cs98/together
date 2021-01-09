@@ -65,3 +65,5 @@ draw_set_font(Font1);
 chat_color_1 = 0;
 chat_color_2 = 0;
 chat_color_3 = 0;
+
+scrambled = 0; // int

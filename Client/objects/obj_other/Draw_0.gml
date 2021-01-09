@@ -14,4 +14,38 @@ draw_sprite_part(
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_color(c_white);
-draw_text(x, y-40, username);
+
+if (scrambled == 0){
+	draw_text(x, y-40, username);
+}
+else if (obj_player.scrambled == 1){ // Clone certain letters
+	
+	new_username = "";
+	
+	for (i = 0; i < string_length(username); i++){
+		
+		if (string_char_at(username, i) == "s"){
+			string_insert("ss", new_username, string_length(new_username));
+		}
+		else if (string_char_at(username, i) == "l"){
+			string_insert("ll", new_username, string_length(new_username));
+		}
+		else if (string_char_at(username, i) == "t"){
+			string_insert("tt", new_username, string_length(new_username));
+		}
+		else if (string_char_at(username, i) == "t"){	
+			string_insert("tt", new_username, string_length(new_username));
+		}
+		else{
+			string_insert(string_char_at(username, i), new_username, string_length(new_username));
+		}
+	}
+	
+	draw_text(x, y-40, new_username);
+}
+else if (obj_player.scrambled == 2){ // Cut off name after five characters
+	
+	new_username = string_copy(username, 0, 5);
+	
+	draw_text(x, y-40, new_username);
+}
