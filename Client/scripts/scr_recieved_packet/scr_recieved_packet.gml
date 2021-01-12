@@ -161,6 +161,23 @@ function scr_recieved_packet(buffer){
 			//show_debug_message("Taskbar: " + string(taskbar))
 			#endregion
 			break;
+		
+		case network.duotask:
+			#region task
+			var objectid = buffer_read(buffer, buffer_u32);
+			
+			show_debug_message(objectid);
+			
+			with(obj_player) {
+				show_debug_message(nearestObject);
+				if (nearestObject == objectid) {
+					scr_task_complete(5);
+					script_execute(nearestObject.myscript, nearestObject);
+				}
+			}
+
+			#endregion
+			break;
 
 		case network.pause:
 			#region pause
