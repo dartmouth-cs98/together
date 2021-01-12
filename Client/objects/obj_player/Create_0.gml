@@ -38,6 +38,7 @@ hat = ""; // string
 role = ""; // string
 
 currentNearestObject = obj_interactable; // object
+onObject = obj_interactable; // object
 
 inventory = ds_list_create(); // list
 max_inventory = 3; // int

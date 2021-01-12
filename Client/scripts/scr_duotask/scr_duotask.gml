@@ -7,6 +7,7 @@ function scr_duotask(object){
 				global.minigame_duotask = true;
 				global.any_menu = true;
 				scr_pause();
+				onObject = object;
 				
 				var c = c_dkgray;
 				draw_rectangle_color(0, 0, global.cam_width, global.cam_height, c, c, c, c, false);
@@ -26,7 +27,7 @@ function scr_duotask(object){
 				buttons[1] =	scr_create_button(global.cam_width/2 - _width/2,				global.cam_height/2 - _height/2,						_width, _height, "GO",			scr_duotask_on,				object,			c_green,	_hover_color, _text_color,	_sound);
 																																																																			
 				// Exit passcode																																																															
-				buttons[2] =	scr_create_button(global.cam_width/2 - _offset*2 - _width/2,	global.cam_height/2 - _height/2,				_width, _height, "EXIT",		scr_duotask,				object,			c_orange,	_hover_color, _text_color,	_sound);
+				buttons[2] =	scr_create_button(global.cam_width/2 - _offset*2 - _width/2,	global.cam_height/2 - _height/2,						_width, _height, "EXIT",		scr_duotask,				object,			c_orange,	_hover_color, _text_color,	_sound);
 				
 				#endregion
 
@@ -35,6 +36,7 @@ function scr_duotask(object){
 				global.minigame_duotask = false;
 				global.any_menu = false;
 				
+				onObject = obj_interactable;
 				scr_duotask_off(object);
 				scr_unpause();
 				for (var i = 0; i < array_length_1d(buttons); i++) {

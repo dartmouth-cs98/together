@@ -170,8 +170,8 @@ function scr_recieved_packet(buffer){
 			
 			with(obj_player) {
 				show_debug_message(nearestObject);
-				if (nearestObject == objectid) {
-					scr_task_complete(5);
+				if (onObject == objectid) {
+					scr_task_complete(taskvalue);
 					script_execute(nearestObject.myscript, nearestObject);
 				}
 			}

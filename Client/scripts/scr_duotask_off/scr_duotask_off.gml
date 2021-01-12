@@ -7,7 +7,7 @@ function scr_duotask_off(object){
 	buffer_write(con_client.client_buffer, buffer_u8, network.duotask);	// ID
 
 	buffer_write(con_client.client_buffer, buffer_u32, object);			// Send object id
-	buffer_write(con_client.client_buffer, buffer_u8, -1);				// Send player getting off task
+	buffer_write(con_client.client_buffer, buffer_s8, -1);				// Send player getting off task
 	
 	network_send_packet(con_client.client, con_client.client_buffer, buffer_tell(con_client.client_buffer));
 }
