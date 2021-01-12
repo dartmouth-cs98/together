@@ -13,7 +13,8 @@ enum network {
 	task,				// For handling task bar progress
 	duotask,			// For handling tasks that require two players
 	pause,				// To keep player from animating on other machines
-	unpause				// To restore normal animation after unpausing
+	unpause,			// To restore normal animation after unpausing
+	chat_rgb
 }
 
 #region An enum & ds map for colors, makes it easier to send color IDs across the internet

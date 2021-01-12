@@ -37,3 +37,5 @@ audio_group_load(audiogroup_master);
 with (con_menu) {
 	script_execute(ds_grid[# 2, menu_option[page]], ds_grid[# 3, menu_option[page]], menu_option[page]);	
 }
+
+randomize();

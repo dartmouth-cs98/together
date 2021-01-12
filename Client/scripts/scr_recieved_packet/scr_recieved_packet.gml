@@ -141,11 +141,15 @@ function scr_recieved_packet(buffer){
 			//show_debug_message("RECIEVE: chat: "+string(current_time));
 			
 			// Read chat message, put it in the list.
-			var _chat = buffer_read(buffer, buffer_string);
-			ds_list_insert(global.chat, 0, _chat);
+			if (global.chat != noone){
+				var _chat = buffer_read(buffer, buffer_string);
+				ds_list_insert(global.chat, 0, _chat);
 			
-			var _colorid = buffer_read(buffer, buffer_u8);
-			ds_list_insert(global.chat_color, 0, ds_map_find_value(color_map, _colorid));
+				var _color_1 = buffer_read(buffer, buffer_u8);
+				var _color_2 = buffer_read(buffer, buffer_u8);
+				var _color_3 = buffer_read(buffer, buffer_u8);
+				ds_list_insert(global.chat_color, 0, make_color_rgb(_color_1, _color_2, _color_3));
+			}
 			#endregion
 			break;
       
@@ -203,5 +207,6 @@ function scr_recieved_packet(buffer){
 			
 			#endregion
 			break;
+		
 	}
 }

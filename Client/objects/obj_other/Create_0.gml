@@ -38,3 +38,7 @@ time_since_hands_washed = 0; // double
 mask_on = false; // bool
 
 draw_set_font(Font1);
+
+chat_color_1 = 0;
+chat_color_2 = 0;
+chat_color_3 = 0;
