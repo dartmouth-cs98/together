@@ -163,15 +163,17 @@ function scr_recieved_packet(buffer){
 			break;
 		
 		case network.duotask:
-			#region task
+			#region duotask
 			var objectid = buffer_read(buffer, buffer_u32);
 			
-			show_debug_message(objectid);
-			
 			with(obj_player) {
-				show_debug_message(nearestObject);
+				show_debug_message(onObject);
+				show_debug_message(objectid);
 				if (onObject == objectid) {
-					scr_task_complete(taskvalue);
+					with(objectid) {
+						scr_task_complete(taskvalue);
+					}
+
 					script_execute(nearestObject.myscript, nearestObject);
 				}
 			}

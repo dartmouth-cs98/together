@@ -7,8 +7,9 @@ function scr_duotask(object){
 				global.minigame_duotask = true;
 				global.any_menu = true;
 				scr_pause();
-				onObject = object;
-				
+				with (obj_player) {
+					onObject = object;
+				}
 				var c = c_dkgray;
 				draw_rectangle_color(0, 0, global.cam_width, global.cam_height, c, c, c, c, false);
 				
@@ -36,7 +37,9 @@ function scr_duotask(object){
 				global.minigame_duotask = false;
 				global.any_menu = false;
 				
-				onObject = obj_interactable;
+				with (obj_player) {
+					onObject = obj_interactable;
+				}
 				scr_duotask_off(object);
 				scr_unpause();
 				for (var i = 0; i < array_length_1d(buttons); i++) {

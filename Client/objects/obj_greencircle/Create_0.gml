@@ -4,4 +4,6 @@ object2 = spr_greencircle2;
 
 sentduotask = false;
 
+taskvalue = 5;
+
 myscript = scr_duotask;
