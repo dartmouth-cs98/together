@@ -36,6 +36,17 @@ moving = true; // Boolean, used to determine if the NPC is moving or not
 move_dir = 270; // Int, direction of NPC movement
 
 // Walk in a square
-alarm_set(0, 2 * room_speed);
+// alarm_set(0, 2 * room_speed);
 
 #endregion
+
+ds_list_add(con_npc_controller.npc_list, self);
+
+start_node = instance_nearest(x, y, con_npc_graph_node);
+current_node = start_node;
+
+// ???
+next_node = 0;
+
+x = start_node.x;
+y = start_node.y;

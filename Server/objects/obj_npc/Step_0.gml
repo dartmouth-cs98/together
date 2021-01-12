@@ -1,6 +1,10 @@
 /// @description Move the NPC as appropriate
 
 if (moving) {
+	if (x = next_node.x && y = next_node.y) {
+		
+	}
+	
 	//var move_dir = point_direction(0, 0, h_input, v_input);
 	var move_x = lengthdir_x(walk_speed, move_dir);
 	var move_y = lengthdir_y(walk_speed, move_dir);	

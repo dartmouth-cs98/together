@@ -70,9 +70,9 @@ function scr_network_player_join(_username, _sprite_sheet){
 	
 	#region Send info about NPCs to newly connected player
 	
-	for(var i = 0; i < ds_list_size(con_npc_generator.npc_list); i++) {
+	for(var i = 0; i < ds_list_size(con_npc_controller.npc_list); i++) {
 		
-		var _npc = ds_list_find_value(con_npc_generator.npc_list, i);
+		var _npc = ds_list_find_value(con_npc_controller.npc_list, i);
 		
 		buffer_seek(server_buffer, buffer_seek_start, 0);
 		buffer_write(server_buffer, buffer_u8, network.npc_create);
