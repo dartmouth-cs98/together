@@ -7,3 +7,5 @@ sentduotask = false;
 taskvalue = 5;
 
 myscript = scr_duotask;
+
+buttons = [];

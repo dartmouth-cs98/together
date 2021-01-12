@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_duotask(object){
-	with (con_passcode) {
+	with (obj_greencircle) {
 		if ( !(global.any_menu and !global.minigame_duotask)) {
 			if (!global.minigame_duotask and !global.any_menu) {
 				global.minigame_duotask = true;
