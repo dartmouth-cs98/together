@@ -197,7 +197,7 @@ function scr_recieved_packet(buffer){
 			
 			var unpause_socket = buffer_read(buffer, buffer_u8);
 			var _player = ds_map_find_value(socket_to_instanceid, unpause_socket);
-			_player.image_speed = _player.default_image_speed;
+			//_player.image_speed = _player.default_image_speed;
 			
 			#endregion
 			break;
