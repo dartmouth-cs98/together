@@ -10,7 +10,8 @@ enum network {
 	task,				// For handling task bar progress
 	pause,				// To keep paused players from animating
 	unpause,			// To restore normal animation after pausing
-	chat_rgb
+	revive,
+	update_infection_level
 }
 
 #region An enum & ds map for colors, makes it easier to send color IDs across the internet

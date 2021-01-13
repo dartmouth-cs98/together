@@ -79,7 +79,7 @@ function scr_recieved_packet(buffer, socket){
 			var _chat = buffer_read(buffer, buffer_string);
 			var	_player = ds_map_find_value(socket_to_instanceid, socket);
 			
-			_chat = _player.username + ": " + _chat;					// Append username to show who it's from
+			_chat = _player.username + ":" + _chat;					// Append username to show who it's from
 			ds_list_insert(global.chat, 0, _chat);
 			
 			//TODO: Potential issues here, 32:44 in networking video (https://youtu.be/NbsXRuNijlo) (Could be another one in the series)
@@ -179,6 +179,32 @@ function scr_recieved_packet(buffer, socket){
 			
 			#endregion
 			break;
+		
+		case network.revive:
+			#region revive
 			
+			#endregion
+			break;
+		
+		case network.update_infection_level:
+			#region update_infection_level
+			var _player = ds_map_find_value(socket_to_instanceid, socket);
+			var infection_level = buffer_read(buffer, buffer_u8);
+			// Echo it out
+			for(var i = 0; i < ds_list_size(socket_list); i++) {
+				var recipient_socket = ds_list_find_value(socket_list, i);
+				
+				if (recipient_socket != socket) {
+					buffer_seek(server_buffer, buffer_seek_start, 0);
+					buffer_write(server_buffer, buffer_u8, network.update_infection_level);
+					buffer_write(server_buffer, buffer_u8, socket);			// Socket of the unpausing player
+					buffer_write(server_buffer, buffer_u8, infection_level);
+					network_send_packet(recipient_socket, server_buffer, buffer_tell(server_buffer));
+					//show_debug_message("SEND: unpause: "+string(current_time));
+				}
+			}
+			
+			#endregion
+			break;
 	}
 }

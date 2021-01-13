@@ -2,9 +2,6 @@
 // You can write your code in this editor
 
 username = get_string_async("Please enter a username", "");
-if (string_length(username) > 12){
-	username = string_delete(username, 12, string_length(username) - 12);
-}
 
 // Used so we can pass it on to the game.
 player_sprite = 0;
@@ -39,5 +36,7 @@ audio_group_load(audiogroup_master);
 with (con_menu) {
 	script_execute(ds_grid[# 2, menu_option[page]], ds_grid[# 3, menu_option[page]], menu_option[page]);	
 }
+
+other_count = 0;
 
 randomize();

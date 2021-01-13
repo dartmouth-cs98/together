@@ -53,6 +53,7 @@ function scr_recieved_packet(buffer){
 			_other.username = _username;
 			_other.sprite_sheet = _sprite_sheet;
 			_other.image_index = 0;
+			con_game_manager.other_count++;
 			ds_map_add(socket_to_instanceid, _socket, _other);
 			#endregion
 			break;
@@ -70,6 +71,8 @@ function scr_recieved_packet(buffer){
 			}
 			
 			ds_map_delete(socket_to_instanceid, _socket);
+			
+			con_game_manager.other_count--;
 			#endregion
 			break;
 		
@@ -189,5 +192,20 @@ function scr_recieved_packet(buffer){
 			#endregion
 			break;
 		
+		case network.revive:
+			#region revive
+			
+			#endregion
+			break;
+		
+		case network.update_infection_level:
+			#region update_infection_level
+			var _sock = buffer_read(buffer, buffer_u8);
+			_player = ds_map_find_value(socket_to_instanceid, _sock);
+			var infection_level = buffer_read(buffer, buffer_u8);
+			_player.infection_level = infection_level;
+
+			#endregion
+			break;
 	}
 }

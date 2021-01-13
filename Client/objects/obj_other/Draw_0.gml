@@ -15,7 +15,7 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_color(c_white);
 
-if (scrambled == 0){
+if (obj_player.scrambled == 0){
 	draw_text(x, y-40, username);
 }
 else if (obj_player.scrambled == 1){ // Clone certain letters
@@ -25,20 +25,22 @@ else if (obj_player.scrambled == 1){ // Clone certain letters
 	for (i = 0; i < string_length(username); i++){
 		
 		if (string_char_at(username, i) == "s"){
-			string_insert("ss", new_username, string_length(new_username));
+			new_username = string_insert("ss", new_username, string_length(new_username));
 		}
 		else if (string_char_at(username, i) == "l"){
-			string_insert("ll", new_username, string_length(new_username));
+			new_username = string_insert("ll", new_username, string_length(new_username));
 		}
 		else if (string_char_at(username, i) == "t"){
-			string_insert("tt", new_username, string_length(new_username));
+			new_username = string_insert("tt", new_username, string_length(new_username));
 		}
 		else if (string_char_at(username, i) == "t"){	
-			string_insert("tt", new_username, string_length(new_username));
+			new_username = string_insert("tt", new_username, string_length(new_username));
 		}
 		else{
-			string_insert(string_char_at(username, i), new_username, string_length(new_username));
+			new_username = string_insert(string_char_at(username, i), new_username, string_length(new_username));
 		}
+		
+		show_debug_message(new_username);
 	}
 	
 	draw_text(x, y-40, new_username);

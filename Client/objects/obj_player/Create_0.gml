@@ -29,10 +29,10 @@ anim_speed = 8; // Int, how fast it animates
 
 
 username = ""; // string
-food = 10; // int
-//food_obj = instance_create(0, 0, obj_food);
-water = 10; // int
-infection_level = 0; // int
+food_max = 10; // int
+food = food_max; // int
+water_max = 10; // int
+water = water_max; // int
 player_color = c_black; // string
 hat = ""; // string
 role = ""; // string
@@ -66,4 +66,9 @@ chat_color_1 = 0;
 chat_color_2 = 0;
 chat_color_3 = 0;
 
-scrambled = 0; // int
+infection_level = 3; // int
+slow = false;
+nearsighted = false;
+scrambled = 1; // int
+dehydrated = true;
+alarm[0] = room_speed * 60;
