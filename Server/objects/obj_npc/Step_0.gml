@@ -1,9 +1,27 @@
 /// @description Move the NPC as appropriate
-
 if (moving) {
+	
+	// If we've reached our target node...
 	if (x = next_node.x && y = next_node.y) {
+		prev_node = current_node;
+		current_node = next_node
 		
+		// ...choose next node to go to
+		// Only go back the way you came if that's the only way you can go.
+		if (num_neighbors == 1) {
+			next_node = ds_list_find_value(current_neighbors, 0);
+		} else {
+			next_node = ds_list_find_value(current_node.neighbors, irandom(ds_list_size(current_node.neighbors) - 1));
+			while (next_node == prev_node || next_node == current_node) {
+				next_node = ds_list_find_value(current_node.neighbors, irandom(ds_list_size(current_node.neighbors) - 1));
+			}
+		}
+		
+		ds_list_copy(current_neighbors, current_node.neighbors);
+		num_neighbors = ds_list_size(current_neighbors);
+		move_dir = point_direction(x, y, next_node.x, next_node.y);
 	}
+	
 	
 	//var move_dir = point_direction(0, 0, h_input, v_input);
 	var move_x = lengthdir_x(walk_speed, move_dir);
