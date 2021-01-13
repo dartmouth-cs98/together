@@ -1,35 +1,47 @@
 /// @description Move the NPC as appropriate
 if (moving) {
-	
 	// If we've reached our target node...
-	if (x = next_node.x && y = next_node.y) {
+	//if (x = next_node.x && y = next_node.y) {
+	if (distance_to_object(next_node) <= 3) {
+		
 		prev_node = current_node;
-		current_node = next_node
+		current_node = next_node;
 		
 		// ...choose next node to go to
-		// Only go back the way you came if that's the only way you can go.
+		//next_node = ds_list_find_value(current_node.neighbors, irandom(ds_list_size(current_node.neighbors) - 1));
+		
+		
+		// Only go back to prev_node if that's the only way you can go.
 		if (num_neighbors == 1) {
 			next_node = ds_list_find_value(current_neighbors, 0);
 		} else {
 			next_node = ds_list_find_value(current_node.neighbors, irandom(ds_list_size(current_node.neighbors) - 1));
-			while (next_node == prev_node || next_node == current_node) {
+			while (next_node == prev_node) {
 				next_node = ds_list_find_value(current_node.neighbors, irandom(ds_list_size(current_node.neighbors) - 1));
 			}
 		}
+		
 		
 		ds_list_copy(current_neighbors, current_node.neighbors);
 		num_neighbors = ds_list_size(current_neighbors);
 		move_dir = point_direction(x, y, next_node.x, next_node.y);
 	}
 	
-	
+	/*
 	//var move_dir = point_direction(0, 0, h_input, v_input);
 	var move_x = lengthdir_x(walk_speed, move_dir);
 	var move_y = lengthdir_y(walk_speed, move_dir);	
-					
+	
 	x += move_x;
 	y += move_y;
-						
+	*/
+	
+	if (distance_to_object(next_node) < walk_speed) {
+		move_towards_point(next_node.x, next_node.y, distance_to_object(next_node));
+	} else {
+		move_towards_point(next_node.x, next_node.y, walk_speed);
+	}
+				
 	// Change which direction the NPC sprite is facing
 	switch(move_dir) {
 		case 0:		y_frame = 2; break;	// Right
