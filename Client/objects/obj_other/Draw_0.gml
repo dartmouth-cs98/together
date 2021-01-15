@@ -9,7 +9,7 @@ draw_sprite_part(
 	frame_width,
 	frame_height+7,
 	x - x_offset,
-	y - y_offset);;
+	y - y_offset);
 
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
@@ -33,13 +33,12 @@ else if (obj_player.scrambled == 1){ // Clone certain letters
 		else if (string_char_at(username, i) == "t"){
 			new_username = string_insert("tt", new_username, string_length(new_username));
 		}
-		else if (string_char_at(username, i) == "t"){	
-			new_username = string_insert("tt", new_username, string_length(new_username));
+		else if (string_char_at(username, i) == "r"){	
+			new_username = string_insert("rr", new_username, string_length(new_username));
 		}
 		else{
 			new_username = string_insert(string_char_at(username, i), new_username, string_length(new_username));
 		}
-		
 		show_debug_message(new_username);
 	}
 	
@@ -48,6 +47,5 @@ else if (obj_player.scrambled == 1){ // Clone certain letters
 else if (obj_player.scrambled == 2){ // Cut off name after five characters
 	
 	new_username = string_copy(username, 0, 5);
-	
 	draw_text(x, y-40, new_username);
 }

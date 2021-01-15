@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "common abilities",
-    "path": "folders/Scripts/common abilities.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_anyone_set_infection",
+  "name": "scr_update_infection_level",
   "tags": [],
   "resourceType": "GMScript",
 }

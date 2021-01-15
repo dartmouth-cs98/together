@@ -73,6 +73,7 @@ for (i = 0; i < con_game_manager.other_count; i++){
 		if (infection_level_other == 6 and irandom(3) == 0) infection_level = 3;
 	}
 }
+scr_update_infection_level(infection_level);
 
 #endregion
 
