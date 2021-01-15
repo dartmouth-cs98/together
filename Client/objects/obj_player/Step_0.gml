@@ -43,6 +43,7 @@ network_send_packet(con_client.client, con_client.client_buffer, buffer_tell(con
 #endregion
 
 #region Manage contagion checks
+DTO = 0;
 for (i = 0; i < con_game_manager.other_count; i++){
 	var other_player = instance_find(obj_other, i);
 	DTO = distance_to_object(other_player)
@@ -74,6 +75,8 @@ for (i = 0; i < con_game_manager.other_count; i++){
 	}
 }
 scr_update_infection_level(infection_level);
+
+show_debug_message(DTO);
 
 #endregion
 

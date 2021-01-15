@@ -202,15 +202,12 @@ function scr_recieved_packet(buffer){
 			#region update_infection_level
 			var _sock = buffer_read(buffer, buffer_u8);
 			var _other = ds_map_find_value(socket_to_instanceid, _sock);
-			show_debug_message("Other.username" + _other.username);
-			var infection_level = buffer_read(buffer, buffer_u8);
-			show_debug_message("receive infect level: " + string(infection_level));
-			_other.infection_level = infection_level;
-
-			show_debug_message("updated other infection level: " + string(_other.infection_level));
+			if (!is_undefined(_other)){
+				var infection_level = buffer_read(buffer, buffer_u8);
+				_other.infection_level = infection_level;
+			}
 			
 			#endregion
 			break;
-		
 	}
 }

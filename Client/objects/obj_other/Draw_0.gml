@@ -39,7 +39,7 @@ else if (obj_player.scrambled == 1){ // Clone certain letters
 		else{
 			new_username = string_insert(string_char_at(username, i), new_username, string_length(new_username));
 		}
-		show_debug_message(new_username);
+		//show_debug_message(new_username);
 	}
 	
 	draw_text(x, y-40, new_username);
