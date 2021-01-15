@@ -4,7 +4,7 @@
 sprite_sheet = spr_skeleton_pink_sheet;
 
 // int [POSSIBLY UNNEEDED]
-default_walk_speed = 4;
+default_walk_speed = 3;
 walk_speed = default_walk_speed;
 
 // Int, gaps at the top and left of the sprite sheet
@@ -32,12 +32,14 @@ anim_speed = 8; // Int, how fast it animates [POSSIBLY UNNEEDED]
 
 #region control movement
 
+randomize(); // Ensures that random movement is different each game
+
 moving = true; // Boolean, used to determine if the NPC is moving or not
 
 // Walk in a square
 // alarm_set(0, 2 * room_speed);
 
-ds_list_add(con_npc_controller.npc_list, self);
+//ds_list_add(con_npc_controller.npc_list, self.id);
 
 // IDs of the node the NPC started at, the node it's currently at, the node it was at last, and the node it's going to next
 // start_node variable may not be needed

@@ -69,6 +69,6 @@ These types and their respective IDs are defined in the enum `network`. This enu
 ### `npc_move`
 * ID: 9
 * Protocol
-    * The `obj_npc` step event onthe server determines how the npc will move and broadcasts that information to all players. Format: `<ID, npc_ID, move_x, move_y, x_frame, y_frame>`
+    * The `obj_npc` step event on the server determines how the npc will move and broadcasts that information to all players. Format: `<ID, npc_ID, move_x, move_y, x_frame, y_frame>`
         * *Note: x_frame & y_frame determine what part of the sprite sheet to draw*
     * The client reiceves this and directly updates this information in its `obj_npc` instances. No response.

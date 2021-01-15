@@ -69,14 +69,14 @@ function scr_network_player_join(_username, _sprite_sheet){
 	#endregion
 	
 	#region Send info about NPCs to newly connected player
-	
+	show_debug_message("# NPCs = " + string(ds_list_size(con_npc_controller.npc_list)));
 	for(var i = 0; i < ds_list_size(con_npc_controller.npc_list); i++) {
 		
 		var _npc = ds_list_find_value(con_npc_controller.npc_list, i);
 		
 		buffer_seek(server_buffer, buffer_seek_start, 0);
 		buffer_write(server_buffer, buffer_u8, network.npc_create);
-		buffer_write(server_buffer, buffer_u8, _npc);
+		buffer_write(server_buffer, buffer_u32, _npc.id);
 		buffer_write(server_buffer, buffer_u16, _npc.x);
 		buffer_write(server_buffer, buffer_u16, _npc.y);
 		buffer_write(server_buffer, buffer_u8, 45/*_npc.sprite_sheet*/);

@@ -2,6 +2,12 @@
 
 npc_list = ds_list_create();
 
+for (var i = 1; i <= 5; i++) {
+	ds_list_add(npc_list, instance_create_layer(100*i, 100*i, "Instances", obj_npc));
+}
+
+/*
 ds_list_add(npc_list, instance_create_layer(100, 100, "Instances", obj_npc));
 ds_list_add(npc_list, instance_create_layer(200, 200, "Instances", obj_npc));
 ds_list_add(npc_list, instance_create_layer(300, 300, "Instances", obj_npc));
+*/
