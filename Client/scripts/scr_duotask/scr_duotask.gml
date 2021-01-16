@@ -1,3 +1,4 @@
+				// Exit passcode																																																																			buttons[2] =	scr_create_button(global.cam_width/2 - _offset*2 - _width/2,	global.cam_height/2 - _height/2,						_width,
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_duotask(object){
@@ -48,4 +49,5 @@ function scr_duotask(object){
 			}
 		}
 	}
+>>>>>>> 80eaeb431081267ba0e3b6ba5ce637d22029e4ba
 }
