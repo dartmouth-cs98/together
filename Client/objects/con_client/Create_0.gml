@@ -15,8 +15,8 @@ enum network {
 	unpause,				// To restore normal animation after unpausing
 	revive,					// To restore a fallen player to health
 	update_infection_level, // To keep all players apprised of each other's infection level
-
 	duotask					// For handling tasks that require two players
+}
 
 #region An enum & ds map for colors, makes it easier to send color IDs across the internet
 enum colors {
