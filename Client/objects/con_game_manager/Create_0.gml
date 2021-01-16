@@ -28,6 +28,7 @@ global.any_menu = false;
 // Variables for which menu to open
 global.pause_menu = false;
 global.minigame_passcode = false;
+global.minigame_duotask = false;
 
 audio_group_load(audiogroup_music);
 audio_group_load(audiogroup_soundeffects);

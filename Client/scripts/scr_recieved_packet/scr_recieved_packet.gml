@@ -209,5 +209,24 @@ function scr_recieved_packet(buffer){
 			
 			#endregion
 			break;
+			
+		case network.duotask:
+			#region duotask
+			var objectid = buffer_read(buffer, buffer_u32);
+			
+			with(obj_player) {
+				show_debug_message(onObject);
+				show_debug_message(objectid);
+				if (onObject == objectid) {
+					with(objectid) {
+						scr_task_complete(taskvalue);
+					}
+
+					script_execute(nearestObject.myscript, nearestObject);
+				}
+			}
+
+			#endregion
+			break;
 	}
 }
