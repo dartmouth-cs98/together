@@ -4,17 +4,18 @@
 // Enums: network.player_establish = 0, because move is at index 0 of this enumerator.
 // Server should have same enum.
 enum network {
-	player_establish,	// 
-	player_connect,		// For managing a player connecting
-	player_joined,		// For when another player joins
-	player_disconnect,	// For removing a player when they disconnect
-	move,				// For when a player moves
-	chat,				// For handling chat messages being sent
-	task,				// For handling task bar progress
-	pause,				// To keep player from animating on other machines
-	unpause,			// To restore normal animation after unpausing
-	revive,
-	update_infection_level
+	player_establish,		// 
+	player_connect,			// For managing a player connecting
+	player_joined,			// For when another player joins
+	player_disconnect,		// For removing a player when they disconnect
+	move,					// For when a player moves
+	chat,					// For handling chat messages being sent
+	task,					// For handling task bar progress
+	pause,					// To keep player from animating on other machines
+	unpause,				// To restore normal animation after unpausing
+	revive,					// To restore a fallen player to health
+	update_infection_level, // To keep all players apprised of each other's infection level
+	duotask					// For handling tasks that require two players
 }
 
 #region An enum & ds map for colors, makes it easier to send color IDs across the internet
