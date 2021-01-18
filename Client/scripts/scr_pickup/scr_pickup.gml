@@ -6,9 +6,9 @@ function scr_pickup(object){
 		if(ds_list_size(inventory) < max_inventory){
 			ds_list_add(inventory, object.object_index);
 		} else {
-			show_message("You're inventory is full!");
+			scr_create_text("You're inventory is full!");
 		}
 	} else {
-		show_message("You already have one!");
+		scr_create_text("You already have one!");
 	}
 }

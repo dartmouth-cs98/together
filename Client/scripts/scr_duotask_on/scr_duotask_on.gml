@@ -14,6 +14,6 @@ function scr_duotask_on(object){
 	
 		network_send_packet(con_client.client, con_client.client_buffer, buffer_tell(con_client.client_buffer));
 	} else {
-		show_message("Waiting for other player")
+		scr_create_text("Waiting for other player")
 	}
 }
