@@ -8,10 +8,9 @@ function scr_collect(object){
 		if(object_get_name(key)==object.collects){
 			ds_list_delete(inventory, i);
 			scr_task_complete(10);
-			show_message("Delivery successful!");
+			scr_create_text("Delivery successful!");
 			exit;
 		}
 	}
-	//show_message("You do not have object: " + string(object.collects) + "!");
-	show_message("You don't have any apples in your inventory! See if you can find all 5.");
+	scr_create_text("You don't have any apples in your inventory! See if you can find all 5.");
 }
