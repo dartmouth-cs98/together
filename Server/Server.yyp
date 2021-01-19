@@ -29,6 +29,7 @@
     {"id":{"name":"spr_ur_strip4","path":"sprites/spr_ur_strip4/spr_ur_strip4.yy",},"order":7,},
     {"id":{"name":"scr_network_player_join","path":"scripts/scr_network_player_join/scr_network_player_join.yy",},"order":1,},
     {"id":{"name":"spr_shirt_green_sheet","path":"sprites/spr_shirt_green_sheet/spr_shirt_green_sheet.yy",},"order":18,},
+    {"id":{"name":"scr_bellman_ford","path":"scripts/scr_bellman_ford/scr_bellman_ford.yy",},"order":2,},
     {"id":{"name":"spr_purple_blond_sheet","path":"sprites/spr_purple_blond_sheet/spr_purple_blond_sheet.yy",},"order":15,},
     {"id":{"name":"spr_l_strip4","path":"sprites/spr_l_strip4/spr_l_strip4.yy",},"order":3,},
     {"id":{"name":"con_gui","path":"objects/con_gui/con_gui.yy",},"order":0,},

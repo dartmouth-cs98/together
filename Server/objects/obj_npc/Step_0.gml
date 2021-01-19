@@ -1,5 +1,6 @@
 /// @description Move the NPC as appropriate
 if (moving) {
+	
 	// If we've reached our target node...
 	//if (x = next_node.x && y = next_node.y) {
 	if (distance_to_object(next_node) <= 3) {
@@ -7,8 +8,37 @@ if (moving) {
 		prev_node = current_node;
 		current_node = next_node;
 		
+		#region Random walk
 		// ...choose next node to go to
-		next_node = ds_list_find_value(current_node.neighbors, irandom(ds_list_size(current_node.neighbors) - 1));
+		if (mode = npc_mode.random_walk) {
+			next_node = ds_list_find_value(current_node.neighbors, irandom(ds_list_size(current_node.neighbors) - 1));
+		}
+		#endregion
+		
+		#region Random target BFS
+		else if (mode = npc_mode.random_target_bfs) {
+			if (ds_list_size(path) > 0) {
+				next_node = ds_list_find_value(path, 0);
+				ds_list_delete(path, 0);
+			} else {
+				show_debug_message("=========================================================");
+				show_debug_message("NPC " + string(self.id) + " has finished its bellman-ford path!");
+				show_debug_message("Final Coordinates: " + string(x) + "," + string(y));
+				show_debug_message("=========================================================");
+				moving = false;
+				speed = 0;
+			}
+		}
+		#endregion
+		
+		#region mode not recognized
+		else {
+			show_debug_message("=========================================================");
+			show_debug_message("NPC ERROR: mode not recognized in step event");
+			show_debug_message("mode = " + string(mode));
+			show_debug_message("=========================================================");
+		}
+		#endregion
 		
 		/*
 		// This code causes a freeze, unknown why
@@ -43,6 +73,7 @@ if (moving) {
 	move_towards_point(next_node.x, next_node.y, dist);
 	var move_x = lengthdir_x(dist, move_dir);
 	var move_y = lengthdir_y(dist, move_dir);	
+	show_debug_message("NPC " + string(id) + " moved");
 	
 	#region Change which direction the NPC sprite is facing
 	if (move_dir < 0) {
@@ -104,7 +135,6 @@ if (moving) {
 	// Progress the walk animation
 	x_frame += anim_speed/room_speed;
 	if (x_frame >= anim_length) { x_frame = 0; }
-	
 	// Broadcast movement to all players
 	for(var i = 0; i < ds_list_size(con_server.socket_list); i++) {
 				
@@ -118,18 +148,9 @@ if (moving) {
 		buffer_write(con_server.server_buffer, buffer_f32, move_y);				// Y movement
 		buffer_write(con_server.server_buffer, buffer_f32, x_frame);				// Where along the walk animation should the npc be?
 		buffer_write(con_server.server_buffer, buffer_f32, y_frame);				// Which direction should the npc face?
-		/*
-		show_debug_message("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		show_debug_message("Values at time " + string(current_time));
-		show_debug_message("ID" + string(self.id));
-		show_debug_message("move_x" + string(move_x));
-		show_debug_message("move_y" + string(move_y));
-		show_debug_message("x_frame" + string(x_frame));
-		show_debug_message("y_frame" + string(y_frame));
-		show_debug_message("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		*/
+		
 		network_send_packet(_sock, con_server.server_buffer, buffer_tell(con_server.server_buffer));
-		//show_debug_message("SEND: npc_move: "+string(current_time));
+		show_debug_message("SEND: npc_move: "+string(current_time));
 	}
 	
 } else {

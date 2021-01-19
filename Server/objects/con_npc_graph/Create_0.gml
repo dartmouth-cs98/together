@@ -1,7 +1,7 @@
 /// @description Graph that represents NPC-walkable areas. Controls where they can move.
 
 node_list = ds_list_create();
-
+edge_list = ds_list_create();
 
 #region Node setup: 3 x 3 grid
 /*
@@ -87,87 +87,143 @@ ds_list_add(node_list,	P, Q, R,
 						V, W, X);
 #endregion
 
-#region Set up neighbors
+#region Set up neighbors & edges
 
 ds_list_add(A.neighbors, B);
 ds_list_add(A.neighbors, G);
+ds_list_add(edge_list, [A, B]);
+ds_list_add(edge_list, [A, G]);
 
 ds_list_add(B.neighbors, A);
 ds_list_add(B.neighbors, H);
 ds_list_add(B.neighbors, C);
+ds_list_add(edge_list, [B, A]);
+ds_list_add(edge_list, [B, H]);
+ds_list_add(edge_list, [B, C]);
 
 ds_list_add(C.neighbors, B);
 ds_list_add(C.neighbors, D);
+ds_list_add(edge_list, [C, B]);
+ds_list_add(edge_list, [C, D]);
 
 ds_list_add(D.neighbors, C);
 ds_list_add(D.neighbors, E);
 ds_list_add(D.neighbors, I);
+ds_list_add(edge_list, [D, C]);
+ds_list_add(edge_list, [D, E]);
+ds_list_add(edge_list, [D, I]);
 
 ds_list_add(E.neighbors, D);
 ds_list_add(E.neighbors, N);
+ds_list_add(edge_list, [E, D]);
+ds_list_add(edge_list, [E, N]);
 
 ds_list_add(F.neighbors, O);
+ds_list_add(edge_list, [F, O]);
 
 ds_list_add(G.neighbors, A);
 ds_list_add(G.neighbors, H);
+ds_list_add(edge_list, [G, A]);
+ds_list_add(edge_list, [G, H]);
 
 ds_list_add(H.neighbors, I);
 ds_list_add(H.neighbors, B);
 ds_list_add(H.neighbors, G);
 ds_list_add(H.neighbors, L);
+ds_list_add(edge_list, [H, I]);
+ds_list_add(edge_list, [H, B]);
+ds_list_add(edge_list, [H, G]);
+ds_list_add(edge_list, [H, L]);
 
 ds_list_add(I.neighbors, H);
 ds_list_add(I.neighbors, D);
 ds_list_add(I.neighbors, M);
+ds_list_add(edge_list, [I, H]);
+ds_list_add(edge_list, [I, D]);
+ds_list_add(edge_list, [I, M]);
 
 ds_list_add(J.neighbors, K);
+ds_list_add(edge_list, [J, K]);
 
 ds_list_add(K.neighbors, Q);
 ds_list_add(K.neighbors, J);
 ds_list_add(K.neighbors, L);
+ds_list_add(edge_list, [K, Q]);
+ds_list_add(edge_list, [K, J]);
+ds_list_add(edge_list, [K, L]);
 
 ds_list_add(L.neighbors, K);
 ds_list_add(L.neighbors, H);
 ds_list_add(L.neighbors, M);
+ds_list_add(edge_list, [L, K]);
+ds_list_add(edge_list, [L, H]);
+ds_list_add(edge_list, [L, M]);
 
 ds_list_add(M.neighbors, L);
 ds_list_add(M.neighbors, I);
 ds_list_add(M.neighbors, N);
+ds_list_add(edge_list, [M, L]);
+ds_list_add(edge_list, [M, I]);
+ds_list_add(edge_list, [M, N]);
 
 ds_list_add(N.neighbors, M);
 ds_list_add(N.neighbors, E);
 ds_list_add(N.neighbors, R);
+ds_list_add(edge_list, [N, M]);
+ds_list_add(edge_list, [N, E]);
+ds_list_add(edge_list, [N, R]);
 
 ds_list_add(O.neighbors, F);
 ds_list_add(O.neighbors, P);
 ds_list_add(O.neighbors, S);
+ds_list_add(edge_list, [O, F]);
+ds_list_add(edge_list, [O, P]);
+ds_list_add(edge_list, [O, S]);
 
 ds_list_add(P.neighbors, O);
 ds_list_add(P.neighbors, T);
+ds_list_add(edge_list, [P, O]);
+ds_list_add(edge_list, [P, T]);
 
 ds_list_add(Q.neighbors, K);
 ds_list_add(Q.neighbors, V);
+ds_list_add(edge_list, [Q, K]);
+ds_list_add(edge_list, [Q, V]);
 
 ds_list_add(R.neighbors, N);
 ds_list_add(R.neighbors, S);
+ds_list_add(edge_list, [R, N]);
+ds_list_add(edge_list, [R, S]);
 
 ds_list_add(S.neighbors, R);
 ds_list_add(S.neighbors, O);
 ds_list_add(S.neighbors, T);
+ds_list_add(edge_list, [S, R]);
+ds_list_add(edge_list, [S, O]);
+ds_list_add(edge_list, [S, T]);
 
 ds_list_add(T.neighbors, S);
 ds_list_add(T.neighbors, P);
 ds_list_add(T.neighbors, U);
+ds_list_add(edge_list, [T, S]);
+ds_list_add(edge_list, [T, P]);
+ds_list_add(edge_list, [T, U]);
 
 ds_list_add(U.neighbors, T);
+ds_list_add(edge_list, [U, T]);
 
 ds_list_add(V.neighbors, Q);
 ds_list_add(V.neighbors, W);
+ds_list_add(edge_list, [V, Q]);
+ds_list_add(edge_list, [V, W]);
 
 ds_list_add(W.neighbors, V);
 ds_list_add(W.neighbors, X);
+ds_list_add(edge_list, [W, V]);
+ds_list_add(edge_list, [W, X]);
 
 ds_list_add(X.neighbors, W);
+ds_list_add(edge_list, [X, W]);
 
 #endregion
 
