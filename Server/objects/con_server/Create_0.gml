@@ -81,3 +81,15 @@ socket_to_instanceid = ds_map_create();
 
 player_spawn_x = 0;
 player_spawn_y = 0;
+
+available_roles = ds_list_create();
+ds_list_add(available_roles, "Doctor");
+ds_list_add(available_roles, "Farmer");
+ds_list_add(available_roles, "Engineer");
+ds_list_add(available_roles, "Shopkeeper");
+ds_list_add(available_roles, "Taxi Driver");
+ds_list_add(available_roles, "Post Officer");
+ds_list_add(available_roles, "Mayor");
+ds_list_add(available_roles, "Philanthropist");
+ds_list_add(available_roles, "Jack of All Trades");
+ds_list_add(available_roles, "Scientist");

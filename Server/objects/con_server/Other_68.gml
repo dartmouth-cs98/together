@@ -9,7 +9,6 @@ switch(type_event) {
 		// When you get a connect message, add the client to the list
 		socket = ds_map_find_value(async_load, "socket");
 		ds_list_add(socket_list, socket);
-		
 		buffer_seek(server_buffer, buffer_seek_start, 0);
 		buffer_write(server_buffer, buffer_u8, network.player_establish);
 		buffer_write(server_buffer, buffer_u8, socket);

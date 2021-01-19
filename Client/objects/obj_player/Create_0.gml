@@ -29,10 +29,6 @@ anim_speed = 8; // Int, how fast it animates
 
 
 username = ""; // string
-food_max = 10; // int
-food = food_max; // int
-water_max = 10; // int
-water = water_max; // int
 player_color = c_black; // string
 hat = ""; // string
 role = ""; // string
@@ -53,6 +49,20 @@ taskbar_y = 10;  // int
 taskbar_max = 100; // int
 taskbar_width = 118;  // int
 taskbar_height = 22; // int
+
+food_bar_x = 10; // int
+food_bar_y = 40; // int
+food_bar_width = 118; // int
+food_bar_height = 22; // int
+food_max = 10; // int
+food = food_max; // int
+
+water_bar_x = 10; // int
+water_bar_y = 70; // int
+water_bar_width = 118; // int
+water_bar_height = 22; // int
+water_max = 10; // int
+water = water_max; // int
 
 x = 0;
 y = 0;

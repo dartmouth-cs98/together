@@ -31,8 +31,10 @@ function scr_recieved_packet(buffer){
 			var _y = buffer_read(buffer, buffer_u16);
 			var _username = buffer_read(buffer, buffer_string);
 			var _player = instance_create_depth(_x, _y, depth, obj_player);
+			var _role = buffer_read(buffer, buffer_string);
 			_player.socket = _socket;
 			_player.username = _username;
+			_player.role = _role;
 			_player.image_index = 0;
 			
 			ds_map_add(socket_to_instanceid, _socket, _player);
@@ -48,10 +50,12 @@ function scr_recieved_packet(buffer){
 			var _y = buffer_read(buffer, buffer_u16);
 			var _username = buffer_read(buffer, buffer_string);
 			var _sprite_sheet = buffer_read(buffer, buffer_u8);
+			var _role = buffer_read(buffer, buffer_string);
 			var _other = instance_create_depth(_x, _y, depth, obj_other);
 			_other.socket = _socket;
 			_other.username = _username;
 			_other.sprite_sheet = _sprite_sheet;
+			_other.role = _role;
 			_other.image_index = 0;
 			con_game_manager.other_count++;
 			ds_map_add(socket_to_instanceid, _socket, _other);
