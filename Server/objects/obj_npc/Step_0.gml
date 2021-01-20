@@ -4,14 +4,21 @@ if (moving) {
 	// If we've reached our target node...
 	//if (x = next_node.x && y = next_node.y) {
 	if (distance_to_object(next_node) <= 3) {
-		
+		var old_prev_node = prev_node;
 		prev_node = current_node;
 		current_node = next_node;
 		
 		#region Random walk
-		// ...choose next node to go to
+		// ...choose next node to go to.
 		if (mode = npc_mode.random_walk) {
 			next_node = ds_list_find_value(current_node.neighbors, irandom(ds_list_size(current_node.neighbors) - 1));
+			// If you have multiple neighbors...
+			if (ds_list_size(current_node.neighbors) > 1) {
+				// ...don't go back to the one you just came from.
+				while (next_node == prev_node) {
+					next_node = ds_list_find_value(current_node.neighbors, irandom(ds_list_size(current_node.neighbors) - 1));
+				}
+			}
 		}
 		#endregion
 		
@@ -72,8 +79,7 @@ if (moving) {
 	}
 	move_towards_point(next_node.x, next_node.y, dist);
 	var move_x = lengthdir_x(dist, move_dir);
-	var move_y = lengthdir_y(dist, move_dir);	
-	show_debug_message("NPC " + string(id) + " moved");
+	var move_y = lengthdir_y(dist, move_dir);
 	
 	#region Change which direction the NPC sprite is facing
 	if (move_dir < 0) {

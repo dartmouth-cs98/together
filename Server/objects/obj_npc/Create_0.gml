@@ -41,7 +41,7 @@ enum npc_mode {
 	random_target_bfs
 }
 
-mode = npc_mode.random_target_bfs;
+
 
 // Walk in a square
 // alarm_set(0, 2 * room_speed);
@@ -57,6 +57,8 @@ next_node = noone;
 target_node = noone;
 path = noone;
 
+mode = npc_mode.random_walk;
+
 if (mode == npc_mode.random_walk) {
 	// Determine random next node
 	while (next_node == noone || next_node == current_node) {
@@ -71,102 +73,7 @@ else if (mode == npc_mode.random_target_bfs) {
 	next_node = ds_list_find_value(path, 0);
 	ds_list_delete(path, 0);
 	
-	#region TEMP pseudocode for bellman-ford
-	/*
-	Algorithm:
 	
-	target_node = random node from con_npc_graph
-	scr_node_search(self, con_npc_graph, current_node, target_node)
-	
-	Bellman-Ford Script:
-	scr_bellman_ford(npc, graph, start_node, target_node) {
-		distance = []
-		predecessor = []
-		
-		for each node in graph.node_list {
-			distance[index] = 2147483647 // max int
-			predecessor[index] = noone
-		}
-		
-		distance[start_node] = 0
-		
-		repeat(# of nodes - 1) {
-			for each neighbor of node (index) {
-				if (distance[neighbor] + distance_between(node, neighbor) < distance[node]) {
-					distance[node] = distance[neighbor] + distance_between(node, neighbor)
-					predecessor[node] = neighbor
-				}
-			}
-		}
-		
-		// Reconstruct path back from target node
-		current_node = target_node
-		path = []
-		path.add(current_node)
-		while (current_node != start_node) {
-			current_node = predecessor[current_node]
-			path.add(current_node)
-		}
-	}
-	
-	///////////////////////////
-	PSEUDOCODE
-	function BellmanFord(list vertices, list edges, vertex source) is
-
-    // This implementation takes in a graph, represented as
-    // lists of vertices (represented as integers [0..n-1]) and edges,
-    // and fills two arrays (distance and predecessor) holding
-    // the shortest path from the source to each vertex
-
-    distance := list of size n
-    predecessor := list of size n
-
-    // Step 1: initialize graph
-    for each vertex v in vertices do
-        distance[v] := inf             // Initialize the distance to all vertices to infinity
-        predecessor[v] := null         // And having a null predecessor
-    
-    distance[source] := 0              // The distance from the source to itself is, of course, zero
-
-    // Step 2: relax edges repeatedly
-    repeat |V|−1 times:
-        for each edge (u, v) with weight w in edges do
-            if distance[u] + w < distance[v] then
-                distance[v] := distance[u] + w
-                predecessor[v] := u
-
-    // Step 3: check for negative-weight cycles
-    for each edge (u, v) with weight w in edges do
-        if distance[u] + w < distance[v] then
-            error "Graph contains a negative-weight cycle"
-
-    return distance, predecessor
-	///////////////////////////
-	
-	BFSScript:
-	scr_node_bfs (npc, graph, start_node, target_node) {
-		current_node = noone;
-		frontier = a_queue
-		frontier.add(start_node)
-		
-		path = []
-		explored = []
-		
-		while (frontier.size > 0) {
-			current = fronteir.pop
-			explored.add(current)
-			for each node in current.neighbors {
-				next = node_from_loop
-				if (next isn't in fronteir or explored) {
-					if (next == target)
-					frontier.add(next);
-				}
-			}
-		}
-	}
-	
-	*/
-	#endregion
 } else {
 	show_debug_message("=========================================================");
 	show_debug_message("NPC ERROR: mode not recognized in create event");
