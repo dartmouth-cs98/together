@@ -24,8 +24,8 @@ if (moving) {
 		#region Random target BFS
 		else if (mode = npc_mode.random_target_bfs) {
 			if (ds_list_size(path) > 0) {
-				next_node = ds_list_find_value(path, ds_list_size(path) - 1);
-				ds_list_delete(path, ds_list_size(path) - 1);
+				next_node = ds_list_find_value(path, 0);
+				ds_list_delete(path, 0);
 			} else {
 				show_debug_message("=========================================================");
 				show_debug_message("NPC " + string(self.id) + " has finished its bellman-ford path!");

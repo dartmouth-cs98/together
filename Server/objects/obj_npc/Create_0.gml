@@ -73,8 +73,8 @@ else if (mode == npc_mode.random_target_bfs) {
 	// TEMP: Set target to a specific node to see if bellman-ford is working
 	target_node = ds_list_find_value(con_npc_graph.node_list, 23);
 	path = scr_bellman_ford(start_node, target_node);
-	next_node = ds_list_find_value(path, ds_list_size(path) - 1);
-	ds_list_delete(path, ds_list_size(path) - 1);
+	next_node = ds_list_find_value(path, 0);
+	ds_list_delete(path, 0);
 	
 	
 } else {

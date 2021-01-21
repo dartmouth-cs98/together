@@ -49,7 +49,8 @@ function scr_bellman_ford(start_node, target_node){
 		// 4. ???
 		// 5. Profit
 		current_node = ds_list_find_value(predecessor, ds_list_find_index(con_npc_graph.node_list, current_node));
-		ds_list_add(path, current_node);
+		ds_list_insert(path, 0, current_node);
+		//ds_list_add(path, current_node);
 	}
 	ds_list_destroy(distance);
 	ds_list_destroy(predecessor);
