@@ -40,4 +40,28 @@ with (con_menu) {
 
 other_count = 0;
 
-randomize();
+/*
+role_to_sprite_map = ds_map_create();
+ds_map_add(role_to_sprite_map, "Doctor", spr_doctor);
+ds_map_add(role_to_sprite_map, "Farmer", spr_farmer);
+ds_map_add(role_to_sprite_map, "Post Officer", spr_mail_carrier);
+ds_map_add(role_to_sprite_map, "Taxi Driver", spr_taxi_driver);
+ds_map_add(role_to_sprite_map, "Shopkeeper", spr_shopkeeper);
+ds_map_add(role_to_sprite_map, "Jack of All Trades", spr_jack_of_all_trades);
+ds_map_add(role_to_sprite_map, "Mayor", spr_mayor);
+ds_map_add(role_to_sprite_map, "Philanthropist", spr_philanthropist);
+ds_map_add(role_to_sprite_map, "Engineer", spr_engineer);
+ds_map_add(role_to_sprite_map, "Scientist", spr_scientist);
+
+role_to_ability_icon_map = ds_map_create();
+ds_map_add(role_to_sprite_map, "Doctor", spr_doctor_ability);
+ds_map_add(role_to_sprite_map, "Farmer", spr_farmer_ability);
+ds_map_add(role_to_sprite_map, "Post Officer", spr_post_officer_ability);
+ds_map_add(role_to_sprite_map, "Taxi Driver", spr_taxi_driver_ability);
+ds_map_add(role_to_sprite_map, "Shopkeeper", spr_shopkeeper_ability);
+ds_map_add(role_to_sprite_map, "Jack of All Trades", spr_jack_of_all_trades_ability);
+ds_map_add(role_to_sprite_map, "Mayor", spr_mayor_ability);
+ds_map_add(role_to_sprite_map, "Philanthropist", spr_philanthropist_ability);
+ds_map_add(role_to_sprite_map, "Engineer", spr_engineer_ability);
+ds_map_add(role_to_sprite_map, "Scientist", spr_scientist_ability);
+*/

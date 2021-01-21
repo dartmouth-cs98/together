@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"1069842f-e484-454a-b824-d8c1402c2a55","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "UI",
-    "path": "folders/Sprites/UI.yy",
+    "name": "Progress Bars",
+    "path": "folders/Sprites/UI/Progress Bars.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_water_bar",
