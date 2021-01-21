@@ -8,6 +8,7 @@ enum network {
 	player_connect,			// For managing a player connecting
 	player_joined,			// For when another player joins
 	player_disconnect,		// For removing a player when they disconnect
+	player_denied,			// For when tpp many players try to join
 	move,					// For when a player moves
 	chat,					// For handling chat messages being sent
 	task,					// For handling task bar progress

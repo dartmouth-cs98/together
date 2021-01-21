@@ -5,6 +5,7 @@ enum network {
 	player_connect,			// For managing a player connecting
 	player_joined,			// For when another player joins
 	player_disconnect,		// For removing a player when they disconnect
+	player_denied,			// For when too many players join
 	move,					// For when a player moves
 	chat,					// For handling chat messages being sent
 	task,					// For handling task bar progress
@@ -81,6 +82,9 @@ socket_to_instanceid = ds_map_create();
 
 player_spawn_x = 0;
 player_spawn_y = 0;
+
+max_player_number = 10;
+current_player_number = 0;
 
 available_roles = ds_list_create();
 ds_list_add(available_roles, "Doctor");

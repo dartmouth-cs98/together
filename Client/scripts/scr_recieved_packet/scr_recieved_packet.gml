@@ -80,6 +80,15 @@ function scr_recieved_packet(buffer){
 			#endregion
 			break;
 		
+		case network.player_denied:
+		
+			#region player_denied
+			room_goto(rm_main_menu);
+			
+			#endregion
+			break;
+			
+		
 		case network.move: 
 			#region move
 			//show_debug_message("RECIEVE: move: "+string(current_time));
@@ -232,5 +241,6 @@ function scr_recieved_packet(buffer){
 
 			#endregion
 			break;
+		
 	}
 }

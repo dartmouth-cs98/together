@@ -8,12 +8,21 @@ switch(type_event) {
 	case network_type_connect:
 		// When you get a connect message, add the client to the list
 		socket = ds_map_find_value(async_load, "socket");
-		ds_list_add(socket_list, socket);
-		buffer_seek(server_buffer, buffer_seek_start, 0);
-		buffer_write(server_buffer, buffer_u8, network.player_establish);
-		buffer_write(server_buffer, buffer_u8, socket);
-		network_send_packet(socket, server_buffer, buffer_tell(server_buffer));
-		//show_debug_message("SEND: player_establish: "+string(current_time));
+		if (ds_map_size(socket_list) < 2){
+			ds_list_add(socket_list, socket);
+			buffer_seek(server_buffer, buffer_seek_start, 0);
+			buffer_write(server_buffer, buffer_u8, network.player_establish);
+			buffer_write(server_buffer, buffer_u8, socket);
+			network_send_packet(socket, server_buffer, buffer_tell(server_buffer));
+			//show_debug_message("SEND: player_establish: "+string(current_time));
+		}
+		else {
+			
+			buffer_seek(server_buffer, buffer_seek_start, 0);
+			buffer_write(server_buffer, buffer_u8, network.player_denied);
+			network_send_packet(socket, server_buffer, buffer_tell(server_buffer));
+		}
+		
 		break;
 		
 	case network_type_disconnect:
