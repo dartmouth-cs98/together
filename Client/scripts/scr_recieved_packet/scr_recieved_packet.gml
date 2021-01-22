@@ -70,8 +70,10 @@ function scr_recieved_packet(buffer){
 			var _socket = buffer_read(buffer, buffer_u8);
 			var _player = ds_map_find_value(socket_to_instanceid, _socket);
 			
-			with(_player) {
-				instance_destroy();
+			if (_player != noone){
+				with(_player) {
+					instance_destroy();
+				}
 			}
 			
 			ds_map_delete(socket_to_instanceid, _socket);

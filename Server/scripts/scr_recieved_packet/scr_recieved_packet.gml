@@ -190,7 +190,7 @@ function scr_recieved_packet(buffer, socket){
 			#region update_infection_level
 			var _player = ds_map_find_value(socket_to_instanceid, socket);
 			var infection_level = buffer_read(buffer, buffer_u8);
-			show_debug_message(infection_level);
+			
 			// Echo it out
 			for(var i = 0; i < ds_list_size(socket_list); i++) {
 				var recipient_socket = ds_list_find_value(socket_list, i);

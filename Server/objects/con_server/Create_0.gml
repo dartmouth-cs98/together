@@ -83,7 +83,7 @@ socket_to_instanceid = ds_map_create();
 player_spawn_x = 0;
 player_spawn_y = 0;
 
-max_player_number = 10;
+max_player_number = 0;
 current_player_number = 0;
 
 available_roles = ds_list_create();
