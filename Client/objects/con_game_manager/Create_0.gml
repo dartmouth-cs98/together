@@ -38,6 +38,7 @@ with (con_menu) {
 	script_execute(ds_grid[# 2, menu_option[page]], ds_grid[# 3, menu_option[page]], menu_option[page]);	
 }
 
+id_to_npc_object_map = ds_map_create();
 other_count = 0;
 
 /*

@@ -206,6 +206,57 @@ function scr_recieved_packet(buffer){
 			
 			#endregion
 			break;
+	
+		case network.npc_create:
+			#region npc_create
+			show_debug_message("RECIEVE: npc_create: "+string(current_time));
+			var _npc_id = buffer_read(buffer, buffer_u32);
+			var _x = buffer_read(buffer, buffer_u16);
+			var _y = buffer_read(buffer, buffer_u16);
+			var _sprite_sheet = buffer_read(buffer, buffer_u8);
+			
+			_npc = instance_create_layer(_x, _y, "Instances", obj_npc);
+			
+			_npc.npc_id = _npc_id;
+			_npc.sprite_sheet = _sprite_sheet;
+			
+			ds_map_add(con_game_manager.id_to_npc_object_map, _npc_id, _npc); 
+			
+			#endregion
+			break;
+		
+		case network.npc_move:
+			#region npc_move
+			//show_debug_message("RECIEVE: npc_move: "+string(current_time));
+			
+			var npc_id = buffer_read(buffer, buffer_u32);
+			var move_x = buffer_read(buffer, buffer_f32);
+			var move_y = buffer_read(buffer, buffer_f32);
+			var _x_frame = buffer_read(buffer, buffer_f32);
+			var _y_frame = buffer_read(buffer, buffer_f32);
+			/*
+			show_debug_message("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			show_debug_message("Values at time " + string(current_time));
+			show_debug_message("ID" + string(npc_id));
+			show_debug_message("move_x" + string(move_x));
+			show_debug_message("move_y" + string(move_y));
+			show_debug_message("x_frame" + string(_x_frame));
+			show_debug_message("y_frame" + string(_y_frame));
+			show_debug_message("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			*/
+			_npc = ds_map_find_value(con_game_manager.id_to_npc_object_map, npc_id);
+			
+			// Move sprite, advance animation, and set correct facing direction
+			if (!is_undefined(_npc)) {
+				with (_npc) {
+					x += move_x;
+					y += move_y;
+					x_frame = _x_frame;
+					y_frame = _y_frame;
+				}
+			}
+			#endregion
+			break;
 		
 		case network.revive:
 			#region revive
