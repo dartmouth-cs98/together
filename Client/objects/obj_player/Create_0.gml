@@ -5,7 +5,7 @@ sprite_sheet = con_game_manager.player_sprite;
 walk_speed = 4; // int
 
 // Int, gaps at the top and left of the sprite sheet
-left_gap = 8
+left_gap = 8;
 top_gap = 18;
 
 // Int, width & height of one fame of a mithril age sprite
@@ -29,15 +29,12 @@ anim_speed = 8; // Int, how fast it animates
 
 
 username = ""; // string
-food = 10; // int
-//food_obj = instance_create(0, 0, obj_food);
-water = 10; // int
-infection_level = 0; // int
 player_color = c_black; // string
 hat = ""; // string
 role = ""; // string
 
 currentNearestObject = obj_interactable; // object
+onObject = obj_interactable; // object
 
 inventory = ds_list_create(); // list
 max_inventory = 3; // int
@@ -53,6 +50,20 @@ taskbar_max = 100; // int
 taskbar_width = 118;  // int
 taskbar_height = 22; // int
 
+food_bar_x = 10; // int
+food_bar_y = 40; // int
+food_bar_width = 118; // int
+food_bar_height = 22; // int
+food_max = 10; // int
+food = food_max; // int
+
+water_bar_x = 10; // int
+water_bar_y = 70; // int
+water_bar_width = 118; // int
+water_bar_height = 22; // int
+water_max = 10; // int
+water = water_max; // int
+
 x = 0;
 y = 0;
 image_angle = 0;
@@ -61,3 +72,14 @@ mask_on = false; // bool
 h_collide = 0;
 v_collide = 0;
 draw_set_font(Font1);
+
+chat_color_1 = 0;
+chat_color_2 = 0;
+chat_color_3 = 0;
+
+infection_level = 3; // int
+slow = false;
+nearsighted = false;
+scrambled = 1; // int
+dehydrated = true;
+alarm[0] = room_speed * 60;

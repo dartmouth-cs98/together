@@ -6,3 +6,10 @@ if (global.paused and global.minigame_passcode) {
 	var c = c_dkgray;
 	draw_rectangle_color(0, 0, global.cam_width, global.cam_height, c, c, c, c, false);
 }
+
+// For duotask
+if (global.paused and global.minigame_duotask) {
+	// Draw background
+	var c = c_dkgray;
+	draw_rectangle_color(0, 0, global.cam_width, global.cam_height, c, c, c, c, false);
+}

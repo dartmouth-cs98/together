@@ -7,9 +7,9 @@ function scr_pickup_and_destroy(object){
 			ds_list_add(inventory, object.object_index);
 			instance_destroy(object);
 		} else {
-			show_message("You're inventory is full!");
+			scr_create_text("Your inventory is full!");
 		}
 	} else {
-		show_message("You already have one!");
+		scr_create_text("You already have one!");
 	}
 }

@@ -31,7 +31,6 @@ if (v_input > 0 and y > 1475){
 }
 
 
-
 buffer_seek(con_client.client_buffer, buffer_seek_start, 0);		// Go to start of buffer
 buffer_write(con_client.client_buffer, buffer_u8, network.move);	// ID
 buffer_write(con_client.client_buffer, buffer_s8, h_input);			// Horizontal input
@@ -40,6 +39,44 @@ buffer_write(con_client.client_buffer, buffer_u8, walk_speed);		// Walk speed
 network_send_packet(con_client.client, con_client.client_buffer, buffer_tell(con_client.client_buffer));
 //show_debug_message("SEND: move: "+string(current_time));
   
+#endregion
+
+#region Manage contagion checks
+DTO = 0;
+for (i = 0; i < con_game_manager.other_count; i++){
+	var other_player = instance_find(obj_other, i);
+	DTO = distance_to_object(other_player)
+	infection_level_other = other_player.infection_level;
+	if (DTO < 5){
+		if (infection_level_other > 1 and infection_level_other < 4){
+			if (infection_level == 0) infection_level = 1;
+		}
+		else if (infection_level < 3) infection_level = 3;
+	}
+	
+	else if (DTO < 15){
+		if (infection_level_other > 2 and infection_level_other < 5){
+			if (infection_level == 0 and irandom(2) == 0) infection_level = 1;
+		}
+		else if (infection_level < 3 and irandom(1) == 0) infection_level = 3;
+	}
+	
+	else if (DTO < 30){
+		if (infection_level_other > 2 and infection_level_other < 5){		
+			if (infection_level == 0 and irandom(4) == 0) infection_level = 1;	
+		}
+		else if (infection_level < 3 and irandom(2) == 0) infection_level = 3;
+	}
+	
+	else if (DTO < 50){
+		
+		if (infection_level_other == 6 and irandom(3) == 0) infection_level = 3;
+	}
+}
+scr_update_infection_level(infection_level);
+
+show_debug_message(DTO);
+
 #endregion
 
 #region Manage Object interaction
@@ -54,6 +91,7 @@ if(nearestObject != currentNearestObject){
 }
 
 if(distance_to_object(nearestObject) < interactRange){
+	// CHECK FOR ROLE HERE, for future reference
 	if(keyboard_check_released(vk_space)){
 		// Run object script
 		script_execute(nearestObject.myscript, nearestObject);

@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"5eed3f08-946c-4d99-9f35-759499b77fcc","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "delivery",
-    "path": "folders/Sprites/minigames/delivery.yy",
+    "name": "minigames",
+    "path": "folders/Sprites/minigames.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_object2",

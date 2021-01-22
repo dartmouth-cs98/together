@@ -25,10 +25,12 @@ if (moving) {
 		else if (mode = npc_mode.random_target_bfs) {
 			#region Random target BFS
 			if (ds_list_size(path) <= 0) {
+				/*
 				show_debug_message("=========================================================");
 				show_debug_message("NPC " + string(self.id) + " has finished its bellman-ford path!");
 				show_debug_message("Final Coordinates: " + string(x) + "," + string(y));
 				show_debug_message("=========================================================");
+				*/
 				target_node = ds_list_find_value(con_npc_graph.node_list, random_range(0, ds_list_size(con_npc_graph.node_list) - 1));
 				path = scr_bellman_ford(current_node, target_node);
 				//moving = false;
@@ -144,7 +146,7 @@ if (moving) {
 		buffer_write(con_server.server_buffer, buffer_f32, y_frame);				// Which direction should the npc face?
 		
 		network_send_packet(_sock, con_server.server_buffer, buffer_tell(con_server.server_buffer));
-		show_debug_message("SEND: npc_move: "+string(current_time));
+		//show_debug_message("SEND: npc_move: "+string(current_time));
 	}
 	
 } else {

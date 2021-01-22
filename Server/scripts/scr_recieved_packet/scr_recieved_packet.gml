@@ -80,12 +80,14 @@ function scr_recieved_packet(buffer, socket){
 			var _chat = buffer_read(buffer, buffer_string);
 			var	_player = ds_map_find_value(socket_to_instanceid, socket);
 			
-			_chat = _player.username + ": " + _chat;					// Append username to show who it's from
+			_chat = _player.username + ":" + _chat;					// Append username to show who it's from
 			ds_list_insert(global.chat, 0, _chat);
 			
 			//TODO: Potential issues here, 32:44 in networking video (https://youtu.be/NbsXRuNijlo) (Could be another one in the series)
-			_colorid = buffer_read(buffer, buffer_u8);
-			ds_list_insert(global.chat_color, 0, ds_map_find_value(color_map, _colorid))
+			var _color1 = buffer_read(buffer, buffer_u8);
+			var _color2 = buffer_read(buffer, buffer_u8);
+			var _color3 = buffer_read(buffer, buffer_u8);
+			ds_list_insert(global.chat_color, 0, make_color_rgb(_color1, _color2, _color3));
 			
 			for(var i = 0; i < ds_list_size(socket_list); i++) {
 				
@@ -94,8 +96,9 @@ function scr_recieved_packet(buffer, socket){
 				buffer_seek(server_buffer, buffer_seek_start, 0);		// Start from top of buffer
 				buffer_write(server_buffer, buffer_u8, network.chat);	// Message ID
 				buffer_write(server_buffer, buffer_string, _chat);		// Message contents
-				buffer_write(server_buffer, buffer_u8, _colorid);		// Message color (number that maps to it)
-				
+				buffer_write(server_buffer, buffer_u8, _color1);		// Message color (number that maps to it)
+				buffer_write(server_buffer, buffer_u8, _color2);		// Message color (number that maps to it)
+				buffer_write(server_buffer, buffer_u8, _color3);		// Message color (number that maps to it)
 				network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
 				//show_debug_message("SEND: chat: "+string(current_time));
 			}
@@ -126,7 +129,7 @@ function scr_recieved_packet(buffer, socket){
 			}
 			#endregion
 			break;
-
+			
 		case network.pause:
 			#region pause
 			//show_debug_message("RECIEVE: pause: "+string(current_time));
@@ -175,6 +178,79 @@ function scr_recieved_packet(buffer, socket){
 				}
 			}
 			
+			#endregion
+			break;
+		
+		case network.revive:
+			#region revive
+			
+			#endregion
+			break;
+		
+		case network.update_infection_level:
+			#region update_infection_level
+			var _player = ds_map_find_value(socket_to_instanceid, socket);
+			var infection_level = buffer_read(buffer, buffer_u8);
+			
+			// Echo it out
+			for(var i = 0; i < ds_list_size(socket_list); i++) {
+				var recipient_socket = ds_list_find_value(socket_list, i);
+				
+				if (recipient_socket != socket) {
+					buffer_seek(server_buffer, buffer_seek_start, 0);
+					buffer_write(server_buffer, buffer_u8, network.update_infection_level);
+					buffer_write(server_buffer, buffer_u8, socket);			// Socket of the unpausing player
+					buffer_write(server_buffer, buffer_u8, infection_level);
+					network_send_packet(recipient_socket, server_buffer, buffer_tell(server_buffer));
+					//show_debug_message("SEND: unpause: "+string(current_time));
+				}
+			}
+			
+			#endregion
+			break;
+		
+		case network.duotask:
+			#region duotask
+			//show_debug_message("RECIEVE: duotask: " + string(current_time));
+			
+			var object_id = buffer_read(buffer, buffer_u32);
+			var add = buffer_read(buffer, buffer_s8);
+			
+			show_debug_message("add is " + string(add));
+
+			if ds_map_exists(global.duotask_map, object_id){
+				if ((ds_map_find_value(global.duotask_map, object_id) == 0) && (add == 1)){
+					show_debug_message("add 1 player");
+					ds_map_replace(global.duotask_map, object_id, 1);
+				}
+				
+				else if ((ds_map_find_value(global.duotask_map, object_id) == 1) && (add == -1)) {
+					show_debug_message("remove 1 player");
+					ds_map_replace(global.duotask_map, object_id, 0);
+				}
+				
+				else if ((ds_map_find_value(global.duotask_map, object_id) == 1) && (add == 1)) {
+					show_debug_message("complete duotask");
+					ds_map_replace(global.duotask_map, object_id, 0);
+
+					// Broadcast completion status to all players
+					for(var i = 0; i < ds_list_size(socket_list); i++) {
+
+						var _sock = ds_list_find_value(socket_list, i);
+
+						buffer_seek(server_buffer, buffer_seek_start, 0);			// Start from top of buffer
+						buffer_write(server_buffer, buffer_u8, network.duotask);	// Message ID
+
+						buffer_write(server_buffer, buffer_u32, object_id);			// Send back object id
+				
+						network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
+					}
+				}
+				
+			} else if (add == 1) {
+				show_debug_message("add new object");
+				ds_map_add(global.duotask_map, object_id, 1);
+			}
 			#endregion
 			break;
 	}

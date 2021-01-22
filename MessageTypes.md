@@ -40,8 +40,8 @@ These types and their respective IDs are defined in the enum `network`. This enu
 ### `chat`
 * ID: 5
 * Protocol
-    * When the user sends a chat message, the client sends this message. Format: `<ID, chat_text, color_id>`
-    * The server recieves this and echoes it out to all players. Format: `<ID, chat_text, color_id>`
+    * When the user sends a chat message, the client sends this message. Format: `<ID, chat_text, color_1, color_2, color_3>`
+    * The server recieves this and echoes it out to all players. Format: `<ID, chat_text, color_1, color_2, color_3>`
     * The client recieves this and updates their chat log. No response.
 
 ### `pause`

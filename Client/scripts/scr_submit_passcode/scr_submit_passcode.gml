@@ -7,7 +7,7 @@ function scr_submit_passcode(params){
 		scr_open_close_passcode(params[0]);
 		instance_destroy(params[0]);	// Remove the passcode object that was just submitted.
 	} else {
-		show_message("Incorrect! Try again.");
+		scr_create_text("Incorrect! Try again.");
 	}
 	con_passcode.input = "";
 }
