@@ -7,9 +7,10 @@ if (moving) {
 		prev_node = current_node;
 		current_node = next_node;
 		
-		#region Random walk
+		
 		// ...choose next node to go to.
 		if (mode = npc_mode.random_walk) {
+			#region Random walk
 			next_node = ds_list_find_value(current_node.neighbors, irandom(ds_list_size(current_node.neighbors) - 1));
 			// If you have multiple neighbors...
 			if (ds_list_size(current_node.neighbors) > 1) {
@@ -18,48 +19,35 @@ if (moving) {
 					next_node = ds_list_find_value(current_node.neighbors, irandom(ds_list_size(current_node.neighbors) - 1));
 				}
 			}
+			#endregion
 		}
-		#endregion
 		
-		#region Random target BFS
 		else if (mode = npc_mode.random_target_bfs) {
-			if (ds_list_size(path) > 0) {
-				next_node = ds_list_find_value(path, 0);
-				ds_list_delete(path, 0);
-			} else {
+			#region Random target BFS
+			if (ds_list_size(path) <= 0) {
 				show_debug_message("=========================================================");
 				show_debug_message("NPC " + string(self.id) + " has finished its bellman-ford path!");
 				show_debug_message("Final Coordinates: " + string(x) + "," + string(y));
 				show_debug_message("=========================================================");
-				moving = false;
-				speed = 0;
-				exit;
+				target_node = ds_list_find_value(con_npc_graph.node_list, random_range(0, ds_list_size(con_npc_graph.node_list) - 1));
+				path = scr_bellman_ford(current_node, target_node);
+				//moving = false;
+				//speed = 0;
+				//exit;
 			}
+			next_node = ds_list_find_value(path, 0);
+			ds_list_delete(path, 0);
+			#endregion
 		}
-		#endregion
 		
-		#region mode not recognized
 		else {
+			#region mode not recognized
 			show_debug_message("=========================================================");
 			show_debug_message("NPC ERROR: mode not recognized in step event");
 			show_debug_message("mode = " + string(mode));
 			show_debug_message("=========================================================");
+			#endregion
 		}
-		#endregion
-		
-		/*
-		// This code causes a freeze, unknown why
-		// Only go back to prev_node if that's the only way you can go.
-		if (num_neighbors == 1) {
-			next_node = ds_list_find_value(current_neighbors, 0);
-		} else {
-			next_node = ds_list_find_value(current_node.neighbors, irandom(ds_list_size(current_node.neighbors) - 1));
-			while (next_node == prev_node) {
-				next_node = ds_list_find_value(current_node.neighbors, irandom(ds_list_size(current_node.neighbors) - 1));
-			}
-		}
-		*/
-		
 		
 		ds_list_copy(current_neighbors, current_node.neighbors);
 		num_neighbors = ds_list_size(current_neighbors);
