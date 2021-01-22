@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f1629fe6-0730-41bd-b380-2f2c2d42040a","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "UI",
-    "path": "folders/Sprites/UI.yy",
+    "name": "Progress Bars",
+    "path": "folders/Sprites/UI/Progress Bars.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_taskbar",
