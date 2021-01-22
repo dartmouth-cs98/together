@@ -90,7 +90,7 @@ These types and their respective IDs are defined in the enum `network`. This enu
    * When a player's infection level changes, it tells the server to update that level. Format: `<ID, infection_level>`
    * Each client receives the infection level of said player and updates accordingly. Format: `<ID, player_socket, infection_level>`
 
-### 'duotask'
+### `duotask`
 * ID: 13
 * Protocol
    * When a player initiates a duotask, it tells the server which object is being used and whether to add/delete/complete a task. Format: `<ID, object_id, add>`
