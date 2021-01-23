@@ -94,8 +94,10 @@ ds_list_add(available_roles, "Farmer");
 ds_list_add(available_roles, "Engineer");
 ds_list_add(available_roles, "Shopkeeper");
 ds_list_add(available_roles, "Taxi Driver");
-ds_list_add(available_roles, "Post Officer");
+ds_list_add(available_roles, "Mail Carrier");
 ds_list_add(available_roles, "Mayor");
 ds_list_add(available_roles, "Philanthropist");
 ds_list_add(available_roles, "Jack of All Trades");
 ds_list_add(available_roles, "Scientist");
+
+alarm[0] = room_speed * 60;
