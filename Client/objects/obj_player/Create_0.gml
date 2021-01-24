@@ -39,13 +39,7 @@ role = ""; // string
 
 currentNearestObject = obj_interactable; // object
 onObject = obj_interactable; // object
-
-inventory = ds_list_create(); // list
-max_inventory = 3; // int
 interactRange = 10; // int
-showInventory = false; // bool
-inventory_x = (global.cam_width/2)-75; // int
-inventory_y = global.cam_height-48; // int
 
 tasks = []; // list, but fetches from hashtable in server
 taskbar_x = 10;  // int

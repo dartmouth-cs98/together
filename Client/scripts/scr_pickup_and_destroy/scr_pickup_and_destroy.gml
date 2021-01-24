@@ -2,14 +2,10 @@
 
 function scr_pickup_and_destroy(object){
 	// Picks up object
-	if(ds_list_find_index(inventory, object.object_index) < 0){
-		if(ds_list_size(inventory) < max_inventory){
-			ds_list_add(inventory, object.object_index);
-			instance_destroy(object);
-		} else {
-			scr_create_text("Your inventory is full!");
-		}
+	if(ds_list_size(global.inventory) < global.max_inventory){
+		ds_list_add(global.inventory, object.object_index);
+		instance_destroy(object);
 	} else {
-		scr_create_text("You already have one!");
+		scr_create_text("Your inventory is full!");
 	}
 }

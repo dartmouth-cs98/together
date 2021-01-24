@@ -92,6 +92,7 @@
     {"id":{"name":"scr_update_infection_level","path":"scripts/scr_update_infection_level/scr_update_infection_level.yy",},"order":11,},
     {"id":{"name":"roguelikeCity_transparent","path":"sprites/roguelikeCity_transparent/roguelikeCity_transparent.yy",},"order":2,},
     {"id":{"name":"con_client","path":"objects/con_client/con_client.yy",},"order":2,},
+    {"id":{"name":"con_inventory","path":"objects/con_inventory/con_inventory.yy",},"order":7,},
     {"id":{"name":"spr_hat_red_icon","path":"sprites/spr_hat_red_icon/spr_hat_red_icon.yy",},"order":6,},
     {"id":{"name":"spr_bandana_red_icon","path":"sprites/spr_bandana_red_icon/spr_bandana_red_icon.yy",},"order":1,},
     {"id":{"name":"spr_cape_red_icon","path":"sprites/spr_cape_red_icon/spr_cape_red_icon.yy",},"order":3,},

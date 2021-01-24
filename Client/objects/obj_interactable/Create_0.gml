@@ -19,6 +19,6 @@ collects = "obj_apple";
 sentduotask = false;
 
 // Default script, change in children, (do not call script)
-myscript = scr_duotask;
+myscript = scr_pickup;
 
 sprite_index = object1;
