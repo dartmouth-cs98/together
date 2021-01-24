@@ -3,3 +3,6 @@
 
 global.inventory = ds_list_create(); // list
 global.max_inventory = 3; // int
+
+// For selecting item in inventory
+selected = 0;
