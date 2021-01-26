@@ -14,6 +14,6 @@ option = 0;
 _width = 50;
 _height = 25;
 _color = c_white;
-_hover_color = c_ltgray;
+_hover_color = c_orange;
 _text_color = c_black;
 _offset = 25;

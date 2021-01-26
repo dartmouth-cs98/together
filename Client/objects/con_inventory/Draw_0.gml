@@ -13,8 +13,14 @@ if (!global.paused or global.inventory_menu) {
 		draw_sprite(object_get_sprite(key.object_index), 0, inventory_x+25+(50*i), inventory_y+26);
 	}
 	
-	// Draw selector
 	if (global.inventory_menu) {
+		// Darken screen
+		draw_set_alpha(0.3);
+		draw_set_colour(c_black);
+		draw_rectangle(0,0,room_width,room_height,-1);
+		draw_set_alpha(1); //reset alpha value so it doesn't mess with other draw events
+		
+		// Draw selector
 		draw_sprite(spr_selector, 0, inventory_x+25+(50*selected), inventory_y - 10);
 	}
 	

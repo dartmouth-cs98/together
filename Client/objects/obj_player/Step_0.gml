@@ -93,7 +93,7 @@ if(nearestObject != currentNearestObject){
 
 if(distance_to_object(nearestObject) < interactRange){
 	// CHECK FOR ROLE HERE, for future reference
-	if(keyboard_check_released(vk_space)){
+	if(keyboard_check_released(vk_space) and !global.paused){
 		// Run object script
 		script_execute(nearestObject.myscript, nearestObject);
 
