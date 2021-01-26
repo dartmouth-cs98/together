@@ -2,11 +2,13 @@
 
 function scr_pickup(object){
 	// Picks up object
-	// Clone object
-	clone = instance_create_layer(-100, -100, "Instances", object.object_index); 
-	if(ds_list_size(global.inventory) < global.max_inventory){
-		ds_list_add(global.inventory, clone);
+	if(ds_list_find_index(inventory, object.object_index) < 0){
+		if(ds_list_size(inventory) < max_inventory){
+			ds_list_add(inventory, object.object_index);
+		} else {
+			scr_create_text("You're inventory is full!");
+		}
 	} else {
-		scr_create_text("Your inventory is full!");
+		scr_create_text("You already have one!");
 	}
 }
