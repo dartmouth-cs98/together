@@ -8,6 +8,29 @@ player_sprite = 0;
 player_sprite_h = 0;
 player_sprite_w = 0;
 
+//// ENUMS USED FOR MENU PAGES
+// ID for each menu page
+enum menu_page {
+	main,
+	settings,
+	audio,
+	//difficulty,
+	graphics,
+	controls,
+	height,			// Used to check how many entries are in this enum
+}
+
+// ID for each type of menu element
+enum menu_element_type {
+	script_runner,
+	page_transfer,
+	slider,
+	shift,
+	toggle,
+	input,
+	height,			// Used to check how many entries are in this enum
+}
+
 // Default controls
 global.key_enter	= vk_space;		// Confirm
 global.key_left		= vk_left;
@@ -34,7 +57,7 @@ audio_group_load(audiogroup_music);
 audio_group_load(audiogroup_soundeffects);
 audio_group_load(audiogroup_master);
 
-with (con_menu) {
+with (con_pause_menu) {
 	script_execute(ds_grid[# 2, menu_option[page]], ds_grid[# 3, menu_option[page]], menu_option[page]);	
 }
 

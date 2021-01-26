@@ -2,29 +2,6 @@
 
 // Menus are based on tutorial from FriendlyCosmonaut: https://youtu.be/Y0XohkeieVg
 
-// ID for each menu page
-enum menu_page {
-	main,
-	settings,
-	audio,
-	//difficulty,
-	graphics,
-	controls,
-	height,			// Used to check how many entries are in this enum
-}
-
-// ID for each type of menu element
-enum menu_element_type {
-	script_runner,
-	page_transfer,
-	slider,
-	shift,
-	toggle,
-	input,
-	height,			// Used to check how many entries are in this enum
-}
-
-
 //									CREATE MENU PAGES
 //	----------		------------------------------		--------------		--------------
 //	|Elt text|		|		   Elt type          |		|Elt function|		|Other params|

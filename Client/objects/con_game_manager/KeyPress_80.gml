@@ -10,7 +10,7 @@ if ( !(global.any_menu and !global.pause_menu) ) {
 			scr_unpause();
 			global.pause_menu = false;
 			global.any_menu = false;
-			with (con_menu) {
+			with (con_pause_menu) {
 				page = 0;
 			}
 		}
