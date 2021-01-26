@@ -1,4 +1,4 @@
-/// @description Set up menus
+/// @description Set up menus elements
 
 // Menus are based on tutorial from FriendlyCosmonaut: https://youtu.be/Y0XohkeieVg
 
@@ -8,9 +8,9 @@
 //	----------		------------------------------		--------------		--------------
 
 ds_menu_main = scr_create_menu_page(
-	["RESUME",		menu_element_type.script_runner,	scr_resume_game],
+	["START",		menu_element_type.script_runner,	scr_start_game],		// TODO: New script needed
 	["SETTINGS",	menu_element_type.page_transfer,	menu_page.settings],
-	["QUIT",		menu_element_type.page_transfer,	menu_page.main_or_exit],
+	["EXIT",		menu_element_type.script_runner,	scr_exit_game],
 	[],
 	[]
 );
@@ -56,16 +56,8 @@ ds_menu_controls = scr_create_menu_page(
 	["BACK",		menu_element_type.page_transfer,	menu_page.settings]
 );
 
-ds_menu_main_or_exit = scr_create_menu_page(
-	["MAIN MENU",	menu_element_type.script_runner,	scr_quit_to_main_menu],
-	["EXIT GAME",	menu_element_type.script_runner,	scr_exit_game],
-	[],
-	[],
-	[],
-);
-
 page = 0;			// Current page, index in menu_pages
-menu_pages = [ds_menu_main, ds_menu_settings, ds_menu_audio, /*ds_menu_difficulty,*/ ds_menu_graphics, ds_menu_controls, ds_menu_main_or_exit];
+menu_pages = [ds_menu_main, ds_menu_settings, ds_menu_audio, /*ds_menu_difficulty,*/ ds_menu_graphics, ds_menu_controls];
 
 
 var i = 0;

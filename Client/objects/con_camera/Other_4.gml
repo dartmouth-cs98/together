@@ -1,14 +1,7 @@
 /// @description Camera setup
 /// Based on this tutorial series: https://www.youtube.com/watch?v=raGK_j1NVdE&list=PLhIbBGhnxj5JcbfoxS_CWTnImRL_wB_Wg
 
-// Camera
-// The "global." operator makes a variable into a global variable (shocking, I know).
-global.cam_X = 0;
-global.cam_Y = 0;
 target = obj_player;
-
-global.cam_width = 544;
-global.cam_height = 306;
 
 // Enabling a viewport & making it visible (0 in this case)
 view_enabled = true;

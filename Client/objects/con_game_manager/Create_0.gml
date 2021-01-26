@@ -17,6 +17,7 @@ enum menu_page {
 	//difficulty,
 	graphics,
 	controls,
+	main_or_exit,
 	height,			// Used to check how many entries are in this enum
 }
 
@@ -52,6 +53,13 @@ global.any_menu = false;
 global.pause_menu = false;
 global.minigame_passcode = false;
 global.minigame_duotask = false;
+
+// Variables to control the camera
+global.cam_X = 0;
+global.cam_Y = 0;
+
+global.cam_width = 544;
+global.cam_height = 306;
 
 audio_group_load(audiogroup_music);
 audio_group_load(audiogroup_soundeffects);
