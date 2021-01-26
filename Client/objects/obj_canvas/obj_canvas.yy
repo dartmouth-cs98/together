@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_canvas",
-    "path": "sprites/spr_canvas/spr_canvas.yy",
+    "name": "spr_canvas2",
+    "path": "sprites/spr_canvas2/spr_canvas2.yy",
   },
   "solid": false,
   "visible": true,
@@ -28,6 +28,7 @@
     {"isDnD":false,"eventNum":7,"eventType":6,"collisionObjectId":null,"parent":{"name":"obj_canvas","path":"objects/obj_canvas/obj_canvas.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":64,"eventType":8,"collisionObjectId":null,"parent":{"name":"obj_canvas","path":"objects/obj_canvas/obj_canvas.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":32,"eventType":10,"collisionObjectId":null,"parent":{"name":"obj_canvas","path":"objects/obj_canvas/obj_canvas.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"obj_canvas","path":"objects/obj_canvas/obj_canvas.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
