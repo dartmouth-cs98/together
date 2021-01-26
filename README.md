@@ -1,4 +1,4 @@
-# Untitled Pandemic Game (Tentative title: Together)
+# Together
 
 An online co-op multiplayer game in which players must work together to maintain their daily lives in the midst of a pandemic.
 

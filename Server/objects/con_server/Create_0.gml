@@ -5,11 +5,14 @@ enum network {
 	player_connect,			// For managing a player connecting
 	player_joined,			// For when another player joins
 	player_disconnect,		// For removing a player when they disconnect
+	player_denied,			// For when too many players join
 	move,					// For when a player moves
 	chat,					// For handling chat messages being sent
 	task,					// For handling task bar progress
 	pause,					// To keep player from animating on other machines
 	unpause,				// To restore normal animation after unpausing
+	npc_create,			// To set up NPCs on clients
+	npc_move,			// To broadcast NPC movement to players
 	revive,					// To restore a fallen player to health
 	update_infection_level, // To keep all players apprised of each other's infection level
 	duotask					// For handling tasks that require two players
@@ -81,3 +84,18 @@ socket_to_instanceid = ds_map_create();
 
 player_spawn_x = 0;
 player_spawn_y = 0;
+
+max_player_number = 10;
+current_player_number = 0;
+
+available_roles = ds_list_create();
+ds_list_add(available_roles, "Doctor");
+ds_list_add(available_roles, "Farmer");
+ds_list_add(available_roles, "Engineer");
+ds_list_add(available_roles, "Shopkeeper");
+ds_list_add(available_roles, "Taxi Driver");
+ds_list_add(available_roles, "Post Officer");
+ds_list_add(available_roles, "Mayor");
+ds_list_add(available_roles, "Philanthropist");
+ds_list_add(available_roles, "Jack of All Trades");
+ds_list_add(available_roles, "Scientist");

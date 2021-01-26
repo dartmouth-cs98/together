@@ -9,12 +9,21 @@ switch(type_event) {
 		// When you get a connect message, add the client to the list
 		socket = ds_map_find_value(async_load, "socket");
 		ds_list_add(socket_list, socket);
+		if (current_player_number < max_player_number){
+			current_player_number++;
+			buffer_seek(server_buffer, buffer_seek_start, 0);
+			buffer_write(server_buffer, buffer_u8, network.player_establish);
+			buffer_write(server_buffer, buffer_u8, socket);
+			network_send_packet(socket, server_buffer, buffer_tell(server_buffer));
+			//show_debug_message("SEND: player_establish: "+string(current_time));
+		}
+		else {
+			
+			buffer_seek(server_buffer, buffer_seek_start, 0);
+			buffer_write(server_buffer, buffer_u8, network.player_denied);
+			network_send_packet(socket, server_buffer, buffer_tell(server_buffer));
+		}
 		
-		buffer_seek(server_buffer, buffer_seek_start, 0);
-		buffer_write(server_buffer, buffer_u8, network.player_establish);
-		buffer_write(server_buffer, buffer_u8, socket);
-		network_send_packet(socket, server_buffer, buffer_tell(server_buffer));
-		//show_debug_message("SEND: player_establish: "+string(current_time));
 		break;
 		
 	case network_type_disconnect:
@@ -33,12 +42,14 @@ switch(type_event) {
 			//show_debug_message("SEND: player_disconnect: "+string(current_time));
 		}
 		
-		
 		// Make the player destroy itself
-		with (ds_map_find_value(socket_to_instanceid, socket)) {
-			instance_destroy();	
+		if (ds_map_find_value(socket_to_instanceid, socket) != noone and !is_undefined(ds_map_find_value(socket_to_instanceid, socket))){
+			with (ds_map_find_value(socket_to_instanceid, socket)) {
+				instance_destroy();	
+			}
+			ds_map_delete(socket_to_instanceid, socket);
 		}
-		ds_map_delete(socket_to_instanceid, socket);
+		current_player_number--;
 		
 		break;
 		
