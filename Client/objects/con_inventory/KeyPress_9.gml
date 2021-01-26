@@ -8,6 +8,7 @@ if ( !(global.any_menu and !global.inventory_menu )) {
 	} else {
 		global.inventory_menu = false;
 		global.any_menu = false;
+		itemSelected = undefined;
 
 		scr_unpause();
 	}
