@@ -1,4 +1,5 @@
 /// @description On Create
+event_inherited();
 // Object name, change in children
 myname = "bag";
 
