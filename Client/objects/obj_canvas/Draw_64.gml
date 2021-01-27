@@ -14,7 +14,6 @@ if (open and !finished){
 	draw_set_color(player_draw_color);
 	
 	draw_circle_color(destination_x, destination_y, 3, player_draw_color, player_draw_color, false);
-	//draw_circle_color(start_x, start_y, 3, player_draw_color, player_draw_color, false);
 
 	//draw_point_color(destination_x, destination_y, c_blue);
 	for (i = 0; i < current_points_size; i++){	
@@ -40,6 +39,12 @@ if (open and !finished){
 			scr_unpause();
 			open = false;
 			finished = true;
+			scientist_tasks = ds_map_find_value(con_game_manager.role_to_tasks_map, "Scientist");
+			for (i = 0; i < ds_list_size(scientist_tasks); i++){
+				if (ds_list_find_value(scientist_tasks, i) == "Graph Disease Progression"){
+					ds_list_delete(scientist_tasks, i);
+				}
+			}
 			scr_task_complete(5);
 			
 			// Write message saying task complete

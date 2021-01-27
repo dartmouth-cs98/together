@@ -8,6 +8,7 @@ myname = "Passcode Object";
 // Change these in the children
 object1 = spr_floppydisk1;
 object2 = spr_floppydisk2;
+task = "Enter Passcode";
 
 // Default script, change in children
 myscript = scr_open_close_passcode;

@@ -16,5 +16,6 @@ ds_list_add(y_positions, start_y);
 myname = "canvas";
 object1 = spr_canvas1;
 object2 = spr_canvas2;
+task = "Graph Disease Progression";
 
 myscript = scr_open_canvas;
