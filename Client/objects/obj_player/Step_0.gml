@@ -94,7 +94,7 @@ if(nearestObject != currentNearestObject){
 if(distance_to_object(nearestObject) < interactRange){
 	
 	var has_task = false;
-	// CHECK FOR ROLE HERE, for future reference
+	// Check for role here
 	if(keyboard_check_released(vk_space)){
 		
 		open_tasks = ds_map_find_value(con_game_manager.role_to_tasks_map, role);
@@ -102,6 +102,8 @@ if(distance_to_object(nearestObject) < interactRange){
 			if (ds_list_find_value(open_tasks, i) == nearestObject.task) has_task = true;
 		}
 		
+	if(keyboard_check_released(vk_space) and !global.paused){
+
 		// Run object script
 		if(has_task) script_execute(nearestObject.myscript, nearestObject);
 

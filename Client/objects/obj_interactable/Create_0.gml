@@ -19,7 +19,13 @@ collects = "obj_apple";
 // For duo tasks
 sentduotask = false;
 
+// For item options, only for objects you can pick up.
+optionNames = ds_list_create();
+ds_list_insert(optionNames, 0, "Back"); ds_list_insert(optionNames, 1, "Drop"); // Default options
+options = ds_list_create();
+ds_list_insert(options, 0, scr_back); ds_list_insert(options, 1, scr_drop); // Default options
+
 // Default script, change in children, (do not call script)
-myscript = scr_duotask;
+myscript = scr_pickup;
 
 sprite_index = object1;
