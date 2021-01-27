@@ -1,5 +1,8 @@
 /// @description Every frame
 
+// Comment out when not testing a specific role
+role = "Scientist";
+
 #region Manage 8-directional movement, based on this video: https://www.youtube.com/watch?v=0-a0Fak7cjk
 
 if (!global.paused) {
@@ -75,8 +78,6 @@ for (i = 0; i < con_game_manager.other_count; i++){
 }
 scr_update_infection_level(infection_level);
 
-show_debug_message(DTO);
-
 #endregion
 
 #region Manage Object interaction
@@ -91,10 +92,20 @@ if(nearestObject != currentNearestObject){
 }
 
 if(distance_to_object(nearestObject) < interactRange){
-	// CHECK FOR ROLE HERE, for future reference
+	
+	var has_task = false;
+	// Check for role here
+	if(keyboard_check_released(vk_space)){
+		
+		open_tasks = ds_map_find_value(con_game_manager.role_to_tasks_map, role);
+		for (i = 0; i < ds_list_size(open_tasks); i++){
+			if (ds_list_find_value(open_tasks, i) == nearestObject.task) has_task = true;
+		}
+		
 	if(keyboard_check_released(vk_space) and !global.paused){
+
 		// Run object script
-		script_execute(nearestObject.myscript, nearestObject);
+		if(has_task) script_execute(nearestObject.myscript, nearestObject);
 
 		//show_debug_message("Object interact distance: " + string(distance_to_object(nearestObject)))
 	}

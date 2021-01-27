@@ -42,6 +42,36 @@ with (con_menu) {
 id_to_npc_object_map = ds_map_create();
 other_count = 0;
 
+role_to_tasks_map = ds_map_create();
+doctor_tasks = ds_list_create();
+scientist_tasks = ds_list_create();
+farmer_tasks = ds_list_create();
+shopkeeper_tasks = ds_list_create();
+engineer_tasks = ds_list_create();
+mail_carrier_tasks = ds_list_create();
+mayor_tasks = ds_list_create();
+
+ds_list_add(doctor_tasks, "Save 5 NPCs");
+ds_list_add(doctor_tasks, "Collect Apples");
+ds_list_add(scientist_tasks, "Graph Disease Progression");
+ds_list_add(scientist_tasks, "Collect Apples");
+ds_list_add(farmer_tasks, "Collect Apples");
+ds_list_add(farmer_tasks, "Duotask Unnamed");
+ds_list_add(shopkeeper_tasks, "Collect Apples");
+ds_list_add(shopkeeper_tasks, "Duotask Unnamed");
+ds_list_add(engineer_tasks, "Collect Apples");
+ds_list_add(mail_carrier_tasks, "Collect Apples");
+ds_list_add(mayor_tasks, "Collect Apples");
+ds_list_add(mayor_tasks, "Enter Passcode");
+
+ds_map_add(role_to_tasks_map, "Doctor", doctor_tasks);
+ds_map_add(role_to_tasks_map, "Scientist", scientist_tasks);
+ds_map_add(role_to_tasks_map, "Engineer", scientist_tasks);
+ds_map_add(role_to_tasks_map, "Farmer", scientist_tasks);
+ds_map_add(role_to_tasks_map, "Mail Carrier", scientist_tasks);
+ds_map_add(role_to_tasks_map, "Mayor", scientist_tasks);
+ds_map_add(role_to_tasks_map, "Shopkeeper", scientist_tasks);
+
 /*
 role_to_sprite_map = ds_map_create();
 ds_map_add(role_to_sprite_map, "Doctor", spr_doctor);

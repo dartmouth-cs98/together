@@ -8,4 +8,6 @@ taskvalue = 5;
 
 myscript = scr_duotask;
 
+task = "Duotask_Unnamed";
+
 buttons = [];

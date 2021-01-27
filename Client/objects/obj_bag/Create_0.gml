@@ -8,6 +8,7 @@ myname = "bag";
 // Change these in the children
 object1 = spr_bag1;
 object2 = spr_bag2;
+task = "Collect Apples";
 
 // For collecting objects, can ignore if not relevant
 collects = "obj_apple";

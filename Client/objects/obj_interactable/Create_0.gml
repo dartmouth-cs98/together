@@ -7,6 +7,7 @@ myname = "object";
 // Change these in the children
 object1 = spr_object1;
 object2 = spr_object2;
+task = "";
 
 taskvalue = 5; // Default value of task completion
 
