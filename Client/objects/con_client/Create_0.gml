@@ -68,7 +68,8 @@ ds_map_add(color_map, colors.yellow, c_yellow);
 
 
 // Connection type has to be the same for client & server
-client = network_create_socket(network_socket_udp);
+//client = network_create_socket(network_socket_udp);
+client = network_create_socket_ext(network_socket_udp, 64198);
 
 // 127.0.0.1 is localhost
 // To get your IP address, open command prompt, type ipconfig. IPv4 address

@@ -72,7 +72,7 @@ max_clients = 12;
 // TCP is slower & more reliable
 // UDP is faster but packets can get lost
 // WS is intended for browser-based games
-network_create_server(network_socket_udp, port, max_clients);
+//network_create_server(network_socket_udp, port, max_clients);
 
 server_buffer = buffer_create(1024, buffer_fixed, 1);
 
