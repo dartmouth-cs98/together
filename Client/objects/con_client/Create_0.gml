@@ -76,7 +76,7 @@ client = network_create_socket(network_socket_tcp);
 // Same port for client & server (64198)
 
 //network_connect(client, "127.0.0.1", 64198);
-network_connect(client, "192.168.1.142", 64198);
+network_connect(client, "129.170.131.247", 64198);
 
 client_buffer = buffer_create(1024, buffer_fixed, 1);
 
