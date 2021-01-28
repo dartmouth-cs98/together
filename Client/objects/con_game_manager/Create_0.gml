@@ -32,12 +32,19 @@ enum menu_element_type {
 	height,			// Used to check how many entries are in this enum
 }
 
+#region Global variables
+
 // Default controls
-global.key_enter	= vk_space;		// Confirm
-global.key_left		= vk_left;
-global.key_right	= vk_right;
-global.key_up		= vk_up;
-global.key_down		= vk_down;
+global.key_enter		= vk_space;		// Confirm
+global.key_left			= vk_left;
+global.key_right		= vk_right;
+global.key_up			= vk_up;
+global.key_down			= vk_down;
+
+// The values of each volume type
+global.master_volume	= 0.5;
+global.sound_volume		= 0.5;
+global.music_volume		= 0.5;
 
 // Taskbar
 global.taskbar = 0;
@@ -60,6 +67,8 @@ global.cam_Y = 0;
 
 global.cam_width = 544;
 global.cam_height = 306;
+
+#endregion
 
 audio_group_load(audiogroup_music);
 audio_group_load(audiogroup_soundeffects);

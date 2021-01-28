@@ -25,9 +25,9 @@ ds_menu_settings = scr_create_menu_page(
 );
 
 ds_menu_audio = scr_create_menu_page(	
-	["MASTER",		menu_element_type.slider,			scr_change_volume,	0.5,	[0,1]],
-	["SOUNDS",		menu_element_type.slider,			scr_change_volume,	0.5,	[0,1]],
-	["MUSIC",		menu_element_type.slider,			scr_change_volume,	0.5,	[0,1]],
+	["MASTER",		menu_element_type.slider,			scr_change_volume,	global.master_volume,	[0,1]],
+	["SOUNDS",		menu_element_type.slider,			scr_change_volume,	global.sound_volume,	[0,1]],
+	["MUSIC",		menu_element_type.slider,			scr_change_volume,	global.music_volume,	[0,1]],
 	["BACK",		menu_element_type.page_transfer,	menu_page.settings],
 	[]
 );
