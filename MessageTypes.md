@@ -95,3 +95,8 @@ These types and their respective IDs are defined in the enum `network`. This enu
 * Protocol
    * When a player initiates a duotask, it tells the server which object is being used and whether to add/delete/complete a task. Format: `<ID, object_id, add>`
    * Each client receives the object whose task was completed and updates the taskbar and completion status accordingly. Format: `<ID, object_ID>`
+
+### `event`
+* ID: 14
+* Protocol
+   * Server tells clients when an event has been initiated and which event it is. Format: `<ID, event>`
