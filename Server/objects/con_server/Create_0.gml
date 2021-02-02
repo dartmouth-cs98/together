@@ -75,7 +75,8 @@ max_clients = 12;
 network_create_server(network_socket_tcp, port, max_clients);
 //network_create_server(network_socket_udp, port, max_clients);
 
-server_buffer = buffer_create(1024, buffer_fixed, 1);
+// This buffer defaults to 1024 bytes, but can grow to a greater size when needed
+server_buffer = buffer_create(1024, buffer_grow, 1);
 
 // List of connected clients
 socket_list = ds_list_create();

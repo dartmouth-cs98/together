@@ -72,23 +72,20 @@ client = network_create_socket(network_socket_tcp);
 //client = network_create_socket_ext(network_socket_udp, 64198);
 
 // 127.0.0.1 is localhost
-// To get your IP address, open command prompt, type ipconfig. IPv4 address
+// To get your INTERNAL IP address, open command prompt, type ipconfig. IPv4 address
+// To get your EXTERNAL IP address (the one that other computers can actually use), google "what is my IP address?"
 // Only people on your network would be able to connect to your local IP address
 // Same port for client & server (64198)
-// The other addresses below are specific to Will's machine while using the Katheriine network on the Phi Tau router
 
 // Localhost, works only on an individual machine
 //network_connect(client, "127.0.0.1", 64198);
 
-// IPv4 (internal),  [WORKS LOCALLY]
-//network_connect(client, "192.168.1.142", 64198);
-
-// IP (external), [WORKS LOCALLY]
+// IP address (external),
+// Allows people to join a server un on Will's laptop
+// while he isusing the Katheriine network on the Phi Tau router.
 network_connect(client, "129.170.131.247", 64198);
 
-// DNS Server/default gateway, [WORKS LOCALLY]
-//network_connect(client, "192.168.1.1", 64198);
-
-client_buffer = buffer_create(1024, buffer_fixed, 1);
+// This buffer defaults to 1024 bytes, but can grow to a greater size when needed
+client_buffer = buffer_create(1024, buffer_grow, 1);
 
 socket_to_instanceid = ds_map_create();
