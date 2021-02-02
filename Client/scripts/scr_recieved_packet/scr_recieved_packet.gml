@@ -207,7 +207,7 @@ function scr_recieved_packet(buffer){
 	
 		case network.npc_create:
 			#region npc_create
-			show_debug_message("RECIEVE: npc_create: "+string(current_time));
+			//show_debug_message("RECIEVE: npc_create: "+string(current_time));
 			var _npc_id = buffer_read(buffer, buffer_u32);
 			var _x = buffer_read(buffer, buffer_u16);
 			var _y = buffer_read(buffer, buffer_u16);
@@ -279,8 +279,8 @@ function scr_recieved_packet(buffer){
 			var objectid = buffer_read(buffer, buffer_u32);
 			
 			with(obj_player) {
-				show_debug_message(onObject);
-				show_debug_message(objectid);
+				//show_debug_message(onObject);
+				//show_debug_message(objectid);
 				if (onObject == objectid) {
 					with(objectid) {
 						scr_task_complete(taskvalue);

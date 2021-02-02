@@ -81,9 +81,9 @@ if (room = rm_main_menu) {
 	
 	#region Enact selected option
 	if (input_enter_p) {
-		show_debug_message("Fullscreen? " + string(window_get_fullscreen()));
-		show_debug_message("Grid:");
-		show_debug_message(string(ds_grid));
+		//show_debug_message("Fullscreen? " + string(window_get_fullscreen()));
+		//show_debug_message("Grid:");
+		//show_debug_message(string(ds_grid));
 		//show_debug_message("Option name: " + ds_grid[# 1, menu_option[page]-1])
 		
 		// This long if condition ensures that the resolution cannot be changed while the game is in fullscreen

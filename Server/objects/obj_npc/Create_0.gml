@@ -77,10 +77,12 @@ else if (mode == npc_mode.random_target_bfs) {
 	
 	
 } else {
+	/*
 	show_debug_message("=========================================================");
 	show_debug_message("NPC ERROR: mode not recognized in create event");
 	show_debug_message("mode = " + string(mode));
-	show_debug_message("=========================================================");	
+	show_debug_message("=========================================================");
+	*/
 }
 
 x = start_node.x;

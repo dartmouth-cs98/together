@@ -75,7 +75,7 @@ for (i = 0; i < con_game_manager.other_count; i++){
 }
 scr_update_infection_level(infection_level);
 
-show_debug_message(DTO);
+//show_debug_message(DTO);
 
 #endregion
 
