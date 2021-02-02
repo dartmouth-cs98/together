@@ -16,4 +16,10 @@ if (!(global.any_menu and !open)){ // Check if menu is open and that menu isn't 
 		open = false;
 	}
 }
-*/
+
+
+if (open){
+	scr_unpause();
+	global.any_menu = false;
+	open = false;
+}

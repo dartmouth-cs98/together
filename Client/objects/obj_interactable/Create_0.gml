@@ -29,3 +29,5 @@ ds_list_insert(options, 0, scr_back); ds_list_insert(options, 1, scr_drop); // D
 myscript = scr_pickup;
 
 sprite_index = object1;
+
+contaminated = false;

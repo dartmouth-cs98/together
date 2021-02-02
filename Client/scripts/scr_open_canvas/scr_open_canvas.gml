@@ -12,12 +12,13 @@ function scr_open_canvas(object){
 					global.any_menu = true;
 					open = true;
 				}
-	
+				/*
 				else{
 					global.any_menu = false;
 					scr_unpause();
 					open = false;
 				}
+				*/
 			}
 		}
 	}

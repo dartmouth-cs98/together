@@ -29,3 +29,5 @@ v_sep = 18;
 anim_length = 4; // Int, # of frames in an animation [POSSIBLY UNNEEDED]
 anim_speed = 8; // Int, how fast it animates [POSSIBLY UNNEEDED]
 #endregion
+
+interactRange = 15;

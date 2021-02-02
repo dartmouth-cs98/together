@@ -100,6 +100,7 @@ if(distance_to_object(nearestObject) < interactRange){
 		if (ds_list_find_value(open_tasks, i) == nearestObject.task) has_task = true;
 	}	
 	
+	
 	if(keyboard_check_released(vk_space) and !global.paused){
 
 		// Run object script
