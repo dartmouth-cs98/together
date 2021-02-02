@@ -26,6 +26,7 @@ Willem Klein Wassink, Eitan Vilker, Joe Zhang
 * [Mythril Age Volume 1](https://mythril-age.itch.io/mythril-age-sprites-volume-1)
 * [CanariPack 8BIT TopDown](https://canarigames.itch.io/canaripack-8bit-topdown)
 * [Japanese City Game Assets](https://guttykreum.itch.io/japanese-town)
+* [WebStockReview](https://webstockreview.net/startdownload.html)
 
 ## Acknowledgments
 
