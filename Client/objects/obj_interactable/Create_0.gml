@@ -11,7 +11,6 @@ task = "";
 
 taskvalue = 5; // Default value of task completion
 
-germs = 0; // Int to keep track of germs on an object
 
 // For collecting objects, can ignore if not relevant
 collects = "obj_apple";

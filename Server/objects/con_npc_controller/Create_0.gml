@@ -1,5 +1,8 @@
 /// @description Controls NPC creation and behavior
 
+npc_infection_level = 0;
+alarm[0] = room_speed * 120;
+
 npc_list = ds_list_create();
 
 ds_list_add(npc_list, instance_create_layer(340, 185, "Instances", obj_npc));

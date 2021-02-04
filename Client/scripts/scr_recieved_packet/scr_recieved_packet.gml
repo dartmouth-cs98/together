@@ -295,5 +295,13 @@ function scr_recieved_packet(buffer){
 			#endregion
 			break;
 		
+		case network.update_npc_infection_level:
+			
+			#region update_npc_infection level
+			con_game_manager.npc_infection_level = buffer_read(buffer, buffer_u8);
+			
+			#endregion
+			break;
+		
 	}
 }

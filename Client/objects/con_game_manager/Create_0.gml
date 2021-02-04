@@ -42,6 +42,10 @@ with (con_menu) {
 id_to_npc_object_map = ds_map_create();
 other_count = 0;
 
+npc_infection_level = 0;
+
+#region roles and tasks
+
 role_to_tasks_map = ds_map_create();
 doctor_tasks = ds_list_create();
 scientist_tasks = ds_list_create();
@@ -97,3 +101,4 @@ ds_map_add(role_to_sprite_map, "Philanthropist", spr_philanthropist_ability);
 ds_map_add(role_to_sprite_map, "Engineer", spr_engineer_ability);
 ds_map_add(role_to_sprite_map, "Scientist", spr_scientist_ability);
 */
+#endregion
