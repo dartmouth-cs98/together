@@ -41,7 +41,7 @@ with (con_menu) {
 
 id_to_npc_object_map = ds_map_create();
 other_count = 0;
-
+npc_count = 0;
 npc_infection_level = 0;
 
 #region roles and tasks

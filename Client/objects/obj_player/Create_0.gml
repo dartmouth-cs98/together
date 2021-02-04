@@ -72,9 +72,9 @@ chat_color_1 = 0;
 chat_color_2 = 0;
 chat_color_3 = 0;
 
-infection_level = 3; // int
+infection_level = 0; // int
 slow = false;
 nearsighted = false;
-scrambled = 1; // int
-dehydrated = true;
+scrambled = 0; // int
+dehydrated = false;
 alarm[0] = room_speed * 60;

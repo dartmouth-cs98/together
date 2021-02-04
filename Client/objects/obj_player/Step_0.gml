@@ -45,38 +45,74 @@ network_send_packet(con_client.client, con_client.client_buffer, buffer_tell(con
 #endregion
 
 #region Manage contagion checks
-DTO = 0;
-for (i = 0; i < con_game_manager.other_count; i++){
-	var other_player = instance_find(obj_other, i);
-	DTO = distance_to_object(other_player)
-	infection_level_other = other_player.infection_level;
-	if (DTO < 5){
-		if (infection_level_other > 1 and infection_level_other < 4){
-			if (infection_level == 0) infection_level = 1;
+
+if (infection_level < 4){
+	DTO = 0;
+	for (i = 0; i < con_game_manager.other_count; i++){
+		var other_player = instance_find(obj_other, i);
+		DTO = distance_to_object(other_player)
+		infection_level_other = other_player.infection_level;
+		if (DTO < 5){
+			if (infection_level_other > 0 and infection_level_other < 4){
+				if (infection_level == 0) infection_level = 1;
+				else if (infection_level < 3) infection_level = 3;
+			}
+			else if (infection_level < 3 and infection_level_other != 0) infection_level = 3;
 		}
-		else if (infection_level < 3) infection_level = 3;
-	}
 	
-	else if (DTO < 15){
-		if (infection_level_other > 2 and infection_level_other < 5){
-			if (infection_level == 0 and irandom(2) == 0) infection_level = 1;
+		else if (DTO < 15){
+			if (infection_level_other > 1 and infection_level_other < 4){
+				if (infection_level == 0 and irandom(2) == 0) infection_level = 1;
+			}
+			else if (infection_level < 3 and irandom(1) == 0 and infection_level_other != 0) infection_level = 3;
 		}
-		else if (infection_level < 3 and irandom(1) == 0) infection_level = 3;
-	}
 	
-	else if (DTO < 30){
-		if (infection_level_other > 2 and infection_level_other < 5){		
-			if (infection_level == 0 and irandom(4) == 0) infection_level = 1;	
+		else if (DTO < 30){
+			if (infection_level_other > 2 and infection_level_other < 5){		
+				if (infection_level == 0 and irandom(4) == 0) infection_level = 1;	
+			}
+			else if (infection_level < 3 and irandom(2) == 0 and infection_level_other != 0) infection_level = 3;
 		}
-		else if (infection_level < 3 and irandom(2) == 0) infection_level = 3;
-	}
 	
-	else if (DTO < 50){
+		else if (DTO < 50){
 		
-		if (infection_level_other == 6 and irandom(3) == 0) infection_level = 3;
+			if (infection_level < 3 and infection_level_other == 6 and irandom(3) == 0) infection_level = 3;
+		}
 	}
+
+	for (i = 0; i < con_game_manager.npc_count; i++){
+		var npc = instance_find(obj_npc, i);
+		DTO = distance_to_object(npc)
+
+		if (DTO < 5){
+			if (npc_infection_level > 2){
+				if (infection_level < 3) infection_level = 3;
+			}
+			else if (irandom(2) == 0 and infection_level < 3) infection_level = 3;
+		}
+	
+		else if (DTO < 15){
+			if (npc_infection_level > 2){
+				if (irandom(1) == 0 and infection_level < 3) infection_level = 3;
+			}
+			else if (irandom(2) == 0 and infection_level == 0) infection_level = 1;
+		}
+	
+		else if (DTO < 30){
+			if (npc_infection_level > 2){
+				if (irandom(2) == 0 and infection_level < 3) infection_level = 3;
+			}
+			else if (irandom(4) == 0 and infection_level == 0) infection_level = 1;
+		}
+	
+		else if (DTO < 50){
+			if (npc_infection_level > 2){
+				if (irandom(5) == 0 and infection_level == 0) infection_level = 1;
+			}
+		}
+	}
+	scr_update_infection_level(infection_level);
 }
-scr_update_infection_level(infection_level);
 
 #endregion
 
@@ -100,8 +136,9 @@ if(distance_to_object(nearestObject) < interactRange){
 		if (ds_list_find_value(open_tasks, i) == nearestObject.task) has_task = true;
 	}	
 	
-	
 	if(keyboard_check_released(vk_space) and !global.paused){
+		
+		if (nearestObject.contaminated) infection_level = 1;
 
 		// Run object script
 		if(has_task) script_execute(nearestObject.myscript, nearestObject);

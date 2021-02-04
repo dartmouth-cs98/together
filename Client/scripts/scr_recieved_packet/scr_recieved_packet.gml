@@ -221,6 +221,7 @@ function scr_recieved_packet(buffer){
 			_npc.sprite_sheet = _sprite_sheet;
 			
 			ds_map_add(con_game_manager.id_to_npc_object_map, _npc_id, _npc); 
+			con_game_manager.npc_count++;
 			
 			#endregion
 			break;
