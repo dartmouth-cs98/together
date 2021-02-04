@@ -55,14 +55,21 @@ ds_list_add(doctor_tasks, "Save 5 NPCs");
 ds_list_add(doctor_tasks, "Collect Apples");
 ds_list_add(scientist_tasks, "Graph Disease Progression");
 ds_list_add(scientist_tasks, "Collect Apples");
-ds_list_add(farmer_tasks, "Collect Apples");
+ds_list_add(farmer_tasks, "Pick Apples");
+ds_list_add(farmer_tasks, "Water Plants");
 ds_list_add(farmer_tasks, "Duotask Unnamed");
 ds_list_add(shopkeeper_tasks, "Collect Apples");
 ds_list_add(shopkeeper_tasks, "Duotask Unnamed");
 ds_list_add(engineer_tasks, "Collect Apples");
 ds_list_add(mail_carrier_tasks, "Collect Apples");
+ds_list_add(mail_carrier_tasks, "Deliver Mail");
 ds_list_add(mayor_tasks, "Collect Apples");
 ds_list_add(mayor_tasks, "Enter Passcode");
+
+//TESTING PURPOSES
+ds_list_add(scientist_tasks, "Deliver Mail");
+ds_list_add(scientist_tasks, "Water Plants");
+ds_list_add(scientist_tasks, "Pick Apples");
 
 ds_map_add(role_to_tasks_map, "Doctor", doctor_tasks);
 ds_map_add(role_to_tasks_map, "Scientist", scientist_tasks);

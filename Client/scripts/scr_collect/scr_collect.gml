@@ -8,10 +8,10 @@ function scr_collect(object){
 		if(object_get_name(key.object_index)==object.collects){
 			ds_list_delete(global.inventory, i);
 			instance_destroy(key);
-			scr_task_complete(10);
+			scr_task_complete(object.taskvalue);
 			scr_create_text("Delivery successful!");
 			exit;
 		}
 	}
-	scr_create_text("You don't have any apples in your inventory! See if you can find all 5.");
+	scr_create_text(object.empty_message);
 }
