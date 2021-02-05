@@ -17,5 +17,6 @@ myname = "canvas";
 object1 = spr_canvas1;
 object2 = spr_canvas2;
 task = "Graph Disease Progression";
+contaminated = false;
 
 myscript = scr_open_canvas;

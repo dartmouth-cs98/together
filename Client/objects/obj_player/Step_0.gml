@@ -82,7 +82,8 @@ if (infection_level < 4){
 
 	for (i = 0; i < con_game_manager.npc_count; i++){
 		var npc = instance_find(obj_npc, i);
-		DTO = distance_to_object(npc)
+		DTO = distance_to_object(npc);
+		var npc_infection_level = con_game_manager.npc_infection_level;
 
 		if (DTO < 5){
 			if (npc_infection_level > 2){
@@ -138,7 +139,7 @@ if(distance_to_object(nearestObject) < interactRange){
 	
 	if(keyboard_check_released(vk_space) and !global.paused){
 		
-		if (nearestObject.contaminated) infection_level = 1;
+		if (nearestObject.contaminated and infection_level == 0) infection_level = 1;
 
 		// Run object script
 		if(has_task) script_execute(nearestObject.myscript, nearestObject);

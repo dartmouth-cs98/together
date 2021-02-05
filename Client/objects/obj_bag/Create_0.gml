@@ -17,3 +17,4 @@ collects = "obj_apple";
 myscript = scr_collect;
 
 sprite_index = object1;
+contaminated = false;

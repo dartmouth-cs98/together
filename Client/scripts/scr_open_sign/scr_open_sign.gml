@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_open_canvas(object){
+function scr_open_sign(object){
 
 	with(object){
 

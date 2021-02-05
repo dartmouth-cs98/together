@@ -11,3 +11,4 @@ myscript = scr_duotask;
 task = "Duotask_Unnamed";
 
 buttons = [];
+contaminated = false;
