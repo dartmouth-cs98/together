@@ -1,4 +1,5 @@
 /// @description Base duotask object
+event_inherited();
 object1 = spr_greencircle1;
 object2 = spr_greencircle2;
 
