@@ -1,5 +1,9 @@
 /// @description Draw inventory
 
+if (room != rm_client) {
+	exit;
+}
+
 if (global.inventory_menu or not global.paused) {
 	inventory_x = global.cam_X + (global.cam_width/2)-75; // int
 	inventory_y = global.cam_Y + global.cam_height-48; // int
