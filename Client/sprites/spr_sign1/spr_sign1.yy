@@ -147,8 +147,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"5436f5af-64da-4e15-97dc-f88291ee2d21","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "set_max_occupancies",
+    "path": "folders/Sprites/minigames/set_max_occupancies.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_sign1",

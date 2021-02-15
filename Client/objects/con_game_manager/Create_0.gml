@@ -43,6 +43,7 @@ id_to_npc_object_map = ds_map_create();
 other_count = 0;
 npc_count = 0;
 npc_infection_level = 0;
+sign_count = 0;
 
 #region roles and tasks
 
@@ -66,15 +67,16 @@ ds_list_add(shopkeeper_tasks, "Duotask Unnamed");
 ds_list_add(engineer_tasks, "Collect Apples");
 ds_list_add(mail_carrier_tasks, "Collect Apples");
 ds_list_add(mayor_tasks, "Collect Apples");
+ds_list_add(mayor_tasks, "Set Max Occupancies");
 ds_list_add(mayor_tasks, "Enter Passcode");
 
 ds_map_add(role_to_tasks_map, "Doctor", doctor_tasks);
 ds_map_add(role_to_tasks_map, "Scientist", scientist_tasks);
-ds_map_add(role_to_tasks_map, "Engineer", scientist_tasks);
-ds_map_add(role_to_tasks_map, "Farmer", scientist_tasks);
-ds_map_add(role_to_tasks_map, "Mail Carrier", scientist_tasks);
-ds_map_add(role_to_tasks_map, "Mayor", scientist_tasks);
-ds_map_add(role_to_tasks_map, "Shopkeeper", scientist_tasks);
+ds_map_add(role_to_tasks_map, "Engineer", engineer_tasks);
+ds_map_add(role_to_tasks_map, "Farmer", farmer_tasks);
+ds_map_add(role_to_tasks_map, "Mail Carrier", mail_carrier_tasks);
+ds_map_add(role_to_tasks_map, "Mayor", mayor_tasks);
+ds_map_add(role_to_tasks_map, "Shopkeeper", shopkeeper_tasks);
 
 /*
 role_to_sprite_map = ds_map_create();

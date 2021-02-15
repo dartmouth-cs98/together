@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_canvas2",
-    "path": "sprites/spr_canvas2/spr_canvas2.yy",
+    "name": "spr_canvas1",
+    "path": "sprites/spr_canvas1/spr_canvas1.yy",
   },
   "solid": false,
   "visible": true,

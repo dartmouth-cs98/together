@@ -26,3 +26,6 @@ desired_string = string_insert(string(num2), desired_string, string_length(desir
 
 myscript = scr_open_sign;
 sprite_index = object1;
+
+hasRung = false;
+alarm[0] = room_speed * 3;

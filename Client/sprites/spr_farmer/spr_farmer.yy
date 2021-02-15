@@ -7,9 +7,9 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 11,
-  "bbox_right": 179,
-  "bbox_top": 18,
+  "bbox_left": 8,
+  "bbox_right": 183,
+  "bbox_top": 11,
   "bbox_bottom": 255,
   "HTile": false,
   "VTile": false,
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"cc0f95eb-ab8b-426d-af36-55f7e7a35977","path":"sprites/spr_jack_of_all_trades/spr_jack_of_all_trades.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"cc0f95eb-ab8b-426d-af36-55f7e7a35977","path":"sprites/spr_jack_of_all_trades/spr_jack_of_all_trades.yy",},"LayerId":{"name":"b6ce4a71-af3e-4e76-8ffa-f0fd00ec0d08","path":"sprites/spr_jack_of_all_trades/spr_jack_of_all_trades.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_jack_of_all_trades","path":"sprites/spr_jack_of_all_trades/spr_jack_of_all_trades.yy",},"resourceVersion":"1.0","name":"cc0f95eb-ab8b-426d-af36-55f7e7a35977","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"cec2147f-a782-4e1a-912e-ee376999d3c7","path":"sprites/spr_farmer/spr_farmer.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"cec2147f-a782-4e1a-912e-ee376999d3c7","path":"sprites/spr_farmer/spr_farmer.yy",},"LayerId":{"name":"f2d9689a-2340-473a-9608-4ca72757fff2","path":"sprites/spr_farmer/spr_farmer.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_farmer","path":"sprites/spr_farmer/spr_farmer.yy",},"resourceVersion":"1.0","name":"cec2147f-a782-4e1a-912e-ee376999d3c7","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_jack_of_all_trades","path":"sprites/spr_jack_of_all_trades/spr_jack_of_all_trades.yy",},
+    "spriteId": {"name":"spr_farmer","path":"sprites/spr_farmer/spr_farmer.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"041324d9-59cb-4215-a132-10b1bd95c1d8","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"cc0f95eb-ab8b-426d-af36-55f7e7a35977","path":"sprites/spr_jack_of_all_trades/spr_jack_of_all_trades.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"0bbb0b2a-4173-45da-87e3-b4794e3036e6","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"cec2147f-a782-4e1a-912e-ee376999d3c7","path":"sprites/spr_farmer/spr_farmer.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,21 +58,21 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_jack_of_all_trades","path":"sprites/spr_jack_of_all_trades/spr_jack_of_all_trades.yy",},
+    "parent": {"name":"spr_farmer","path":"sprites/spr_farmer/spr_farmer.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_jack_of_all_trades",
+    "name": "spr_farmer",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"b6ce4a71-af3e-4e76-8ffa-f0fd00ec0d08","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f2d9689a-2340-473a-9608-4ca72757fff2","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Roles",
     "path": "folders/Sprites/Roles.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_jack_of_all_trades",
+  "name": "spr_farmer",
   "tags": [],
   "resourceType": "GMSprite",
 }

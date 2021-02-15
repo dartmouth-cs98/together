@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"409a4fbd-efe8-440b-8dbd-7d83cce7947d","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "set_max_occupancies",
+    "path": "folders/Sprites/minigames/set_max_occupancies.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_sign2",
