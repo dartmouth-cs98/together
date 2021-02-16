@@ -85,6 +85,9 @@ client = network_create_socket(network_socket_tcp);
 // while he isusing the Katheriine network on the Phi Tau router.
 network_connect(client, "129.170.131.247", 64198);
 
+// This one is for the Azure VM
+//network_connect(client, "52.188.114.168", 64198);
+
 // This buffer defaults to 1024 bytes, but can grow to a greater size when needed
 client_buffer = buffer_create(1024, buffer_grow, 1);
 
