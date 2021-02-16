@@ -6,7 +6,7 @@
     "path": "folders/Scripts/menus.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_change_resolution",
+  "name": "scr_start_game",
   "tags": [],
   "resourceType": "GMScript",
 }

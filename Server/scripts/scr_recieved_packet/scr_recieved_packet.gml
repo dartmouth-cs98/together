@@ -216,21 +216,21 @@ function scr_recieved_packet(buffer, socket){
 			var object_id = buffer_read(buffer, buffer_u32);
 			var add = buffer_read(buffer, buffer_s8);
 			
-			show_debug_message("add is " + string(add));
+			//show_debug_message("add is " + string(add));
 
 			if ds_map_exists(global.duotask_map, object_id){
 				if ((ds_map_find_value(global.duotask_map, object_id) == 0) && (add == 1)){
-					show_debug_message("add 1 player");
+					//show_debug_message("add 1 player");
 					ds_map_replace(global.duotask_map, object_id, 1);
 				}
 				
 				else if ((ds_map_find_value(global.duotask_map, object_id) == 1) && (add == -1)) {
-					show_debug_message("remove 1 player");
+					//show_debug_message("remove 1 player");
 					ds_map_replace(global.duotask_map, object_id, 0);
 				}
 				
 				else if ((ds_map_find_value(global.duotask_map, object_id) == 1) && (add == 1)) {
-					show_debug_message("complete duotask");
+					//show_debug_message("complete duotask");
 					ds_map_replace(global.duotask_map, object_id, 0);
 
 					// Broadcast completion status to all players
@@ -248,7 +248,7 @@ function scr_recieved_packet(buffer, socket){
 				}
 				
 			} else if (add == 1) {
-				show_debug_message("add new object");
+				//show_debug_message("add new object");
 				ds_map_add(global.duotask_map, object_id, 1);
 			}
 			#endregion

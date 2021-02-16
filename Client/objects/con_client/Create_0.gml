@@ -70,13 +70,26 @@ ds_map_add(color_map, colors.yellow, c_yellow);
 
 // Connection type has to be the same for client & server
 client = network_create_socket(network_socket_tcp);
+//client = network_create_socket_ext(network_socket_udp, 64198);
 
 // 127.0.0.1 is localhost
-// To get your IP address, open command prompt, type ipconfig. IPv4 address
+// To get your INTERNAL IP address, open command prompt, type ipconfig. IPv4 address
+// To get your EXTERNAL IP address (the one that other computers can actually use), google "what is my IP address?"
 // Only people on your network would be able to connect to your local IP address
 // Same port for client & server (64198)
+
+// Localhost, works only on an individual machine
 network_connect(client, "127.0.0.1", 64198);
 
-client_buffer = buffer_create(1024, buffer_fixed, 1);
+// IP address (external),
+// Allows people to join a server on Will's laptop
+// while he isusing the Katheriine network on the Phi Tau router.
+//network_connect(client, "129.170.131.247", 64198);
+
+// This one is for the Azure VM
+//network_connect(client, "52.188.114.168", 64198);
+
+// This buffer defaults to 1024 bytes, but can grow to a greater size when needed
+client_buffer = buffer_create(1024, buffer_grow, 1);
 
 socket_to_instanceid = ds_map_create();

@@ -9,7 +9,7 @@ if (show_chat){
 	buffer_write(con_client.client_buffer, buffer_u8, client_color_2);	// Message color
 	buffer_write(con_client.client_buffer, buffer_u8, client_color_3);	// Message color
 	network_send_packet(con_client.client, con_client.client_buffer, buffer_tell(con_client.client_buffer));
-	show_debug_message("SEND: chat: "+string(current_time));
+	//show_debug_message("SEND: chat: "+string(current_time));
 	
 	keyboard_string = "";
 	chat_text = "";
