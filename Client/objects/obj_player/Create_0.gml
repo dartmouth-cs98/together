@@ -44,6 +44,7 @@ taskbar_y = 10;  // int
 taskbar_max = 100; // int
 taskbar_width = 118;  // int
 taskbar_height = 22; // int
+display_tasks = false; // bool
 
 food_bar_x = 10; // int
 food_bar_y = 40; // int

@@ -18,16 +18,10 @@ for (i = 0; i < sign_count; i++){
 	while (num1 < 10){
 		num1 = irandom(99);	
 	}
-	num2 = irandom(99);
-	while (num2 < 10){
-		num2 = irandom(99);
-	}
+
 	desired_string = string(num1);
-	desired_string = string_insert(string(num2), desired_string, string_length(desired_string) - 1);
 	ds_list_add(max_occupancy_list, desired_string);
 }
-
-
 
 myscript = scr_open_computer;
 sprite_index = object1;
