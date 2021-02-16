@@ -86,9 +86,9 @@ function scr_network_player_join(_username, _sprite_sheet){
 		buffer_write(server_buffer, buffer_u32, _npc.id);
 		buffer_write(server_buffer, buffer_u16, _npc.x);
 		buffer_write(server_buffer, buffer_u16, _npc.y);
-		buffer_write(server_buffer, buffer_u8, 45/*_npc.sprite_sheet*/);
-		// 45 here is a temp number. sprite sheet IDs differ between client and server.
-		// 45 is the ID of the pink skeleton.
+		buffer_write(server_buffer, buffer_u8, 58/*_npc.sprite_sheet*/);
+		// 58 here is a temp number. sprite sheet IDs differ between client and server.
+		// 58 is the ID of the pink skeleton.
 		network_send_packet(socket, server_buffer, buffer_tell(server_buffer));
 		//show_debug_message("SEND: npc_create: "+string(current_time));
 	}

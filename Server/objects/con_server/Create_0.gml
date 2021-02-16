@@ -11,11 +11,12 @@ enum network {
 	task,					// For handling task bar progress
 	pause,					// To keep player from animating on other machines
 	unpause,				// To restore normal animation after unpausing
-	npc_create,			// To set up NPCs on clients
-	npc_move,			// To broadcast NPC movement to players
+	npc_create,				// To set up NPCs on clients
+	npc_move,				// To broadcast NPC movement to players
 	revive,					// To restore a fallen player to health
 	update_infection_level, // To keep all players apprised of each other's infection level
-	duotask					// For handling tasks that require two players
+	duotask,				// For handling tasks that require two players
+	event
 }
 
 #region An enum & ds map for colors, makes it easier to send color IDs across the internet
@@ -87,7 +88,7 @@ socket_to_instanceid = ds_map_create();
 player_spawn_x = 0;
 player_spawn_y = 0;
 
-max_player_number = 10;
+max_player_number = 7;
 current_player_number = 0;
 
 available_roles = ds_list_create();
@@ -95,9 +96,8 @@ ds_list_add(available_roles, "Doctor");
 ds_list_add(available_roles, "Farmer");
 ds_list_add(available_roles, "Engineer");
 ds_list_add(available_roles, "Shopkeeper");
-ds_list_add(available_roles, "Taxi Driver");
-ds_list_add(available_roles, "Post Officer");
+ds_list_add(available_roles, "Mail Carrier");
 ds_list_add(available_roles, "Mayor");
-ds_list_add(available_roles, "Philanthropist");
-ds_list_add(available_roles, "Jack of All Trades");
 ds_list_add(available_roles, "Scientist");
+
+alarm[0] = room_speed * 60;

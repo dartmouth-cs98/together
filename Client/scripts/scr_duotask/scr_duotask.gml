@@ -38,7 +38,7 @@ function scr_duotask(object){
 				global.any_menu = false;
 				
 				with (obj_player) {
-					onObject = obj_interactable;
+					onObject = noone;
 				}
 				scr_duotask_off(object);
 				scr_unpause();
