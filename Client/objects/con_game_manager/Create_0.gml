@@ -60,6 +60,7 @@ ds_list_add(doctor_tasks, "Save 5 NPCs");
 ds_list_add(doctor_tasks, "Collect Apples");
 ds_list_add(scientist_tasks, "Graph Disease Progression");
 ds_list_add(scientist_tasks, "Collect Apples");
+ds_list_add(farmer_tasks, "Harvest");
 ds_list_add(farmer_tasks, "Collect Apples");
 ds_list_add(farmer_tasks, "Duotask Unnamed");
 ds_list_add(shopkeeper_tasks, "Collect Apples");
