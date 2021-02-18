@@ -23,7 +23,7 @@ function scr_recieved_packet(buffer){
 		
 		case network.player_connect:
 			#region player_connect
-			show_debug_message("RECIEVE: player_connect: "+string(current_time));
+			//show_debug_message("RECIEVE: player_connect: "+string(current_time));
 			
 			// When a player connects, get their info & put them in appropriate data structures
 			var _socket = buffer_read(buffer, buffer_u8);

@@ -10,7 +10,6 @@ function scr_recieved_packet(buffer, socket){
 			
 			var _username = buffer_read(buffer, buffer_string);
 			var _sprite_sheet = buffer_read(buffer, buffer_u8);
-			show_debug_message("~ NPJ call in scr_recieved_packet");
 			scr_network_player_join(_username, _sprite_sheet);
 			#endregion
 			break;

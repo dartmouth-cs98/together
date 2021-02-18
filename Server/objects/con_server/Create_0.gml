@@ -1,5 +1,8 @@
 /// @description Set up server
 
+// Global variable. If true, visuals should show up. If false, they shouldn't
+global.show_visuals = false;
+
 enum network {
 	player_establish,		// 
 	player_connect,			// For managing a player connecting

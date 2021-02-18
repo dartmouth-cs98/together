@@ -70,6 +70,7 @@ function scr_network_player_join(_username, _sprite_sheet){
 			buffer_write(server_buffer, buffer_u8, network.task);	// Message ID
 			buffer_write(server_buffer, buffer_u8, global.task);			// Taskbar		
 			network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
+			//show_debug_message("SEND: task: "+string(current_time));
 		}
 	}
 	

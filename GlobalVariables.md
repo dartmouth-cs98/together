@@ -88,3 +88,8 @@ Description of global variables.
 
 ### `global.task`
 * Int, indicates progress of tasks
+
+### `global.show_visuals`
+* Boolean, intended to remove debug visuals on server to lighten the load
+* If true, visuals are shown on the server
+* If false, visuals are not shown on the server
