@@ -1,13 +1,16 @@
 {
   "spriteId": {
-    "name": "Sprite91",
-    "path": "sprites/Sprite91/Sprite91.yy",
+    "name": "spr_farmhouse2",
+    "path": "sprites/spr_farmhouse2/spr_farmhouse2.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_interactable",
+    "path": "objects/obj_interactable/obj_interactable.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -20,15 +23,17 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_farmhouse","path":"objects/obj_farmhouse/obj_farmhouse.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Farming",
+    "path": "folders/Objects/Minigames/Farming.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_wall100x125",
+  "name": "obj_farmhouse",
   "tags": [],
   "resourceType": "GMObject",
 }
