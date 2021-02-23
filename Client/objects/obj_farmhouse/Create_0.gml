@@ -3,7 +3,6 @@
 
 event_inherited();
 
-
 myname = "farmhouse";
 object1 = spr_farmhouse1;
 object2 = spr_farmhouse2;

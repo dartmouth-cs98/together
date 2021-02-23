@@ -1,4 +1,4 @@
-/// @description Controls NPC creation and behavior
+		/// @description Controls NPC creation and behavior
 
 npc_infection_level = 0;
 alarm[0] = room_speed * 120;

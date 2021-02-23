@@ -1,7 +1,7 @@
 /// @description Every frame
 
 // Comment out when not testing a specific role
-role = "Mayor";
+role = "Farmer";
 
 #region Manage 8-directional movement, based on this video: https://www.youtube.com/watch?v=0-a0Fak7cjk
 

@@ -31,6 +31,7 @@
     {"id":{"name":"item8BIT_key","path":"sprites/item8BIT_key/item8BIT_key.yy",},"order":6,},
     {"id":{"name":"spr_ur_strip4","path":"sprites/spr_ur_strip4/spr_ur_strip4.yy",},"order":7,},
     {"id":{"name":"spr_cheese","path":"sprites/spr_cheese/spr_cheese.yy",},"order":8,},
+    {"id":{"name":"scr_pickup_seeds","path":"scripts/scr_pickup_seeds/scr_pickup_seeds.yy",},"order":0,},
     {"id":{"name":"snd_Jump03","path":"sounds/snd_Jump03/snd_Jump03.yy",},"order":11,},
     {"id":{"name":"con_menu","path":"objects/con_menu/con_menu.yy",},"order":4,},
     {"id":{"name":"snd_Jump02","path":"sounds/snd_Jump02/snd_Jump02.yy",},"order":10,},
