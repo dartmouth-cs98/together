@@ -6,6 +6,7 @@ switch (room) {
 		audio_stop_all();
 		audio_play_sound(msc_MusicDUNGEON, 2, true);
 		window_set_size(1152, 648);
+		id_to_npc_object_map = ds_map_create();
 		break;
 		
 	case rm_win_screen:
