@@ -11,7 +11,8 @@ switch (room) {
 		
 	case rm_win_screen:
 		audio_stop_all();
-		audio_play_sound(msc_MusicADVENTURE, 2, false);
+		// TODO: Uncomment this
+		//audio_play_sound(msc_MusicADVENTURE, 2, false);
 		break;
 		
 	default:

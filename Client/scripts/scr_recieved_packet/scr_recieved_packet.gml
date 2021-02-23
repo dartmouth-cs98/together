@@ -225,7 +225,7 @@ function scr_recieved_packet(buffer){
 		
 		case network.npc_move:
 			#region npc_move
-			show_debug_message("RECEIVE: npc_move: "+string(current_time));
+			//show_debug_message("RECEIVE: npc_move: "+string(current_time));
 			
 			var npc_id = buffer_read(buffer, buffer_u32);
 			var move_x = buffer_read(buffer, buffer_f32);
@@ -247,7 +247,6 @@ function scr_recieved_packet(buffer){
 			// Move sprite, advance animation, and set correct facing direction
 			if (!is_undefined(_npc)) {
 				with (_npc) {
-					show_debug_message("NPC #" + string(self.id) + " actually moved")
 					x += move_x;
 					y += move_y;
 					x_frame = _x_frame;
