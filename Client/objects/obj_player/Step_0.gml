@@ -37,6 +37,7 @@ network_send_packet(con_client.client, con_client.client_buffer, buffer_tell(con
 //show_debug_message("SEND: move: "+string(current_time));
   
 #endregion
+
 #region Manage contagion checks
 if (infection_level < 4){
 	DTO = 0;
@@ -105,6 +106,7 @@ if (infection_level < 4){
 	scr_update_infection_level(infection_level);
 }
 #endregion
+
 #region Manage Object interaction
 nearestObject = instance_nearest(x,y,obj_interactable);
 if(nearestObject != currentNearestObject){
@@ -117,6 +119,10 @@ if(distance_to_object(nearestObject) < interactRange){
 	
 	// Check for role here
 	var has_task = false;
+	
+	// TODO: This is here for the demo. Remove.
+	has_task = true;
+	
 	open_tasks = ds_map_find_value(con_game_manager.role_to_tasks_map, role);
 	for (i = 0; i < ds_list_size(open_tasks); i++){
 		if (ds_list_find_value(open_tasks, i) == nearestObject.task) has_task = true;

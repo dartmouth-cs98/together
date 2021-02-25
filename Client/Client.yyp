@@ -150,7 +150,7 @@
     {"id":{"name":"snd_Attack01","path":"sounds/snd_Attack01/snd_Attack01.yy",},"order":0,},
     {"id":{"name":"spr_witch_purple_icon","path":"sprites/spr_witch_purple_icon/spr_witch_purple_icon.yy",},"order":23,},
     {"id":{"name":"con_main_menu","path":"objects/con_main_menu/con_main_menu.yy",},"order":7,},
-    {"id":{"name":"scr_recieved_packet","path":"scripts/scr_recieved_packet/scr_recieved_packet.yy",},"order":0,},
+    {"id":{"name":"scr_received_packet","path":"scripts/scr_received_packet/scr_received_packet.yy",},"order":0,},
     {"id":{"name":"obj_npc","path":"objects/obj_npc/obj_npc.yy",},"order":10,},
     {"id":{"name":"obj_computer","path":"objects/obj_computer/obj_computer.yy",},"order":1,},
     {"id":{"name":"Font2","path":"fonts/Font2/Font2.yy",},"order":1,},

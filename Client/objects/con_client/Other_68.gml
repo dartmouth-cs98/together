@@ -6,6 +6,6 @@ switch(type_event) {
 	case network_type_data:
 		buffer = ds_map_find_value(async_load, "buffer");
 		buffer_seek(buffer, buffer_seek_start, 0);
-		scr_recieved_packet(buffer);
+		scr_received_packet(buffer);
 		break;
 }

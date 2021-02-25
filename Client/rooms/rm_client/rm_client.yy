@@ -730,4 +730,4 @@
   "name": "rm_client",
   "tags": [],
   "resourceType": "GMRoom",
- }
+}
