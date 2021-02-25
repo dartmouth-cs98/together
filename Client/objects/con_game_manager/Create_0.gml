@@ -8,12 +8,43 @@ player_sprite = 0;
 player_sprite_h = 0;
 player_sprite_w = 0;
 
+//// ENUMS USED FOR MENU PAGES
+// ID for each menu page
+enum menu_page {
+	main,
+	settings,
+	audio,
+	//difficulty,
+	graphics,
+	controls,
+	main_or_exit,
+	height,			// Used to check how many entries are in this enum
+}
+
+// ID for each type of menu element
+enum menu_element_type {
+	script_runner,
+	page_transfer,
+	slider,
+	shift,
+	toggle,
+	input,
+	height,			// Used to check how many entries are in this enum
+}
+
+#region Global variables
+
 // Default controls
-global.key_enter	= vk_space;		// Confirm
-global.key_left		= vk_left;
-global.key_right	= vk_right;
-global.key_up		= vk_up;
-global.key_down		= vk_down;
+global.key_enter		= vk_space;		// Confirm
+global.key_left			= vk_left;
+global.key_right		= vk_right;
+global.key_up			= vk_up;
+global.key_down			= vk_down;
+
+// The values of each volume type
+global.master_volume	= 0.5;
+global.sound_volume		= 0.5;
+global.music_volume		= 0.5;
 
 // Taskbar
 global.taskbar = 0;
@@ -31,15 +62,23 @@ global.inventory_menu = false;
 global.minigame_passcode = false;
 global.minigame_duotask = false;
 
+// Variables to control the camera
+global.cam_X = 0;
+global.cam_Y = 0;
+
+global.cam_width = 544;
+global.cam_height = 306;
+
+#endregion
+
 audio_group_load(audiogroup_music);
 audio_group_load(audiogroup_soundeffects);
 audio_group_load(audiogroup_master);
 
-with (con_menu) {
+with (con_pause_menu) {
 	script_execute(ds_grid[# 2, menu_option[page]], ds_grid[# 3, menu_option[page]], menu_option[page]);	
 }
 
-id_to_npc_object_map = ds_map_create();
 other_count = 0;
 npc_count = 0;
 npc_infection_level = 0;
@@ -62,14 +101,22 @@ ds_list_add(scientist_tasks, "Graph Disease Progression");
 ds_list_add(scientist_tasks, "Collect Apples");
 ds_list_add(farmer_tasks, "Harvest");
 ds_list_add(farmer_tasks, "Collect Apples");
+ds_list_add(farmer_tasks, "Pick Apples");
+ds_list_add(farmer_tasks, "Water Plants");
 ds_list_add(farmer_tasks, "Duotask Unnamed");
 ds_list_add(shopkeeper_tasks, "Collect Apples");
 ds_list_add(shopkeeper_tasks, "Duotask Unnamed");
 ds_list_add(engineer_tasks, "Collect Apples");
 ds_list_add(mail_carrier_tasks, "Collect Apples");
+ds_list_add(mail_carrier_tasks, "Deliver Mail");
 ds_list_add(mayor_tasks, "Collect Apples");
 ds_list_add(mayor_tasks, "Set Max Occupancies");
 ds_list_add(mayor_tasks, "Enter Passcode");
+
+//TESTING PURPOSES
+ds_list_add(scientist_tasks, "Deliver Mail");
+ds_list_add(scientist_tasks, "Water Plants");
+ds_list_add(scientist_tasks, "Pick Apples");
 
 ds_map_add(role_to_tasks_map, "Doctor", doctor_tasks);
 ds_map_add(role_to_tasks_map, "Scientist", scientist_tasks);

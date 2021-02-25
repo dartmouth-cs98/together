@@ -44,10 +44,12 @@ if (moving) {
 		
 		else {
 			#region mode not recognized
+			/*
 			show_debug_message("=========================================================");
 			show_debug_message("NPC ERROR: mode not recognized in step event");
 			show_debug_message("mode = " + string(mode));
 			show_debug_message("=========================================================");
+			*/
 			#endregion
 		}
 		
@@ -74,17 +76,21 @@ if (moving) {
 	#region Change which direction the NPC sprite is facing
 	if (move_dir < 0) {
 		// Error: move_dir too low
+		/*
 		show_debug_message("=========================================================");
 		show_debug_message("NPC ERROR: move_dir is less than 0. That shouldn't happen");
 		show_debug_message("move_dir = " + string(move_dir));
 		show_debug_message("=========================================================");
+		*/
 	
 	} else if (move_dir >= 360) {
 		// Error: move_dir too high
+		/*
 		show_debug_message("===========================================================");
 		show_debug_message("NPC ERROR: move_dir is more than 359. That shouldn't happen");
 		show_debug_message("move_dir = " + string(move_dir));
 		show_debug_message("===========================================================");
+		*/
 	
 	} else if ((move_dir > 315 and move_dir < 360) or (move_dir >= 0 and move_dir < 45)) {
 		// Face right
@@ -104,10 +110,12 @@ if (moving) {
 		
 	} else {
 		// Error: Something weird happened
+		/*
 		show_debug_message("=================================================================");
 		show_debug_message("NPC ERROR: We somehow got to the last case. That shouldn't happen");
 		show_debug_message("move_dir = " + string(move_dir));
 		show_debug_message("=================================================================");
+		*/
 		
 	}
 	

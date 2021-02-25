@@ -2,7 +2,7 @@
 
 if (show_chat){
 	
-	show_debug_message(chat_text);
+	//show_debug_message(chat_text);
 
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_middle);

@@ -64,6 +64,18 @@ Description of global variables.
 * Int, The value that the taskbar must reach for the players to win.
 * Default:  `100`
 
+### `global.master_volume`
+* Float, ranges between 0 and 1. Determines how loud all audio in the game is.
+* Default: `0.5`
+
+### `global.sound_volume`
+* Float, ranges between 0 and 1. Determines how loud all non-music sounds are.
+* Default: `0.5`
+
+### `global.music_volume`
+* Float, ranges between 0 and 1. Determines how loud the music is.
+* Default: `0.5`
+
 ---
 
 ## Server
@@ -76,3 +88,8 @@ Description of global variables.
 
 ### `global.task`
 * Int, indicates progress of tasks
+
+### `global.show_visuals`
+* Boolean, intended to remove debug visuals on server to lighten the load
+* If true, visuals are shown on the server
+* If false, visuals are not shown on the server
