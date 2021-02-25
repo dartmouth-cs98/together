@@ -44,6 +44,7 @@ taskbar_y = 10;  // int
 taskbar_max = 100; // int
 taskbar_width = 118;  // int
 taskbar_height = 22; // int
+display_tasks = false; // bool
 
 food_bar_x = 10; // int
 food_bar_y = 40; // int
@@ -72,9 +73,9 @@ chat_color_1 = 0;
 chat_color_2 = 0;
 chat_color_3 = 0;
 
-infection_level = 3; // int
+infection_level = 0; // int
 slow = false;
 nearsighted = false;
-scrambled = 1; // int
-dehydrated = true;
+scrambled = 0; // int
+dehydrated = false;
 alarm[0] = room_speed * 60;

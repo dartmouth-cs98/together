@@ -19,7 +19,8 @@ enum network {
 	revive,					// To restore a fallen player to health
 	update_infection_level, // To keep all players apprised of each other's infection level
 	duotask,					// For handling tasks that require two players
-	event
+	event,
+	update_npc_infection_level
 }
 
 #region An enum & ds map for colors, makes it easier to send color IDs across the internet

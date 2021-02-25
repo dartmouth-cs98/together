@@ -12,10 +12,8 @@ if (open and !finished){
 			obj_player.chat_color_3);
 	
 	draw_set_color(player_draw_color);
-	
 	draw_circle_color(destination_x, destination_y, 3, player_draw_color, player_draw_color, false);
 
-	//draw_point_color(destination_x, destination_y, c_blue);
 	for (i = 0; i < current_points_size; i++){	
 		draw_circle_color(ds_list_find_value(x_positions,i), ds_list_find_value(y_positions,i), 
 				3, player_draw_color, player_draw_color, false);

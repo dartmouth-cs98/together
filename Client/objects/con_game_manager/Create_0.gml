@@ -80,6 +80,11 @@ with (con_pause_menu) {
 }
 
 other_count = 0;
+npc_count = 0;
+npc_infection_level = 0;
+sign_count = 0;
+
+#region roles and tasks
 
 role_to_tasks_map = ds_map_create();
 doctor_tasks = ds_list_create();
@@ -94,6 +99,8 @@ ds_list_add(doctor_tasks, "Save 5 NPCs");
 ds_list_add(doctor_tasks, "Collect Apples");
 ds_list_add(scientist_tasks, "Graph Disease Progression");
 ds_list_add(scientist_tasks, "Collect Apples");
+ds_list_add(farmer_tasks, "Harvest");
+ds_list_add(farmer_tasks, "Collect Apples");
 ds_list_add(farmer_tasks, "Pick Apples");
 ds_list_add(farmer_tasks, "Water Plants");
 ds_list_add(farmer_tasks, "Duotask Unnamed");
@@ -103,6 +110,7 @@ ds_list_add(engineer_tasks, "Collect Apples");
 ds_list_add(mail_carrier_tasks, "Collect Apples");
 ds_list_add(mail_carrier_tasks, "Deliver Mail");
 ds_list_add(mayor_tasks, "Collect Apples");
+ds_list_add(mayor_tasks, "Set Max Occupancies");
 ds_list_add(mayor_tasks, "Enter Passcode");
 
 //TESTING PURPOSES
@@ -112,25 +120,23 @@ ds_list_add(scientist_tasks, "Pick Apples");
 
 ds_map_add(role_to_tasks_map, "Doctor", doctor_tasks);
 ds_map_add(role_to_tasks_map, "Scientist", scientist_tasks);
-ds_map_add(role_to_tasks_map, "Engineer", scientist_tasks);
-ds_map_add(role_to_tasks_map, "Farmer", scientist_tasks);
-ds_map_add(role_to_tasks_map, "Mail Carrier", scientist_tasks);
-ds_map_add(role_to_tasks_map, "Mayor", scientist_tasks);
-ds_map_add(role_to_tasks_map, "Shopkeeper", scientist_tasks);
+ds_map_add(role_to_tasks_map, "Engineer", engineer_tasks);
+ds_map_add(role_to_tasks_map, "Farmer", farmer_tasks);
+ds_map_add(role_to_tasks_map, "Mail Carrier", mail_carrier_tasks);
+ds_map_add(role_to_tasks_map, "Mayor", mayor_tasks);
+ds_map_add(role_to_tasks_map, "Shopkeeper", shopkeeper_tasks);
 
-/*
+
 role_to_sprite_map = ds_map_create();
 ds_map_add(role_to_sprite_map, "Doctor", spr_doctor);
 ds_map_add(role_to_sprite_map, "Farmer", spr_farmer);
-ds_map_add(role_to_sprite_map, "Post Officer", spr_mail_carrier);
-ds_map_add(role_to_sprite_map, "Taxi Driver", spr_taxi_driver);
+ds_map_add(role_to_sprite_map, "Mail Carrier", spr_mail_carrier);
 ds_map_add(role_to_sprite_map, "Shopkeeper", spr_shopkeeper);
-ds_map_add(role_to_sprite_map, "Jack of All Trades", spr_jack_of_all_trades);
 ds_map_add(role_to_sprite_map, "Mayor", spr_mayor);
-ds_map_add(role_to_sprite_map, "Philanthropist", spr_philanthropist);
 ds_map_add(role_to_sprite_map, "Engineer", spr_engineer);
-ds_map_add(role_to_sprite_map, "Scientist", spr_scientist);
+//ds_map_add(role_to_sprite_map, "Scientist", spr_scientist);
 
+/*
 role_to_ability_icon_map = ds_map_create();
 ds_map_add(role_to_sprite_map, "Doctor", spr_doctor_ability);
 ds_map_add(role_to_sprite_map, "Farmer", spr_farmer_ability);
@@ -143,3 +149,4 @@ ds_map_add(role_to_sprite_map, "Philanthropist", spr_philanthropist_ability);
 ds_map_add(role_to_sprite_map, "Engineer", spr_engineer_ability);
 ds_map_add(role_to_sprite_map, "Scientist", spr_scientist_ability);
 */
+#endregion

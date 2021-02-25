@@ -21,3 +21,4 @@ empty_message = "You don't have any apples in your inventory! Ask the farmer for
 myscript = scr_collect;
 
 sprite_index = object1;
+contaminated = false;

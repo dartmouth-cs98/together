@@ -219,6 +219,7 @@ function scr_recieved_packet(buffer){
 			_npc.sprite_sheet = _sprite_sheet;
 			
 			ds_map_add(con_game_manager.id_to_npc_object_map, _npc_id, _npc); 
+			con_game_manager.npc_count++;
 			
 			#endregion
 			break;
@@ -290,6 +291,14 @@ function scr_recieved_packet(buffer){
 				}
 			}
 
+			#endregion
+			break;
+		
+		case network.update_npc_infection_level:
+			
+			#region update_npc_infection level
+			con_game_manager.npc_infection_level = buffer_read(buffer, buffer_u8);
+			
 			#endregion
 			break;
 		

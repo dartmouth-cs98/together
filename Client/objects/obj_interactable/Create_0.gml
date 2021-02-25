@@ -11,7 +11,6 @@ task = "";
 
 taskvalue = 5; // Default value of task completion
 
-germs = 0; // Int to keep track of germs on an object
 
 // For collecting objects, can ignore if not relevant
 collects = "obj_apple";
@@ -29,3 +28,5 @@ ds_list_insert(options, 0, scr_back); ds_list_insert(options, 1, scr_drop); // D
 myscript = scr_pickup;
 
 sprite_index = object1;
+
+contaminated = false;
