@@ -7,6 +7,7 @@ ds_list_add(npc_list, instance_create_layer(670, 185, "Instances", obj_npc));
 ds_list_add(npc_list, instance_create_layer(1000, 185, "Instances", obj_npc));
 ds_list_add(npc_list, instance_create_layer(1000, 260, "Instances", obj_npc));
 ds_list_add(npc_list, instance_create_layer(1280, 260, "Instances", obj_npc));
+/*
 ds_list_add(npc_list, instance_create_layer(1675, 196, "Instances", obj_npc));
 ds_list_add(npc_list, instance_create_layer(340, 430, "Instances", obj_npc));
 ds_list_add(npc_list, instance_create_layer(670, 430, "Instances", obj_npc));
@@ -26,7 +27,7 @@ ds_list_add(npc_list, instance_create_layer(2040, 850, "Instances", obj_npc));
 ds_list_add(npc_list, instance_create_layer(460, 1000, "Instances", obj_npc));
 ds_list_add(npc_list, instance_create_layer(355, 1045, "Instances", obj_npc));
 ds_list_add(npc_list, instance_create_layer(355, 1145, "Instances", obj_npc));
-
+*/
 
 /*
 for (var i = 1; i <= 5; i++) {

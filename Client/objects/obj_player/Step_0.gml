@@ -8,6 +8,9 @@ role = "Scientist";
 if (!global.paused) {
 	h_input = keyboard_check(vk_right) - keyboard_check(vk_left);
 	v_input = keyboard_check(vk_down) - keyboard_check(vk_up);
+} else {
+	h_input = 0;
+	v_input = 0;
 }
 
 if (h_collide == -1 && h_input < 0) { h_input = 0; } // Left

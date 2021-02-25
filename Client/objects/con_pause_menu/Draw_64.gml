@@ -26,6 +26,7 @@ if (global.paused and global.pause_menu) {
 	#region Draw left side elements
 	draw_set_valign(fa_middle);
 	draw_set_halign(fa_right);
+	draw_set_font(-1); // -1 is the value of 12 point Arial font
 	
 	var ltx = start_x - x_buffer;	// ltx = left text x-position. 3 guesses what lty is...
 	var lty;

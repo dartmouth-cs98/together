@@ -23,7 +23,7 @@ function scr_recieved_packet(buffer){
 		
 		case network.player_connect:
 			#region player_connect
-			show_debug_message("RECIEVE: player_connect: "+string(current_time));
+			//show_debug_message("RECIEVE: player_connect: "+string(current_time));
 			
 			// When a player connects, get their info & put them in appropriate data structures
 			var _socket = buffer_read(buffer, buffer_u8);
@@ -207,7 +207,7 @@ function scr_recieved_packet(buffer){
 	
 		case network.npc_create:
 			#region npc_create
-			//show_debug_message("RECIEVE: npc_create: "+string(current_time));
+			show_debug_message("RECEIVE: npc_create: "+string(current_time));
 			var _npc_id = buffer_read(buffer, buffer_u32);
 			var _x = buffer_read(buffer, buffer_u16);
 			var _y = buffer_read(buffer, buffer_u16);
@@ -225,7 +225,7 @@ function scr_recieved_packet(buffer){
 		
 		case network.npc_move:
 			#region npc_move
-			//show_debug_message("RECIEVE: npc_move: "+string(current_time));
+			//show_debug_message("RECEIVE: npc_move: "+string(current_time));
 			
 			var npc_id = buffer_read(buffer, buffer_u32);
 			var move_x = buffer_read(buffer, buffer_f32);
