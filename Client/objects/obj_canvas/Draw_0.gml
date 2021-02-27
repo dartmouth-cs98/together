@@ -1,12 +1,14 @@
 /// @description Insert description here
 // You can write your code in this editor
-/*
+
 var current_points_size = ds_list_size(x_positions);
+
+draw_self();
 
 if (open and !finished){
 
 	draw_set_color(c_white);
-	draw_rectangle(80, 30, 450, 250, false);
+	draw_rectangle(global.cam_X + 20, global.cam_Y + 20, global.cam_X + 500, global.cam_Y + 280, false);
 	
 	player_draw_color = make_color_rgb(obj_player.chat_color_1, obj_player.chat_color_2, 
 			obj_player.chat_color_3);

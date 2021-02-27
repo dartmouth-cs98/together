@@ -10,8 +10,8 @@ start_x = 100;
 start_y = 240;
 destination_x = 400;
 destination_y = 40;
-ds_list_add(x_positions, start_x);
-ds_list_add(y_positions, start_y);
+//ds_list_add(x_positions, start_x);
+//ds_list_add(y_positions, start_y);
 
 myname = "canvas";
 object1 = spr_canvas1;
