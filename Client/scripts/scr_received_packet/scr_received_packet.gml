@@ -175,8 +175,8 @@ function scr_received_packet(buffer){
 			global.taskbar = taskbar;
 			if (global.taskbar >= global.taskbar_max) {
 				//
-				
-				room_goto(rm_win_screen);
+				// TODO: Removed for testing purposes. Put it back.
+				//room_goto(rm_win_screen);
 			}
 			//show_debug_message("Taskbar: " + string(taskbar))
 			#endregion
