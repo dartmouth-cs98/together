@@ -71,7 +71,8 @@ ds_map_add(color_map, colors.yellow, c_yellow);
 // Depending on our router, ports may be blocked. We may have to unblock them in order to have people connect.
 port = 64198;
 
-max_clients = 12;
+// This has been set to be the number of existing roles there are
+max_clients = 7;
 
 // TCP, UDP, and WS type servers have pros and cons. Look 'em up.
 // TCP is slower & more reliable
@@ -97,7 +98,6 @@ current_player_number = 0;
 
 available_roles = ds_list_create();
 ds_list_add(available_roles, "Doctor");
-/*
 ds_list_add(available_roles, "Farmer");
 ds_list_add(available_roles, "Engineer");
 ds_list_add(available_roles, "Shopkeeper");
