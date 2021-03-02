@@ -7,10 +7,10 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 7,
-  "bbox_right": 39,
-  "bbox_top": 11,
-  "bbox_bottom": 63,
+  "bbox_left": 11,
+  "bbox_right": 36,
+  "bbox_top": 18,
+  "bbox_bottom": 64,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"cec2147f-a782-4e1a-912e-ee376999d3c7","path":"sprites/spr_farmer/spr_farmer.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"cec2147f-a782-4e1a-912e-ee376999d3c7","path":"sprites/spr_farmer/spr_farmer.yy",},"LayerId":{"name":"f2d9689a-2340-473a-9608-4ca72757fff2","path":"sprites/spr_farmer/spr_farmer.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_farmer","path":"sprites/spr_farmer/spr_farmer.yy",},"resourceVersion":"1.0","name":"cec2147f-a782-4e1a-912e-ee376999d3c7","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"2ed3eafd-155f-44e0-9896-74bcf7aef9be","path":"sprites/spr_scientist/spr_scientist.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"2ed3eafd-155f-44e0-9896-74bcf7aef9be","path":"sprites/spr_scientist/spr_scientist.yy",},"LayerId":{"name":"a0b24f25-9eb8-4bcd-8f1b-d8b4eab3e580","path":"sprites/spr_scientist/spr_scientist.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_scientist","path":"sprites/spr_scientist/spr_scientist.yy",},"resourceVersion":"1.0","name":"2ed3eafd-155f-44e0-9896-74bcf7aef9be","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_farmer","path":"sprites/spr_farmer/spr_farmer.yy",},
+    "spriteId": {"name":"spr_scientist","path":"sprites/spr_scientist/spr_scientist.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"0bbb0b2a-4173-45da-87e3-b4794e3036e6","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"cec2147f-a782-4e1a-912e-ee376999d3c7","path":"sprites/spr_farmer/spr_farmer.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"355dcf3e-14a9-475a-8240-428180951407","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2ed3eafd-155f-44e0-9896-74bcf7aef9be","path":"sprites/spr_scientist/spr_scientist.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,21 +58,21 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_farmer","path":"sprites/spr_farmer/spr_farmer.yy",},
+    "parent": {"name":"spr_scientist","path":"sprites/spr_scientist/spr_scientist.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_farmer",
+    "name": "spr_scientist",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f2d9689a-2340-473a-9608-4ca72757fff2","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"a0b24f25-9eb8-4bcd-8f1b-d8b4eab3e580","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "Roles",
     "path": "folders/Sprites/Roles.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_farmer",
+  "name": "spr_scientist",
   "tags": [],
   "resourceType": "GMSprite",
 }

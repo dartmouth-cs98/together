@@ -99,19 +99,25 @@ ds_list_add(doctor_tasks, "Save 5 NPCs");
 ds_list_add(doctor_tasks, "Collect Apples");
 ds_list_add(scientist_tasks, "Graph Disease Progression");
 ds_list_add(scientist_tasks, "Collect Apples");
+ds_list_add(scientist_tasks, "Checkup");
 ds_list_add(farmer_tasks, "Harvest");
 ds_list_add(farmer_tasks, "Collect Apples");
 ds_list_add(farmer_tasks, "Pick Apples");
 ds_list_add(farmer_tasks, "Water Plants");
 ds_list_add(farmer_tasks, "Duotask Unnamed");
+ds_list_add(farmer_tasks, "Checkup");
 ds_list_add(shopkeeper_tasks, "Collect Apples");
 ds_list_add(shopkeeper_tasks, "Duotask Unnamed");
+ds_list_add(shopkeeper_tasks, "Checkup");
 ds_list_add(engineer_tasks, "Collect Apples");
+ds_list_add(engineer_tasks, "Checkup");
 ds_list_add(mail_carrier_tasks, "Collect Apples");
 ds_list_add(mail_carrier_tasks, "Deliver Mail");
+ds_list_add(mail_carrier_tasks, "Checkup");
 ds_list_add(mayor_tasks, "Collect Apples");
 ds_list_add(mayor_tasks, "Set Max Occupancies");
 ds_list_add(mayor_tasks, "Enter Passcode");
+ds_list_add(mayor_tasks, "Checkup");
 
 //TESTING PURPOSES
 ds_list_add(scientist_tasks, "Deliver Mail");
@@ -134,7 +140,7 @@ ds_map_add(role_to_sprite_map, "Mail Carrier", spr_mail_carrier);
 ds_map_add(role_to_sprite_map, "Shopkeeper", spr_shopkeeper);
 ds_map_add(role_to_sprite_map, "Mayor", spr_mayor);
 ds_map_add(role_to_sprite_map, "Engineer", spr_engineer);
-//ds_map_add(role_to_sprite_map, "Scientist", spr_scientist);
+ds_map_add(role_to_sprite_map, "Scientist", spr_scientist);
 
 /*
 role_to_ability_icon_map = ds_map_create();
