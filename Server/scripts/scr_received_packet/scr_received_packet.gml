@@ -1,5 +1,5 @@
 /// @description Determine what to do based on data recieved
-function scr_recieved_packet(buffer, socket){
+function scr_received_packet(buffer, socket){
 	msgid = buffer_read(buffer, buffer_u8);
 	
 	// All the possible things we may need the server to do should be in here

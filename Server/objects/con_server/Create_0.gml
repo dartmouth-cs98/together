@@ -97,6 +97,7 @@ current_player_number = 0;
 
 available_roles = ds_list_create();
 ds_list_add(available_roles, "Doctor");
+/*
 ds_list_add(available_roles, "Farmer");
 ds_list_add(available_roles, "Engineer");
 ds_list_add(available_roles, "Shopkeeper");

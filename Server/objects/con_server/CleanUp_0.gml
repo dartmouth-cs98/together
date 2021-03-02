@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Destroy data structures when we end
 
 ds_map_destroy(socket_list);
 ds_map_destroy(socket_to_instanceid);

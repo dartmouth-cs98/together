@@ -58,6 +58,6 @@ switch(type_event) {
 		buffer = ds_map_find_value(async_load, "buffer");
 		socket = ds_map_find_value(async_load, "id");
 		buffer_seek(buffer, buffer_seek_start, 0); // Go to start of buffer
-		scr_recieved_packet(buffer, socket);
+		scr_received_packet(buffer, socket);
 		break;
 }
