@@ -43,11 +43,6 @@ if (infection_level < 4){
 	DTO = 0;
 	for (i = 0; i < con_game_manager.other_count; i++){
 		var other_player = instance_find(obj_other, i);
-		
-		if (is_undefined(other_player) or (other_player == noone)) {
-			continue;
-		}
-		
 		DTO = distance_to_object(other_player);
 		infection_level_other = other_player.infection_level;
 		if (DTO < 5){

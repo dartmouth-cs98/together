@@ -218,8 +218,7 @@ function scr_received_packet(buffer){
 			_npc.npc_id = _npc_id;
 			_npc.sprite_sheet = _sprite_sheet;
 			
-			ds_map_add(con_game_manager.id_to_npc_object_map, _npc_id, _npc); 
-			//ds_list_add(_npc);
+			ds_map_add(con_game_manager.id_to_npc_object_map, _npc_id, _npc);
 			con_game_manager.npc_count++;
 			
 			#endregion

@@ -7,6 +7,7 @@ switch (room) {
 		// TODO: Uncomment this
 		//audio_play_sound(msc_MusicDUNGEON, 2, true);
 		window_set_size(1152, 648);
+		other_count = 0;
 		id_to_npc_object_map = ds_map_create();
 		break;
 		
