@@ -15,3 +15,7 @@ if (open){
 		else if (obj_player.infection_level < 7) draw_text(125, 50 + 16 * 4, "Infection Test Result: Positive, Seek Medical Care Immediately");	
 	}
 }
+
+if (arm_in){
+	instance_create_layer(150, 150, "Instances", obj_arm);	
+}

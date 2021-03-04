@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "hf_icon_100",
-    "path": "sprites/hf_icon_100/hf_icon_100.yy",
+    "name": "spr_arm",
+    "path": "sprites/spr_arm/spr_arm.yy",
   },
   "solid": false,
   "visible": true,
@@ -28,7 +28,7 @@
     "path": "folders/Objects/Minigames/Hospital.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_hospital_icon",
+  "name": "obj_arm",
   "tags": [],
   "resourceType": "GMObject",
 }
