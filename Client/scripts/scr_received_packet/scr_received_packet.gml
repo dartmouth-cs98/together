@@ -70,11 +70,15 @@ function scr_received_packet(buffer){
 			var _socket = buffer_read(buffer, buffer_u8);
 			var _player = ds_map_find_value(socket_to_instanceid, _socket);
 			
+			//if (_player != noone and !is_undefined(_player)){
+			/*
 			if (_player != noone){
 				with(_player) {
 					instance_destroy();
 				}
 			}
+			*/
+			instance_destroy(_player);
 			
 			ds_map_delete(socket_to_instanceid, _socket);
 			
@@ -295,7 +299,6 @@ function scr_received_packet(buffer){
 			break;
 		
 		case network.update_npc_infection_level:
-			
 			#region update_npc_infection level
 			con_game_manager.npc_infection_level = buffer_read(buffer, buffer_u8);
 			
