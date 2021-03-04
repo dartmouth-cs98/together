@@ -18,8 +18,8 @@ if (keyboard_check_pressed(global.key_up)) {
 	if (itemSelected != undefined) {
 		option -= 1;
 		ds_list_size(itemSelected.optionNames);
-		show_debug_message(string(ds_list_size(itemSelected.options)));
 		option = clamp(option, 0, ds_list_size(itemSelected.options) -1);
+		show_debug_message(string(option));
 	}
 }
 
@@ -27,6 +27,7 @@ if (keyboard_check_pressed(global.key_down)) {
 	if (itemSelected != undefined) {
 		option += 1;
 		option = clamp(option, 0, ds_list_size(itemSelected.options) -1);
+		show_debug_message(string(option));
 	}
 }
 

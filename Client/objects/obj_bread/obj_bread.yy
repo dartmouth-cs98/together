@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_collectionbox1",
-    "path": "sprites/spr_collectionbox1/spr_collectionbox1.yy",
+    "name": "spr_bread1",
+    "path": "sprites/spr_bread1/spr_bread1.yy",
   },
   "solid": false,
   "visible": true,
@@ -24,16 +24,16 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_collectionbox","path":"objects/obj_collectionbox/obj_collectionbox.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_bread","path":"objects/obj_bread/obj_bread.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Delivery",
-    "path": "folders/Objects/Minigames/Delivery.yy",
+    "name": "Cooking",
+    "path": "folders/Objects/Minigames/Cooking.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_collectionbox",
+  "name": "obj_bread",
   "tags": [],
   "resourceType": "GMObject",
 }

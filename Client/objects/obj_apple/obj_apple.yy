@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Delivery",
-    "path": "folders/Objects/Minigames/Draw/Delivery.yy",
+    "path": "folders/Objects/Minigames/Delivery.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_apple",
