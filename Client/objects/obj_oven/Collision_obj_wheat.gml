@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Collision with wheat
 
 if (is_cooking == false) {
 	is_cooking = true;

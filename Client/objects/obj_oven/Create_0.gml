@@ -10,6 +10,7 @@ task = "Cooking";
 
 myscript = scr_cooking;
 
+// For cooking
 is_cooking = false;
 product = undefined;
 counter = 0;

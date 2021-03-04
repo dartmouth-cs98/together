@@ -28,6 +28,8 @@
     {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_wheat","path":"objects/obj_wheat/obj_wheat.yy",},"parent":{"name":"obj_oven","path":"objects/obj_oven/obj_oven.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"obj_oven","path":"objects/obj_oven/obj_oven.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"obj_oven","path":"objects/obj_oven/obj_oven.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_milk","path":"objects/obj_milk/obj_milk.yy",},"parent":{"name":"obj_oven","path":"objects/obj_oven/obj_oven.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_egg","path":"objects/obj_egg/obj_egg.yy",},"parent":{"name":"obj_oven","path":"objects/obj_oven/obj_oven.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],

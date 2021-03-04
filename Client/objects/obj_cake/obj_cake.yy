@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_wheat1",
-    "path": "sprites/spr_wheat1/spr_wheat1.yy",
+    "name": "spr_cake1",
+    "path": "sprites/spr_cake1/spr_cake1.yy",
   },
   "solid": false,
   "visible": true,
@@ -24,16 +24,16 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_wheat","path":"objects/obj_wheat/obj_wheat.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_cake","path":"objects/obj_cake/obj_cake.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Farming",
-    "path": "folders/Objects/Minigames/Farming.yy",
+    "name": "Cooking",
+    "path": "folders/Objects/Minigames/Cooking.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_wheat",
+  "name": "obj_cake",
   "tags": [],
   "resourceType": "GMObject",
 }
