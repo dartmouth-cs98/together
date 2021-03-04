@@ -1,6 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if (open){
+	// Darken screen
+	draw_set_alpha(0.3);
+	draw_set_colour(c_black);
+	draw_rectangle(0,0,room_width,room_height,-1);
+	draw_set_alpha(1); //reset alpha value so it doesn't mess with other draw events	
+}
 draw_self();
 
 draw_set_halign(fa_center);
