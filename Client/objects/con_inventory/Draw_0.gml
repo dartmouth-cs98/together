@@ -33,17 +33,17 @@ if (global.inventory_menu or not global.paused) {
 		for (i=0; i < ds_list_size(itemSelected.optionNames); i++) {
 			
 			if (option == i) {
-				draw_set_color(_color);
-			} else {
 				draw_set_color(_hover_color);
+			} else {
+				draw_set_color(_color);
 			}
 
-			draw_roundrect(inventory_x+(50*selected), inventory_y-25-(i*_offset), inventory_x+(50*selected)+_width, inventory_y-25-(i*_offset)+_height, 0);	// Rounded rectangle
+			draw_roundrect(inventory_x+(50*selected), inventory_y-25-((ds_list_size(itemSelected.optionNames)-i-1)*_offset), inventory_x+(50*selected)+_width, inventory_y-25-((ds_list_size(itemSelected.optionNames)-i-1)*_offset)+_height, 0);	// Rounded rectangle
 
-			draw_set_color(_text_color);
-			draw_set_halign(fa_center);
-			draw_set_valign(fa_middle);
-			draw_text(inventory_x+(50*selected) + _width/2, inventory_y-25-(i*_offset) + _height/2, ds_list_find_value(itemSelected.optionNames, ds_list_size(itemSelected.optionNames)-1-i));
+			// draw_set_color(_text_color);
+			// draw_set_halign(fa_center);
+			// draw_set_valign(fa_middle);
+			// draw_text(inventory_x+(50*selected) + _width/2, inventory_y-25-(i*_offset) + _height/2, ds_list_find_value(itemSelected.optionNames, ds_list_size(itemSelected.optionNames)-1-i));
 		}
 		
 	}
