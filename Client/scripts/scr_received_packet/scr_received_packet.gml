@@ -35,6 +35,7 @@ function scr_received_packet(buffer){
 			_player.socket = _socket;
 			_player.username = _username;
 			_player.role = _role;
+			_player.sprite_sheet = ds_map_find_value(con_game_manager.role_to_sprite_map, _role);
 			_player.image_index = 0;
 			
 			ds_map_add(socket_to_instanceid, _socket, _player);
@@ -216,7 +217,10 @@ function scr_received_packet(buffer){
 			_npc = instance_create_layer(_x, _y, "Instances", obj_npc);
 			
 			_npc.npc_id = _npc_id;
-			_npc.sprite_sheet = _sprite_sheet;
+			
+			// TODO: Find some better way of assigning NPC spritesheets
+			_npc.sprite_sheet = spr_princess_red_sheet;
+			//_npc.sprite_sheet = _sprite_sheet;
 			
 			ds_map_add(con_game_manager.id_to_npc_object_map, _npc_id, _npc); 
 			con_game_manager.npc_count++;
