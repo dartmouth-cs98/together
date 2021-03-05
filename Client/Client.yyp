@@ -95,7 +95,6 @@
     {"id":{"name":"spr_ul_strip4","path":"sprites/spr_ul_strip4/spr_ul_strip4.yy",},"order":6,},
     {"id":{"name":"scr_backspace","path":"scripts/scr_backspace/scr_backspace.yy",},"order":3,},
     {"id":{"name":"spr_egg1","path":"sprites/spr_egg1/spr_egg1.yy",},"order":4,},
-    {"id":{"name":"spr_egg","path":"sprites/spr_egg/spr_egg.yy",},"order":4,},
     {"id":{"name":"Sprite143","path":"sprites/Sprite143/Sprite143.yy",},"order":1,},
     {"id":{"name":"spr_dr_strip4","path":"sprites/spr_dr_strip4/spr_dr_strip4.yy",},"order":2,},
     {"id":{"name":"Sprite22","path":"sprites/Sprite22/Sprite22.yy",},"order":4,},
