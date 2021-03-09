@@ -13,7 +13,7 @@
     {"id":{"name":"spr_cape_red_sheet","path":"sprites/spr_cape_red_sheet/spr_cape_red_sheet.yy",},"order":3,},
     {"id":{"name":"spr_orc_brunette_sheet","path":"sprites/spr_orc_brunette_sheet/spr_orc_brunette_sheet.yy",},"order":10,},
     {"id":{"name":"spr_epaulets_sheet","path":"sprites/spr_epaulets_sheet/spr_epaulets_sheet.yy",},"order":4,},
-    {"id":{"name":"scr_recieved_packet","path":"scripts/scr_recieved_packet/scr_recieved_packet.yy",},"order":0,},
+    {"id":{"name":"scr_received_packet","path":"scripts/scr_received_packet/scr_received_packet.yy",},"order":0,},
     {"id":{"name":"spr_r_strip4","path":"sprites/spr_r_strip4/spr_r_strip4.yy",},"order":4,},
     {"id":{"name":"spr_dr_strip4","path":"sprites/spr_dr_strip4/spr_dr_strip4.yy",},"order":2,},
     {"id":{"name":"con_npc_graph","path":"objects/con_npc_graph/con_npc_graph.yy",},"order":3,},

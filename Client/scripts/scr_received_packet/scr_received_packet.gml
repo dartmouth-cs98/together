@@ -71,11 +71,15 @@ function scr_received_packet(buffer){
 			var _socket = buffer_read(buffer, buffer_u8);
 			var _player = ds_map_find_value(socket_to_instanceid, _socket);
 			
+			//if (_player != noone and !is_undefined(_player)){
+			/*
 			if (_player != noone){
 				with(_player) {
 					instance_destroy();
 				}
 			}
+			*/
+			instance_destroy(_player);
 			
 			ds_map_delete(socket_to_instanceid, _socket);
 			
@@ -177,7 +181,7 @@ function scr_received_packet(buffer){
 			if (global.taskbar >= global.taskbar_max) {
 				//
 				// TODO: Removed for testing purposes. Put it back.
-				//room_goto(rm_win_screen);
+				room_goto(rm_win_screen);
 			}
 			//show_debug_message("Taskbar: " + string(taskbar))
 			#endregion
@@ -208,7 +212,7 @@ function scr_received_packet(buffer){
 	
 		case network.npc_create:
 			#region npc_create
-			show_debug_message("RECEIVE: npc_create: "+string(current_time));
+			//show_debug_message("RECEIVE: npc_create: "+string(current_time));
 			var _npc_id = buffer_read(buffer, buffer_u32);
 			var _x = buffer_read(buffer, buffer_u16);
 			var _y = buffer_read(buffer, buffer_u16);
@@ -222,7 +226,7 @@ function scr_received_packet(buffer){
 			_npc.sprite_sheet = spr_princess_red_sheet;
 			//_npc.sprite_sheet = _sprite_sheet;
 			
-			ds_map_add(con_game_manager.id_to_npc_object_map, _npc_id, _npc); 
+			ds_map_add(con_game_manager.id_to_npc_object_map, _npc_id, _npc);
 			con_game_manager.npc_count++;
 			
 			#endregion
@@ -299,7 +303,6 @@ function scr_received_packet(buffer){
 			break;
 		
 		case network.update_npc_infection_level:
-			
 			#region update_npc_infection level
 			con_game_manager.npc_infection_level = buffer_read(buffer, buffer_u8);
 			

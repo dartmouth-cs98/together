@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 username = get_string_async("Please enter a username", "");
+id_to_npc_object_map = ds_map_create();
 
 // Used so we can pass it on to the game.
 player_sprite = 0;
