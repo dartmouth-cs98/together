@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+/*
 var current_points_size = ds_list_size(x_positions);
 
 if (open and !finished){

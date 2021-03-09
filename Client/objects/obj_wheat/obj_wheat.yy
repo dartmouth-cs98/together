@@ -1,13 +1,16 @@
 {
   "spriteId": {
-    "name": "spr_wheat",
-    "path": "sprites/spr_wheat/spr_wheat.yy",
+    "name": "spr_wheat1",
+    "path": "sprites/spr_wheat1/spr_wheat1.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_interactable",
+    "path": "objects/obj_interactable/obj_interactable.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -20,7 +23,9 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_wheat","path":"objects/obj_wheat/obj_wheat.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {

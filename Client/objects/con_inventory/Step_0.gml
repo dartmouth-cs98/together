@@ -18,7 +18,6 @@ if (keyboard_check_pressed(global.key_up)) {
 	if (itemSelected != undefined) {
 		option -= 1;
 		ds_list_size(itemSelected.optionNames);
-		show_debug_message(string(ds_list_size(itemSelected.options)));
 		option = clamp(option, 0, ds_list_size(itemSelected.options) -1);
 	}
 }
@@ -46,7 +45,6 @@ if (keyboard_check_pressed(global.key_enter)) {
 		if (object == undefined) {
 			scr_create_text("There is no item here!");
 		} else {
-			scr_create_text("OBJECT SELECTED");
 			itemSelected = object;
 			option = 0;
 		}
