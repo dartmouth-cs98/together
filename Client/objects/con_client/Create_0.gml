@@ -5,6 +5,7 @@
 // Server should have same enum.
 enum network {
 	player_establish,		// 
+	server_full,			// For indicating to players that the server is full
 	player_connect,			// For managing a player connecting
 	player_joined,			// For when another player joins
 	player_disconnect,		// For removing a player when they disconnect
@@ -20,7 +21,7 @@ enum network {
 	update_infection_level, // To keep all players apprised of each other's infection level
 	duotask,					// For handling tasks that require two players
 	event,
-	update_npc_infection_level
+	update_npc_infection_level,
 }
 
 #region An enum & ds map for colors, makes it easier to send color IDs across the internet

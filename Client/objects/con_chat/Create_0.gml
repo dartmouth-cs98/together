@@ -13,7 +13,7 @@ show_chat = false;
 chat_size = 10;		// # of visible chat messages
 repeat(chat_size) {
 	ds_list_add(global.chat,"");
-	ds_list_add(global.chat_color, ds_map_find_value(con_client.color_map, colors.black));
+	ds_list_add(global.chat_color, colors.black/*ds_map_find_value(con_client.color_map, colors.black)*/);
 }
 
 chat_text = "";		// Current chat message

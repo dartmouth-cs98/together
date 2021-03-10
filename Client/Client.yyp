@@ -136,6 +136,7 @@
     {"id":{"name":"spr_witch_red_sheet","path":"sprites/spr_witch_red_sheet/spr_witch_red_sheet.yy",},"order":23,},
     {"id":{"name":"obj_greencircle","path":"objects/obj_greencircle/obj_greencircle.yy",},"order":0,},
     {"id":{"name":"con_passcode","path":"objects/con_passcode/con_passcode.yy",},"order":1,},
+    {"id":{"name":"rm_wait","path":"rooms/rm_wait/rm_wait.yy",},"order":4,},
     {"id":{"name":"spr_seeds_bag","path":"sprites/spr_seeds_bag/spr_seeds_bag.yy",},"order":9,},
     {"id":{"name":"Sprite105","path":"sprites/Sprite105/Sprite105.yy",},"order":15,},
     {"id":{"name":"spr_r_strip4","path":"sprites/spr_r_strip4/spr_r_strip4.yy",},"order":4,},
@@ -308,6 +309,7 @@
     {"roomId":{"name":"","path":"",},},
     {"roomId":{"name":"rm_win_screen","path":"rooms/rm_win_screen/rm_win_screen.yy",},},
     {"roomId":{"name":"rm_sprite_select","path":"rooms/rm_sprite_select/rm_sprite_select.yy",},},
+    {"roomId":{"name":"rm_wait","path":"rooms/rm_wait/rm_wait.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":929,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
