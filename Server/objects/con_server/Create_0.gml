@@ -2,7 +2,6 @@
 
 // Global variable. If true, visuals should show up. If false, they shouldn't
 global.show_visuals = false;
-
 enum network {
 	player_establish,		// 
 	server_full,			// For indicating to players that the server is full
@@ -73,7 +72,7 @@ ds_map_add(color_map, colors.yellow, c_yellow);
 port = 64198;
 
 // This has been set to be the number of existing roles there are
-max_clients = 1;
+max_clients = 2;
 
 // TCP, UDP, and WS type servers have pros and cons. Look 'em up.
 // TCP is slower & more reliable

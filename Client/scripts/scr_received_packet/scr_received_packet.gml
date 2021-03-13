@@ -5,7 +5,7 @@ function scr_received_packet(buffer){
 	switch(msgid) {
 		case network.player_establish:
 			#region player_establish
-			show_debug_message("RECEIVE: player_establish: "+string(current_time));
+			//show_debug_message("RECEIVE: player_establish: "+string(current_time));
 			
 			var _socket = buffer_read(buffer, buffer_u8);
 			
@@ -20,13 +20,13 @@ function scr_received_packet(buffer){
 			*/
 			network_send_packet(client, client_buffer, buffer_tell(client_buffer));
 			
-			show_debug_message("SEND: player_establish: "+string(current_time));
+			//show_debug_message("SEND: player_establish: "+string(current_time));
 			#endregion
 			break;
 			
 		case network.server_full:
 			#region server_full
-			show_debug_message("RECEIVE: server_full: "+string(current_time));
+			//show_debug_message("RECEIVE: server_full: "+string(current_time));
 			
 			room_goto(rm_client);
 			
@@ -36,14 +36,14 @@ function scr_received_packet(buffer){
 			buffer_write(client_buffer, buffer_u8, con_game_manager.player_sprite);
 			network_send_packet(client, client_buffer, buffer_tell(client_buffer));
 			
-			show_debug_message("SEND: server_full: "+string(current_time));
+			//show_debug_message("SEND: server_full: "+string(current_time));
 			
 			#endregion
 			break;
 		
 		case network.player_connect:
 			#region player_connect
-			show_debug_message("RECEIVE: player_connect: "+string(current_time));
+			//show_debug_message("RECEIVE: player_connect: "+string(current_time));
 			
 			// When a player connects, get their info & put them in appropriate data structures
 			var _socket = buffer_read(buffer, buffer_u8);
@@ -64,7 +64,7 @@ function scr_received_packet(buffer){
 			
 		case network.player_joined:
 			#region player_joined
-			show_debug_message("RECEIVE: player_joined: "+string(current_time));
+			//show_debug_message("RECEIVE: player_joined: "+string(current_time));
 			
 			var _socket = buffer_read(buffer, buffer_u8);
 			var _x = buffer_read(buffer, buffer_u16);
@@ -116,7 +116,7 @@ function scr_received_packet(buffer){
 			
 		case network.move: 
 			#region move
-			show_debug_message("RECEIVE: move: "+string(current_time));
+			//show_debug_message("RECEIVE: move: "+string(current_time));
 			
 			var _sock = buffer_read(buffer, buffer_u8);
 			var h_input = buffer_read(buffer, buffer_s8);

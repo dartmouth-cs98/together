@@ -7,7 +7,7 @@ function scr_received_packet(buffer, socket) {
 	switch (msgid) {
 		case network.player_establish:
 			#region player_establish
-			show_debug_message("RECEIVE: player_establish: "+string(current_time));
+			//show_debug_message("RECEIVE: player_establish: "+string(current_time));
 			
 			/*
 			var _username = buffer_read(buffer, buffer_string);
@@ -22,7 +22,7 @@ function scr_received_packet(buffer, socket) {
 					buffer_seek(server_buffer, buffer_seek_start, 0);				// Start from top of buffer
 					buffer_write(server_buffer, buffer_u8, network.server_full);	// Message ID			
 					network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
-					show_debug_message("SEND: server_full: "+string(current_time));
+					//show_debug_message("SEND: server_full: "+string(current_time));
 				}
 			}
 			
@@ -32,7 +32,7 @@ function scr_received_packet(buffer, socket) {
 		case network.server_full:
 			#region server_full
 			
-			show_debug_message("RECEIVE: server_full: "+string(current_time));
+			//show_debug_message("RECEIVE: server_full: "+string(current_time));
 			var _username = buffer_read(buffer, buffer_string);
 			var _sprite_sheet = buffer_read(buffer, buffer_u8);
 			scr_network_player_join(_username, _sprite_sheet);
@@ -42,7 +42,7 @@ function scr_received_packet(buffer, socket) {
 		
 		case network.move:
 			#region move
-			show_debug_message("RECEIVE: move: "+string(current_time));
+			//show_debug_message("RECEIVE: move: "+string(current_time));
 			
 			// Make sure your reads & writes match. Write string -> read string.
 			var h_input = buffer_read(buffer, buffer_s8);
@@ -94,7 +94,7 @@ function scr_received_packet(buffer, socket) {
 				buffer_write(server_buffer, buffer_u8, walk_speed);		// Walk speed
 				
 				network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
-				show_debug_message("SEND: move: "+string(current_time));
+				//show_debug_message("SEND: move: "+string(current_time));
 			}
 			
 			#endregion
