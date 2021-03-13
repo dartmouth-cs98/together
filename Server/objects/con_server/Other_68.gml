@@ -15,7 +15,7 @@ switch(type_event) {
 			buffer_write(server_buffer, buffer_u8, network.player_establish);
 			buffer_write(server_buffer, buffer_u8, socket);
 			network_send_packet(socket, server_buffer, buffer_tell(server_buffer));
-			//show_debug_message("SEND: player_establish: "+string(current_time));
+			show_debug_message("SEND: player_establish: "+string(current_time));
 		}
 		else {
 			
@@ -39,7 +39,7 @@ switch(type_event) {
 			buffer_write(server_buffer, buffer_u8, network.player_disconnect);
 			buffer_write(server_buffer, buffer_u8, socket);
 			network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
-			//show_debug_message("SEND: player_disconnect: "+string(current_time));
+			show_debug_message("SEND: player_disconnect: "+string(current_time));
 		}
 		
 		// Make the player destroy itself
@@ -57,7 +57,6 @@ switch(type_event) {
 		// When you get data, send out the appropriate messages
 		buffer = ds_map_find_value(async_load, "buffer");
 		socket = ds_map_find_value(async_load, "id");
-		buffer_seek(buffer, buffer_seek_start, 0); // Go to start of buffer
 		scr_received_packet(buffer, socket);
 		break;
 }

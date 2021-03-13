@@ -73,7 +73,7 @@ ds_map_add(color_map, colors.yellow, c_yellow);
 port = 64198;
 
 // This has been set to be the number of existing roles there are
-max_clients = 7;
+max_clients = 1;
 
 // TCP, UDP, and WS type servers have pros and cons. Look 'em up.
 // TCP is slower & more reliable

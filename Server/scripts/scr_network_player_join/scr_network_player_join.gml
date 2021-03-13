@@ -20,7 +20,7 @@ function scr_network_player_join(_username, _sprite_sheet){
 	buffer_write(server_buffer, buffer_string, _player.username);
 	buffer_write(server_buffer, buffer_string, _player.role);
 	network_send_packet(socket, server_buffer, buffer_tell(server_buffer));
-	//show_debug_message("SEND: player_connect: "+string(current_time));
+	show_debug_message("SEND: player_connect: "+string(current_time));
 	
 	#endregion
 		
@@ -41,7 +41,7 @@ function scr_network_player_join(_username, _sprite_sheet){
 				buffer_write(server_buffer, buffer_u8, _other.sprite_sheet);
 				buffer_write(server_buffer, buffer_string, _other.role);
 				network_send_packet(socket, server_buffer, buffer_tell(server_buffer));
-				//show_debug_message("SEND: player_joined: "+string(current_time));
+				show_debug_message("SEND: player_joined: "+string(current_time));
 			}
 		}
 	}
@@ -63,7 +63,7 @@ function scr_network_player_join(_username, _sprite_sheet){
 			buffer_write(server_buffer, buffer_u8, _sprite_sheet);
 			buffer_write(server_buffer, buffer_string, _player.role);
 			network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
-			//show_debug_message("SEND: player_joined: "+string(current_time));
+			show_debug_message("SEND: player_joined: "+string(current_time));
 		}
 		
 		// Send taskbar info
