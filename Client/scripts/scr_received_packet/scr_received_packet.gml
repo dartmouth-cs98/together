@@ -99,7 +99,9 @@ function scr_received_packet(buffer){
 				}
 			}
 			*/
-			instance_destroy(_player);
+			if (!is_undefined(_player)) {
+				instance_destroy(_player);
+			}
 			
 			ds_map_delete(socket_to_instanceid, _socket);
 			
