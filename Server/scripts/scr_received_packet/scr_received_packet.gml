@@ -280,5 +280,15 @@ function scr_received_packet(buffer, socket) {
 			}
 			#endregion
 			break;
+		
+		case network.start_early:
+			for(var i = 0; i < ds_list_size(socket_list); i++) {
+				var _sock = ds_list_find_value(socket_list, i);
+				buffer_seek(server_buffer, buffer_seek_start, 0);				// Start from top of buffer
+				buffer_write(server_buffer, buffer_u8, network.server_full);	// Message ID			
+				network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
+				//show_debug_message("SEND: server_full: "+string(current_time));
+			}
+			break;
 	}
 }

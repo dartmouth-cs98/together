@@ -114,3 +114,15 @@ These types and their respective IDs are defined in the enum `network`. This enu
 * ID: 16
 * Protocol
    * Server tells clients when an event has been initiated and which event it is. Format: `<ID, event>`
+
+
+### `update_npc_infection_level`
+* ID: 17
+* Protocol
+    * [UNKNOWN, WHOEVER ADDED THIS PLEASE UPDATE]
+
+### `start_early`
+* ID: 18
+* Protocol
+    * When the players in the waiting room are ready to start, someone can press enter, sending this message. Format: `<ID>`
+    * The server recieves this and sends a `server_full` message back to all the clients. No response.
