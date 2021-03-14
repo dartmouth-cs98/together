@@ -20,7 +20,8 @@ enum network {
 	update_infection_level, // To keep all players apprised of each other's infection level
 	duotask,				// For handling tasks that require two players
 	event,
-	update_npc_infection_level
+	update_npc_infection_level,
+	item					// For picking up and dropping shared items
 }
 
 #region An enum & ds map for colors, makes it easier to send color IDs across the internet

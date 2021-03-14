@@ -14,13 +14,14 @@ enum network {
 	task,					// For handling task bar progress
 	pause,					// To keep player from animating on other machines
 	unpause,				// To restore normal animation after unpausing
-	npc_create,			// To set up NPCs on clients
-	npc_move,			// To broadcast NPC movement to players
+	npc_create,				// To set up NPCs on clients
+	npc_move,				// To broadcast NPC movement to players
 	revive,					// To restore a fallen player to health
 	update_infection_level, // To keep all players apprised of each other's infection level
-	duotask,					// For handling tasks that require two players
+	duotask,				// For handling tasks that require two players
 	event,
-	update_npc_infection_level
+	update_npc_infection_level,
+	item					// For picking up and dropping shared items
 }
 
 #region An enum & ds map for colors, makes it easier to send color IDs across the internet

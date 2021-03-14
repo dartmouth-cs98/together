@@ -254,5 +254,56 @@ function scr_received_packet(buffer, socket){
 			}
 			#endregion
 			break;
+			
+		case network.item:
+			#region item
+
+			var action = buffer_read(buffer, buffer_u8);
+			var object_type = buffer_read(buffer, buffer_u32);
+			var object_id = buffer_read(buffer, buffer_u32);
+			var object_x = buffer_read(buffer, buffer_s16);
+			var object_y = buffer_read(buffer, buffer_s16);
+
+			// If the action is drop
+			if (action == 0) {
+				ds_map_add(global.item_map, object_id, object_type);
+				
+			}
+			
+			if ds_map_exists(global.duotask_map, object_id){
+				if ((ds_map_find_value(global.duotask_map, object_id) == 0) && (add == 1)){
+					//show_debug_message("add 1 player");
+					ds_map_replace(global.duotask_map, object_id, 1);
+				}
+				
+				else if ((ds_map_find_value(global.duotask_map, object_id) == 1) && (add == -1)) {
+					//show_debug_message("remove 1 player");
+					ds_map_replace(global.duotask_map, object_id, 0);
+				}
+				
+				else if ((ds_map_find_value(global.duotask_map, object_id) == 1) && (add == 1)) {
+					//show_debug_message("complete duotask");
+					ds_map_replace(global.duotask_map, object_id, 0);
+
+					// Broadcast completion status to all players
+					for(var i = 0; i < ds_list_size(socket_list); i++) {
+
+						var _sock = ds_list_find_value(socket_list, i);
+
+						buffer_seek(server_buffer, buffer_seek_start, 0);			// Start from top of buffer
+						buffer_write(server_buffer, buffer_u8, network.duotask);	// Message ID
+
+						buffer_write(server_buffer, buffer_u32, object_id);			// Send back object id
+				
+						network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
+					}
+				}
+				
+			} else if (add == 1) {
+				//show_debug_message("add new object");
+				ds_map_add(global.duotask_map, object_id, 1);
+			}
+			#endregion
+			break;
 	}
 }
