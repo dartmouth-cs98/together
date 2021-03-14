@@ -9,6 +9,14 @@ switch(room){
 		//draw_text_transformed(room_width/2, room_height/2, "Press Space to start", 5, 5, 0);
 		break;
 	
+	case rm_wait:
+		draw_set_colour(c_white);
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_middle);
+		draw_text_transformed(room_width/2, room_height/2 - 30, "Waiting for players", 5, 5, 0);
+		draw_text_transformed(room_width/2, room_height/2 + 35, "Press space to start early", 3, 3, 0);
+		break;
+	
 	case rm_client:
 		if(instance_find(obj_player, 0) != noone){
 		

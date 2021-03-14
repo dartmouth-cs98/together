@@ -1,22 +1,48 @@
 /// @description Determine what to do based on data recieved
-function scr_received_packet(buffer, socket){
+function scr_received_packet(buffer, socket) {
+	buffer_seek(buffer, buffer_seek_start, 0); // Go to start of buffer
 	msgid = buffer_read(buffer, buffer_u8);
 	
 	// All the possible things we may need the server to do should be in here
 	switch (msgid) {
 		case network.player_establish:
 			#region player_establish
-			//show_debug_message("RECIEVE: player_establish: "+string(current_time));
+			//show_debug_message("RECEIVE: player_establish: "+string(current_time));
 			
+			/*
 			var _username = buffer_read(buffer, buffer_string);
 			var _sprite_sheet = buffer_read(buffer, buffer_u8);
 			scr_network_player_join(_username, _sprite_sheet);
+			*/
+			
+			// If this player's establishment fills the server, tell all the players that the server is now full.
+			if (con_server.current_player_number == con_server.max_clients) {
+				for(var i = 0; i < ds_list_size(socket_list); i++) {
+					var _sock = ds_list_find_value(socket_list, i);
+					buffer_seek(server_buffer, buffer_seek_start, 0);				// Start from top of buffer
+					buffer_write(server_buffer, buffer_u8, network.server_full);	// Message ID			
+					network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
+					//show_debug_message("SEND: server_full: "+string(current_time));
+				}
+			}
+			
+			#endregion
+			break;
+		
+		case network.server_full:
+			#region server_full
+			
+			//show_debug_message("RECEIVE: server_full: "+string(current_time));
+			var _username = buffer_read(buffer, buffer_string);
+			var _sprite_sheet = buffer_read(buffer, buffer_u8);
+			scr_network_player_join(_username, _sprite_sheet);
+			
 			#endregion
 			break;
 		
 		case network.move:
 			#region move
-			//show_debug_message("RECIEVE: move: "+string(current_time));
+			//show_debug_message("RECEIVE: move: "+string(current_time));
 			
 			// Make sure your reads & writes match. Write string -> read string.
 			var h_input = buffer_read(buffer, buffer_s8);
@@ -76,7 +102,7 @@ function scr_received_packet(buffer, socket){
 			
 		case network.chat:
 			#region chat
-			//show_debug_message("RECIEVE: chat: "+string(current_time));
+			//show_debug_message("RECEIVE: chat: "+string(current_time));
 			
 			var _chat = buffer_read(buffer, buffer_string);
 			var	_player = ds_map_find_value(socket_to_instanceid, socket);
@@ -108,7 +134,7 @@ function scr_received_packet(buffer, socket){
     
 		case network.task:
 			#region task
-			//show_debug_message("RECIEVE: task: "+string(current_time));
+			//show_debug_message("RECEIVE: task: "+string(current_time));
 			
 			var add_to_taskbar = buffer_read(buffer, buffer_u8);
 
@@ -133,7 +159,7 @@ function scr_received_packet(buffer, socket){
 			
 		case network.pause:
 			#region pause
-			//show_debug_message("RECIEVE: pause: "+string(current_time));
+			//show_debug_message("RECEIVE: pause: "+string(current_time));
 			
 			var _player = ds_map_find_value(socket_to_instanceid, socket);
 			
@@ -159,7 +185,7 @@ function scr_received_packet(buffer, socket){
 			
 		case network.unpause:
 			#region unpause
-			//show_debug_message("RECIEVE: unpause: "+string(current_time));
+			//show_debug_message("RECEIVE: unpause: "+string(current_time));
 			
 			var _player = ds_map_find_value(socket_to_instanceid, socket);
 			
@@ -212,7 +238,7 @@ function scr_received_packet(buffer, socket){
 		
 		case network.duotask:
 			#region duotask
-			//show_debug_message("RECIEVE: duotask: " + string(current_time));
+			//show_debug_message("RECEIVE: duotask: " + string(current_time));
 			
 			var object_id = buffer_read(buffer, buffer_u32);
 			var add = buffer_read(buffer, buffer_s8);
@@ -253,6 +279,16 @@ function scr_received_packet(buffer, socket){
 				ds_map_add(global.duotask_map, object_id, 1);
 			}
 			#endregion
+			break;
+		
+		case network.start_early:
+			for(var i = 0; i < ds_list_size(socket_list); i++) {
+				var _sock = ds_list_find_value(socket_list, i);
+				buffer_seek(server_buffer, buffer_seek_start, 0);				// Start from top of buffer
+				buffer_write(server_buffer, buffer_u8, network.server_full);	// Message ID			
+				network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
+				//show_debug_message("SEND: server_full: "+string(current_time));
+			}
 			break;
 	}
 }
