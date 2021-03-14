@@ -252,5 +252,26 @@ function scr_recieved_packet(buffer, socket){
 			}
 			#endregion
 			break;
+		
+		case network.vaccinate:
+		
+			#region vaccinate
+			var vaccinate_status = buffer_read(buffer, buffer_u8);
+			
+			// Echo it out
+			for(var i = 0; i < ds_list_size(socket_list); i++) {
+				var recipient_socket = ds_list_find_value(socket_list, i);
+				
+				if (recipient_socket != socket) {
+					buffer_seek(server_buffer, buffer_seek_start, 0);
+					buffer_write(server_buffer, buffer_u8, network.vaccinate);
+					buffer_write(server_buffer, buffer_u8, vaccinate_status);
+					network_send_packet(recipient_socket, server_buffer, buffer_tell(server_buffer));
+					//show_debug_message("SEND: unpause: "+string(current_time));
+				}
+			}
+			
+			#endregion
+			break;
 	}
 }

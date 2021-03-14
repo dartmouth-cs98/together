@@ -2,21 +2,17 @@
 // You can write your code in this editor
 
 if (open){
-	scr_unpause();
-	global.any_menu = false;
-	open = false;
-	if (obj_player.role == "Doctor" and doctor_in){
-		obj_syringe.y = 4000;
-		doctor_in = false;
+	if (obj_player.role == "Doctor"){
+		doctor_in = true;		
 		buffer_write(con_client.client_buffer, buffer_u8, network.vaccinate);
-		buffer_write(con_client.client_buffer, buffer_u8, 3);
+		buffer_write(con_client.client_buffer, buffer_u8, 1);
 		network_send_packet(con_client.client, con_client.client_buffer, buffer_tell(con_client.client_buffer));
 	}
-	else if (obj_player.role != "Doctor" and arm_in){
-		obj_arm.y = 4000;
-		arm_in = false;
+	else if (finished and other_arm_in == false and obj_player.infection_level > 0){
+		arm_in = true;
 		buffer_write(con_client.client_buffer, buffer_u8, network.vaccinate);
-		buffer_write(con_client.client_buffer, buffer_u8, 4);
+		buffer_write(con_client.client_buffer, buffer_u8, 2);
 		network_send_packet(con_client.client, con_client.client_buffer, buffer_tell(con_client.client_buffer));
 	}
+	if (arm_in and doctor_in) alarm[0] = room_speed * 5; 
 }

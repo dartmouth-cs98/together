@@ -306,5 +306,24 @@ function scr_received_packet(buffer){
 			#endregion
 			break;
 		
+		case network.vaccinate:
+			#region vaccinate
+			var buffer_result = buffer_read(buffer, buffer_bool);
+			if (buffer_result == 1){
+				obj_hospital.doctor_in = true;
+			}
+			else if (buffer_result == 2){
+				obj_hospital.other_arm_in = true;
+			}
+			else if (buffer_result == 3){
+				obj_hospital.doctor_in = false;
+			}
+			else if (buffer_result == 4){
+				obj_hospital.other_arm_in = false;
+			}
+			
+			#endregion
+			break;
+		
 	}
 }

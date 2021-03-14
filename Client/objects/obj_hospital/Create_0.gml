@@ -20,5 +20,7 @@ task = "Checkup";
 contaminated = false;
 alarm[0] = room_speed * 2;
 arm_in = false;
+other_arm_in = false;
+doctor_in = false;
 
 myscript = scr_open_hospital;

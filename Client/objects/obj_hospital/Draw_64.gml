@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (open){
+if (open and !finished and obj_player.role != "Doctor"){
 	draw_rectangle_color(80, 30, 450, 250, c_black, c_black, c_black, c_black, false);
 	draw_set_color(c_green);
 	draw_set_halign(fa_left);
@@ -12,10 +12,17 @@ if (open){
 	if (e){
 		if (obj_player.infection_level == 0) draw_text(125, 50 + 16 * 4, "Infection Test Result: Negative");
 		else if (obj_player.infection_level < 4) draw_text(125, 50 + 16 * 4, "Infection Test Result: Positive");	
-		else if (obj_player.infection_level < 7) draw_text(125, 50 + 16 * 4, "Infection Test Result: Positive, Seek Medical Care Immediately");	
+		else if (obj_player.infection_level < 7) draw_text(125, 50 + 16 * 4, "Infection Test Result: Positive, Seek Medical Care");	
 	}
 }
-
-if (arm_in){
-	instance_create_layer(150, 150, "Instances", obj_arm);	
+else if (open and (arm_in or doctor_in)){
+	//draw_rectangle_color(80, 30, 450, 250, c_white, c_white, c_white, c_white, false);
+	if (arm_in){
+		obj_arm.x = 200;
+		obj_arm.y = 100;
+	}
+	if (doctor_in){
+		obj_syringe.x = 200;
+		obj_syringe.y = 100;
+	}
 }

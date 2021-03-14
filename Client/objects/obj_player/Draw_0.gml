@@ -16,4 +16,4 @@ draw_set_valign(fa_middle);
 draw_set_color(c_white);
 draw_set_font(Font1);
 draw_text(x, y-40, username);
-draw_text(x, y-70, role);
+//draw_text(x, y-70, role);
