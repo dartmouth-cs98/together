@@ -15,3 +15,4 @@ chat_text = "";		// Current chat message
 
 global.task = 0;	// Start taskbar progress at 0
 global.duotask_map = ds_map_create();	// Creates a new map for duotasks
+global.item_map = ds_map_create();		// Creates a new map for items

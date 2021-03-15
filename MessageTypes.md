@@ -115,7 +115,6 @@ These types and their respective IDs are defined in the enum `network`. This enu
 * Protocol
    * Server tells clients when an event has been initiated and which event it is. Format: `<ID, event>`
 
-
 ### `update_npc_infection_level`
 * ID: 17
 * Protocol
@@ -126,3 +125,10 @@ These types and their respective IDs are defined in the enum `network`. This enu
 * Protocol
     * When the players in the waiting room are ready to start, someone can press enter, sending this message. Format: `<ID>`
     * The server recieves this and sends a `server_full` message back to all the clients. No response.
+
+### `item`
+* ID: 20
+* Protocol
+   * Player tells server whenever an item is dropped or picked up
+   * Server keeps track of items being picked up and dropped and updates other clients accordingly.
+   * Format: `<ID, action, object_type, object_id, object_x, object_y>`

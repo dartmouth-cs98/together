@@ -330,6 +330,35 @@ function scr_received_packet(buffer){
 			
 			#endregion
 			break;
+			
+		case network.item:
+			#region item
+			
+			var action = buffer_read(buffer, buffer_u8);
+			var object_type = buffer_read(buffer, buffer_string);
+			var obj_id = buffer_read(buffer, buffer_u32);
+			
+			// If the action is drop
+			if (action == 0) {
+				var object_x = buffer_read(buffer, buffer_s16);
+				var object_y = buffer_read(buffer, buffer_s16);
+				
+				temp = instance_create_layer(object_x, object_y, "Instances", asset_get_index(object_type));
+				
+				with(temp) {
+					object_id = obj_id;
+				}
+
+			} else if (action == 1) { // else if action is pickup
+				with(asset_get_index(object_type)) {
+					if (object_id == obj_id) {
+						instance_destroy();
+					}
+				}
+
+			}
+			
+			#endregion
 		
 	}
 }
