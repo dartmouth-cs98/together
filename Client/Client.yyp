@@ -201,6 +201,7 @@
     {"id":{"name":"spr_taxi_driver","path":"sprites/spr_taxi_driver/spr_taxi_driver.yy",},"order":1,},
     {"id":{"name":"spr_shirt_blue_sheet","path":"sprites/spr_shirt_blue_sheet/spr_shirt_blue_sheet.yy",},"order":16,},
     {"id":{"name":"spr_shirt_green_sheet","path":"sprites/spr_shirt_green_sheet/spr_shirt_green_sheet.yy",},"order":17,},
+    {"id":{"name":"rm_lose_screen","path":"rooms/rm_lose_screen/rm_lose_screen.yy",},"order":4,},
     {"id":{"name":"snd_Valid01","path":"sounds/snd_Valid01/snd_Valid01.yy",},"order":15,},
     {"id":{"name":"scr_create_menu_page","path":"scripts/scr_create_menu_page/scr_create_menu_page.yy",},"order":0,},
     {"id":{"name":"Sprite147","path":"sprites/Sprite147/Sprite147.yy",},"order":931,},
@@ -294,6 +295,7 @@
     {"roomId":{"name":"","path":"",},},
     {"roomId":{"name":"rm_win_screen","path":"rooms/rm_win_screen/rm_win_screen.yy",},},
     {"roomId":{"name":"rm_sprite_select","path":"rooms/rm_sprite_select/rm_sprite_select.yy",},},
+    {"roomId":{"name":"rm_lose_screen","path":"rooms/rm_lose_screen/rm_lose_screen.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":929,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},

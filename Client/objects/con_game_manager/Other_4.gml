@@ -14,6 +14,10 @@ switch (room) {
 		// TODO: Uncomment this
 		//audio_play_sound(msc_MusicADVENTURE, 2, false);
 		break;
+	
+	case rm_lose_screen:
+		audio_stop_all();
+		break;
 		
 	default:
 		break;

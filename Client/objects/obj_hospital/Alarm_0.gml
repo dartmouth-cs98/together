@@ -5,7 +5,7 @@ alarm[0] = room_speed * 2;
 
 if (open){
 	
-	if (!finished){
+	if (!(finished or obj_player.role == "Doctor")){
 		if (e){
 			global.any_menu = false;
 			scr_unpause();
@@ -25,6 +25,9 @@ if (open){
 		if (b) c = true;
 		if (a) b = true;
 		a = true;
+	}
+	else if (obj_player.role == "Doctor"){
+		doctor_in = true;
 	}
 	else if (arm_in and doctor_in){
 		obj_player.infection_level = 0;

@@ -83,6 +83,7 @@ other_count = 0;
 npc_count = 0;
 npc_infection_level = 0;
 sign_count = 0;
+total_player_infect_level = 0;
 
 #region roles and tasks
 
