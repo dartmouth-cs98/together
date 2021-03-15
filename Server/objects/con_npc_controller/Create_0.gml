@@ -12,12 +12,13 @@ ds_list_add(npc_list, instance_create_layer(1000, 260, "Instances", obj_npc));
 ds_list_add(npc_list, instance_create_layer(1280, 260, "Instances", obj_npc));
 ds_list_add(npc_list, instance_create_layer(1675, 196, "Instances", obj_npc));
 ds_list_add(npc_list, instance_create_layer(340, 430, "Instances", obj_npc));
-
-// TODO: Commented out to improve performance during testing. Add back in.
-/*
 ds_list_add(npc_list, instance_create_layer(670, 430, "Instances", obj_npc));
 ds_list_add(npc_list, instance_create_layer(1000, 430, "Instances", obj_npc));
 ds_list_add(npc_list, instance_create_layer(365, 625, "Instances", obj_npc));
+
+// TODO: Commented out to improve performance during testing. Add back in.
+
+/*
 ds_list_add(npc_list, instance_create_layer(515, 625, "Instances", obj_npc));
 ds_list_add(npc_list, instance_create_layer(670, 625, "Instances", obj_npc));
 ds_list_add(npc_list, instance_create_layer(1000, 625, "Instances", obj_npc));
