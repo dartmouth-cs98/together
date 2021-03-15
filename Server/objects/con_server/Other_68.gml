@@ -9,7 +9,7 @@ switch(type_event) {
 		// When you get a connect message, add the client to the list
 		socket = ds_map_find_value(async_load, "socket");
 		ds_list_add(socket_list, socket);
-		if (current_player_number < max_player_number){
+		if (current_player_number < max_clients){
 			current_player_number++;
 			buffer_seek(server_buffer, buffer_seek_start, 0);
 			buffer_write(server_buffer, buffer_u8, network.player_establish);
@@ -57,7 +57,6 @@ switch(type_event) {
 		// When you get data, send out the appropriate messages
 		buffer = ds_map_find_value(async_load, "buffer");
 		socket = ds_map_find_value(async_load, "id");
-		buffer_seek(buffer, buffer_seek_start, 0); // Go to start of buffer
 		scr_received_packet(buffer, socket);
 		break;
 }

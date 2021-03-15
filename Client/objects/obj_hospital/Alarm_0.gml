@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 alarm[0] = room_speed * 2;
-show_debug_message("Alarming!");
+//show_debug_message("Alarming!");
 
 if (open){
 	if (e){

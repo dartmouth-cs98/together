@@ -31,16 +31,18 @@ function scr_network_player_join(_username, _sprite_sheet){
 		// Don't broadcast to yourself
 		if (_sock != socket) {
 			var _other = ds_map_find_value(socket_to_instanceid, _sock);
-			buffer_seek(server_buffer, buffer_seek_start, 0);
-			buffer_write(server_buffer, buffer_u8, network.player_joined);
-			buffer_write(server_buffer, buffer_u8, _sock);
-			buffer_write(server_buffer, buffer_u16, _other.x);
-			buffer_write(server_buffer, buffer_u16, _other.y);
-			buffer_write(server_buffer, buffer_string, _other.username);
-			buffer_write(server_buffer, buffer_u8, _other.sprite_sheet);
-			buffer_write(server_buffer, buffer_string, _other.role);
-			network_send_packet(socket, server_buffer, buffer_tell(server_buffer));
-			//show_debug_message("SEND: player_joined: "+string(current_time));
+			if (!is_undefined(_other)) {
+				buffer_seek(server_buffer, buffer_seek_start, 0);
+				buffer_write(server_buffer, buffer_u8, network.player_joined);
+				buffer_write(server_buffer, buffer_u8, _sock);
+				buffer_write(server_buffer, buffer_u16, _other.x);
+				buffer_write(server_buffer, buffer_u16, _other.y);
+				buffer_write(server_buffer, buffer_string, _other.username);
+				buffer_write(server_buffer, buffer_u8, _other.sprite_sheet);
+				buffer_write(server_buffer, buffer_string, _other.role);
+				network_send_packet(socket, server_buffer, buffer_tell(server_buffer));
+				//show_debug_message("SEND: player_joined: "+string(current_time));
+			}
 		}
 	}
 	

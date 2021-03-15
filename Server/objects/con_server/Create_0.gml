@@ -2,9 +2,9 @@
 
 // Global variable. If true, visuals should show up. If false, they shouldn't
 global.show_visuals = false;
-
 enum network {
 	player_establish,		// 
+	server_full,			// For indicating to players that the server is full
 	player_connect,			// For managing a player connecting
 	player_joined,			// For when another player joins
 	player_disconnect,		// For removing a player when they disconnect
@@ -21,7 +21,8 @@ enum network {
 	duotask,				// For handling tasks that require two players
 	event,
 	update_npc_infection_level,
-	item					// For picking up and dropping shared items
+	start_early,
+  item					// For picking up and dropping shared items
 }
 
 #region An enum & ds map for colors, makes it easier to send color IDs across the internet
@@ -94,7 +95,6 @@ socket_to_instanceid = ds_map_create();
 player_spawn_x = 0;
 player_spawn_y = 0;
 
-max_player_number = 7;
 current_player_number = 0;
 
 available_roles = ds_list_create();
