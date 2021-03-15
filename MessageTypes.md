@@ -107,3 +107,10 @@ These types and their respective IDs are defined in the enum `network`. This enu
 * ID: 15
 * Protocol
    * Server tells clients when an event has been initiated and which event it is. Format: `<ID, event>`
+
+### `item`
+* ID: 17
+* Protocol
+   * Player tells server whenever an item is dropped or picked up
+   * Server keeps track of items being picked up and dropped and updates other clients accordingly.
+   * Format: `<ID, action, object_type, object_id, object_x, object_y>`
