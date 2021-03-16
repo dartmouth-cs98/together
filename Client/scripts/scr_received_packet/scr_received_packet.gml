@@ -244,7 +244,7 @@ function scr_received_packet(buffer){
 			_npc.npc_id = _npc_id;
 			
 			// TODO: Find some better way of assigning NPC spritesheets
-			_npc.sprite_sheet = spr_princess_red_sheet;
+			_npc.sprite_sheet = spr_bandana_purple_sheet;
 			//_npc.sprite_sheet = _sprite_sheet;
 			
 			ds_map_add(con_game_manager.id_to_npc_object_map, _npc_id, _npc);
