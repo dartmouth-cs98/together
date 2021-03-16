@@ -70,13 +70,14 @@ function scr_received_packet(buffer){
 			var _x = buffer_read(buffer, buffer_u16);
 			var _y = buffer_read(buffer, buffer_u16);
 			var _username = buffer_read(buffer, buffer_string);
-			var _sprite_sheet = buffer_read(buffer, buffer_u8);
+			//var _sprite_sheet = buffer_read(buffer, buffer_u8);
 			var _role = buffer_read(buffer, buffer_string);
 			var _other = instance_create_depth(_x, _y, depth, obj_other);
 			_other.socket = _socket;
 			_other.username = _username;
-			_other.sprite_sheet = _sprite_sheet;
+			//_other.sprite_sheet = _sprite_sheet;
 			_other.role = _role;
+			_other.sprite_sheet = ds_map_find_value(con_game_manager.role_to_sprite_map, _role);
 			_other.image_index = 0;
 			con_game_manager.other_count++;
 			ds_map_add(socket_to_instanceid, _socket, _other);
@@ -201,8 +202,6 @@ function scr_received_packet(buffer){
 			var taskbar = buffer_read(buffer, buffer_u8);
 			global.taskbar = taskbar;
 			if (global.taskbar >= global.taskbar_max) {
-				//
-				// TODO: Removed for testing purposes. Put it back.
 				room_goto(rm_win_screen);
 			}
 			//show_debug_message("Taskbar: " + string(taskbar))
@@ -245,7 +244,7 @@ function scr_received_packet(buffer){
 			_npc.npc_id = _npc_id;
 			
 			// TODO: Find some better way of assigning NPC spritesheets
-			_npc.sprite_sheet = spr_princess_red_sheet;
+			_npc.sprite_sheet = spr_bandana_purple_sheet;
 			//_npc.sprite_sheet = _sprite_sheet;
 			
 			ds_map_add(con_game_manager.id_to_npc_object_map, _npc_id, _npc);
@@ -297,8 +296,9 @@ function scr_received_packet(buffer){
 			#region update_infection_level
 			var _sock = buffer_read(buffer, buffer_u8);
 			var _other = ds_map_find_value(socket_to_instanceid, _sock);
-			if (!is_undefined(_other)){
-				var infection_level = buffer_read(buffer, buffer_u8);
+			var infection_level = buffer_read(buffer, buffer_u8);
+			
+			if (!is_undefined(_other) and instance_exists(_other)){
 				_other.infection_level = infection_level;
 			}
 			
