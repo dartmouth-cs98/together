@@ -26,7 +26,9 @@ switch(room){
 			chat_obj = instance_find(obj_chat_icon, 0);
 			chat_obj.x = global.cam_X + 455;
 			chat_obj.y = global.cam_Y + 250;
-			draw_text(global.cam_X + 40, global.cam_Y + 65, "Water: " + string(obj_player.water));	
+			
+			// TODO: Commented out because water's not implemented for the demo
+			//draw_text(global.cam_X + 40, global.cam_Y + 65, "Water: " + string(obj_player.water));	
 		}
 		break;
 		
