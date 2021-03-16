@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Hospital Checkup",
-    "path": "folders/Objects/Minigames/Hospital Checkup.yy",
+    "name": "Hospital",
+    "path": "folders/Objects/Minigames/Hospital.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_hospital_icon",

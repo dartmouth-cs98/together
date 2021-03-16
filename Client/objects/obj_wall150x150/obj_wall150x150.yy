@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "Sprite90",
-    "path": "sprites/Sprite90/Sprite90.yy",
+    "name": "spr_hospital1",
+    "path": "sprites/spr_hospital1/spr_hospital1.yy",
   },
   "solid": false,
   "visible": true,

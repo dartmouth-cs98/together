@@ -14,8 +14,8 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 150,
-  "height": 150,
+  "width": 151,
+  "height": 151,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"0ad38452-66f4-44af-ad7a-52edd9dd4f88","path":"sprites/Sprite90/Sprite90.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"0ad38452-66f4-44af-ad7a-52edd9dd4f88","path":"sprites/Sprite90/Sprite90.yy",},"LayerId":{"name":"c46c5ed0-8861-4dbc-9b59-84c543b79035","path":"sprites/Sprite90/Sprite90.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"Sprite90","path":"sprites/Sprite90/Sprite90.yy",},"resourceVersion":"1.0","name":"0ad38452-66f4-44af-ad7a-52edd9dd4f88","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"0ad38452-66f4-44af-ad7a-52edd9dd4f88","path":"sprites/spr_hospital1/spr_hospital1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"0ad38452-66f4-44af-ad7a-52edd9dd4f88","path":"sprites/spr_hospital1/spr_hospital1.yy",},"LayerId":{"name":"c46c5ed0-8861-4dbc-9b59-84c543b79035","path":"sprites/spr_hospital1/spr_hospital1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_hospital1","path":"sprites/spr_hospital1/spr_hospital1.yy",},"resourceVersion":"1.0","name":"0ad38452-66f4-44af-ad7a-52edd9dd4f88","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"Sprite90","path":"sprites/Sprite90/Sprite90.yy",},
+    "spriteId": {"name":"spr_hospital1","path":"sprites/spr_hospital1/spr_hospital1.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"93fc7ba3-c001-4d5c-a177-7cef6c789be0","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"0ad38452-66f4-44af-ad7a-52edd9dd4f88","path":"sprites/Sprite90/Sprite90.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"93fc7ba3-c001-4d5c-a177-7cef6c789be0","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"0ad38452-66f4-44af-ad7a-52edd9dd4f88","path":"sprites/spr_hospital1/spr_hospital1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,9 +58,9 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"Sprite90","path":"sprites/Sprite90/Sprite90.yy",},
+    "parent": {"name":"spr_hospital1","path":"sprites/spr_hospital1/spr_hospital1.yy",},
     "resourceVersion": "1.3",
-    "name": "Sprite90",
+    "name": "spr_hospital1",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -72,7 +72,7 @@
     "path": "folders/Sprites.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Sprite90",
+  "name": "spr_hospital1",
   "tags": [],
   "resourceType": "GMSprite",
 }

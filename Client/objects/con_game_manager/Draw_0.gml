@@ -26,7 +26,9 @@ switch(room){
 			chat_obj = instance_find(obj_chat_icon, 0);
 			chat_obj.x = global.cam_X + 455;
 			chat_obj.y = global.cam_Y + 250;
-			draw_text(global.cam_X + 40, global.cam_Y + 65, "Water: " + string(obj_player.water));	
+			
+			// TODO: Commented out because water's not implemented for the demo
+			//draw_text(global.cam_X + 40, global.cam_Y + 65, "Water: " + string(obj_player.water));	
 		}
 		break;
 		
@@ -36,7 +38,14 @@ switch(room){
 		draw_set_valign(fa_middle);
 		draw_text_transformed(room_width/2, room_height/2, "You win!", 3, 3, 0);
 		break;
-		
+	
+	case rm_lose_screen:
+		draw_set_colour(c_red);
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_middle);
+		draw_text_transformed(room_width/2, room_height/2, "You lose!", 3, 3, 0);
+		break;
+	
 	default:
 		break;
 	

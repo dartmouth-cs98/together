@@ -1,5 +1,5 @@
-/// @description Determine what to do based on data recieved
-function scr_received_packet(buffer, socket) {
+/// @description Determine what to do based on data received
+function scr_received_packet(buffer, socket){
 	buffer_seek(buffer, buffer_seek_start, 0); // Go to start of buffer
 	msgid = buffer_read(buffer, buffer_u8);
 	
@@ -25,7 +25,7 @@ function scr_received_packet(buffer, socket) {
 					//show_debug_message("SEND: server_full: "+string(current_time));
 				}
 			}
-			
+
 			#endregion
 			break;
 		
@@ -36,7 +36,6 @@ function scr_received_packet(buffer, socket) {
 			var _username = buffer_read(buffer, buffer_string);
 			var _sprite_sheet = buffer_read(buffer, buffer_u8);
 			scr_network_player_join(_username, _sprite_sheet);
-			
 			#endregion
 			break;
 		
@@ -58,10 +57,10 @@ function scr_received_packet(buffer, socket) {
 						var move_dir = point_direction(0, 0, h_input, v_input);
 						var move_x = lengthdir_x(walk_speed, move_dir);
 						var move_y = lengthdir_y(walk_speed, move_dir);	
-					
+						
 						x += move_x;
 						y += move_y;
-					
+						
 						// Set sprites based on move direction
 						switch(move_dir) {
 							case 0: sprite_index = spr_r_strip4; break;			// Right
@@ -289,9 +288,9 @@ function scr_received_packet(buffer, socket) {
 				network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
 				//show_debug_message("SEND: server_full: "+string(current_time));
 			}
-      break;
-      
-    case network.item:
+      		break;
+		
+		case network.item:
 			#region item
 
 			var action = buffer_read(buffer, buffer_u8);
@@ -341,6 +340,28 @@ function scr_received_packet(buffer, socket) {
 					network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
 				}
 			}
+			#endregion
+			break;
+		
+		case network.vaccinate:
+		
+			#region vaccinate
+			var vaccinate_status = buffer_read(buffer, buffer_u8);
+			show_debug_message("Vaccinate status: " + string(vaccinate_status));
+			
+			// Echo it out
+			for(var i = 0; i < ds_list_size(socket_list); i++) {
+				var recipient_socket = ds_list_find_value(socket_list, i);
+				
+				if (recipient_socket != socket) {
+					buffer_seek(server_buffer, buffer_seek_start, 0);
+					buffer_write(server_buffer, buffer_u8, network.vaccinate);
+					buffer_write(server_buffer, buffer_u8, vaccinate_status);
+					network_send_packet(recipient_socket, server_buffer, buffer_tell(server_buffer));
+					//show_debug_message("SEND: unpause: "+string(current_time));
+				}
+			}
+			
 			#endregion
 			break;
 	}

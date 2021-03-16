@@ -14,10 +14,13 @@ d_val = irandom_range(70, 130);
 e = false;
 
 myname = "canvas";
-object1 = Sprite90;
-object2 = Sprite90;
+object1 = spr_hospital1;
+object2 = spr_hospital2;
 task = "Checkup";
 contaminated = false;
 alarm[0] = room_speed * 2;
+arm_in = false;
+other_arm_in = false;
+doctor_in = false;
 
 myscript = scr_open_hospital;

@@ -22,7 +22,8 @@ enum network {
 	event,
 	update_npc_infection_level,
 	start_early,
-  item					// For picking up and dropping shared items
+  	item,					// For picking up and dropping shared items
+	vaccinate
 }
 
 #region An enum & ds map for colors, makes it easier to send color IDs across the internet

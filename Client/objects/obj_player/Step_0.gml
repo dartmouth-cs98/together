@@ -1,5 +1,4 @@
 /// @description Every frame
-// Comment out when not testing a specific role
 
 #region Manage 8-directional movement, based on this video: https://www.youtube.com/watch?v=0-a0Fak7cjk
 if (!global.paused) {
@@ -120,9 +119,6 @@ if(distance_to_object(nearestObject) < interactRange){
 	
 	// Check for role here
 	var has_task = false;
-	
-	// TODO: This is here for the demo. Remove.
-	has_task = true;
 	
 	open_tasks = ds_map_find_value(con_game_manager.role_to_tasks_map, role);
 	for (i = 0; i < ds_list_size(open_tasks); i++){
