@@ -280,7 +280,7 @@ function scr_received_packet(buffer, socket) {
 			}
 			#endregion
 			break;
-		
+
 		case network.start_early:
 			for(var i = 0; i < ds_list_size(socket_list); i++) {
 				var _sock = ds_list_find_value(socket_list, i);
@@ -289,6 +289,59 @@ function scr_received_packet(buffer, socket) {
 				network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
 				//show_debug_message("SEND: server_full: "+string(current_time));
 			}
+      break;
+      
+    case network.item:
+			#region item
+
+			var action = buffer_read(buffer, buffer_u8);
+			var object_type = buffer_read(buffer, buffer_string);
+			var object_id = buffer_read(buffer, buffer_u32);
+
+			// If the action is drop
+			if (action == 0) {
+				var object_x = buffer_read(buffer, buffer_s16);
+				var object_y = buffer_read(buffer, buffer_s16);
+				
+				ds_map_add(global.item_map, object_id, object_type);
+				
+				// Broadcast item drop to all players
+				for(var i = 0; i < ds_list_size(socket_list); i++) {
+
+					var _sock = ds_list_find_value(socket_list, i);
+
+					buffer_seek(server_buffer, buffer_seek_start, 0);			// Start from top of buffer
+					buffer_write(server_buffer, buffer_u8, network.item);		// Message ID
+
+					buffer_write(server_buffer, buffer_u8, action);				// Send back action
+					buffer_write(server_buffer, buffer_string, object_type);		// Send back object type
+					buffer_write(server_buffer, buffer_u32, object_id);			// Send back object id
+					buffer_write(server_buffer, buffer_s16, object_x);
+					buffer_write(server_buffer, buffer_s16, object_y);
+				
+					network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
+				}
+			} else if (action == 1) { // else if action is pickup
+				if ds_map_exists(global.item_map, object_id) {
+					ds_map_delete(global.item_map, object_id)
+				}
+
+				// Broadcast item pickup to all players
+				for(var i = 0; i < ds_list_size(socket_list); i++) {
+
+					var _sock = ds_list_find_value(socket_list, i);
+
+					buffer_seek(server_buffer, buffer_seek_start, 0);			// Start from top of buffer
+					buffer_write(server_buffer, buffer_u8, network.item);		// Message ID
+
+					buffer_write(server_buffer, buffer_u8, action);				// Send back action
+					buffer_write(server_buffer, buffer_string, object_type);		// Send back object type
+					buffer_write(server_buffer, buffer_u32, object_id);			// Send back object id
+				
+					network_send_packet(_sock, server_buffer, buffer_tell(server_buffer));
+				}
+			}
+			#endregion
 			break;
 	}
 }
