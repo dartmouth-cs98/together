@@ -5,7 +5,7 @@ function scr_received_packet(buffer){
 	switch(msgid) {
 		case network.player_establish:
 			#region player_establish
-			//show_debug_message("RECIEVE: player_establish: "+string(current_time));
+			//show_debug_message("RECEIVE: player_establish: "+string(current_time));
 			
 			var _socket = buffer_read(buffer, buffer_u8);
 			
@@ -14,16 +14,36 @@ function scr_received_packet(buffer){
 			
 			buffer_seek(client_buffer, buffer_seek_start, 0);
 			buffer_write(client_buffer, buffer_u8, network.player_establish);
+			/*
+			buffer_write(client_buffer, buffer_string, con_game_manager.username);
+			buffer_write(client_buffer, buffer_u8, con_game_manager.player_sprite);
+			*/
+			network_send_packet(client, client_buffer, buffer_tell(client_buffer));
+			
+			//show_debug_message("SEND: player_establish: "+string(current_time));
+			#endregion
+			break;
+			
+		case network.server_full:
+			#region server_full
+			//show_debug_message("RECEIVE: server_full: "+string(current_time));
+			
+			room_goto(rm_client);
+			
+			buffer_seek(client_buffer, buffer_seek_start, 0);
+			buffer_write(client_buffer, buffer_u8, network.server_full);
 			buffer_write(client_buffer, buffer_string, con_game_manager.username);
 			buffer_write(client_buffer, buffer_u8, con_game_manager.player_sprite);
 			network_send_packet(client, client_buffer, buffer_tell(client_buffer));
-			//show_debug_message("SEND: player_establish: "+string(current_time));
+			
+			//show_debug_message("SEND: server_full: "+string(current_time));
+			
 			#endregion
 			break;
 		
 		case network.player_connect:
 			#region player_connect
-			//show_debug_message("RECIEVE: player_connect: "+string(current_time));
+			//show_debug_message("RECEIVE: player_connect: "+string(current_time));
 			
 			// When a player connects, get their info & put them in appropriate data structures
 			var _socket = buffer_read(buffer, buffer_u8);
@@ -44,19 +64,20 @@ function scr_received_packet(buffer){
 			
 		case network.player_joined:
 			#region player_joined
-			//show_debug_message("RECIEVE: player_joined: "+string(current_time));
+			//show_debug_message("RECEIVE: player_joined: "+string(current_time));
 			
 			var _socket = buffer_read(buffer, buffer_u8);
 			var _x = buffer_read(buffer, buffer_u16);
 			var _y = buffer_read(buffer, buffer_u16);
 			var _username = buffer_read(buffer, buffer_string);
-			var _sprite_sheet = buffer_read(buffer, buffer_u8);
+			//var _sprite_sheet = buffer_read(buffer, buffer_u8);
 			var _role = buffer_read(buffer, buffer_string);
 			var _other = instance_create_depth(_x, _y, depth, obj_other);
 			_other.socket = _socket;
 			_other.username = _username;
-			_other.sprite_sheet = _sprite_sheet;
+			//_other.sprite_sheet = _sprite_sheet;
 			_other.role = _role;
+			_other.sprite_sheet = ds_map_find_value(con_game_manager.role_to_sprite_map, _role);
 			_other.image_index = 0;
 			con_game_manager.other_count++;
 			ds_map_add(socket_to_instanceid, _socket, _other);
@@ -65,16 +86,22 @@ function scr_received_packet(buffer){
 			
 		case network.player_disconnect:
 			#region player_disconnect
-			//show_debug_message("RECIEVE: player_disconnect: "+string(current_time));
+			//show_debug_message("RECEIVE: player_disconnect: "+string(current_time));
 			
 			// Destroy whichever player is disconnected and remove them from the socket map
 			var _socket = buffer_read(buffer, buffer_u8);
 			var _player = ds_map_find_value(socket_to_instanceid, _socket);
 			
+			//if (_player != noone and !is_undefined(_player)){
+			/*
 			if (_player != noone){
 				with(_player) {
 					instance_destroy();
 				}
+			}
+			*/
+			if (!is_undefined(_player)) {
+				instance_destroy(_player);
 			}
 			
 			ds_map_delete(socket_to_instanceid, _socket);
@@ -92,7 +119,7 @@ function scr_received_packet(buffer){
 			
 		case network.move: 
 			#region move
-			//show_debug_message("RECIEVE: move: "+string(current_time));
+			//show_debug_message("RECEIVE: move: "+string(current_time));
 			
 			var _sock = buffer_read(buffer, buffer_u8);
 			var h_input = buffer_read(buffer, buffer_s8);
@@ -155,7 +182,7 @@ function scr_received_packet(buffer){
 			
 		case network.chat:
 			#region chat
-			//show_debug_message("RECIEVE: chat: "+string(current_time));
+			//show_debug_message("RECEIVE: chat: "+string(current_time));
 			
 			// Read chat message, put it in the list.
 			if (global.chat != noone){
@@ -175,9 +202,7 @@ function scr_received_packet(buffer){
 			var taskbar = buffer_read(buffer, buffer_u8);
 			global.taskbar = taskbar;
 			if (global.taskbar >= global.taskbar_max) {
-				//
-				// TODO: Removed for testing purposes. Put it back.
-				//room_goto(rm_win_screen);
+				room_goto(rm_win_screen);
 			}
 			//show_debug_message("Taskbar: " + string(taskbar))
 			#endregion
@@ -185,7 +210,7 @@ function scr_received_packet(buffer){
 
 		case network.pause:
 			#region pause
-			//show_debug_message("RECIEVE: pause: "+string(current_time));
+			//show_debug_message("RECEIVE: pause: "+string(current_time));
 			
 			var pause_socket = buffer_read(buffer, buffer_u8);
 			var _player = ds_map_find_value(socket_to_instanceid, pause_socket);
@@ -197,7 +222,7 @@ function scr_received_packet(buffer){
 			
 		case network.unpause:
 			#region unpause
-			//show_debug_message("RECIEVE: unpause: "+string(current_time));
+			//show_debug_message("RECEIVE: unpause: "+string(current_time));
 			
 			var unpause_socket = buffer_read(buffer, buffer_u8);
 			var _player = ds_map_find_value(socket_to_instanceid, unpause_socket);
@@ -208,7 +233,7 @@ function scr_received_packet(buffer){
 	
 		case network.npc_create:
 			#region npc_create
-			show_debug_message("RECEIVE: npc_create: "+string(current_time));
+			//show_debug_message("RECEIVE: npc_create: "+string(current_time));
 			var _npc_id = buffer_read(buffer, buffer_u32);
 			var _x = buffer_read(buffer, buffer_u16);
 			var _y = buffer_read(buffer, buffer_u16);
@@ -219,10 +244,10 @@ function scr_received_packet(buffer){
 			_npc.npc_id = _npc_id;
 			
 			// TODO: Find some better way of assigning NPC spritesheets
-			_npc.sprite_sheet = spr_princess_red_sheet;
+			_npc.sprite_sheet = spr_bandana_purple_sheet;
 			//_npc.sprite_sheet = _sprite_sheet;
 			
-			ds_map_add(con_game_manager.id_to_npc_object_map, _npc_id, _npc); 
+			ds_map_add(con_game_manager.id_to_npc_object_map, _npc_id, _npc);
 			con_game_manager.npc_count++;
 			
 			#endregion
@@ -271,8 +296,9 @@ function scr_received_packet(buffer){
 			#region update_infection_level
 			var _sock = buffer_read(buffer, buffer_u8);
 			var _other = ds_map_find_value(socket_to_instanceid, _sock);
-			if (!is_undefined(_other)){
-				var infection_level = buffer_read(buffer, buffer_u8);
+			var infection_level = buffer_read(buffer, buffer_u8);
+			
+			if (!is_undefined(_other) and instance_exists(_other)){
 				_other.infection_level = infection_level;
 			}
 			
@@ -299,12 +325,40 @@ function scr_received_packet(buffer){
 			break;
 		
 		case network.update_npc_infection_level:
-			
 			#region update_npc_infection level
 			con_game_manager.npc_infection_level = buffer_read(buffer, buffer_u8);
 			
 			#endregion
 			break;
+			
+		case network.item:
+			#region item
+			
+			var action = buffer_read(buffer, buffer_u8);
+			var object_type = buffer_read(buffer, buffer_string);
+			var obj_id = buffer_read(buffer, buffer_u32);
+			
+			// If the action is drop
+			if (action == 0) {
+				var object_x = buffer_read(buffer, buffer_s16);
+				var object_y = buffer_read(buffer, buffer_s16);
+				
+				temp = instance_create_layer(object_x, object_y, "Instances", asset_get_index(object_type));
+				
+				with(temp) {
+					object_id = obj_id;
+				}
+
+			} else if (action == 1) { // else if action is pickup
+				with(asset_get_index(object_type)) {
+					if (object_id == obj_id) {
+						instance_destroy();
+					}
+				}
+
+			}
+			
+			#endregion
 		
 		case network.vaccinate:
 			#region vaccinate

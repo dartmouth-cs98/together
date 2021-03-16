@@ -2,7 +2,9 @@
 // You can write your code in this editor
 
 food--;
-water--;
+
+// TODO: Commented out because water's not implemented for the demo
+//water--;
 if (food == 0 or water == 0){
 
 	global.paused = true;

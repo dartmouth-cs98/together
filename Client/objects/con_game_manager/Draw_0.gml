@@ -9,6 +9,14 @@ switch(room){
 		//draw_text_transformed(room_width/2, room_height/2, "Press Space to start", 5, 5, 0);
 		break;
 	
+	case rm_wait:
+		draw_set_colour(c_white);
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_middle);
+		draw_text_transformed(room_width/2, room_height/2 - 30, "Waiting for players", 5, 5, 0);
+		draw_text_transformed(room_width/2, room_height/2 + 35, "Press space to start early", 3, 3, 0);
+		break;
+	
 	case rm_client:
 		if(instance_find(obj_player, 0) != noone){
 		
@@ -18,7 +26,9 @@ switch(room){
 			chat_obj = instance_find(obj_chat_icon, 0);
 			chat_obj.x = global.cam_X + 455;
 			chat_obj.y = global.cam_Y + 250;
-			draw_text(global.cam_X + 40, global.cam_Y + 65, "Water: " + string(obj_player.water));	
+			
+			// TODO: Commented out because water's not implemented for the demo
+			//draw_text(global.cam_X + 40, global.cam_Y + 65, "Water: " + string(obj_player.water));	
 		}
 		break;
 		

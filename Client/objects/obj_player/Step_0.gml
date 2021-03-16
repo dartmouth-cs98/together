@@ -42,7 +42,7 @@ if (infection_level < 4){
 	DTO = 0;
 	for (i = 0; i < con_game_manager.other_count; i++){
 		var other_player = instance_find(obj_other, i);
-		DTO = distance_to_object(other_player)
+		DTO = distance_to_object(other_player);
 		infection_level_other = other_player.infection_level;
 		if (DTO < 5){
 			if (infection_level_other > 0 and infection_level_other < 4){
@@ -71,6 +71,7 @@ if (infection_level < 4){
 			if (infection_level < 3 and infection_level_other == 6 and irandom(3) == 0) infection_level = 3;
 		}
 	}
+	
 	for (i = 0; i < con_game_manager.npc_count; i++){
 		var npc = instance_find(obj_npc, i);
 		DTO = distance_to_object(npc);
@@ -118,9 +119,6 @@ if(distance_to_object(nearestObject) < interactRange){
 	
 	// Check for role here
 	var has_task = false;
-	
-	// TODO: This is here for the demo. Remove.
-	//has_task = true;
 	
 	open_tasks = ds_map_find_value(con_game_manager.role_to_tasks_map, role);
 	for (i = 0; i < ds_list_size(open_tasks); i++){

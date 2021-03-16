@@ -2,9 +2,9 @@
 
 // Global variable. If true, visuals should show up. If false, they shouldn't
 global.show_visuals = false;
-
 enum network {
 	player_establish,		// 
+	server_full,			// For indicating to players that the server is full
 	player_connect,			// For managing a player connecting
 	player_joined,			// For when another player joins
 	player_disconnect,		// For removing a player when they disconnect
@@ -21,6 +21,8 @@ enum network {
 	duotask,				// For handling tasks that require two players
 	event,
 	update_npc_infection_level,
+	start_early,
+  	item,					// For picking up and dropping shared items
 	vaccinate
 }
 
@@ -72,7 +74,8 @@ ds_map_add(color_map, colors.yellow, c_yellow);
 // Depending on our router, ports may be blocked. We may have to unblock them in order to have people connect.
 port = 64198;
 
-max_clients = 12;
+// This has been set to be the number of existing roles there are
+max_clients = 7;
 
 // TCP, UDP, and WS type servers have pros and cons. Look 'em up.
 // TCP is slower & more reliable
@@ -93,7 +96,6 @@ socket_to_instanceid = ds_map_create();
 player_spawn_x = 0;
 player_spawn_y = 0;
 
-max_player_number = 7;
 current_player_number = 0;
 
 available_roles = ds_list_create();

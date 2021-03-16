@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 username = get_string_async("Please enter a username", "");
+id_to_npc_object_map = ds_map_create();
 
 // Used so we can pass it on to the game.
 player_sprite = 0;
@@ -149,7 +150,7 @@ ds_map_add(role_to_sprite_map, "Mail Carrier", spr_mail_carrier);
 ds_map_add(role_to_sprite_map, "Shopkeeper", spr_shopkeeper);
 ds_map_add(role_to_sprite_map, "Mayor", spr_mayor);
 ds_map_add(role_to_sprite_map, "Engineer", spr_engineer);
-ds_map_add(role_to_sprite_map, "Scientist", spr_scientist);
+ds_map_add(role_to_sprite_map, "Scientist", spr_shirt_green_sheet);
 
 /*
 role_to_ability_icon_map = ds_map_create();

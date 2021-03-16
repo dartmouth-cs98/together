@@ -144,12 +144,12 @@ if (moving) {
 				
 		var _sock = ds_list_find_value(con_server.socket_list, i);
 				
-		buffer_seek(con_server.server_buffer, buffer_seek_start, 0);			// Start from top of buffer
-		buffer_write(con_server.server_buffer, buffer_u8, network.npc_move);	// Message ID
+		buffer_seek(con_server.server_buffer, buffer_seek_start, 0);				// Start from top of buffer
+		buffer_write(con_server.server_buffer, buffer_u8, network.npc_move);		// Message ID
 		
-		buffer_write(con_server.server_buffer, buffer_u32, self);				// ID of the moving NPC
-		buffer_write(con_server.server_buffer, buffer_f32, move_x);				// X movement
-		buffer_write(con_server.server_buffer, buffer_f32, move_y);				// Y movement
+		buffer_write(con_server.server_buffer, buffer_u32, self);					// ID of the moving NPC
+		buffer_write(con_server.server_buffer, buffer_f32, move_x);					// X movement
+		buffer_write(con_server.server_buffer, buffer_f32, move_y);					// Y movement
 		buffer_write(con_server.server_buffer, buffer_f32, x_frame);				// Where along the walk animation should the npc be?
 		buffer_write(con_server.server_buffer, buffer_f32, y_frame);				// Which direction should the npc face?
 		
