@@ -100,39 +100,34 @@ mayor_tasks = ds_list_create();
 ds_list_add(doctor_tasks, "Save 5 NPCs");
 ds_list_add(doctor_tasks, "Checkup");
 ds_list_add(doctor_tasks, "Get Vaccine");
-ds_list_add(doctor_tasks, "Collect Apples");
+ds_list_add(doctor_tasks, "Common");
 ds_list_add(scientist_tasks, "Graph Disease Progression");
-ds_list_add(scientist_tasks, "Collect Apples");
+ds_list_add(scientist_tasks, "Common");
 ds_list_add(scientist_tasks, "Checkup");
 ds_list_add(scientist_tasks, "Get Vaccine");
 ds_list_add(farmer_tasks, "Harvest");
-ds_list_add(farmer_tasks, "Collect Apples");
-ds_list_add(farmer_tasks, "Pick Apples");
+ds_list_add(farmer_tasks, "Common");
 ds_list_add(farmer_tasks, "Water Plants");
 ds_list_add(farmer_tasks, "Duotask Unnamed");
 ds_list_add(farmer_tasks, "Checkup");
 ds_list_add(farmer_tasks, "Get Vaccine");
-ds_list_add(shopkeeper_tasks, "Collect Apples");
+ds_list_add(shopkeeper_tasks, "Common");
+ds_list_add(shopkeeper_tasks, "Cooking");
 ds_list_add(shopkeeper_tasks, "Duotask Unnamed");
 ds_list_add(shopkeeper_tasks, "Checkup");
 ds_list_add(shopkeeper_tasks, "Get Vaccine");
-ds_list_add(engineer_tasks, "Collect Apples");
+ds_list_add(engineer_tasks, "Common");
+ds_list_add(engineer_tasks, "Enter Passcode");
 ds_list_add(engineer_tasks, "Checkup");
 ds_list_add(engineer_tasks, "Get Vaccine");
-ds_list_add(mail_carrier_tasks, "Collect Apples");
+ds_list_add(mail_carrier_tasks, "Common");
 ds_list_add(mail_carrier_tasks, "Deliver Mail");
 ds_list_add(mail_carrier_tasks, "Checkup");
 ds_list_add(mail_carrier_tasks, "Get Vaccine");
-ds_list_add(mayor_tasks, "Collect Apples");
+ds_list_add(mayor_tasks, "Common");
 ds_list_add(mayor_tasks, "Set Max Occupancies");
-ds_list_add(mayor_tasks, "Enter Passcode");
 ds_list_add(mayor_tasks, "Checkup");
 ds_list_add(mayor_tasks, "Get Vaccine");
-
-//TESTING PURPOSES
-ds_list_add(scientist_tasks, "Deliver Mail");
-ds_list_add(scientist_tasks, "Water Plants");
-ds_list_add(scientist_tasks, "Pick Apples");
 
 ds_map_add(role_to_tasks_map, "Doctor", doctor_tasks);
 ds_map_add(role_to_tasks_map, "Scientist", scientist_tasks);
@@ -141,7 +136,6 @@ ds_map_add(role_to_tasks_map, "Farmer", farmer_tasks);
 ds_map_add(role_to_tasks_map, "Mail Carrier", mail_carrier_tasks);
 ds_map_add(role_to_tasks_map, "Mayor", mayor_tasks);
 ds_map_add(role_to_tasks_map, "Shopkeeper", shopkeeper_tasks);
-
 
 role_to_sprite_map = ds_map_create();
 ds_map_add(role_to_sprite_map, "Doctor", spr_doctor);

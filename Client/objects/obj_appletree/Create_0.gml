@@ -5,7 +5,7 @@ event_inherited();
 object1 = spr_appletree1;
 object2 = spr_appletree2;
 
-task = "Pick Apples";
+task = "Common";
 
 pickup_item = obj_apple;
 
