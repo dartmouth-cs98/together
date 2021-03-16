@@ -14,7 +14,8 @@ if (display_tasks){
 	draw_set_font(Font2);
 	draw_set_color(c_yellow);
 	var my_tasks = ds_map_find_value(con_game_manager.role_to_tasks_map, role);
+	draw_text(20, 130, "ROLE: " + role);
 	for (i = 0; i < ds_list_size(my_tasks); i++){
-		draw_text(20, i * 15 + 130, ds_list_find_value(my_tasks, i));
+		draw_text(20, i * 15 + 160, ds_list_find_value(my_tasks, i));
 	}
 }
