@@ -72,7 +72,7 @@ switch(page) {
 		draw_text(global.cam_width/2, 50, "Click the chat icon to chat with other people");
 		
 		draw_set_colour(c_white);
-		draw_rectangle(global.cam_width/2, global.cam_height/2 - 45, global.cam_width/2 + 45, global.cam_height/2, true);
+		draw_rectangle(global.cam_width/2, global.cam_height/2 - 45, global.cam_width/2 + 45, global.cam_height/2, false);
 		draw_sprite(chat_icon0, 0, global.cam_width/2, global.cam_height/2 - 50);
 		
 		draw_text(global.cam_width/2, 210, "You can also use a third party program to");
