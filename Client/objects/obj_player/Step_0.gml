@@ -121,9 +121,6 @@ if(distance_to_object(nearestObject) < interactRange){
 	// Check for role here
 	var has_task = false;
 	
-	// TODO: This is here for the demo. Remove.
-	has_task = true;
-	
 	open_tasks = ds_map_find_value(con_game_manager.role_to_tasks_map, role);
 	for (i = 0; i < ds_list_size(open_tasks); i++){
 		if (ds_list_find_value(open_tasks, i) == nearestObject.task) has_task = true;
