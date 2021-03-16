@@ -19,6 +19,9 @@ if (open){
 	if (arm_in and doctor_in and obj_player.role != "Doctor"){
 		obj_player.infection_level = 0;
 		scr_create_text("You've been cured!");
+		global.any_menu = false;
+		scr_unpause();
+		open = false;
 		arm_in = false;
 		buffer_seek(con_client.client_buffer, buffer_seek_start, 0);		// Go to start of buffer
 		buffer_write(con_client.client_buffer, buffer_u8, network.vaccinate);
