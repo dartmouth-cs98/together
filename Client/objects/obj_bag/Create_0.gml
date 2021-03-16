@@ -13,7 +13,7 @@ task = "Collect Apples";
 // For collecting objects, can ignore if not relevant
 collects = "obj_apple";
 
-taskvalue = 10;
+taskvalue = 1;
 
 empty_message = "You don't have any apples in your inventory! Ask the farmer for some!";
 
