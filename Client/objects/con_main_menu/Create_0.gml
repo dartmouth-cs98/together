@@ -9,9 +9,9 @@
 
 ds_menu_main = scr_create_menu_page(
 	["START",		menu_element_type.script_runner,	scr_start_game],		// TODO: New script needed
+	["HOW TO PLAY",	menu_element_type.script_runner,	scr_how2play],
 	["SETTINGS",	menu_element_type.page_transfer,	menu_page.settings],
 	["EXIT",		menu_element_type.script_runner,	scr_exit_game],
-	[],
 	[]
 );
 
