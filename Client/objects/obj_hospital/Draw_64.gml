@@ -16,7 +16,7 @@ if (open and !finished and obj_player.role != "Doctor"){
 	}
 }
 else if (open and (arm_in or doctor_in)){
-	if (arm_in){
+	if (arm_in or (obj_player.role == "Doctor" and other_arm_in)){
 		obj_arm.x = x - 150;
 		obj_arm.y = y - 300;
 	}

@@ -16,5 +16,13 @@ if (open){
 		buffer_write(con_client.client_buffer, buffer_u8, 2);
 		network_send_packet(con_client.client, con_client.client_buffer, buffer_tell(con_client.client_buffer));
 	}
-	if (arm_in and doctor_in) alarm[0] = room_speed * 5; 
+	if (arm_in and doctor_in and obj_player.role != "Doctor"){
+		obj_player.infection_level = 0;
+		scr_create_text("You've been cured!");
+		arm_in = false;
+		buffer_seek(con_client.client_buffer, buffer_seek_start, 0);		// Go to start of buffer
+		buffer_write(con_client.client_buffer, buffer_u8, network.vaccinate);
+		buffer_write(con_client.client_buffer, buffer_u8, 4);
+		network_send_packet(con_client.client, con_client.client_buffer, buffer_tell(con_client.client_buffer));	
+	}
 }
