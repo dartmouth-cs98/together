@@ -311,9 +311,11 @@ function scr_received_packet(buffer){
 			var buffer_result = buffer_read(buffer, buffer_bool);
 			if (buffer_result == 1){
 				obj_hospital.doctor_in = true;
+				show_debug_message("Doctor is in!");
 			}
 			else if (buffer_result == 2){
 				obj_hospital.other_arm_in = true;
+				show_debug_message("Patient is in!");
 			}
 			else if (buffer_result == 3){
 				obj_hospital.doctor_in = false;

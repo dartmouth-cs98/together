@@ -257,6 +257,7 @@ function scr_recieved_packet(buffer, socket){
 		
 			#region vaccinate
 			var vaccinate_status = buffer_read(buffer, buffer_u8);
+			show_debug_message("Vaccinate status: " + string(vaccinate_status));
 			
 			// Echo it out
 			for(var i = 0; i < ds_list_size(socket_list); i++) {

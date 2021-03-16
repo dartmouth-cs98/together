@@ -16,13 +16,16 @@ if (open and !finished and obj_player.role != "Doctor"){
 	}
 }
 else if (open and (arm_in or doctor_in)){
-	//draw_rectangle_color(80, 30, 450, 250, c_white, c_white, c_white, c_white, false);
 	if (arm_in){
 		obj_arm.x = x - 150;
-		obj_arm.y = y - 150;
+		obj_arm.y = y - 300;
 	}
-	if (true){ //(doctor_in){
-		obj_syringe.x = x - 150;
-		obj_syringe.y = y - 150;
+	if (doctor_in){
+		obj_syringe.x = x - 250;
+		obj_syringe.y = y - 10;
 	}
+}
+else{
+	obj_arm.y = 4000;
+	obj_syringe.y = 4000;
 }
