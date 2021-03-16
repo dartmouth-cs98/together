@@ -7,7 +7,7 @@ function scr_collect_and_keep(object){
 		var key = ds_list_find_value(global.inventory, i);
 		if(object_get_name(key.object_index)==object.collects){
 			scr_task_complete(object.taskvalue);
-			scr_create_text("Delivery successful!");
+			scr_create_text("Success!");
 			instance_destroy(object);
 			exit;
 		}

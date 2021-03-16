@@ -9,7 +9,7 @@ function scr_collect_and_destroy(object){
 			ds_list_delete(global.inventory, i);
 			instance_destroy(key);
 			scr_task_complete(object.taskvalue);
-			scr_create_text("Delivery successful!");
+			scr_create_text("Success!");
 			instance_destroy(object);
 			exit;
 		}
