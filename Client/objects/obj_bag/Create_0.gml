@@ -8,14 +8,14 @@ myname = "bag";
 // Change these in the children
 object1 = spr_bag1;
 object2 = spr_bag2;
-task = "Collect Apples";
+task = "Common";
 
 // For collecting objects, can ignore if not relevant
 collects = "obj_apple";
 
 taskvalue = 1;
 
-empty_message = "You don't have any apples in your inventory! Ask the farmer for some!";
+empty_message = "You don't have any apples in your inventory! Go find some!";
 
 // Default script, change in children
 myscript = scr_collect;
