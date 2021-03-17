@@ -6,7 +6,7 @@ event_inherited();
 
 object1 = spr_sink1;
 object2 = spr_sink2;
-task = "Common";
+task = "Collect Apples";
 
 is_washing = false;
 just_washed = false;

@@ -9,7 +9,7 @@ object2 = spr_bread2;
 
 object_id = 0;
 
-task = "Common";
+task = "Collect Apples";
 
 ds_list_insert(optionNames, 2, "Eat");
 ds_list_insert(options, 2, scr_eat);

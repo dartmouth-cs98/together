@@ -4,7 +4,7 @@ event_inherited();
 object1 = spr_collectionbox1;
 object2 = spr_collectionbox2;
 
-task = "Deliver Mail";
+task = "Deliver Packages";
 
 // For collecting objects, can ignore if not relevant
 collects = "obj_package";

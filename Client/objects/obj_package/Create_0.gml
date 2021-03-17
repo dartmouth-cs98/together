@@ -6,4 +6,4 @@ object2 = spr_package2;
 
 myscript = scr_pickup_and_destroy;
 
-task = "Deliver Mail";
+task = "Deliver Packages";
