@@ -33,5 +33,6 @@ if (keyboard_check_released(vk_enter) and string_length(number_string) == 2 and 
 	open = false;
 	finished = true;
 	global.any_menu = false;
+	scr_task_complete(3);
 	scr_unpause();
 }
