@@ -14,8 +14,9 @@ task = "Collect Apples";
 ds_list_insert(optionNames, 2, "Eat");
 ds_list_insert(options, 2, scr_eat);
 
-ds_list_replace(options, 1, scr_server_drop);
+//ds_list_replace(options, 1, scr_server_drop);
 
-myscript = scr_server_pickup;
+//myscript = scr_server_pickup;
+myscript = scr_pickup_and_destroy;
 
 sprite_index = object1;
